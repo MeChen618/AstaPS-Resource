@@ -1,0 +1,83 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Target",
+              "value": -1,
+              "entityTypes": [
+                "Monster"
+              ]
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "failActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Oceanid_Tit_MvM_DyingBS_PartnerCamp",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Oceanid_Tit_MvM_DyingBS_MonsterCamp",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Monster_Oceanid_Tit_02_MvM_DyingBS",
+      "modifiers": {
+        "Oceanid_Tit_MvM_DyingBS_MonsterCamp": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ServerCreateGadgetOnKillMixin",
+              "gadgetIDList": [
+                42005027
+              ],
+              "actorIceSubHurtDelta": -1,
+              "campID": 4001
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Oceanid_Tit_MvM_DyingBS_PartnerCamp": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ServerCreateGadgetOnKillMixin",
+              "gadgetIDList": [
+                42005027
+              ],
+              "actorIceSubHurtDelta": -1,
+              "campID": 3001
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]
