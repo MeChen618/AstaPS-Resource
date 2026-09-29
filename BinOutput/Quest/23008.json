@@ -1,0 +1,191 @@
+{
+  "taskId": 42310,
+  "talks": [
+    {
+      "npcId": [
+        4016
+      ],
+      "id": 2300801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2300801",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "9679057690338063",
+      "questId": 23008,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 230080101,
+      "freeStyleList": [
+        1190,
+        1170,
+        1180,
+        1250
+      ]
+    },
+    {
+      "npcId": [
+        4016
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2300802,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2300802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2300802"
+          ],
+          "type": "QUEST_COND_ITEM_GIVING_ACTIVED"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "16605743611930135150",
+      "questId": 23008,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 230080201
+    },
+    {
+      "npcId": [
+        4016
+      ],
+      "id": 2300803,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2300803",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "126314031571636480",
+      "questId": 23008,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "performCfg": "QuestDialogue/IQ/Sumeru_23008/Q2300803",
+      "initDialog": 230080301
+    }
+  ],
+  "titleTextMapHash": 753027039,
+  "luaPath": "Actor/Quest/IQ23008",
+  "id": 23008,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2300801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        4016
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "4016"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 4012049244,
+      "subId": 2300801,
+      "mainId": 23008
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2300802,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_ITEM_GIVING"
+        }
+      ],
+      "npcId": [
+        4016
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "4016"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 133685908,
+      "subId": 2300802,
+      "mainId": 23008
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2300803,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "42310",
+            "0",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_DAILY_TASK_VAR"
+        },
+        {
+          "param": [
+            "42310"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_DAILY_TASK"
+        }
+      ],
+      "npcId": [
+        4016
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "4016"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1077698372,
+      "subId": 2300803,
+      "mainId": 23008
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 4137113134
+}

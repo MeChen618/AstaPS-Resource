@@ -1,0 +1,128 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        3098
+      ],
+      "id": 7218301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7218301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "641485726778194566",
+      "questId": 72183,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72183/Q7218301",
+      "initDialog": 721830101
+    },
+    {
+      "npcId": [
+        2093
+      ],
+      "id": 7218302,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7218302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "4111726649820950408",
+      "questId": 72183,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72183/Q7218302",
+      "initDialog": 721830201
+    }
+  ],
+  "titleTextMapHash": 356432871,
+  "luaPath": "Actor/Quest/WQ72183",
+  "rewardIdList": [
+    172183
+  ],
+  "HGFFNBIGPJK": true,
+  "HMJOIJHMGJD": true,
+  "id": 72183,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7218301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        3098
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "3098"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3023700716,
+      "subId": 7218301,
+      "mainId": 72183
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7218302,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100966",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        2093
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "2093"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1944427012,
+      "subId": 7218302,
+      "mainId": 72183
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2885578718,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

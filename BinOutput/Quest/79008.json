@@ -1,0 +1,219 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        2003059
+      ],
+      "id": 7900801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7900802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "11704560319784795174",
+      "questId": 79008,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Island_79008/Q7900801",
+      "initDialog": 790080101
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 7900802,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7900804",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "2399745313134838973",
+      "questId": 79008,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 790080201
+    }
+  ],
+  "titleTextMapHash": 317261463,
+  "luaPath": "Actor/Quest/WQ79008",
+  "rewardIdList": [
+    179008
+  ],
+  "id": 79008,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900801,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            220027,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7900801,
+      "mainId": 79008,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "144004087"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        2003059
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "Q7900802",
+          "50"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3409221276,
+      "subId": 7900802,
+      "mainId": 79008
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7900803",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "144004088"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        },
+        {
+          "param": [
+            "144004087"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "Q7900803",
+          "30"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "subId": 7900803,
+      "mainId": 79008
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900802,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 6,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7900804,
+      "mainId": 79008
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900805,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        2003059
+      ],
+      "order": 2,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7900805,
+      "mainId": 79008,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 4058740518,
+  "mainQuestTag": "MAINQUEST_TAG_ACTIVITY"
+}

@@ -1,0 +1,197 @@
+{
+  "taskId": 20403,
+  "freeStyleDic": {
+    "155101": [
+      1240,
+      1300
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        155101
+      ],
+      "id": 2001901,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2001901",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "16103116091656562429",
+      "questId": 20019,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200190101
+    },
+    {
+      "npcId": [
+        155101
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2001902,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2001901",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2001903",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "1801516016228064745",
+      "questId": 20019,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200190201
+    },
+    {
+      "npcId": [
+        155101
+      ],
+      "id": 2001904,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2001903",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "17642032373644710524",
+      "questId": 20019,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200190401
+    }
+  ],
+  "titleTextMapHash": 3790591033,
+  "luaPath": "Actor/Quest/IQ20019",
+  "id": 20019,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2001901,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100302",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "155101"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 16379280,
+      "subId": 2001901,
+      "mainId": 20019
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100302,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q20005KEY02_Reminder",
+          "50"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 4001438112,
+      "subId": 2001903,
+      "mainId": 20019
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2001904,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "20403"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_DAILY_TASK"
+        },
+        {
+          "param": [
+            "100302",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "155101"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3889976376,
+      "subId": 2001904,
+      "mainId": 20019
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 4258479231
+}

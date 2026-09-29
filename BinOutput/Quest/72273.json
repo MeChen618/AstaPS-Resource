@@ -1,0 +1,90 @@
+{
+  "titleTextMapHash": 3750219399,
+  "luaPath": "Actor/Quest/WQ72273",
+  "id": 72273,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7227301",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "descTextMapHash": 1234723476,
+      "subId": 7227301,
+      "mainId": 72273,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            5,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD_SCENE"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7227302",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "155007103",
+            "0"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        },
+        {
+          "param": [
+            "7227301"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 2,
+      "failParentShow": "QUEST_HIDDEN",
+      "descTextMapHash": 2569207612,
+      "subId": 7227302,
+      "mainId": 72273,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7227303",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 3,
+      "failParentShow": "QUEST_HIDDEN",
+      "finishParent": true,
+      "descTextMapHash": 3773893332,
+      "subId": 7227303,
+      "mainId": 72273,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

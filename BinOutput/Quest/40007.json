@@ -1,0 +1,167 @@
+{
+  "freeStyleDic": {
+    "10205": [
+      1280
+    ]
+  },
+  "forcePreloadLuaList": [
+    "6734397233118567582",
+    "1155864748680695470"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        10205
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 4000208,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4000701",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "4000702",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "630398490244368868",
+      "questId": 40007,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/Sealamp1_40002/Q4000208",
+      "initDialog": 400020801
+    }
+  ],
+  "titleTextMapHash": 192083921,
+  "luaPath": "Actor/Quest/EQ40007",
+  "series": 10001,
+  "id": 40007,
+  "type": "EQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            4000701,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        10205
+      ],
+      "order": 2,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            4000701,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "descTextMapHash": 3852766182,
+      "subId": 4000701,
+      "mainId": 40007,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            4000702,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "4000701"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "npcId": [
+        10205
+      ],
+      "order": 3,
+      "failCond": [
+        {
+          "param": [
+            4000702,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "descTextMapHash": 2226773662,
+      "subId": 4000702,
+      "mainId": 40007,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            4000703,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        10205
+      ],
+      "order": 1,
+      "descTextMapHash": 582936286,
+      "subId": 4000703,
+      "mainId": 40007,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            4000704,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 4,
+      "failCond": [
+        {
+          "param": [
+            4000701,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "finishParent": true,
+      "descTextMapHash": 4023697366,
+      "subId": 4000704,
+      "mainId": 40007,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "10645300292928738537",
+    "1134720382046399899"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 325319423,
+  "showType": "QUEST_HIDDEN"
+}

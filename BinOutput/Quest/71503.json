@@ -1,0 +1,130 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30181,
+        30183,
+        30184
+      ],
+      "id": 7150301,
+      "priority": 15,
+      "beginCond": [
+        {
+          "param": [
+            "7150301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "1785430854315988660",
+      "questId": 71503,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/TheChasmChallenge/Q7150301",
+      "initDialog": 715030101
+    }
+  ],
+  "titleTextMapHash": 3528152847,
+  "activityId": 5079,
+  "luaPath": "Actor/Quest/WQ71503",
+  "HMJOIJHMGJD": true,
+  "id": 71503,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7150301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "166001689",
+            "0"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        30181,
+        30183,
+        30184
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "30181"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 6,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 259559188,
+      "subId": 7150301,
+      "mainId": 71503
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "Q71503",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "Q7150302_guide",
+          "30"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 6,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 1674179236,
+      "subId": 7150302,
+      "mainId": 71503
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 4172768164,
+      "subId": 7150303,
+      "mainId": 71503
+    }
+  ],
+  "descTextMapHash": 1933101918,
+  "mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+  "suggestTrackMainQuestList": [
+    71508
+  ]
+}

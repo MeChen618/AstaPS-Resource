@@ -1,0 +1,338 @@
+{
+  "freeStyleDic": {
+    "12326": [
+      1190
+    ]
+  },
+  "forcePreloadLuaList": [
+    "1655464130713233642"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        12326
+      ],
+      "id": 7183102,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7183104",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "4224790691012927417",
+      "questId": 71831,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 718310201
+    },
+    {
+      "npcId": [
+        12326
+      ],
+      "id": 7183103,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7183103",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "17548886691542146664",
+      "questId": 71831,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Liyue_71831/Q7183103",
+      "initDialog": 718310301
+    },
+    {
+      "npcId": [
+        12326
+      ],
+      "id": 7183105,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7183105",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "9119510803913172581",
+      "questId": 71831,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Liyue_71831/Q7183105",
+      "initDialog": 718310501
+    },
+    {
+      "npcId": [
+        12326
+      ],
+      "id": 7183110,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7183101",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "935152427908841096",
+      "questId": 71831,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Liyue_71830/Q7183003",
+      "initDialog": 718311001
+    }
+  ],
+  "titleTextMapHash": 3509395583,
+  "luaPath": "Actor/Quest/WQ71831",
+  "rewardIdList": [
+    171831
+  ],
+  "series": 71035,
+  "id": 71831,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            71830,
+            0
+          ],
+          "param_str": "1",
+          "type": "QUEST_CONTENT_TIME_VAR_PASS_DAY"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "134"
+          ],
+          "type": "QUEST_EXEC_DEL_SCENE_TAG"
+        },
+        {
+          "param": [
+            "3",
+            "135"
+          ],
+          "type": "QUEST_EXEC_ADD_SCENE_TAG"
+        },
+        {
+          "param": [
+            "71830"
+          ],
+          "type": "QUEST_EXEC_CLEAR_TIME_VAR"
+        },
+        {
+          "param": [
+            "3",
+            "133107218"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "3",
+            "133107942,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 122027348,
+      "subId": 7183101,
+      "mainId": 71831,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7183102,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        12326
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q7183102_N12326",
+          "20"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      },
+      "isRewind": true,
+      "descTextMapHash": 378221852,
+      "subId": 7183102,
+      "exclusivePlaceList": [
+        1101499
+      ],
+      "mainId": 71831
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7183103,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        12326
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "12326"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2306413012,
+      "subId": 7183103,
+      "exclusivePlaceList": [
+        1101499
+      ],
+      "mainId": 71831
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "133107238",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133107220"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "101657"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        },
+        {
+          "param": [
+            "133107238"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        12326
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "Q7183104_guide"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "descTextMapHash": 2496262500,
+      "subId": 7183104,
+      "exclusivePlaceList": [
+        1101499
+      ],
+      "mainId": 71831
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7183105,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "71831",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "133107220"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        },
+        {
+          "param": [
+            "3",
+            "133107219"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "npcId": [
+        12326
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "12326"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2798439868,
+      "subId": 7183105,
+      "exclusivePlaceList": [
+        1101499
+      ],
+      "mainId": 71831
+    }
+  ],
+  "preloadLuaList": [
+    "5955888044303909495"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2825952302
+}

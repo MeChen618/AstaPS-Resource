@@ -1,0 +1,408 @@
+{
+  "chapterId": 103402,
+  "forcePreloadLuaList": [
+    "490347769750393026"
+  ],
+  "titleTextMapHash": 1343079135,
+  "luaPath": "Actor/Quest/LQ19090",
+  "HGFFNBIGPJK": true,
+  "series": 103402,
+  "id": 19090,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "failExec": [
+        {
+          "param": [
+            "500"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        },
+        {
+          "param": [
+            "1909003"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            70710338,
+            0
+          ],
+          "type": "QUEST_CONTENT_INTERACT_GADGET",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        1027
+      ],
+      "order": 4,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "Q1909001point",
+          "30"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failCond": [
+        {
+          "param": [
+            1909001,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_TEAM_DEAD"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ANY_MANUAL_TRANSPORT"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "2001,2002,2003",
+          "type": "QUEST_CONTENT_ENTER_MY_HOME_WORLD"
+        },
+        {
+          "param": [
+            3,
+            100
+          ],
+          "param_str": "Q1909001point",
+          "type": "QUEST_CONTENT_LEAVE_SCENE_RANGE"
+        }
+      ],
+      "descTextMapHash": 2087243548,
+      "subId": 1909001,
+      "mainId": 19090
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            70710327,
+            0
+          ],
+          "type": "QUEST_CONTENT_INTERACT_GADGET",
+          "count": 1
+        },
+        {
+          "param": [
+            70710356,
+            0
+          ],
+          "type": "QUEST_CONTENT_INTERACT_GADGET",
+          "count": 3
+        }
+      ],
+      "npcId": [
+        1027
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "Q1909003target",
+          "40"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 858087964,
+      "subId": 1909002,
+      "mainId": 19090
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "133003927",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "133003927"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        1027
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q1909003target",
+          "40"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1006001116,
+      "subId": 1909003,
+      "mainId": 19090
+    },
+    {
+      "order": 7,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 1909004,
+      "mainId": 19090,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "order": 8,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 1909005,
+      "mainId": 19090,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            103402,
+            1909002
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100764"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        },
+        {
+          "param": [
+            "100765"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        },
+        {
+          "param": [
+            "500"
+          ],
+          "type": "QUEST_EXEC_GRANT_TRIAL_AVATAR"
+        }
+      ],
+      "npcId": [
+        1027
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "1027",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "descTextMapHash": 1374832268,
+      "subId": 1909006,
+      "mainId": 19090
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "500"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        },
+        {
+          "param": [
+            "1909003"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        },
+        {
+          "param": [
+            "133003007"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "133003925",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "500"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        },
+        {
+          "param": [
+            "133003007"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        1027
+      ],
+      "order": 5,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "Q1909001point",
+          "70"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failCond": [
+        {
+          "param": [
+            1909007,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_TEAM_DEAD"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ANY_MANUAL_TRANSPORT"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "2001,2002,2003",
+          "type": "QUEST_CONTENT_ENTER_MY_HOME_WORLD"
+        },
+        {
+          "param": [
+            3,
+            100
+          ],
+          "param_str": "Q1909001point",
+          "type": "QUEST_CONTENT_LEAVE_SCENE_RANGE"
+        }
+      ],
+      "descTextMapHash": 854187572,
+      "subId": 1909007,
+      "mainId": 19090
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            103402,
+            1909101
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        },
+        {
+          "param": [
+            103402,
+            1909201
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "133003925",
+            "1"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        1027
+      ],
+      "order": 6,
+      "guide": {
+        "param": [
+          "1027",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1640097580,
+      "subId": 1909008,
+      "mainId": 19090
+    }
+  ],
+  "preloadLuaList": [
+    "1789663610377520153",
+    "15785972100993235259"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 3005,
+  "descTextMapHash": 242629254,
+  "suggestTrackOutOfOrder": true,
+  "suggestTrackMainQuestList": [
+    19091,
+    19092
+  ]
+}

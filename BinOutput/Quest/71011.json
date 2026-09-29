@@ -1,0 +1,199 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        20114
+      ],
+      "id": 34763,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7101101",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "3123613807541538811",
+      "questId": 71011,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 3476301
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 34768,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7101101",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7101102",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "2073751652428559441",
+      "questId": 71011,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 3476801
+    }
+  ],
+  "titleTextMapHash": 3046378471,
+  "luaPath": "Actor/Quest/WQ71011",
+  "id": 71011,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            34763,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3799540476,
+      "subId": 7101101,
+      "mainId": 71011,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            34768,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133103540"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "order": 2,
+      "isMpBlock": true,
+      "failParentShow": "QUEST_HIDDEN",
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 4038060644,
+      "subId": 7101102,
+      "mainId": 71011,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7101102_progress",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 3,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "Q71011Target",
+          "75"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3575132900,
+      "subId": 7101103,
+      "mainId": 71011
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7101103_progress",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 4,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "Q71011Target",
+          "18"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3622522684,
+      "subId": 7101104,
+      "mainId": 71011
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7101104_progress",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 5,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "Q71011Target",
+          "13"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 2024096644,
+      "subId": 7101105,
+      "mainId": 71011
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2648852430
+}

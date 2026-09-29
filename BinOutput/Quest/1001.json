@@ -1,0 +1,89 @@
+{
+  "chapterId": 1101,
+  "titleTextMapHash": 2046717777,
+  "luaPath": "Actor/Quest/MQ1001",
+  "series": 1101,
+  "id": 1001,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            100101,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            100102,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            100101,
+            0
+          ],
+          "type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+          "count": 1
+        }
+      ],
+      "descTextMapHash": 1528199070,
+      "subId": 100101,
+      "mainId": 1001,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100102,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100101"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 208068374,
+      "subId": 100102,
+      "mainId": 1001,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100103,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1712105238,
+      "subId": 100103,
+      "mainId": 1001,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2302617543,
+  "showType": "QUEST_HIDDEN"
+}

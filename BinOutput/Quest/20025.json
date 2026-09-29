@@ -1,0 +1,196 @@
+{
+  "taskId": 20401,
+  "freeStyleDic": {
+    "155101": [
+      1240,
+      1300
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        155101
+      ],
+      "id": 2002501,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2002501",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "65282318794641105",
+      "questId": 20025,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200250101
+    },
+    {
+      "npcId": [
+        155101
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2002502,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2002501",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2002503",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "16852246201920900315",
+      "questId": 20025,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200250201
+    },
+    {
+      "npcId": [
+        155101
+      ],
+      "id": 2002504,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2002503",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "771006098617748485",
+      "questId": 20025,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200250401
+    }
+  ],
+  "titleTextMapHash": 1475502329,
+  "luaPath": "Actor/Quest/IQ20025",
+  "id": 20025,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2002501,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100302"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "155101"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 244537544,
+      "subId": 2002501,
+      "mainId": 20025
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100302,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q20025KEY02_Reminder",
+          "80"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2909557136,
+      "subId": 2002503,
+      "mainId": 20025
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2002504,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "20401"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_DAILY_TASK"
+        },
+        {
+          "param": [
+            "100302",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "155101"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2260510888,
+      "subId": 2002504,
+      "mainId": 20025
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 3312881791
+}

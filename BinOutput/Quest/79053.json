@@ -1,0 +1,189 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        13247
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7905301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7905301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "4862010598660913857",
+      "questId": 79053,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 790530101
+    },
+    {
+      "npcId": [
+        13247
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7905313,
+      "priority": 10,
+      "beginCond": [
+        {
+          "param": [
+            "7905302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "120310",
+            "1"
+          ],
+          "type": "QUEST_COND_PACK_HAVE_ITEM"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "7116202884452254534",
+      "questId": 79053,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Penumbra_79041/Q7905313",
+      "initDialog": 790531301
+    },
+    {
+      "finishExec": [
+        {
+          "param": [
+            "1",
+            "1",
+            "79053"
+          ],
+          "type": "TALK_EXEC_SET_QUEST_VAR"
+        }
+      ],
+      "npcId": [
+        13247
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7905314,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "7905304",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "120462",
+            "1"
+          ],
+          "type": "QUEST_COND_PACK_HAVE_ITEM"
+        },
+        {
+          "param": [
+            "1",
+            "0",
+            "79053"
+          ],
+          "type": "QUEST_COND_QUEST_VAR_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "1331257100252222178",
+      "questId": 79053,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Penumbra_79041/Q7905314",
+      "initDialog": 790531401
+    }
+  ],
+  "titleTextMapHash": 1548673983,
+  "luaPath": "Actor/Quest/WQ79053",
+  "id": 79053,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7905301,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        13247
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7905301,
+      "mainId": 79053,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7905313,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        13247
+      ],
+      "order": 2,
+      "isRewind": true,
+      "subId": 7905302,
+      "mainId": 79053,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7905303",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        13247
+      ],
+      "order": 3,
+      "isRewind": true,
+      "subId": 7905303,
+      "mainId": 79053,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7905314,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 4,
+      "isRewind": true,
+      "subId": 7905304,
+      "mainId": 79053,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

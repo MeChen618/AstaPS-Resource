@@ -1,0 +1,105 @@
+{
+  "titleTextMapHash": 1845029735,
+  "luaPath": "Actor/Quest/WQ74103",
+  "id": 74103,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "WQ7410301",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "120526",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7410301,
+      "mainId": 74103,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "WQ7410302",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "120526",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7410302,
+      "mainId": 74103,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            120643,
+            0
+          ],
+          "type": "QUEST_CONTENT_USE_ITEM"
+        },
+        {
+          "param": [
+            120526,
+            1
+          ],
+          "type": "QUEST_CONTENT_ITEM_NUM_EQUAL"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7410301"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7410303,
+      "mainId": 74103,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "order": 4,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "subId": 7410304,
+      "mainId": 74103,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

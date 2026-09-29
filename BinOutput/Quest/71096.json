@@ -1,0 +1,98 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        2061
+      ],
+      "id": 7109601,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "7107402"
+          ],
+          "type": "QUEST_COND_ITEM_GIVING_ACTIVED"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "13806941497070570831",
+      "questId": 71096,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Liyue_71096/Q7109601",
+      "lowPriority": true,
+      "initDialog": 710960101
+    },
+    {
+      "npcId": [
+        2061,
+        1005
+      ],
+      "id": 7109602,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "7109602",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "14169254000431193259",
+      "questId": 71096,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "performCfg": "QuestDialogue/WQ/Liyue_71096/Q7109602",
+      "initDialog": 710960201
+    }
+  ],
+  "titleTextMapHash": 2967824999,
+  "luaPath": "Actor/Quest/WQ71096",
+  "rewardIdList": [
+    171096
+  ],
+  "id": 71096,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7107402,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_ITEM_GIVING"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2938813348,
+      "subId": 7109601,
+      "mainId": 71096,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7109602,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 1454224972,
+      "subId": 7109602,
+      "mainId": 71096,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

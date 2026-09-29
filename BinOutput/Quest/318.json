@@ -1,0 +1,69 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        10092
+      ],
+      "id": 31802,
+      "beginCond": [
+        {
+          "param": [
+            "31802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "2636994088160529282",
+      "questId": 318,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "performCfg": "QuestDialogue/Q318/InterContainer_Q31802",
+      "initDialog": 3180201
+    }
+  ],
+  "titleTextMapHash": 3810169769,
+  "luaPath": "Actor/Quest/IQ318",
+  "id": 318,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            31801,
+            0
+          ],
+          "type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 3287132927,
+      "subId": 31801,
+      "mainId": 318,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            31802,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1627811743,
+      "subId": 31802,
+      "mainId": 318,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

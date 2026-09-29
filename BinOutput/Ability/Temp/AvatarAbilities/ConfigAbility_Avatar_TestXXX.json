@@ -1,0 +1,901 @@
+[
+  {
+    "Default": {
+      "abilitySpecials": {
+        "ExtraAttack_Sword_Stamina_Cost": 0,
+        "Flexible_Stamina": -2
+      },
+      "abilityName": "Avatar_TestXXX_ExtraAttack",
+      "modifiers": {
+        "ExtraAttack_AS_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Male_Sword_Kaeya_ExtraAttack_SwordAS",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ExtraAttack_StaminaCost": {
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "cdRatio": 1,
+              "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "skillID": 10001,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "OnBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "DoSkill",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "value": 99,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByAnimatorInt",
+                      "target": "Target",
+                      "parameter": "ComboCount",
+                      "logic": "Equal"
+                    },
+                    {
+                      "$type": "ByAnimatorInt",
+                      "target": "Target",
+                      "value": 5,
+                      "parameter": "ComboCount",
+                      "logic": "Equal"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "intID": "SkillID"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "OnBeginSecondCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "DoSkill",
+              "predicates": [
+                {
+                  "$type": "ByLocalAvatarStamina",
+                  "target": "Target",
+                  "stamina": [
+                    "ExtraAttack_Sword_Stamina_Cost",
+                    "Flexible_Stamina",
+                    "ADD"
+                  ],
+                  "logic": "GreaterOrEqual"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "value": 6,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByLocalAvatarStamina",
+                  "target": "Target",
+                  "stamina": [
+                    "ExtraAttack_Sword_Stamina_Cost",
+                    "Flexible_Stamina",
+                    "ADD"
+                  ],
+                  "logic": "GreaterOrEqual"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "intID": "SkillID"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "skillID": 10461,
+          "OnReleaseCharged": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "intID": "SkillID"
+            }
+          ],
+          "secondChargeTime": 0.20000000298023224,
+          "OnBeginCharged": [
+            {
+              "$type": "SetAnimatorBool",
+              "value": true,
+              "boolID": "IsCharging",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "chargeTime": 0.11999999731779099,
+          "OnReleaseUncharged": [
+            {
+              "$type": "SetAnimatorInt",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "intID": "SkillID"
+            }
+          ],
+          "chargeStateIDs": [
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "Run"
+          ]
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "ExtraAttack_AS",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "ExtraAttack_AS_Effect",
+          "normalizeStart": 0.20999999344348907,
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "ExtraAttack_StaminaCost",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilitySpecials": {
+        "GetElementRatio": 1,
+        "TasteOfCold": 0.15000000596046448,
+        "damage": 0
+      },
+      "abilityName": "Avatar_TestXXX_Normalattackball",
+      "modifiers": {
+        "ElementBall": {
+          "onAdded": [
+            {
+              "$type": "GenerateElemBall",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "configID": 2020,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "z": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "baseEnergy": 6,
+              "ratio": "GetElementRatio",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ElementBall_Extra": {
+          "onAdded": [
+            {
+              "$type": "Randomed",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "chance": 0.9900000095367432,
+              "successActions": [
+                {
+                  "$type": "GenerateElemBall",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "configID": 2020,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "offset": {
+                      "z": 1
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "baseEnergy": 3,
+                  "ratio": "GetElementRatio",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "MultipleRefreshNoRemove",
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "stackingOption": {
+            "maxModifierNumForMultipleType": 3
+          },
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "GenerateElemBall_IceShield": {
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "target": "Target",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "ElementBall",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "ElementBall_Extra",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Attack05"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "GenerateElemBall_IceShield",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_TestXXX_NormalattackElement",
+      "modifiers": {
+        "Fire_Enhancement_Weapon": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Diluc_FireCross_Weapon_02",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementType": "Fire",
+          "stacking": "Unique",
+          "duration": 10,
+          "elementDurability": 30,
+          "overrideWeaponElement": true,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "OnAvatarUseSkillMixin",
+          "actorIceSubHurtDelta": -1,
+          "clearSkillIdDelay": 0.20000000298023224,
+          "onTriggerSkill": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByEquipParts",
+                "partNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Fire_Enhancement_Weapon",
+              "canBeHandledOnRecover": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilitySpecials": {
+        "GetElementRatio": 1,
+        "TasteOfCold": 0.15000000596046448,
+        "damage": 0
+      },
+      "abilityName": "Avatar_TestXXX_IceShield_Impact",
+      "modifiers": {
+        "ElementBall": {
+          "onAdded": [
+            {
+              "$type": "GenerateElemBall",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "configID": 2022,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "z": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "baseEnergy": 6,
+              "ratio": "GetElementRatio",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ElementBall_Extra": {
+          "onAdded": [
+            {
+              "$type": "Randomed",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "chance": 0.6700000166893005,
+              "successActions": [
+                {
+                  "$type": "GenerateElemBall",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "configID": 2022,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "offset": {
+                      "z": 1
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "baseEnergy": 3,
+                  "ratio": "GetElementRatio",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "MultipleRefreshNoRemove",
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "stackingOption": {
+            "maxModifierNumForMultipleType": 3
+          },
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FrozenStar": {
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "target": "Caster",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "FrozenStar_ElementBall",
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasAbilityState",
+                      "abilityState": "ElementWet"
+                    },
+                    {
+                      "$type": "ByHasAbilityState",
+                      "abilityState": "ElementFreeze"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FrozenStar_ElementBall": {
+          "onAdded": [
+            {
+              "$type": "GenerateElemBall",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "configID": 2022,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "z": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "baseEnergy": 3,
+              "ratio": 1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Multiple",
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "stackingOption": {
+            "maxModifierNumForMultipleType": 2
+          },
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "GenerateElemBall_IceShield": {
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "target": "Target",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "ElementBall",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "ElementBall_Extra",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Target",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "FrozenStar",
+                  "predicates": [
+                    {
+                      "$type": "ByUnlockTalentParam",
+                      "talentParam": "FrozenStar",
+                      "target": "Target"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "IceShield_AS_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Kaeya_IceShield_Impact_SwordAS",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Kaeya_IceShield_Impact_SwordAS1",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "TasteOfCold": {
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                }
+              ],
+              "target": "Target",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "HealHP",
+                  "value": 1,
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "canBeHandledOnRecover": true,
+                  "amountByCasterAttackRatio": "TasteOfCold"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "cdRatio": 1,
+          "costStaminaRatio": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "skillID": 10462,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "effectPattern": "Eff_TestXXX_IceShield_Impact_Breath",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "targetType": "Enemy",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "attackEvent": {
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "HBOOKFMCODC": {
+                "BPIJOAMNKIH": {
+                  "GGOHGMFHHEC": true,
+                  "value": 1
+                },
+                "onHitEffectName": "default"
+              },
+              "hitPattern": {
+                "hitHaltTimeScale": 0.019999999552965164,
+                "BPIJOAMNKIH": {
+                  "GGOHGMFHHEC": true,
+                  "value": 1
+                },
+                "onHitEffectName": "default",
+                "hitImpulseX": 800,
+                "hitLevel": "Heavy"
+              },
+              "INKGMIHAPMA": {
+                "NDIBGPPKGJP": "Shake"
+              },
+              "cameraShake": {
+                "shakeDistance": 30,
+                "extension": {
+                  "rangeAttenuation": 0.5,
+                  "baseOnCamera": true,
+                  "baseCycle": 0.11999999731779099,
+                  "cycleDamping": 0.11999999731779099
+                },
+                "shakeTime": 0.11999999731779099,
+                "shakeRange": 0.36000001430511475
+              },
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "elementType": "Electric",
+                "elementDurability": 50,
+                "enBreak": 140,
+                "elementRank": 1.5,
+                "attackType": "Melee",
+                "damagePercentage": "damage"
+              }
+            },
+            "attackPattern": {
+              "$type": "ConfigAttackBox",
+              "size": {
+                "x": 1.7999999523162842,
+                "z": 8,
+                "y": 4
+              },
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 1,
+                  "z": -0.20000000298023224
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "MPNIJNGFBIH": {
+                "INOCAOHPEBB": {
+                  "GGOHGMFHHEC": true,
+                  "value": 1
+                }
+              },
+              "triggerType": "TriggerNoRepeat",
+              "massiveAttackRatio": 1
+            }
+          },
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "IceShield_AS",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "IceShield_AS_Effect",
+          "normalizeStart": 0.14000000059604645,
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "IceShield"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "TasteOfCold",
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "talentParam": "TasteOfCold",
+              "target": "Target"
+            }
+          ],
+          "value": -1
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1479
+      ],
+      "id": 9000101,
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "9380985269489477985",
+      "questId": 90001,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 900010101
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 9000102,
+      "beginCond": [
+        {
+          "param": [
+            "9000101",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1375624141917769970",
+      "questId": 90001,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/IQ/TestQuest_90001/Q9000102",
+      "initDialog": 900010201
+    }
+  ],
+  "titleTextMapHash": 3732419311,
+  "luaPath": "Actor/Quest/IQ90001",
+  "id": 90001,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            9000101,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1479"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "descTextMapHash": 1876349500,
+      "subId": 9000101,
+      "mainId": 90001,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 1064832766
+}

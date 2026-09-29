@@ -1,0 +1,670 @@
+{
+  "chapterId": 10040,
+  "freeStyleDic": {
+    "1042": [
+      1120
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        1042
+      ],
+      "id": 4002201,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4002201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "8097296637476226534",
+      "questId": 40022,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/OnmyoMaze_40022/Q4002201",
+      "initDialog": 400220101
+    },
+    {
+      "npcId": [
+        10200
+      ],
+      "id": 4002203,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4002203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14844042373381273190",
+      "questId": 40022,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/OnmyoMaze_40022/Q4002203",
+      "initDialog": 400220301
+    },
+    {
+      "npcId": [
+        30067
+      ],
+      "id": 4002206,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4002206",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "9375310898431027954",
+      "questId": 40022,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/OnmyoMaze_40022/Q4002206",
+      "initDialog": 400220601
+    },
+    {
+      "npcId": [
+        10200
+      ],
+      "id": 4002211,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4002211",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14698493801572607384",
+      "questId": 40022,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/OnmyoMaze_40022/Q4002211",
+      "initDialog": 400221101
+    },
+    {
+      "npcId": [
+        1042,
+        30067
+      ],
+      "id": 4002213,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4002208",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "993303537307414792",
+      "questId": 40022,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/OnmyoMaze_40022/Q4002213",
+      "initDialog": 400221301
+    }
+  ],
+  "titleTextMapHash": 2238460535,
+  "activityId": 2008,
+  "luaPath": "Actor/Quest/EQ40022",
+  "rewardIdList": [
+    140022
+  ],
+  "HMJOIJHMGJD": true,
+  "id": 40022,
+  "type": "EQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            4002201,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1042
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "1042"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2383292300,
+      "subId": 4002201,
+      "mainId": 40022
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROGUE_DUNGEON"
+        }
+      ],
+      "npcId": [
+        1042
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "Q40020guide"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 4105920140,
+      "subId": 4002202,
+      "mainId": 40022
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "0",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "1",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "4002212"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            4002203,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "47006",
+            " 247006002"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "npcId": [
+        10200,
+        30067,
+        1042
+      ],
+      "order": 7,
+      "guide": {
+        "param": [
+          "10200"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "descTextMapHash": 4252242852,
+      "subId": 4002203,
+      "mainId": 40022
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "0",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "2",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "4002210"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "4002204",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        }
+      ],
+      "npcId": [
+        10200,
+        30067,
+        1042
+      ],
+      "order": 9,
+      "guideTipsTextMapHash": 2668672774,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "descTextMapHash": 1615937476,
+      "subId": 4002204,
+      "mainId": 40022
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "0",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "1",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "4002212"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            70710489,
+            0
+          ],
+          "type": "QUEST_CONTENT_INTERACT_GADGET",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "47006",
+            "247006002"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "npcId": [
+        10200,
+        30067,
+        1042
+      ],
+      "order": 6,
+      "guide": {
+        "param": [
+          "Q4002205target",
+          "5"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 47006,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "descTextMapHash": 1773365804,
+      "subId": 4002205,
+      "mainId": 40022
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "0",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "3",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        },
+        {
+          "param": [
+            "4002207"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            4002206,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        }
+      ],
+      "npcId": [
+        10200,
+        30067,
+        1042,
+        30096
+      ],
+      "order": 11,
+      "guide": {
+        "param": [
+          "30067"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "descTextMapHash": 3898103580,
+      "subId": 4002206,
+      "mainId": 40022
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROGUE_DUNGEON"
+        }
+      ],
+      "npcId": [
+        1042,
+        10200,
+        30067
+      ],
+      "order": 10,
+      "guide": {
+        "param": [
+          "Q40020guide"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 380619740,
+      "subId": 4002207,
+      "mainId": 40022
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "npcId": [
+        30067,
+        1042
+      ],
+      "order": 12,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 3393368628,
+      "subId": 4002208,
+      "mainId": 40022
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1,
+            0
+          ],
+          "param_str": "8,12",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "npcId": [
+        1042
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2921791276,
+      "subId": 4002209,
+      "mainId": 40022
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROGUE_DUNGEON"
+        }
+      ],
+      "npcId": [
+        1042,
+        10200,
+        30067
+      ],
+      "order": 8,
+      "guide": {
+        "param": [
+          "Q40020guide"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 940285908,
+      "subId": 4002210,
+      "mainId": 40022
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "4002202"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            4002211,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        }
+      ],
+      "npcId": [
+        10200,
+        30067,
+        1042
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "10200"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "descTextMapHash": 2986042332,
+      "subId": 4002211,
+      "mainId": 40022
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROGUE_DUNGEON"
+        }
+      ],
+      "npcId": [
+        1042,
+        30067,
+        10200
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "Q40020guide"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 101962676,
+      "subId": 4002212,
+      "mainId": 40022
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 685553638,
+  "suggestTrackMainQuestList": [
+    40023
+  ]
+}

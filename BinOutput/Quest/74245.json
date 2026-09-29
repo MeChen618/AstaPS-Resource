@@ -1,0 +1,83 @@
+{
+  "forcePreloadLuaList": [
+    "6720755021703104643"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        5337,
+        5338
+      ],
+      "id": 7421621,
+      "priority": 1,
+      "beginCond": [
+        {
+          "param": [
+            "7424501",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "18198625000246936958",
+      "questId": 74245,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "stayFreeStyle": true,
+      "initDialog": 742162101
+    },
+    {
+      "npcId": [
+        5337,
+        5338
+      ],
+      "id": 7424501,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7424501",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "6390533541637924876",
+      "questId": 74245,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74245/Q7424501",
+      "stayFreeStyle": true,
+      "initDialog": 742162101
+    }
+  ],
+  "titleTextMapHash": 1848650295,
+  "luaPath": "Actor/Quest/WQ74245",
+  "id": 74245,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7424501,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "DMCMNPLMCKL": "QUEST_HIDDEN",
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "subId": 7424501,
+      "mainId": 74245,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "15549309856822655705"
+  ],
+  "showType": "QUEST_HIDDEN"
+}

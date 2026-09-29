@@ -1,0 +1,74 @@
+{
+  "luaPath": "Actor/Quest/LQ13016",
+  "series": 13000,
+  "id": 13016,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            1300114,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            133302029,
+            29003
+          ],
+          "param_str": "0",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "subId": 1301601,
+      "mainId": 13016,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "1301601"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            1300114,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "order": 2,
+      "failCond": [
+        {
+          "param": [
+            133302029,
+            29003
+          ],
+          "param_str": "201",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "subId": 1301602,
+      "mainId": 13016,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 1797340326,
+  "showType": "QUEST_HIDDEN"
+}

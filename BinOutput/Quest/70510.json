@@ -1,0 +1,96 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30112
+      ],
+      "id": 7051004,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7051001",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "8981644696407996689",
+      "questId": 70510,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Mengde_70510/Q7051004",
+      "initDialog": 705100401
+    }
+  ],
+  "titleTextMapHash": 2798751615,
+  "luaPath": "Actor/Quest/WQ70510",
+  "rewardIdList": [
+    170510
+  ],
+  "HMJOIJHMGJD": true,
+  "id": 70510,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7051004,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        30112
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "30112"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2307660476,
+      "subId": 7051001,
+      "mainId": 70510
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7051001"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7051002,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "isMpBlock": true,
+      "isRewind": true,
+      "descTextMapHash": 793606876,
+      "subId": 7051002,
+      "mainId": 70510,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 1812383550,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

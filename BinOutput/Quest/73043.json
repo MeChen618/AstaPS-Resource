@@ -1,0 +1,98 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        20744
+      ],
+      "id": 7304301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7304301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "10111687978605913477",
+      "questId": 73043,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Sumeru_73043/Q7304301",
+      "initDialog": 730430101
+    },
+    {
+      "questIdleTalk": true,
+      "npcId": [
+        20744
+      ],
+      "id": 7304302,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7304301",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "6622421091633410252",
+      "questId": 73043,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 730430201
+    }
+  ],
+  "titleTextMapHash": 812223935,
+  "luaPath": "Actor/Quest/WQ73043",
+  "rewardIdList": [
+    173043
+  ],
+  "id": 73043,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7304301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 635925644,
+      "subId": 7304301,
+      "mainId": 73043,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 721518684,
+      "subId": 7304302,
+      "mainId": 73043,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 809888046,
+  "showType": "QUEST_HIDDEN"
+}

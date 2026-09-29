@@ -1,0 +1,212 @@
+{
+  "forcePreloadLuaList": [
+    "8007306762014259106"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        1005,
+        10324,
+        12212
+      ],
+      "id": 7227401,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7227401",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "16884106864757804844",
+      "questId": 72274,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72274/Q7227401",
+      "initDialog": 722740110
+    },
+    {
+      "npcId": [
+        10325
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7227402,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7227401",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7227402",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "10452762793439568618",
+      "questId": 72274,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72274/Q7227402",
+      "initDialog": 722740201
+    }
+  ],
+  "titleTextMapHash": 1664053791,
+  "luaPath": "Actor/Quest/WQ72274",
+  "id": 72274,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "failExec": [
+        {
+          "param": [
+            "7227401"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7227401,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "40050",
+            "240050010,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ANY_MANUAL_TRANSPORT"
+        }
+      ],
+      "descTextMapHash": 3095868988,
+      "subId": 7227401,
+      "mainId": 72274,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7227401"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7227402,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "40050",
+            "240050006,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ANY_MANUAL_TRANSPORT"
+        }
+      ],
+      "descTextMapHash": 3995757404,
+      "subId": 7227402,
+      "mainId": 72274,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7227401"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7226616,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ANY_MANUAL_TRANSPORT"
+        }
+      ],
+      "finishParent": true,
+      "descTextMapHash": 1389130364,
+      "subId": 7227403,
+      "mainId": 72274,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718",
+    "3638210874761084624"
+  ],
+  "showType": "QUEST_HIDDEN"
+}

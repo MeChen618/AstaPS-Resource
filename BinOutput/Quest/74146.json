@@ -1,0 +1,103 @@
+{
+  "freeStyleDic": {
+    "21048": [
+      0
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        20995
+      ],
+      "id": 7414601,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7414601",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "8217563708074330039",
+      "questId": 74146,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 741460101
+    },
+    {
+      "npcId": [
+        5303
+      ],
+      "id": 7414602,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7414601",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "param": [
+        "[1080_33:199.937,-21.318,219.124,0.000,22.000,0.000]"
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "13996675768679586956",
+      "questId": 74146,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74146/Q7414602",
+      "initDialog": 741460201
+    },
+    {
+      "npcId": [
+        21048
+      ],
+      "id": 7414603,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7414601",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "5083891555276416104",
+      "questId": 74146,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 741460301
+    }
+  ],
+  "titleTextMapHash": 3100825263,
+  "luaPath": "Actor/Quest/WQ74146",
+  "id": 74146,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7414601,
+            1
+          ],
+          "type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7414601,
+      "mainId": 74146,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

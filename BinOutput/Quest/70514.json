@@ -1,0 +1,251 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30217,
+        1437
+      ],
+      "id": 7051401,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7051401",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "2675897358977080376",
+      "questId": 70514,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Mengde_70514/Q7051401",
+      "initDialog": 705140101
+    },
+    {
+      "npcId": [
+        30217
+      ],
+      "id": 7051403,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7051403"
+          ],
+          "type": "QUEST_COND_ITEM_GIVING_ACTIVED"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "6293049120257215279",
+      "questId": 70514,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Mengde_70514/Q7051403",
+      "initDialog": 705140301
+    },
+    {
+      "npcId": [
+        30217
+      ],
+      "id": 7051404,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7051404",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "12110002583219767231",
+      "questId": 70514,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Mengde_70514/Q7051404",
+      "initDialog": 705140401
+    },
+    {
+      "npcId": [
+        30217
+      ],
+      "id": 7051405,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7051402",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "10370162580013586256",
+      "questId": 70514,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "lowPriority": true,
+      "initDialog": 705140501,
+      "freeStyleList": [
+        1200
+      ]
+    }
+  ],
+  "titleTextMapHash": 4169115431,
+  "activityId": 5082,
+  "luaPath": "Actor/Quest/WQ70514",
+  "rewardIdList": [
+    170514
+  ],
+  "HMJOIJHMGJD": true,
+  "id": 70514,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7051401,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        30217,
+        1437
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "30217"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1499576052,
+      "subId": 7051401,
+      "mainId": 70514
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7051402",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        30217
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q7051402_guide",
+          "30"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3521688180,
+      "subId": 7051402,
+      "mainId": 70514
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7051403,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_ITEM_GIVING"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "133003070"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        30217
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "30217"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3341014924,
+      "subId": 7051403,
+      "mainId": 70514
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7051404,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133004074"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "npcId": [
+        30217
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "30217"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2298771268,
+      "subId": 7051404,
+      "mainId": 70514
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 3188717198,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

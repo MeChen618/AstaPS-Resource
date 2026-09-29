@@ -1,0 +1,84 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "ElementRockModifier",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "AddGlobalValue",
+          "key": "_HIT_TIMES_LEFT",
+          "useLimitRange": true,
+          "value": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "canBeHandledOnRecover": true,
+          "maxValue": 1
+        }
+      ],
+      "abilityName": "Test_OreIron_Interact",
+      "modifiers": {
+        "ElementRockModifier": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "NFAAEHMHAJL",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByHitElement",
+                  "target": "Target",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_HIT_TIMES_LEFT",
+                  "target": "Target",
+                  "value": 1
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_HIT_TIMES_LEFT",
+              "useLimitRange": true,
+              "value": -1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByHitElement",
+                  "target": "Target",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_HIT_TIMES_LEFT",
+                  "target": "Target",
+                  "compareType": "MoreThan"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": 3
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

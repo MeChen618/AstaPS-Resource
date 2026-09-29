@@ -1,0 +1,73 @@
+{
+  "talks": [
+    {
+      "lockGameTime": true,
+      "npcId": [
+        1005
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7225201,
+      "beginCond": [
+        {
+          "param": [
+            "7225202",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "15296045828972455084",
+      "questId": 72252,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72167/Q7225201",
+      "initDialog": 722520101
+    }
+  ],
+  "titleTextMapHash": 1786697391,
+  "luaPath": "Actor/Quest/WQ72252",
+  "id": 72252,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "HG_Fog_Trigger",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7225201,
+      "mainId": 72252,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7225201,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7225202,
+      "mainId": 72252,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "showType": "QUEST_HIDDEN"
+}

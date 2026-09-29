@@ -1,0 +1,5956 @@
+[
+  {
+    "Default": {
+      "abilitySpecials": {
+        "Max_Dura": 0,
+        "StaminaCost": 0
+      },
+      "abilityName": "Avatar_Gaming_ExtraAttack",
+      "modifiers": {
+        "Camera": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "AvatarExitCameraShot",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "onAvatarOut": [
+            {
+              "$type": "AvatarExitCameraShot",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ]
+        },
+        "Cost": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CostStaminaMixin",
+              "costStaminaDelta": "StaminaCost",
+              "actorIceSubHurtDelta": -1,
+              "FOKFBIOAFDK": [
+                {
+                  "$type": "SetAnimatorTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "triggerID": "EndHoldTrigger",
+                  "canBeHandledOnRecover": true
+                }
+              ]
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "SetTrigger": {
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "EndHoldTrigger",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "OnBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "DoSkill",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "intID": "SkillID"
+            },
+            {
+              "$type": "ResetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "EndHoldTrigger",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "SetTrigger",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "OnBeginSecondCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "EndHoldTrigger",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "skillID": 10921,
+          "OnReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "EndHoldTrigger",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "SetTrigger",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "secondChargeTime": "Max_Dura",
+          "OnBeginCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "DoSkill",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "value": 6,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "intID": "SkillID"
+            }
+          ],
+          "chargeTime": 0.25,
+          "chargeStateIDs": [
+            "Attack01_BS",
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "ExtraAttack",
+            "ExtraAttack1"
+          ]
+        },
+        {
+          "$type": "AvatarSteerByCameraMixin",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "angularSpeed": 360,
+          "HKKBPPNNBMH": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Cost",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Camera",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_LionHead_Dissolved",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_Pile_Dissolved",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Gaming_LionHead",
+      "modifiers": {
+        "LionHead": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_LionHead_Dissolved",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true,
+                "attachPointName": "CatalystL"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_OutFit_Flag",
+                  "target": "Target",
+                  "value": 1,
+                  "compareType": "LessAndEqual",
+                  "forceByCaster": true
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_LionHead_Dissolved",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "forceByCaster": true
+                }
+              ],
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead_Dissolve",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true,
+                "attachPointName": "CatalystL"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_OutFit_Flag",
+                  "target": "Target",
+                  "value": 2,
+                  "forceByCaster": true
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_LionHead_Dissolved",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "forceByCaster": true
+                }
+              ],
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead_Dissolve_Neon",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Attack03": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Attack03",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Eff_Appear",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Attack04": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Attack04",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Eff_Loop",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Dissolve": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Eff_Dissolve",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_OutFit_Flag",
+                  "target": "Target",
+                  "value": 1,
+                  "compareType": "LessAndEqual",
+                  "forceByCaster": true
+                }
+              ],
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Eff_Dissolve_Neon",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_OutFit_Flag",
+                  "target": "Target",
+                  "value": 2,
+                  "forceByCaster": true
+                }
+              ],
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_LionHead_Dissolved",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_FallingAnthem_BS": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_FallingAttack_BS",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_FallingAnthem_Loop": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_FallingAttack_Loop",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_FallingAnthem_Strike": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_FallingAttack_Strike",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Jump": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Jump",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Eff_Jump",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Leap": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Leap",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_Eff_Leap",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Pile": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_Pile",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_Pile_Dissolved",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_Pile_Dissolved",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "forceByCaster": true
+                }
+              ],
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_Pile_Dissolve",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_Pile_Dissolve": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "Pile_Dissolve",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_Pile",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_Pile_Dissolved",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionHead_StandbyShow_01": {
+          "onAdded": [
+            {
+              "$type": "Randomed",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "chance": 0.3499999940395355,
+              "failActions": [
+                {
+                  "$type": "SendEffectTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "parameter": "LionHead_Show",
+                  "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "SendEffectTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "parameter": "LionHead_Eff_Show",
+                  "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "key": "_ABILITY_Gaming_OutFit_Flag",
+                  "value": 1,
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": true,
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SendEffectTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "parameter": "LionHead_Show",
+                  "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "SendEffectTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "parameter": "LionHead_Eff_Show_Neon",
+                  "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "key": "_ABILITY_Gaming_OutFit_Flag",
+                  "value": 2,
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": true,
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "normalizedStateIDList": [
+            {
+              "stateID": "Attack03",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Attack04",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalArt_Leap",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalArt_Jump",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalArt_AS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_BS_1_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_BS_2_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_Loop_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_AS_1_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_AS_2_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "StandbyShow_01",
+              "normalizeEnd": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Gaming_ElementalArt_Leap",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Leap",
+          "normalizeStart": 0.03999999910593033,
+          "normalizeEnd": 0.10000000149011612,
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_Jump"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Jump",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS_1_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_FallingAnthem_BS",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_Loop_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_FallingAnthem_Loop",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_AS_1_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_FallingAnthem_Strike",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Gaming_ElementalArt_AS",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Dissolve",
+          "normalizeStart": 0.5600000023841858,
+          "normalizeEnd": 0.5799999833106995,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "FallingAnthem_AS_2_Special",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Dissolve",
+          "normalizeStart": 0.5,
+          "normalizeEnd": 0.5199999809265137,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Attack03",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Attack03",
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Attack03",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Dissolve",
+          "normalizeStart": 0.6700000166893005,
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "normalizedStateIDList": [
+            {
+              "stateID": "Attack03",
+              "normalizeStart": 0.23999999463558197,
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Attack04",
+              "normalizeEnd": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Pile",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Attack03",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Pile_Dissolve",
+          "normalizeStart": 0.699999988079071,
+          "normalizeEnd": 0.7200000286102295,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Attack04",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Pile_Dissolve",
+          "normalizeStart": 0.11999999731779099,
+          "normalizeEnd": 0.15000000596046448,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Attack04",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Attack04",
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Attack04",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Dissolve",
+          "normalizeStart": 0.75,
+          "normalizeEnd": 0.7799999713897705,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "StandbyShow_01",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_StandbyShow_01",
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "StandbyShow_01",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionHead_Dissolve",
+          "normalizeStart": 0.7799999713897705,
+          "normalizeEnd": 1,
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_LionPet_Dissolved",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Gaming_LionPet",
+      "modifiers": {
+        "LionPet": {
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_LionPet_Dissolved",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_LionPet_Dissolved",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "forceByCaster": true
+                }
+              ],
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet_Dissolve",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionPet_Dissolve": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionPet_Eff_Dissolve",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_LionPet_Dissolved",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionPet_ElementalBurst": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionPet_ElementalBurst",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionPet_Eff_ElementalBurst",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionPet_StandbyShow_02": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionPet_Show02",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Mark",
+              "target": "Target",
+              "value": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "failActions": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_Lion_Flag",
+                  "target": "Target",
+                  "value": 1
+                },
+                {
+                  "$type": "ByTargetHPRatio",
+                  "target": "Target",
+                  "HPRatio": 0.5
+                },
+                {
+                  "$type": "LEGDBNLCFNC",
+                  "CALFGIEGPAD": true,
+                  "target": "Target",
+                  "checkEntityAlive": true,
+                  "configIdArray": [
+                    41092002,
+                    41092003
+                  ]
+                }
+              ],
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "chance": 0.5,
+                  "failActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "actorIceSubHurtDelta": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                          "x": 0.5
+                        },
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "direction": {
+                          "$type": "ConfigDirectionByDefault",
+                          "maxAngle": 180,
+                          "angleOffset": {
+                            "x": -75
+                          }
+                        },
+                        "onGroundRaycastUpDist": 2,
+                        "positionKey": "_ABILITY_Gaming_LionPet_Pos"
+                      },
+                      "trackTarget": "SelfAttackTarget",
+                      "bulletID": 41092002,
+                      "value": true,
+                      "canBeHandledOnRecover": true,
+                      "lifeByOwnerV2": true
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "actorIceSubHurtDelta": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                          "x": 0.5
+                        },
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "direction": {
+                          "$type": "ConfigDirectionByDefault",
+                          "maxAngle": 180,
+                          "angleOffset": {
+                            "x": 75
+                          }
+                        },
+                        "onGroundRaycastUpDist": 2,
+                        "positionKey": "_ABILITY_Gaming_LionPet_Pos"
+                      },
+                      "trackTarget": "SelfAttackTarget",
+                      "bulletID": 41092002,
+                      "value": true,
+                      "canBeHandledOnRecover": true,
+                      "lifeByOwnerV2": true
+                    }
+                  ],
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_Lion_Flag",
+                  "target": "Target",
+                  "value": 1
+                },
+                {
+                  "$type": "LEGDBNLCFNC",
+                  "CALFGIEGPAD": true,
+                  "target": "Target",
+                  "checkEntityAlive": true,
+                  "configIdArray": [
+                    41092002,
+                    41092003
+                  ]
+                }
+              ],
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "chance": 0.5,
+                  "failActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "actorIceSubHurtDelta": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                          "x": 0.5
+                        },
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "direction": {
+                          "$type": "ConfigDirectionByDefault",
+                          "maxAngle": 180,
+                          "angleOffset": {
+                            "x": -75
+                          }
+                        },
+                        "onGroundRaycastUpDist": 2,
+                        "positionKey": "_ABILITY_Gaming_LionPet_Pos"
+                      },
+                      "trackTarget": "SelfAttackTarget",
+                      "bulletID": 41092002,
+                      "value": true,
+                      "canBeHandledOnRecover": true,
+                      "lifeByOwnerV2": true
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "actorIceSubHurtDelta": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                          "x": 0.5
+                        },
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "direction": {
+                          "$type": "ConfigDirectionByDefault",
+                          "maxAngle": 180,
+                          "angleOffset": {
+                            "x": 75
+                          }
+                        },
+                        "onGroundRaycastUpDist": 2,
+                        "positionKey": "_ABILITY_Gaming_LionPet_Pos"
+                      },
+                      "trackTarget": "SelfAttackTarget",
+                      "bulletID": 41092002,
+                      "value": true,
+                      "canBeHandledOnRecover": true,
+                      "lifeByOwnerV2": true
+                    }
+                  ],
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "normalizedStateIDList": [
+            {
+              "stateID": "StandbyShow_02",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalBurst",
+              "normalizeEnd": 0.6000000238418579
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionPet",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "StandbyShow_02",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionPet_Dissolve",
+          "normalizeStart": 0.8399999737739563,
+          "normalizeEnd": 0.9399999976158142,
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalBurst"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionPet_ElementalBurst",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "StandbyShow_02",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionPet_StandbyShow_02",
+          "normalizeStart": 0.014000000432133675,
+          "normalizeEnd": 1,
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_OutFit_Flag",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Gaming_OutFit",
+      "modifiers": {
+        "Gaming_Emotion_Handler": {
+          "onAdded": [
+            {
+              "$type": "ControlEmotion",
+              "toggleEyeKey": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "ControlEmotion",
+              "toggleEyeKey": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "LIIHBLNMGAF": true,
+              "toggleBlink": true,
+              "toggleEmoSync": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_OutFit_Neon_On": {
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "enable": true,
+              "value": 2,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorInt",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_OutFit_Off": {
+          "onAdded": [
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "enable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetAnimatorInt",
+              "enable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onAvatarIn": [
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Gaming_OutFit_On": {
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "enable": true,
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetAnimatorInt",
+              "enable": true,
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorInt",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "intID": "SkinControl"
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat01"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Hat02"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "renderNames": [
+                "Avatar_Boy_Claymore_Gaming_Eff_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_OutFit_Swim_Handler": {
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_OutFit_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_OutFit_Flag",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_ElementalBurst_Flag",
+                  "target": "Target",
+                  "value": 1
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_Outfit_Initialize": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_StandbyShow_01": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "TriggerWeatherMixin",
+              "actorIceSubHurtDelta": -1,
+              "transDuration": 0.5,
+              "type": "Skill",
+              "duHPRation": 15,
+              "weatherPattern": "Weather_Gaming_Show02"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_OutFit_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_StandbyShow_02": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "StandbyShow_01",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_StandbyShow_01",
+          "normalizeEnd": 0.8999999761581421,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "StandbyShow_02",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_StandbyShow_02",
+          "normalizeStart": 0.029999999329447746,
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierNameSteps": [
+            "Gaming_OutFit_Off",
+            "Gaming_OutFit_On",
+            "Gaming_OutFit_Neon_On"
+          ],
+          "removeAppliedModifier": true,
+          "globalValueKey": "_ABILITY_Gaming_OutFit_Flag"
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "normalizedStateIDList": [
+            {
+              "stateID": "SwimIdle",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "SwimMove",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "SwimDash",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "SwimJumpToWater",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveDie",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveChannel_BS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveChannel_Loop",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveChannel_AS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveCast_BS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveCast_Loop",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveCast_AS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveIdle",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveBS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveAS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveU_A",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveU_B",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveF_A",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveF_B",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveD_A",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveD_B",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveTurn",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveTurnAS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveTurn2",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveTurnAS2",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveMoveD_A",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveDashBS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveDashAS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveDash",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveDashB",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveSuperDash",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "DiveSuperDash2",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Dive_In_Up",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Dive_In_Side",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Dive_In_Bottom",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Dive_Out_Side",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Dive_Out_Bottom",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Dive_Out_Up",
+              "normalizeEnd": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_OutFit_Swim_Handler",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAbilityStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "abilityStates": [
+            "ElementFrozen"
+          ],
+          "modifierName": "Gaming_OutFit_Swim_Handler"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "Attack01_BS",
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3",
+            "Gaming_ElementalArt_Leap",
+            "Gaming_ElementalArt_Jump",
+            "Gaming_ElementalArt_AS",
+            "Gaming_ElementalBurst",
+            "Gaming_ElementalBurst_AS",
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_AS_1_Special",
+            "FallingAnthem_AS_2_Special",
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_Emotion_Handler",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_ElementalArt_Handler",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilitySpecials": {
+        "Gaming_Constellation_1_Heal_HP": 0,
+        "Gaming_Constellation_4_ReviveEnergy": 0,
+        "Gaming_PermanentSkill_1_Heal_Duration": 0,
+        "Gaming_PermanentSkill_1_Heal_HP": 0
+      },
+      "abilityName": "Avatar_Gaming_ElementalArt",
+      "modifiers": {
+        "AS_VFX": {
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "parameter": "LionHead_AS",
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionHead",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_ElementalArt_Leap_AS",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ClearVelocity": {
+          "onAdded": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_AddGravityScale": -1
+          }
+        },
+        "CloseCollider": {
+          "onAdded": [
+            {
+              "$type": "TriggerSetPassThrough",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "passThrough": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "TriggerSetPassThrough",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "enable": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Collision": {
+          "onAdded": [
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 41092001,
+              "value": true,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "KillGadget",
+              "gadgetInfo": {
+                "configID": 41092001
+              },
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Collision_2": {
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "cdRatio": 1,
+              "costStaminaRatio": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "skillID": 10922,
+              "predicates": [
+                {
+                  "$type": "BySkillReady",
+                  "target": "Target",
+                  "skillID": 10922
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_ElementalArt_Leap",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 41092005,
+              "value": true,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "KillGadget",
+              "gadgetInfo": {
+                "configID": 41092005
+              },
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_ElementalArt_ElementalBall": {
+          "onAdded": [
+            {
+              "$type": "GenerateElemBall",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "configID": 2017,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "z": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "baseEnergy": 6,
+              "ratio": 1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 3,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_ElementalArt_Handler": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "hittingOtherIgnoreDummy": true,
+          "isLimitedProperties": true,
+          "OHJEJFFINDF": true,
+          "onHittingOther": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "FallingAttack"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "PPKMHGEGLHG",
+                  "target": "Target",
+                  "attackType": "Range"
+                }
+              ],
+              "target": "Other",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "Gaming_ElementalArt_ElementalBall",
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "Gaming_SpecialFallingAttack_HP_Handler",
+                  "predicates": [
+                    {
+                      "$type": "ByUnlockTalentParam",
+                      "talentParam": "Gaming_PermanentSkill_1",
+                      "target": "Target"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "modifierName": "Gaming_SpecialFallingAttack_Energy_Handler",
+                  "predicates": [
+                    {
+                      "$type": "ByUnlockTalentParam",
+                      "talentParam": "Gaming_Constellation_4",
+                      "target": "Target"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ]
+        },
+        "Gaming_SpecialFallingAttack_Energy_Handler": {
+          "onAdded": [
+            {
+              "$type": "ReviveElemEnergy",
+              "value": "Gaming_Constellation_4_ReviveEnergy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_SpecialFallingAttack_HP_Handler": {
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_PermanentSkill_1_Heal_Count",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.20000000298023224,
+          "duration": "Gaming_PermanentSkill_1_Heal_Duration",
+          "elementDurability": 100,
+          "onThinkIntervalIsFixedUpdate": true,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_Gaming_PermanentSkill_1_Heal_Count",
+              "useLimitRange": true,
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "maxValue": 5
+            },
+            {
+              "$type": "HealHP",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "amountByCasterMaxHPRatio": "Gaming_PermanentSkill_1_Heal_HP",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_PermanentSkill_1_Heal_Count",
+                  "target": "Target",
+                  "value": 1
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "HealHP",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "amountByCasterMaxHPRatio": "Gaming_PermanentSkill_1_Heal_HP",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_PermanentSkill_1_Heal_Count",
+                  "target": "Target",
+                  "value": 2
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "HealHP",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "amountByCasterMaxHPRatio": "Gaming_PermanentSkill_1_Heal_HP",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_PermanentSkill_1_Heal_Count",
+                  "target": "Target",
+                  "value": 3
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "HealHP",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "amountByCasterMaxHPRatio": "Gaming_PermanentSkill_1_Heal_HP",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_PermanentSkill_1_Heal_Count",
+                  "target": "Target",
+                  "value": 4
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Leap_VFX": {
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_ElementalArt_Leap_Touch",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "LionPet": {
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Gaming_Lion_Flag",
+                  "value": 1
+                }
+              ],
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetGlobalPos",
+                  "key": "_ABILITY_Gaming_LionPet_Pos",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2,
+                    "useRotation": true
+                  },
+                  "setTarget": true,
+                  "canBeHandledOnRecover": true
+                },
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "abilityName": "Avatar_Gaming_LionPet",
+                  "target": "Other",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Roll_VFX": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_ElementalArt_Roll",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ModifyAvatarSkillCD",
+          "cdRatio": -1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "skillID": 10922,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "BySkillReady",
+                  "target": "Target",
+                  "skillID": 10922
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "HealHP",
+          "value": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "amountByCasterMaxHPRatio": "Gaming_Constellation_1_Heal_HP",
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "talentParam": "Gaming_Constellation_1",
+              "target": "Target"
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet_Mark",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_Jump"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "ClearVelocity",
+          "value": -1
+        },
+        {
+          "$type": "AvatarSteerByCameraMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_Jump"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "angularSpeed": 360,
+          "HKKBPPNNBMH": -1,
+          "canReviveStamina": true
+        },
+        {
+          "$type": "AvatarSteerByCameraMixin",
+          "stateIDs": [
+            "FallingAnthem_AS_1_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "angularSpeed": 360,
+          "HKKBPPNNBMH": -1,
+          "canReviveStamina": true
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_AS"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "LionPet",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Gaming_ElementalArt_Leap",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Collision",
+          "normalizeStart": 0.05000000074505806,
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Gaming_ElementalArt_Leap",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Collision_2",
+          "normalizeStart": 0.05000000074505806,
+          "normalizeEnd": 1,
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_AS_1_Special",
+            "FallingAnthem_AS_2_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "CloseCollider",
+          "value": -1
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "normalizedStateIDList": [
+            {
+              "stateID": "FallingAnthem_BS_1_Special",
+              "normalizeStart": 0.3499999940395355,
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_BS_2_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_Loop_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_Loop_Low_Special",
+              "normalizeEnd": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Roll_VFX",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_Jump"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Leap_VFX",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_AS"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "AS_VFX",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Gaming_ElementalArt_Leap_Collider",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAbility",
+          "target": "Other",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "abilityName": "Avatar_Gaming_ElementalArt_Jump",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Gaming_ElementalArt_Jump",
+      "modifiers": {
+        "Gaming_ElementalArt_Jump": {
+          "onAdded": [
+            {
+              "$type": "FixedAvatarRushMove",
+              "DMAHANNMCAH": -1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "isInAir": true,
+              "toPos": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 1.5
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true
+              },
+              "animatorStateIDs": [
+                "Gaming_ElementalArt_Jump"
+              ],
+              "maxRange": 3,
+              "canBeHandledOnRecover": true,
+              "timeRange": 0.10000000149011612
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "value": true,
+              "boolID": "IsElementalArt",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsElementalArt",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_FallingAttack_Mark": {
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Weapon_Handler": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachActionToModifierMixin",
+              "onAdded": [
+                {
+                  "$type": "TriggerHideWeapon",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": true,
+                  "enable": true,
+                  "PIHLOKJAPKO": [
+                    "equip01",
+                    "equip02",
+                    "equip03",
+                    "sheathPoint"
+                  ],
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "actorIceSubHurtDelta": -1,
+              "onRemoved": [
+                {
+                  "$type": "TriggerHideWeapon",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": true,
+                  "visible": true,
+                  "enable": true,
+                  "PIHLOKJAPKO": [
+                    "equip01",
+                    "equip02",
+                    "equip03",
+                    "sheathPoint"
+                  ],
+                  "canBeHandledOnRecover": true
+                }
+              ]
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "SetAnimatorTrigger",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "triggerID": "Gaming_ElementalArt_Jump",
+          "mpTriggerOnRemote": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalArt_Jump"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_ElementalArt_Jump",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_AS_1_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_FallingAttack_Mark",
+          "value": -1
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "normalizedStateIDList": [
+            {
+              "stateID": "Gaming_ElementalArt_Leap",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalArt_Jump",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalArt_AS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalBurst",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "Gaming_ElementalBurst_AS",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_BS_1_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_BS_2_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_Loop_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_Loop_Low_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_AS_1_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "FallingAnthem_AS_2_Special",
+              "normalizeEnd": 1
+            },
+            {
+              "stateID": "StandbyShow_01",
+              "normalizeEnd": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Weapon_Handler",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_Lion_Flag",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_ElementalBurst_Flag",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_ElementalBurst_Mark",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilitySpecials": {
+        "Gaming_ElementalBurst_Duration": 0,
+        "Gaming_ElementalBurst_HealHP": 0
+      },
+      "abilityName": "Avatar_Gaming_ElementalBurst_Cast",
+      "modifiers": {
+        "Avatar_Gaming_ElementalBurst_HasTarget": {
+          "onAdded": [
+            {
+              "$type": "SetGlobalPos",
+              "key": "_ABILITY_Gaming_ElementalBurst_Pos",
+              "target": "SelfAttackTarget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "campTargetType": "Enemy",
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "positionKey": "_ABILITY_Gaming_ElementalBurst_Pos",
+                "onGround": true
+              },
+              "campID": 1001,
+              "KLGHKKGGHEA": {
+                "CBLLACNAMON": true,
+                "DBOLJFPPFGI": 0.5,
+                "JOCOGLBCMEJ": 0.5,
+                "LKEBJHCDOHB": true
+              },
+              "gadgetID": 41092004,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Avatar_Gaming_ElementalBurst_NoTarget": {
+          "onAdded": [
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "campTargetType": "Enemy",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "z": 5
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true,
+                "onGround": true
+              },
+              "campID": 1001,
+              "KLGHKKGGHEA": {
+                "CBLLACNAMON": true,
+                "DBOLJFPPFGI": 0.5,
+                "JOCOGLBCMEJ": 0.5,
+                "LKEBJHCDOHB": true
+              },
+              "gadgetID": 41092004,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Blank": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FireBuff": {
+          "elementType": "Fire",
+          "duration": 0.20000000298023224,
+          "elementDurability": 25,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_ElementalBurstStart": {
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "cdRatio": 1,
+              "costStaminaRatio": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "skillID": 10925,
+              "predicates": [
+                {
+                  "$type": "BySkillReady",
+                  "target": "Target",
+                  "skillID": 10925
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_ElementalBurst_Alert": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Invincible": {
+          "onAdded": [
+            {
+              "$type": "AttachAbilityStateResistance",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "durationRatio": 1,
+              "resistanceListID": 11002,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_ElementalBurst_Launch",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "FireBuff",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Mark",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Mark",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "state": "Invincible"
+        },
+        "Pre_Weather": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "TriggerWeatherMixin",
+              "actorIceSubHurtDelta": -1,
+              "transDuration": 0.30000001192092896,
+              "type": "Skill",
+              "duHPRation": 1.5,
+              "weatherPattern": "Weather_Gaming_ElementalBurst"
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_Gaming_ElementalBurst_Handler": {
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Pre_Weather",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ClearEndura",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "value": 1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "CanSpecialPerform",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_Lion_Flag",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_OutFit_Flag",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Flag",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "modifierName": "UNIQUE_Avatar_Gaming_ElementalBurst_Handler",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "stacking": "Unique",
+          "duration": "Gaming_ElementalBurst_Duration",
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "TriggerWeatherMixin",
+              "actorIceSubHurtDelta": -1,
+              "transDuration": 0.30000001192092896,
+              "type": "Skill",
+              "duHPRation": 15,
+              "weatherPattern": "Weather_Gaming_ElementalBurst_Constant"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "value": true,
+              "boolID": "CanSpecialPerform",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_Lion_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_OutFit_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_EndureDelta": 0.5
+          },
+          "onAvatarOut": [
+            {
+              "$type": "SetAnimatorBool",
+              "value": true,
+              "boolID": "CanSpecialPerform",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_Lion_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_OutFit_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Flag",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "modifierName": "UNIQUE_Avatar_Gaming_ElementalBurst_Handler",
+              "canBeHandledOnRecover": true
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByHasAttackTarget",
+              "target": "Target"
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "failActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Avatar_Gaming_ElementalBurst_NoTarget",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Avatar_Gaming_ElementalBurst_HasTarget",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "RemoveUniqueModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "UNIQUE_Avatar_Gaming_ElementalBurst_Handler",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "UNIQUE_Avatar_Gaming_ElementalBurst_Handler",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "HealHP",
+          "value": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "amountByCasterMaxHPRatio": "Gaming_ElementalBurst_HealHP",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalBurst"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Invincible",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Gaming_ElementalBurst"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Pre_Weather",
+          "value": -1
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "stateID": "Gaming_ElementalBurst",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Gaming_ElementalBurstStart",
+          "normalizeEnd": 0.30000001192092896,
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetRandomOverrideMapValue",
+          "valueRangeMax": 1.350000023841858,
+          "overrideMapKey": "RandomSpeedRatio",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "valueRangeMin": 1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Bullet_Fx",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Gaming_ElementalBurst_Bullet_01",
+      "modifiers": {
+        "Bullet_Fx": {
+          "onAdded": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "LionPet_Roll",
+              "mpTriggerOnRemote": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "LionPet_Eff_Roll",
+              "mpTriggerOnRemote": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "thinkInterval": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "Predicated",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR1H3",
+                "campTargetType": "Alliance",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "predicates": [
+                {
+                  "$type": "ByIsLocalAvatar",
+                  "target": "Target"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KillSelf",
+                  "killSelfType": "Normal",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Target",
+              "value": -1,
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "target": "Target",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "failActions": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Bullet_Fx",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerBullet",
+              "target": "OriginOwner",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.5
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "$type": "ConfigDirectionByAttackTarget",
+                  "useCorrectDir": true,
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true
+              },
+              "trackTarget": "CurLocalAvatar",
+              "value": true,
+              "bulletID": 41092003,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerAbility",
+              "target": "Other",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "abilityName": "Avatar_Gaming_ElementalArt",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Bullet_Fx",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Bullet_Fx",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Gaming_ElementalBurst_Bullet_02",
+      "modifiers": {
+        "Bullet_Fx": {
+          "onAdded": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "LionPet_Fly",
+              "mpTriggerOnRemote": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "LionPet_Eff_Fly",
+              "mpTriggerOnRemote": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "thinkInterval": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "Predicated",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR1H3",
+                "campTargetType": "Alliance",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "predicates": [
+                {
+                  "$type": "ByIsLocalAvatar",
+                  "target": "Target"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KillSelf",
+                  "killSelfType": "Normal",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAbility",
+          "target": "Other",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "abilityName": "Avatar_Gaming_ElementalArt",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Bullet_Fx",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_LionPet_Dissolve",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "KillSelf",
+          "killSelfType": "Normal",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Count",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "SetGlobalPos",
+          "key": "_ABILITY_Gaming_LionPet_Pos",
+          "target": "Owner",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2,
+            "useRotation": true
+          },
+          "setTarget": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilitySpecials": {
+        "Gaming_ElementalBurst_Damage": 0
+      },
+      "abilityName": "Avatar_Gaming_ElementalBurst_Bullet_03",
+      "modifiers": {
+        "Alert": {
+          "onAdded": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "LionPet_Alert",
+              "mpTriggerOnRemote": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "triggerID": "LionPet_Eff_Alert",
+              "mpTriggerOnRemote": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Attack": {
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "positionKey": "_ABILITY_Gaming_ElementalBurst_Pos",
+                "onGround": true
+              },
+              "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_ElementalBurst_Attack",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "Elemental_Burst",
+                  "forceCameraShake": true,
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV7",
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default",
+                    "overrideHitImpulse": {
+                      "hitLevel": "Air",
+                      "hitImpulseY": 600
+                    }
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "canBeModifiedBy": "OriginOwner",
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeDistance": 30,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    },
+                    "shakeTime": 0.11999999731779099,
+                    "shakeRange": 0.23999999463558197,
+                    "shakeDir": {
+                      "x": -0.20000000298023224,
+                      "y": 1
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Fire",
+                    "elementDurability": 25,
+                    "enBreak": 200,
+                    "elementRank": 1.5,
+                    "attackType": "Range",
+                    "damagePercentage": "Gaming_ElementalBurst_Damage"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "fanAngle": 360,
+                  "height": 4,
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": -0.5
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2,
+                    "useRotation": true
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 5,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerAbility",
+              "target": "Other",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "abilityName": "Avatar_Gaming_LionPet",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Count": {
+          "thinkInterval": 0.10000000149011612,
+          "duration": 1.5,
+          "elementDurability": 100,
+          "onThinkIntervalIsFixedUpdate": true,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_Gaming_ElementalBurst_Count",
+              "useLimitRange": true,
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true,
+              "maxValue": 5
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "valueSteps": [
+            -0.5,
+            3.5,
+            4.5
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierNameSteps": [
+            "Alert",
+            "Attack"
+          ],
+          "globalValueKey": "_ABILITY_Gaming_ElementalBurst_Count"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_Constellation_2_Handler",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilitySpecials": {
+        "Gaming_Constellation_2_Buff_AttackRatio": 0,
+        "Gaming_Constellation_2_Buff_Duration": 0
+      },
+      "isDynamicAbility": true,
+      "abilityName": "Avatar_Gaming_Constellation_2",
+      "modifiers": {
+        "Avatar_Gaming_Constellation_2_Buff": {
+          "duration": "Gaming_Constellation_2_Buff_Duration",
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "reApplyModifierOnStateChange": true,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_AttackRatio": "Gaming_Constellation_2_Buff_AttackRatio"
+          },
+          "state": "AttackUp"
+        },
+        "Gaming_Constellation_2_Handler": {
+          "onHeal": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "LPKOBOLMDBI",
+                  "target": "Target",
+                  "logic": "Equal"
+                },
+                {
+                  "$type": "ByTargetHPRatio",
+                  "logic": "Equal",
+                  "HPRatio": 1
+                }
+              ],
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": true,
+                  "modifierName": "Avatar_Gaming_Constellation_2_Buff",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_PermanentSkill_2_Handler",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilitySpecials": {
+        "Gaming_ElementalArt_Damage_Ratio": 0,
+        "Gaming_PermanentSkill_2_HP_Threshold": 0,
+        "Gaming_PermanentSkill_2_HealedAddDelta": 0
+      },
+      "isDynamicAbility": true,
+      "abilityName": "Avatar_Gaming_PermanentSkill_2",
+      "modifiers": {
+        "Gaming_PermanentSkill_2_Buff_HighHP_Handler": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ModifyDamageMixin",
+              "actorIceSubHurtDelta": -1,
+              "damagePercentageRatio": "Gaming_ElementalArt_Damage_Ratio",
+              "predicates": [
+                {
+                  "$type": "PPKMHGEGLHG",
+                  "target": "Target",
+                  "attackType": "Range"
+                }
+              ],
+              "attackTags": [
+                "FallingAttack"
+              ]
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "reApplyModifierOnStateChange": true,
+          "isLimitedProperties": true
+        },
+        "Gaming_PermanentSkill_2_Buff_LowHP_Handler": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "reApplyModifierOnStateChange": true,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_HealedAddDelta": "Gaming_PermanentSkill_2_HealedAddDelta"
+          }
+        },
+        "Gaming_PermanentSkill_2_Handler": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToPredicateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Gaming_PermanentSkill_2_Buff_HighHP_Handler",
+              "predicates": [
+                {
+                  "$type": "ByTargetHPRatio",
+                  "target": "Target",
+                  "logic": "GreaterOrEqual",
+                  "HPRatio": "Gaming_PermanentSkill_2_HP_Threshold"
+                }
+              ]
+            },
+            {
+              "$type": "AttachModifierToPredicateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Gaming_PermanentSkill_2_Buff_LowHP_Handler",
+              "predicates": [
+                {
+                  "$type": "ByTargetHPRatio",
+                  "target": "Target",
+                  "logic": "Lesser",
+                  "HPRatio": "Gaming_PermanentSkill_2_HP_Threshold"
+                }
+              ]
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "target": "CurTeamAvatars",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "modifierName": "UNIQUE_Avatar_Gaming_Talent_RunningInTheSun_Mixin",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "modifierName": "Avatar_Gaming_Talent_RunningInTheSun_Handler",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "isDynamicAbility": true,
+      "abilityName": "Avatar_Gaming_PermanentSkill_3",
+      "modifiers": {
+        "Avatar_Gaming_Talent_RunningInTheSun_Handler": {
+          "thinkInterval": 5,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "target": "CurTeamAvatars",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "modifierName": "UNIQUE_Avatar_Gaming_Talent_RunningInTheSun_Mixin",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_Dehya_Talent_RunningInTheSun": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "reApplyModifierOnStateChange": true,
+          "isUnique": true,
+          "isLimitedProperties": true,
+          "properties": {
+            "Animator_MoveSpeedRatio": 0.10000000149011612
+          }
+        },
+        "UNIQUE_Avatar_Gaming_Talent_RunningInTheSun_Mixin": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToDayNightMixin",
+              "actorIceSubHurtDelta": -1,
+              "GNPKDOANGDE": true,
+              "modifierName": "UNIQUE_Avatar_Gaming_Talent_RunningInTheSun_Predicate"
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_Gaming_Talent_RunningInTheSun_Predicate": {
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "modifierName": "UNIQUE_Avatar_Dehya_Talent_RunningInTheSun",
+              "predicates": [
+                {
+                  "$type": "ByCurrentSceneTypes",
+                  "target": "Target",
+                  "SceneTypes": [
+                    "SCENE_WORLD",
+                    "SCENE_ROOM"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "thinkInterval": 5,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "modifierName": "UNIQUE_Avatar_Dehya_Talent_RunningInTheSun",
+              "predicates": [
+                {
+                  "$type": "ByCurrentSceneTypes",
+                  "target": "Target",
+                  "SceneTypes": [
+                    "SCENE_WORLD",
+                    "SCENE_ROOM"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isUnique": true,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilitySpecials": {
+        "Gaming_ExtraAttack_01_Damage_AtkRatio": 0,
+        "Gaming_ExtraAttack_02_Damage_AtkRatio": 0,
+        "Gaming_NormalAttack_01_Damage_AtkRatio": 0,
+        "Gaming_NormalAttack_02_Damage_AtkRatio": 0,
+        "Gaming_NormalAttack_03_Damage_AtkRatio": 0,
+        "Gaming_NormalAttack_04_Damage_AtkRatio": 0
+      },
+      "abilityName": "Avatar_Gaming_NormalAttack_Damage_Handler",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "actorIceSubHurtDelta": -1,
+          "damagePercentage": "Gaming_NormalAttack_01_Damage_AtkRatio",
+          "animEventNames": [
+            "ATK01"
+          ]
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "actorIceSubHurtDelta": -1,
+          "damagePercentage": "Gaming_NormalAttack_02_Damage_AtkRatio",
+          "animEventNames": [
+            "ATK02"
+          ]
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "actorIceSubHurtDelta": -1,
+          "damagePercentage": "Gaming_NormalAttack_03_Damage_AtkRatio",
+          "animEventNames": [
+            "ATK03"
+          ]
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "actorIceSubHurtDelta": -1,
+          "damagePercentage": "Gaming_NormalAttack_04_Damage_AtkRatio",
+          "animEventNames": [
+            "ATK04"
+          ]
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "actorIceSubHurtDelta": -1,
+          "damagePercentage": "Gaming_ExtraAttack_01_Damage_AtkRatio",
+          "animEventNames": [
+            "ExtraAttack1"
+          ]
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "actorIceSubHurtDelta": -1,
+          "damagePercentage": "Gaming_ExtraAttack_02_Damage_AtkRatio",
+          "animEventNames": [
+            "ExtraAttack2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_FallingAnthem_UseCamera",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "SetGlobalValue",
+          "key": "_ABILITY_FallingAttack_Altitude",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilitySpecials": {
+        "FallingAnthem_Altitude_Lv0": 20,
+        "FallingAnthem_Altitude_Lv1": 40,
+        "FallingAnthem_Altitude_Lv2": 60,
+        "FallingAnthem_Altitude_Lv3": 100,
+        "FallingAnthem_Altitude_Lv4": 200,
+        "FallingAnthem_FallingDamageRatio": 0,
+        "FallingAnthem_FallingDamageRatio_Lv0": -1,
+        "FallingAnthem_FallingDamageRatio_Lv1": -1,
+        "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+        "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+        "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+        "FallingAnthem_Normal_Loop_Damage": 0,
+        "FallingAnthem_Normal_Rank_1_Damage": 0,
+        "FallingAnthem_Normal_Rank_2_Damage": 0,
+        "Gaming_SpecialFallingAttack_BonusCritical": 0,
+        "Gaming_SpecialFallingAttack_BonusCriticalHurt": 0,
+        "Gaming_SpecialFallingAttack_Damage": 0,
+        "Gaming_SpecialFallingAttack_LoseHP": 0
+      },
+      "abilityName": "Avatar_Gaming_FallingAnthem",
+      "modifiers": {
+        "Avatar_Kaveh_FallingAttackVFX_Handler": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Claymore_FallAnthem_Self_02",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Blank": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_BS_Material": {
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Claymore_FallAnthem_Self",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Claymore_FallAnthem_BS",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_BS_VelocityForce_Initialize": {
+          "onAdded": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "forces": [
+                "RushMoveType"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_AddGravityScale": -2
+          }
+        },
+        "FallingAnthem_ClearVelocityForce": {
+          "onAdded": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_FallingDamageImmune_01": {
+          "onAdded": [
+            {
+              "$type": "ClearGlobalValue",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "value": "FallingAnthem_FallingDamageRatio_Lv0",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "minValue": "FallingAnthem_FallingDamageRatio_Lv0",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv0",
+                  "logic": "LesserOrEqual",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": "FallingAnthem_FallingDamageRatio_Lv0"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "value": "FallingAnthem_FallingDamageRatio_Lv1",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "minValue": "FallingAnthem_FallingDamageRatio_Lv1",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv1",
+                  "logic": "LesserOrEqual",
+                  "TargetAltitudeType": "Both"
+                },
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv0",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": "FallingAnthem_FallingDamageRatio_Lv1"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "value": "FallingAnthem_FallingDamageRatio_Lv2",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "minValue": "FallingAnthem_FallingDamageRatio_Lv2",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv2",
+                  "logic": "LesserOrEqual",
+                  "TargetAltitudeType": "Both"
+                },
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv1",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": "FallingAnthem_FallingDamageRatio_Lv2"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "value": "FallingAnthem_FallingDamageRatio_Lv3",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "minValue": "FallingAnthem_FallingDamageRatio_Lv3",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv3",
+                  "logic": "LesserOrEqual",
+                  "TargetAltitudeType": "Both"
+                },
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv2",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": "FallingAnthem_FallingDamageRatio_Lv3"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "value": "FallingAnthem_FallingDamageRatio_Lv4",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "minValue": "FallingAnthem_FallingDamageRatio_Lv4",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": "FallingAnthem_Altitude_Lv3",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": "FallingAnthem_FallingDamageRatio_Lv4"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "FallingAnthem_FallingDamageImmune_02",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_FallingDamageImmune_02": {
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "overrideMapKey": "FallingAnthem_FallingDamageRatio",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "globalValueKey": "_ABILITY_FallingAttack_Altitude",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "FallingAnthem_FallingDamageImmune_03",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_FallingDamageImmune_03": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+          }
+        },
+        "FallingAnthem_Height_Detect": {
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": 2.4000000953674316,
+                  "logic": "LesserOrEqual",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "value": 5,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": 2.4000000953674316,
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "maxValue": 1
+            },
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "floatID": "FallingAnthem_UseCamera",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": 2.4000000953674316,
+                  "logic": "LesserOrEqual",
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorFloat",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "floatID": "FallingAnthem_UseCamera",
+              "predicates": [
+                {
+                  "$type": "ByTargetAltitude",
+                  "target": "Target",
+                  "value": 2.4000000953674316,
+                  "TargetAltitudeType": "Both"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "floatID": "FallingAnthem_UseCamera",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_Landed_Camera": {
+          "onAdded": [
+            {
+              "$type": "AvatarCameraParam",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByAnimatorFloat",
+                  "target": "Target",
+                  "value": 1,
+                  "parameter": "FallingAnthem_UseCamera",
+                  "logic": "Equal"
+                }
+              ],
+              "cameraParam": {
+                "ELHHLIGJFDD": 1,
+                "forceRadiusDuration": 0.10000000149011612,
+                "shouldKeepForceRadius": true,
+                "OJENIIDAGKM": 1,
+                "forceRadius": 6
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_LoopDamage": {
+          "thinkInterval": 0.30000001192092896,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "overrideByWeapon": true,
+                    "enBreak": 35,
+                    "elementRank": 1,
+                    "attackType": "Melee",
+                    "strikeType": "Slash",
+                    "damagePercentage": "FallingAnthem_Normal_Loop_Damage"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "z": 1
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2,
+                    "useRotation": true
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 1,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_Loop_Normal": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Claymore_FallAnthem_Self_02",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_Loop_Normal_Rank_1": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_Loop_Normal_Rank_2": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_OverHead_Camera": {
+          "onAdded": [
+            {
+              "$type": "AvatarCameraParam",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByAnimatorFloat",
+                  "target": "Target",
+                  "value": 1,
+                  "parameter": "FallingAnthem_UseCamera",
+                  "logic": "Equal"
+                }
+              ],
+              "cameraParam": {
+                "ELHHLIGJFDD": 1,
+                "forceRadiusDuration": 0.20000000298023224,
+                "shouldKeepForceRadius": true,
+                "OJENIIDAGKM": 1,
+                "forceRadius": 6.5
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "FallingAnthem_OverHead_Camera_Remover": {
+          "onAdded": [
+            {
+              "$type": "AvatarExitCameraShot",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_FallingAttack_1": {
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "forceCameraShake": true,
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV4",
+                    "hitHaltTimeScale": 0.10000000149011612,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "none"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeDistance": 30,
+                    "extension": {
+                      "rangeAttenuation": 0.30000001192092896,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.23999999463558197
+                    },
+                    "shakeTime": 0.11999999731779099,
+                    "shakeRange": 0.23999999463558197,
+                    "shakeDir": {
+                      "y": 1
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "overrideByWeapon": true,
+                    "enBreak": 150,
+                    "elementRank": 1,
+                    "attackType": "Melee",
+                    "strikeType": "Blunt",
+                    "damagePercentage": "FallingAnthem_Normal_Rank_1_Damage"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "fanAngle": 360,
+                  "height": 2,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "offset": {
+                      "x": -0.5,
+                      "z": 1
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 3,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_FallingAttack_2": {
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "forceCameraShake": true,
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV7",
+                    "hitHaltTimeScale": 0.10000000149011612,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "none"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeDistance": 30,
+                    "extension": {
+                      "rangeAttenuation": 0.30000001192092896,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.4000000059604645
+                    },
+                    "shakeTime": 0.20000000298023224,
+                    "shakeRange": 0.5,
+                    "shakeDir": {
+                      "y": 1,
+                      "z": 1
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "overrideByWeapon": true,
+                    "enBreak": 200,
+                    "elementRank": 1,
+                    "attackType": "Melee",
+                    "strikeType": "Blunt",
+                    "damagePercentage": "FallingAnthem_Normal_Rank_2_Damage"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "fanAngle": 360,
+                  "height": 2,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "offset": {
+                      "x": -0.5,
+                      "z": 1
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 5,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_FallingAttack_Special": {
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "forceCameraShake": true,
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV7",
+                    "hitHaltTimeScale": 0.10000000149011612,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "none"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeDistance": 30,
+                    "extension": {
+                      "rangeAttenuation": 0.30000001192092896,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.4000000059604645
+                    },
+                    "shakeTime": 0.20000000298023224,
+                    "shakeRange": 0.5,
+                    "shakeDir": {
+                      "y": 1,
+                      "z": 1
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Fire",
+                    "elementDurability": 25,
+                    "enBreak": 150,
+                    "elementRank": 1,
+                    "attackType": "Range",
+                    "strikeType": "Blunt",
+                    "damagePercentage": "Gaming_SpecialFallingAttack_Damage"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "fanAngle": 360,
+                  "height": 2,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "offset": {
+                      "x": -0.5
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 4,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Gaming_FallingAttack_Special_Constellation_6": {
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "forceCameraShake": true,
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV7",
+                    "hitHaltTimeScale": 0.10000000149011612,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "none"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeDistance": 30,
+                    "extension": {
+                      "rangeAttenuation": 0.30000001192092896,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.4000000059604645
+                    },
+                    "shakeTime": 0.20000000298023224,
+                    "shakeRange": 0.5,
+                    "shakeDir": {
+                      "y": 1,
+                      "z": 1
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Fire",
+                    "bonusCriticalHurt": "Gaming_SpecialFallingAttack_BonusCriticalHurt",
+                    "elementDurability": 25,
+                    "bonusCritical": "Gaming_SpecialFallingAttack_BonusCritical",
+                    "enBreak": 150,
+                    "elementRank": 1,
+                    "attackType": "Range",
+                    "strikeType": "Blunt",
+                    "damagePercentage": "Gaming_SpecialFallingAttack_Damage"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "fanAngle": 360,
+                  "height": 2,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "offset": {
+                      "x": -0.5
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 6,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Inertia": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ApplyInertiaVelocityMixin",
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_FallingAttack_1",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "compareType": "NoneOrEqual",
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_FallingAttack_2",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "value": 1,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_FallingAttack_Special",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            },
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Gaming_Constellation_6",
+                  "target": "Target"
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Gaming_FallingAttack_Special_Constellation_6",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            },
+            {
+              "$type": "ByUnlockTalentParam",
+              "talentParam": "Gaming_Constellation_6",
+              "target": "Target"
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "compareType": "NoneOrEqual",
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "effectPattern": "Eff_Avatar_Claymore_FallAnthem_Strike_01",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "value": 1,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "effectPattern": "Eff_Avatar_Claymore_FallAnthem_Strike_02",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "compareType": "NoneOrEqual",
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            },
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Gaming_Constellation_6",
+                  "target": "Target"
+                }
+              ]
+            }
+          ],
+          "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_FallingAttack_Strike",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "value": 1,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            },
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Gaming_Constellation_6",
+                  "target": "Target"
+                }
+              ]
+            }
+          ],
+          "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_FallingAttack_Strike",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "compareType": "NoneOrEqual",
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            },
+            {
+              "$type": "ByUnlockTalentParam",
+              "talentParam": "Gaming_Constellation_6",
+              "target": "Target"
+            }
+          ],
+          "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_FallingAttack_Strike_Enhanced",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "target": "Target",
+              "value": 1,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            },
+            {
+              "$type": "ByUnlockTalentParam",
+              "talentParam": "Gaming_Constellation_6",
+              "target": "Target"
+            }
+          ],
+          "effectPattern": "Eff_Avatar_Boy_Claymore_Gaming_FallingAttack_Strike_Enhanced",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "successActions": [
+            {
+              "$type": "LoseHP",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "amountByTargetMaxHPRatio": "Gaming_SpecialFallingAttack_LoseHP",
+              "limboByTargetMaxHPRatio": 0.10000000149011612,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_Lion_Flag",
+              "value": 1
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Gaming_SpecialFallingAttack_Flag",
+              "target": "Target",
+              "value": 1
+            }
+          ],
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "successActions": [
+            {
+              "$type": "SetGlobalPos",
+              "key": "_ABILITY_Gaming_LionPet_Pos",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "useRotation": true
+              },
+              "setTarget": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "abilityName": "Avatar_Gaming_LionPet",
+              "target": "Other",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AvatarChangeSkillMixin",
+          "actorIceSubHurtDelta": -1,
+          "flySkillID": 5092010,
+          "priority": "AvatarCommon",
+          "jumpSkillID": 5092010
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_BS_Material",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_Loop_Normal",
+          "value": -1
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low",
+            "FallingAnthem_BS_2_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_Loop_Low_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_LoopDamage",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_BS_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_BS_VelocityForce_Initialize",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2",
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_AS_1_Special",
+            "FallingAnthem_AS_2_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_Height_Detect",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2",
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_AS_1_Special",
+            "FallingAnthem_AS_2_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_FallingDamageImmune_01",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Inertia",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2",
+            "FallingAnthem_BS_Special",
+            "FallingAnthem_Loop_Special",
+            "FallingAnthem_AS_1_Special",
+            "FallingAnthem_AS_2_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_OverHead_Camera",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_BS_Special"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FallingAnthem_ClearVelocityForce",
+          "value": -1
+        }
+      ]
+    }
+  }
+]

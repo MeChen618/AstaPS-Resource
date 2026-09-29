@@ -1,0 +1,95 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        21393
+      ],
+      "id": 7404602,
+      "priority": 20,
+      "beginCond": [
+        {
+          "param": [
+            "7404602",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "9094574263656312178",
+      "questId": 74046,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74046/Q7404602",
+      "initDialog": 740460201
+    }
+  ],
+  "titleTextMapHash": 2412467887,
+  "luaPath": "Actor/Quest/WQ74046",
+  "id": 74046,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7404601",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 3593484020,
+      "subId": 7404601,
+      "mainId": 74046,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7404602,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7404601"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 2,
+      "descTextMapHash": 3596977140,
+      "subId": 7404602,
+      "mainId": 74046,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7404603,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 255199220,
+      "subId": 7404603,
+      "mainId": 74046,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

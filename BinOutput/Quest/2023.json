@@ -1,0 +1,212 @@
+{
+  "forcePreloadLuaList": [
+    "15800147982413481147"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        12163
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 202303,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "202303",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "200305",
+            "1"
+          ],
+          "type": "QUEST_COND_QUEST_NOT_RECEIVE"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "17366429907577298260",
+      "questId": 2023,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 20230301
+    },
+    {
+      "npcId": [
+        12163
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 202304,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "202303",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "200305",
+            "0"
+          ],
+          "type": "QUEST_COND_QUEST_NOT_RECEIVE"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "2282683391923896525",
+      "questId": 2023,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 20230401
+    }
+  ],
+  "titleTextMapHash": 409161247,
+  "luaPath": "Actor/Quest/AQ2023",
+  "id": 2023,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            202301,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            201309,
+            2
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            7280704,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "descTextMapHash": 1222002316,
+      "subId": 202301,
+      "mainId": 2023,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            202302,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "descTextMapHash": 2485441236,
+      "subId": 202302,
+      "mainId": 2023,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            202303,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            202304,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "202301"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 3,
+      "failParentShow": "QUEST_HIDDEN",
+      "descTextMapHash": 1457504052,
+      "subId": 202303,
+      "mainId": 2023,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            201309,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            201309,
+            4
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "202301"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 4,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "descTextMapHash": 4231450340,
+      "subId": 202304,
+      "mainId": 2023,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 5,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 767984292,
+      "subId": 202305,
+      "mainId": 2023,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "126951663443408333"
+  ],
+  "descTextMapHash": 2289581878,
+  "showType": "QUEST_HIDDEN"
+}

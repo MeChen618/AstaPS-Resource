@@ -1,0 +1,259 @@
+{
+  "titleTextMapHash": 727284415,
+  "luaPath": "Actor/Quest/WQ79005",
+  "rewardIdList": [
+    179005
+  ],
+  "id": 79005,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7900501finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "q7900501region",
+          "1"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 212190148,
+      "subId": 7900501,
+      "mainId": 79005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900502,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "2003057",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 289191908,
+      "subId": 7900502,
+      "mainId": 79005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "14,10",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "stepDescTextMapHash": 88638101,
+      "order": 5,
+      "guide": {
+        "param": [
+          "q7900503course",
+          "5"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7900503finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "descTextMapHash": 2146260868,
+      "subId": 7900503,
+      "mainId": 79005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900502,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 4,
+      "descTextMapHash": 1257244380,
+      "subId": 7900504,
+      "mainId": 79005,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7900503"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7900503finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "stepDescTextMapHash": 1941569325,
+      "order": 6,
+      "guide": {
+        "param": [
+          "q7900503course",
+          "5"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "10,14",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "descTextMapHash": 3340695252,
+      "subId": 7900505,
+      "mainId": 79005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900421,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "subId": 7900506,
+      "mainId": 79005,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900423,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7900424,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 7,
+      "guide": {
+        "param": [
+          "q7900409photopoint",
+          "20"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 4,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2607473180,
+      "subId": 7900507,
+      "mainId": 79005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7900423,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7900424,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7900425,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7900426,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 8,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 1779159860,
+      "subId": 7900508,
+      "mainId": 79005,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2915537454,
+  "mainQuestTag": "MAINQUEST_TAG_ACTIVITY"
+}

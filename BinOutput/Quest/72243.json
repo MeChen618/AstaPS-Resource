@@ -1,0 +1,123 @@
+{
+  "talks": [
+    {
+      "dontBlockDaily": true,
+      "npcId": [
+        1435
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7224301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7224301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "1",
+            "0",
+            "72243"
+          ],
+          "type": "QUEST_COND_QUEST_VAR_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "13427786108798713525",
+      "questId": 72243,
+      "initDialog": 722430102
+    },
+    {
+      "dontBlockDaily": true,
+      "npcId": [
+        1435
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7224302,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7224301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "1",
+            "1",
+            "72243"
+          ],
+          "type": "QUEST_COND_QUEST_VAR_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "9207412053875037037",
+      "questId": 72243,
+      "initDialog": 722430201
+    }
+  ],
+  "titleTextMapHash": 1572151167,
+  "luaPath": "Actor/Quest/WQ72243",
+  "rewardIdList": [
+    172243
+  ],
+  "id": 72243,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7224301,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100945"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        }
+      ],
+      "order": 1,
+      "failCond": [
+        {
+          "param": [
+            7227101,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            7227201,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishParent": true,
+      "descTextMapHash": 225351580,
+      "subId": 7224301,
+      "mainId": 72243,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3285218220,
+      "subId": 7224302,
+      "mainId": 72243
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

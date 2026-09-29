@@ -1,0 +1,257 @@
+{
+  "chapterId": 2007,
+  "freeStyleDic": {
+    "1012": [
+      1220
+    ]
+  },
+  "forcePreloadLuaList": [
+    "630940427974789384"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        1012
+      ],
+      "id": 1100403,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1100403",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "16275515678861875891",
+      "questId": 11004,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Xiangling1_11004/Q1100403",
+      "initDialog": 110040301
+    }
+  ],
+  "titleTextMapHash": 977197905,
+  "luaPath": "Actor/Quest/LQ11004",
+  "rewardIdList": [
+    111004
+  ],
+  "series": 2007,
+  "id": 11004,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            1010,
+            125
+          ],
+          "param_str": "3",
+          "type": "QUEST_CONTENT_ENTER_DUNGEON"
+        }
+      ],
+      "order": 1,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "Q1100401D1"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3674875710,
+      "subId": 1100401,
+      "mainId": 11004
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "1100401"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        },
+        {
+          "param": [
+            "13"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "22000501",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 4,
+      "isMpBlock": true,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            1010,
+            0
+          ],
+          "type": "QUEST_CONTENT_FAIL_DUNGEON"
+        },
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "descTextMapHash": 265570086,
+      "subId": 1100402,
+      "mainId": 11004
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "1100401"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        },
+        {
+          "param": [
+            "13"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            1100403,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "125"
+          ],
+          "type": "QUEST_EXEC_LOCK_POINT"
+        },
+        {
+          "param": [
+            "13"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        }
+      ],
+      "order": 5,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "1012"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 20005,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            1010,
+            0
+          ],
+          "type": "QUEST_CONTENT_FAIL_DUNGEON"
+        },
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "finishParent": true,
+      "descTextMapHash": 1777558054,
+      "subId": 1100403,
+      "mainId": 11004
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1100498,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 3,
+      "failCond": [
+        {
+          "param": [
+            1100403,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "descTextMapHash": 1689452406,
+      "subId": 1100498,
+      "mainId": 11004,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "22000502",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "failCond": [
+        {
+          "param": [
+            1100403,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "descTextMapHash": 4014652182,
+      "subId": 1100499,
+      "mainId": 11004,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718",
+    "10852990404481141455"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 2007,
+  "descTextMapHash": 378013271,
+  "suggestTrackMainQuestList": [
+    11005
+  ]
+}

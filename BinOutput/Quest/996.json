@@ -1,0 +1,158 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1587
+      ],
+      "id": 99602,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "99602",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "18092555303013333976",
+      "questId": 996,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 9960201
+    },
+    {
+      "dontBlockDaily": true,
+      "npcId": [
+        1587
+      ],
+      "id": 99603,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "99601",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "9105200063099470164",
+      "questId": 996,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 9960301
+    }
+  ],
+  "titleTextMapHash": 1903697617,
+  "luaPath": "Actor/Quest/SQ996",
+  "id": 996,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "QuestChurchMark"
+        ],
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3683323503,
+      "subId": 99601,
+      "mainId": 996
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "QuestChurchMark"
+        ],
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 544559735,
+      "subId": 99602,
+      "mainId": 996
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            99603,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            3,
+            305
+          ],
+          "type": "QUEST_CONTENT_UNLOCK_TRANS_POINT"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "descTextMapHash": 2065715967,
+      "subId": 99603,
+      "exclusivePlaceList": [
+        1009
+      ],
+      "mainId": 996
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            99604,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            108103,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        1439
+      ],
+      "order": 4,
+      "isRewind": true,
+      "descTextMapHash": 1617499799,
+      "subId": 99604,
+      "exclusivePlaceList": [
+        1009
+      ],
+      "mainId": 996
+    }
+  ],
+  "preloadLuaList": [
+    "5575916732172504491"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE"
+}

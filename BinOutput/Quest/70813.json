@@ -1,0 +1,199 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1409
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 7081304,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7081302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7081303",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "6330736218631790711",
+      "questId": 70813,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 708130401
+    },
+    {
+      "npcId": [
+        1409
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 7081305,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7081304",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "11728154324870282014",
+      "questId": 70813,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 708130501
+    }
+  ],
+  "titleTextMapHash": 4191037167,
+  "luaPath": "Actor/Quest/WQ70813",
+  "rewardIdList": [
+    170813
+  ],
+  "id": 70813,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "order": 1,
+      "guide": {
+        "param": [
+          "1409"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "JFCJBBCEDGD": [
+        1409
+      ],
+      "descTextMapHash": 3700558492,
+      "subId": 7081301,
+      "mainId": 70813
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "1330023911",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q70813PreCamp",
+          "50"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "JFCJBBCEDGD": [
+        1409
+      ],
+      "isRewind": true,
+      "descTextMapHash": 3259844236,
+      "subId": 7081302,
+      "mainId": 70813
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "1330023921",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "Q70813Camp",
+          "50"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "JFCJBBCEDGD": [
+        1409
+      ],
+      "isRewind": true,
+      "descTextMapHash": 3437280244,
+      "subId": 7081303,
+      "mainId": 70813
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7081305,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133002391,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        },
+        {
+          "param": [
+            "3",
+            "133002392,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        },
+        {
+          "param": [
+            "100561"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        }
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "1409"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH"
+      },
+      "JFCJBBCEDGD": [
+        1409
+      ],
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2919345972,
+      "subId": 7081304,
+      "mainId": 70813
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 3857690222
+}

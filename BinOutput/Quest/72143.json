@@ -1,0 +1,128 @@
+{
+  "talks": [
+    {
+      "talkMarkType": "TALK_MARK_BILLBOARD_ONLY",
+      "npcId": [
+        3193
+      ],
+      "id": 7214301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7214301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "14828846423594693111",
+      "questId": 72143,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Daoqi_72143/Q7214301",
+      "initDialog": 721430101
+    },
+    {
+      "npcId": [
+        3193
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7214302,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7214301",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7214302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "4248606224943067133",
+      "questId": 72143,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 721430201
+    }
+  ],
+  "titleTextMapHash": 2782181303,
+  "luaPath": "Actor/Quest/WQ72143",
+  "HMJOIJHMGJD": true,
+  "id": 72143,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7214301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "stepDescTextMapHash": 839466709,
+      "order": 1,
+      "subId": 7214301,
+      "mainId": 72143,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7214507,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            7214604,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            7214704,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            7214805,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "stepDescTextMapHash": 3516678829,
+      "order": 2,
+      "finishParent": true,
+      "subId": 7214302,
+      "mainId": 72143,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "suggestTrackOutOfOrder": true,
+  "mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+  "suggestTrackMainQuestList": [
+    72145,
+    72146,
+    72147,
+    72148
+  ],
+  "showType": "QUEST_HIDDEN"
+}

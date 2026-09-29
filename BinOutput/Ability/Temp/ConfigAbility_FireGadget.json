@@ -1,0 +1,842 @@
+[
+  {
+    "Default": {
+      "abilityName": "DropLight_Interact",
+      "modifiers": {
+        "Burning": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_SceneObj_FireBasin_01",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementType": "Fire",
+          "elementDurability": 15,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Fire_Off": {
+          "elementType": "Wood",
+          "elementDurability": 1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Trigger_Bullet02",
+              "predicates": [
+                {
+                  "$type": "ByHitBoxName",
+                  "target": "Target",
+                  "hitBoxNames": [
+                    "RopeHitbox"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Fire_On": {
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Burning",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementType": "Fire",
+          "elementDurability": 1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Burning",
+              "predicates": [
+                {
+                  "$type": "ByHitBoxName",
+                  "target": "Target",
+                  "hitBoxNames": [
+                    "LightHitBox"
+                  ]
+                },
+                {
+                  "$type": "ByHitElement",
+                  "target": "Target",
+                  "element": "Wind"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Trigger_Bullet",
+              "predicates": [
+                {
+                  "$type": "ByHitBoxName",
+                  "target": "Target",
+                  "hitBoxNames": [
+                    "RopeHitbox"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Burning",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Trigger_Bullet": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "attachPointName": "EffectPoint"
+              },
+              "effectPattern": "Eff_SceneObj_WoodenObject_Broken",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "attachPointName": "ShootPoint"
+              },
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 70950002,
+              "value": true,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Trigger_Bullet02": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "attachPointName": "EffectPoint"
+              },
+              "effectPattern": "Eff_SceneObj_WoodenObject_Broken",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "attachPointName": "ShootPoint"
+              },
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 70950003,
+              "value": true,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMutexMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierNames": [
+            [
+              "Fire_Off"
+            ],
+            [
+              "Fire_On"
+            ]
+          ],
+          "gadgetStates": [
+            0,
+            201
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "DropLight_Bullet",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "DropLight_Bullet",
+      "modifiers": {
+        "DropLight_Bullet": {
+          "thinkInterval": 0.05000000074505806,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_SceneObj_BombBarrel_01_Explode",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "DropLight_Crash",
+      "modifiers": {
+        "DropLight_Crash": {
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "target": "Owner",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "UnlockIntee",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_SceneObj_BombBarrel_01_Explode",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "All",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV6",
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default",
+                    "overrideHitImpulse": {
+                      "hitImpulseX": 700,
+                      "hitLevel": "Air",
+                      "hitImpulseY": 400
+                    }
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Fire",
+                    "elementDurability": 20,
+                    "enBreak": 200,
+                    "elementRank": 1,
+                    "attackType": "Default",
+                    "damagePercentage": 1
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 2,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "UnlockIntee": {
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "enable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ExecuteGadgetLua",
+              "param1": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "DropLight_Crash",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "DropLight_Crash02",
+      "modifiers": {
+        "DropLight_Crash": {
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_SceneObj_WoodenObject_Broken",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "All",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV6",
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default",
+                    "overrideHitImpulse": {
+                      "hitImpulseX": 700,
+                      "hitLevel": "Air",
+                      "hitImpulseY": 400
+                    }
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Fire",
+                    "elementDurability": 20,
+                    "enBreak": 200,
+                    "elementRank": 1,
+                    "attackType": "Default",
+                    "damagePercentage": 1
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 0.5,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "DropLight_Crash",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AddGlobalValue",
+          "key": "_FIRE_GADGET_ATTACK",
+          "useLimitRange": true,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "minValue": -1,
+          "canBeHandledOnRecover": true,
+          "maxValue": 1
+        }
+      ],
+      "abilityName": "GearWater_Interact",
+      "modifiers": {
+        "Burning": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_SceneObj_FireBasin_01",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementType": "Fire",
+          "thinkInterval": 1,
+          "elementDurability": 15,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "All",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "attackEvent": {
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.5,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "none"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Fire",
+                    "elementDurability": 100,
+                    "enBreak": 30,
+                    "elementRank": 1,
+                    "attackType": "Default",
+                    "damagePercentage": 1
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackBox",
+                  "checkHitLayerType": "Both",
+                  "size": {
+                    "x": 1,
+                    "z": 1,
+                    "y": 1
+                  },
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "z": -0.5
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2,
+                    "attachPointName": "attachPoint"
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "massiveAttackRatio": 1
+                }
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_FIRE_GADGET_ATTACK",
+                  "target": "Target",
+                  "value": 1
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Switch_Close": {
+          "elementType": "Wood",
+          "elementDurability": 1,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Swtich_Open": {
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Burning",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementType": "Water",
+          "elementDurability": 1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Burning",
+              "predicates": [
+                {
+                  "$type": "ByHitElement",
+                  "target": "Target",
+                  "element": "Fire"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Burning",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "onFieldExit": [
+        {
+          "$type": "AddGlobalValue",
+          "key": "_FIRE_GADGET_ATTACK",
+          "useLimitRange": true,
+          "value": -2,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "minValue": -1,
+          "canBeHandledOnRecover": true,
+          "maxValue": 1
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Switch_Close"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Swtich_Open",
+          "gadgetState": 201
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "AddGlobalValue",
+          "key": "_FIRE_GADGET_ATTACK",
+          "useLimitRange": true,
+          "value": 2,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "minValue": -1,
+          "canBeHandledOnRecover": true,
+          "maxValue": 1
+        }
+      ]
+    }
+  }
+]

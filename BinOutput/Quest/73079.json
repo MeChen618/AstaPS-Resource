@@ -1,0 +1,118 @@
+{
+  "freeStyleDic": {
+    "20670": [
+      1090,
+      1080
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        20670
+      ],
+      "id": 7307901,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7307902",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "7698982752311222776",
+      "questId": 73079,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 730790101
+    }
+  ],
+  "titleTextMapHash": 2050823463,
+  "luaPath": "Actor/Quest/WQ73079",
+  "rewardIdList": [
+    210008
+  ],
+  "id": 73079,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 2485064076,
+      "subId": 7307901,
+      "mainId": 73079,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "Q7307902",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        20670
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 2105897180,
+      "subId": 7307902,
+      "mainId": 73079,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7307901,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "73100",
+            "1"
+          ],
+          "type": "QUEST_EXEC_INC_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "3",
+            "133301101,3"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "npcId": [
+        20670
+      ],
+      "order": 3,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3216257476,
+      "subId": 7307903,
+      "mainId": 73079,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

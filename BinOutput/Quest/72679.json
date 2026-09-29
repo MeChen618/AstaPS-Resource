@@ -1,0 +1,99 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        3159
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7267901,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7267902",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "72675",
+            "1"
+          ],
+          "type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "4630249636640356938",
+      "questId": 72679,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72675/Q7267598",
+      "initDialog": 726759801
+    }
+  ],
+  "activityId": 5055,
+  "luaPath": "Actor/Quest/WQ72679",
+  "id": 72679,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7267901,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "72264",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "5055",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "72675",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "order": 2,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7267901,
+      "mainId": 72679,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7267805,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7267902,
+      "mainId": 72679,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

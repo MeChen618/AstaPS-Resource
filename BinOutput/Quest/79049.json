@@ -1,0 +1,108 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        13149
+      ],
+      "id": 7904901,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7904901",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "13808106081132949175",
+      "questId": 79049,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Penumbra_79049/Q7904901",
+      "initDialog": 790490101
+    },
+    {
+      "npcId": [
+        13149
+      ],
+      "id": 7904902,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7904902",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "2742815737022877570",
+      "questId": 79049,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Penumbra_79049/Q7904902",
+      "initDialog": 790490201
+    }
+  ],
+  "titleTextMapHash": 3075484231,
+  "luaPath": "Actor/Quest/WQ79049",
+  "id": 79049,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7904901,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7904801",
+            "1"
+          ],
+          "type": "QUEST_EXEC_INC_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7904901,
+      "mainId": 79049,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7904902,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7904902"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 7904902,
+      "mainId": 79049,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

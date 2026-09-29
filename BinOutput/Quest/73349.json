@@ -1,0 +1,84 @@
+{
+  "titleTextMapHash": 559077359,
+  "luaPath": "Actor/Quest/WQ73349",
+  "id": 73349,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7334901",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "guideScene": 3
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            7323513,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 1572063988,
+      "subId": 7334901,
+      "mainId": 73349,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7334901"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            133316061,
+            61009
+          ],
+          "param_str": "202",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "guideScene": 3
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            133316061,
+            61009
+          ],
+          "param_str": "0",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 3625764404,
+      "subId": 7334902,
+      "mainId": 73349,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,178 @@
+{
+  "taskId": 24701,
+  "freeStyleDic": {
+    "1408": [
+      1190
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        1408
+      ],
+      "id": 2051201,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2051201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "17616807541152570267",
+      "questId": 20512,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205120101
+    },
+    {
+      "npcId": [
+        1408
+      ],
+      "id": 2051202,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2051202",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "16295320292667295372",
+      "questId": 20512,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205120201
+    },
+    {
+      "npcId": [
+        1408
+      ],
+      "id": 2051203,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2051203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "5990497052718889079",
+      "questId": 20512,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205120301
+    }
+  ],
+  "titleTextMapHash": 453364767,
+  "luaPath": "Actor/Quest/IQ20512",
+  "id": 20512,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2051201,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1408
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1408"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2740946380,
+      "subId": 2051201,
+      "mainId": 20512
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100455,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM"
+        }
+      ],
+      "npcId": [
+        1408
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q20512_WaterSlime",
+          "10"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3577720836,
+      "subId": 2051202,
+      "mainId": 20512
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2051203,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100455"
+          ],
+          "type": "QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM"
+        },
+        {
+          "param": [
+            "24701"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_DAILY_TASK"
+        }
+      ],
+      "npcId": [
+        1408
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "1408"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1732344268,
+      "subId": 2051203,
+      "mainId": 20512
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 1625441462
+}

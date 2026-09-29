@@ -1,0 +1,56 @@
+{
+  "chapterId": 1308,
+  "luaPath": "Actor/Quest/AQ8015",
+  "HGFFNBIGPJK": true,
+  "series": 1308,
+  "id": 8015,
+  "subQuests": [
+    {
+      "failExec": [
+        {
+          "param": [
+            "801501"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            801204,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "220180010,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_WORLD_QUEST_FLOW_GROUP_SUITE"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "220180010",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "subId": 801501,
+      "mainId": 8015,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

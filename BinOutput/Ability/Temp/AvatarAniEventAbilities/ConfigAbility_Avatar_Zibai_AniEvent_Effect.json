@@ -1,0 +1,56 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "key": "_ABILITY_Avatar_Effect_Mode",
+          "value": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Lady_Sword_Zibai_AniEvent_Effect",
+      "modifiers": {
+        "Default_Effect_Mode_01": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Invalid_Effect_Mode_00": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "enable": true,
+          "actorIceSubHurtDelta": -1,
+          "modifierNameSteps": [
+            "Invalid_Effect_Mode_00",
+            "Default_Effect_Mode_01"
+          ],
+          "removeAppliedModifier": true,
+          "globalValueKey": "_ABILITY_Avatar_Effect_Mode",
+          "PNELLOCFHCP": true
+        }
+      ]
+    }
+  }
+]

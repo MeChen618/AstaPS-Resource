@@ -1,0 +1,114 @@
+{
+  "forcePreloadLuaList": [
+    "3343075537000554303"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        5213
+      ],
+      "id": 7404702,
+      "priority": 20,
+      "beginCond": [
+        {
+          "param": [
+            "7404702",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "10432007015650250519",
+      "questId": 74047,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 740470201
+    }
+  ],
+  "titleTextMapHash": 297169639,
+  "luaPath": "Actor/Quest/WQ74047",
+  "id": 74047,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7404701,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 1501001404,
+      "subId": 7404701,
+      "mainId": 74047,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7404702,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "descTextMapHash": 3541569332,
+      "subId": 7404702,
+      "mainId": 74047,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7404703,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7404701"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 3,
+      "descTextMapHash": 915310116,
+      "subId": 7404703,
+      "mainId": 74047,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7404704,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 4,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1140843052,
+      "subId": 7404704,
+      "mainId": 74047,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "15239491697648217904"
+  ],
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,80 @@
+{
+  "forcePreloadLuaList": [
+    "6835440901338643291"
+  ],
+  "titleTextMapHash": 1838950473,
+  "luaPath": "Actor/Quest/SQ416",
+  "id": 416,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            41601,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 41601,
+      "mainId": 416,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            41602,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "41601"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 2,
+      "subId": 41602,
+      "mainId": 416,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            41603,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133004915,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 3,
+      "finishParent": true,
+      "subId": 41603,
+      "mainId": 416,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "4360294416003888288"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

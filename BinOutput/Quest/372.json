@@ -1,0 +1,211 @@
+{
+  "chapterId": 1002,
+  "freeStyleDic": {
+    "10038": [
+      1120
+    ],
+    "10039": [
+      1120
+    ],
+    "10040": [
+      1120
+    ],
+    "10041": [
+      1120
+    ],
+    "10042": [
+      1120
+    ],
+    "1160": [
+      1120
+    ]
+  },
+  "forcePreloadLuaList": [
+    "3237233862096732578"
+  ],
+  "talks": [
+    {
+      "nextTalks": [
+        37203
+      ],
+      "npcId": [
+        1160
+      ],
+      "id": 37201,
+      "beginCond": [
+        {
+          "param": [
+            "37203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "8231347020783444260",
+      "questId": 372,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Mengde2_372/Q37201pre"
+    },
+    {
+      "nextTalks": [
+        3720301
+      ],
+      "npcId": [
+        1160
+      ],
+      "id": 37203,
+      "beginCond": [
+        {
+          "param": [
+            "37203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "12237858317754933478",
+      "questId": 372,
+      "performCfg": "QuestDialogue/AQ/Mengde2_372/Q37201",
+      "initDialog": 3720101
+    },
+    {
+      "npcId": [
+        1160
+      ],
+      "id": 3720301,
+      "beginCond": [
+        {
+          "param": [
+            "37203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "16483390009200317218",
+      "questId": 372,
+      "performCfg": "QuestDialogue/AQ/Mengde2_372/Q37205",
+      "initDialog": 3720101
+    }
+  ],
+  "titleTextMapHash": 2546024425,
+  "luaPath": "Actor/Quest/MQ372",
+  "rewardIdList": [
+    100372
+  ],
+  "series": 1002,
+  "id": 372,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            37201,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        1001
+      ],
+      "order": 1,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "1160"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 359632807,
+      "subId": 37201,
+      "mainId": 372
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            37202,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        1001
+      ],
+      "order": 2,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "1160"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 899249983,
+      "subId": 37202,
+      "mainId": 372
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            3720301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100135",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        1001
+      ],
+      "order": 3,
+      "isMpBlock": true,
+      "guide": {
+        "param": [
+          "1160"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1832772295,
+      "subId": 37203,
+      "mainId": 372
+    }
+  ],
+  "preloadLuaList": [
+    "15505298042890098912",
+    "8621857572886984428"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 1002,
+  "descTextMapHash": 3232682647,
+  "suggestTrackMainQuestList": [
+    373
+  ]
+}

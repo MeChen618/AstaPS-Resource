@@ -1,0 +1,114 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        5283
+      ],
+      "id": 7420803,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7420803",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "11791132284257145168",
+      "questId": 74208,
+      "initDialog": 742080301
+    }
+  ],
+  "titleTextMapHash": 2468377119,
+  "luaPath": "Actor/Quest/WQ74208",
+  "rewardIdList": [
+    174208
+  ],
+  "id": 74208,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            74207,
+            0
+          ],
+          "param_str": "1",
+          "type": "QUEST_CONTENT_TIME_VAR_PASS_DAY"
+        }
+      ],
+      "order": 1,
+      "descTextMapHash": 3422365564,
+      "subId": 7420801,
+      "mainId": 74208,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            26162501,
+            0
+          ],
+          "type": "QUEST_CONTENT_MONSTER_DIE",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "30"
+        ],
+        "guideScene": 3
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2806268660,
+      "subId": 7420802,
+      "mainId": 74208,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7420803,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "120760",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "5283"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2355571252,
+      "subId": 7420803,
+      "mainId": 74208,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 1172694846,
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,101 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        21415
+      ],
+      "id": 7423601,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7423603",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "5511252152766247689",
+      "questId": 74236,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74236/Q7423601",
+      "initDialog": 741901701
+    }
+  ],
+  "titleTextMapHash": 1006218079,
+  "luaPath": "Actor/Quest/WQ74236",
+  "id": 74236,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            133413006,
+            6001
+          ],
+          "param_str": "902",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 2563563420,
+      "subId": 7423601,
+      "mainId": 74236,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7419016",
+          "type": "QUEST_CONTENT_LUA_NOTIFY"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "120793",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 300959588,
+      "subId": 7423602,
+      "mainId": 74236,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7423601,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        21415
+      ],
+      "order": 3,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 883432220,
+      "subId": 7423603,
+      "mainId": 74236,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

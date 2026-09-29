@@ -1,0 +1,285 @@
+{
+  "chapterId": 103402,
+  "forcePreloadLuaList": [
+    "14643793726840517779"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        140901
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 1908603,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1908601",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "1908603",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "1908605"
+          ],
+          "type": "QUEST_COND_ITEM_GIVING_ACTIVED"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "553018830093174643",
+      "questId": 19086,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/COOP/CoopNoel2/Q1908603",
+      "initDialog": 190860301
+    }
+  ],
+  "titleTextMapHash": 2053537495,
+  "luaPath": "Actor/Quest/LQ19086",
+  "HGFFNBIGPJK": true,
+  "series": 103402,
+  "id": 19086,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            103402,
+            1908601
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "npcId": [
+        1027,
+        1409
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "140901",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 916345796,
+      "subId": 1908601,
+      "mainId": 19086
+    },
+    {
+      "order": 8,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "subId": 1908602,
+      "mainId": 19086,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1908605,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_ITEM_GIVING"
+        }
+      ],
+      "npcId": [
+        1027,
+        1409
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "140901",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2742761276,
+      "subId": 1908603,
+      "mainId": 19086
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "npcId": [
+        1027,
+        1409
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "140901",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failCond": [
+        {
+          "param": [
+            1908604,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "subId": 1908604,
+      "mainId": 19086,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "order": 7,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "subId": 1908605,
+      "mainId": 19086,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            103402,
+            1908602
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "npcId": [
+        1027,
+        1409
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "140901",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3675460476,
+      "subId": 1908606,
+      "mainId": 19086
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            103402,
+            1908603
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "npcId": [
+        1027,
+        1409
+      ],
+      "order": 6,
+      "guide": {
+        "param": [
+          "140901",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3175235300,
+      "subId": 1908607,
+      "mainId": 19086
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "npcId": [
+        1027,
+        1409
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "140901",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "failCond": [
+        {
+          "param": [
+            1908608,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "subId": 1908608,
+      "mainId": 19086,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "5457977682941397885"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 3005,
+  "descTextMapHash": 1655220110,
+  "suggestTrackOutOfOrder": true,
+  "suggestTrackMainQuestList": [
+    19087
+  ]
+}

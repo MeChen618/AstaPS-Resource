@@ -1,0 +1,110 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1587
+      ],
+      "id": 2050601,
+      "priority": 9,
+      "beginCond": [
+        {
+          "param": [
+            "2050601",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "16688741469180228753",
+      "questId": 20506,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205060101,
+      "freeStyleList": [
+        9000
+      ]
+    },
+    {
+      "npcId": [
+        1587
+      ],
+      "id": 2050602,
+      "priority": 9,
+      "beginCond": [
+        {
+          "param": [
+            "2050602",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "7426116610310414587",
+      "questId": 20506,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205060201
+    }
+  ],
+  "titleTextMapHash": 829288857,
+  "luaPath": "Actor/Quest/IQ20506",
+  "HGFFNBIGPJK": true,
+  "HMJOIJHMGJD": true,
+  "id": 20506,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2050601,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1587
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1587"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 487387536,
+      "subId": 2050601,
+      "exclusivePlaceList": [
+        30040719
+      ],
+      "mainId": 20506
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2050602,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1587
+      ],
+      "order": 2,
+      "finishParent": true,
+      "descTextMapHash": 1238203600,
+      "subId": 2050602,
+      "mainId": 20506,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 3382520839,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

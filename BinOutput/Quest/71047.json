@@ -1,0 +1,122 @@
+{
+  "titleTextMapHash": 1732957999,
+  "luaPath": "Actor/Quest/WQ71047",
+  "id": 71047,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "failExec": [
+        {
+          "param": [
+            "6",
+            "166001013,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "166001013",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            7103709,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "descTextMapHash": 2541877828,
+      "subId": 7104701,
+      "mainId": 71047,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "6",
+            "166001013,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7103705,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            7103709,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "6",
+            "166001013,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 3,
+      "failCond": [
+        {
+          "param": [
+            7103709,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishParent": true,
+      "descTextMapHash": 1420908524,
+      "subId": 7104702,
+      "mainId": 71047,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7103705,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "6",
+            "166001013,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 1,
+      "finishParent": true,
+      "subId": 7104703,
+      "mainId": 71047,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}
