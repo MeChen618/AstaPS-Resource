@@ -1,0 +1,83 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "ForceShowWeapon",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Monster_Oprichnik_LanceArquebus_Custom_Beyd_ForceShowWeapon",
+      "modifiers": {
+        "ForceShowWeapon": {
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "thinkInterval": 2,
+          "onReconnect": [
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "renderNames": [
+                "MonEquip_Oprichnik_LanceArquebus_01_Model"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "renderNames": [
+                "MonEquip_Oprichnik_LanceArquebus_02_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "renderNames": [
+                "MonEquip_Oprichnik_LanceArquebus_01_Model"
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "setEnable": true,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "renderNames": [
+                "MonEquip_Oprichnik_LanceArquebus_02_Model"
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

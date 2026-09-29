@@ -1,0 +1,98 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "key": "_ABILITY_Avatar_Camera_Mode",
+          "value": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Girl_Bow_Jahoda_AniEvent_Camera",
+      "modifiers": {
+        "Default_Camera_Mode_01": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "stateID": "ElementalBurst",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Default_Camera_Mode_01_ElementalBurst_Radius_01",
+              "normalizeStart": 0.1041666641831398,
+              "normalizeEnd": 0.8541659712791443,
+              "value": -1
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Default_Camera_Mode_01_ElementalBurst_Radius_01": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "HKNMIFLOKGI": {
+                "$type": "NKKHDMFPHAF",
+                "BGMDOJLMJDD": [
+                  "Locking"
+                ],
+                "EBKDPDBDHKC": 6,
+                "FDBPFHCIBCF": "Absolute",
+                "GFDODPNCHLE": "CustomRadius",
+                "HANPPPDEEIO": true,
+                "HOAHEELCEAB": 4,
+                "priority": "SkillSpecial",
+                "JCBINFMOIHM": 0.4722200036048889,
+                "OIOHDNHEHPE": 0.30550000071525574,
+                "PCBFMHNEGKM": "EaseOutCubic",
+                "PGJBNAOBKHH": "EaseOutCubic"
+              },
+              "ODEKOPPBIDO": [
+                "Normal"
+              ]
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Invalid_Camera_Mode_00": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "enable": true,
+          "actorIceSubHurtDelta": -1,
+          "modifierNameSteps": [
+            "Invalid_Camera_Mode_00",
+            "Default_Camera_Mode_01"
+          ],
+          "removeAppliedModifier": true,
+          "globalValueKey": "_ABILITY_Avatar_Camera_Mode",
+          "PNELLOCFHCP": true
+        }
+      ]
+    }
+  }
+]

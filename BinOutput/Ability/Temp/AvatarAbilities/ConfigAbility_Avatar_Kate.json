@@ -1,0 +1,1960 @@
+[
+  {
+    "Default": {
+      "abilityName": "Avatar_Kate_RisingBladeNE",
+      "modifiers": {
+        "Charge1": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_RisingBladeNE_Charge_01",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Charge2": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_RisingBladeNE_Charge_01",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "SkillButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "nextLoopTriggerID": "NextLoopTrigger",
+          "skillID": 10011,
+          "beforeStateIDs": [
+            "Attack01"
+          ],
+          "beforeHoldDuration": -1,
+          "chargeLoopStateIDs": [
+            "RisingBladeNE_Charge1",
+            "RisingBladeNE_Charge2"
+          ],
+          "chargeLoopDurations": [
+            1
+          ],
+          "endHoldTrigger": "EndHoldTrigger"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "RisingBladeNE_Charge1"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Charge1",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "RisingBladeNE_Charge2"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Charge2",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kate_TriggerAbility",
+      "modifiers": {
+        "Charge1": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_ThunderFall_Area",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Charge2": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_RisingBladeNE_Charge_02",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "SkillButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "nextLoopTriggerID": "NextLoopTrigger",
+          "skillID": 10012,
+          "beforeStateIDs": [
+            "FlickerWave_BS"
+          ],
+          "beforeHoldDuration": -1,
+          "chargeLoopStateIDs": [
+            "FlickerWave_BS2",
+            "ThunderFall_Ready",
+            "ThunderFall_Strike1"
+          ],
+          "chargeLoopDurations": [
+            1.5,
+            3
+          ],
+          "endHoldTrigger": "EndHoldTrigger"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ThunderFall_Ready"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Charge1",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FlickerWave_BS2"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Charge2",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kate_FlickerWave",
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "cdRatio": 1,
+          "costStaminaRatio": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "skillID": 10012,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "TriggerBullet",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByTarget",
+            "offset": {
+              "x": 1
+            },
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "trackTarget": "SelfAttackTarget",
+          "bulletID": 41006007,
+          "value": true,
+          "canBeHandledOnRecover": true,
+          "lifeByOwnerV2": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "actorIceSubHurtDelta": -1,
+          "scale": 1,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "effectPattern": "Eff_Ani_FlickerWave_Bul",
+          "effectTempleteID": -1,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "StaticElec_Pre",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Test_FlickerWaveDamage",
+      "modifiers": {
+        "StaticElec_Pre": {
+          "onAttackLanded": [
+            {
+              "$type": "TriggerAbility",
+              "target": "Other",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "abilityName": "Test_StaticElecField",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "HBFEADBMFAO": true,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "KillSelf",
+              "killSelfType": "Normal",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 3.200000047683716,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "targetType": "Enemy",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "attackEvent": {
+            "attackInfo": {
+              "HBOOKFMCODC": {
+                "BPIJOAMNKIH": {
+                  "GGOHGMFHHEC": true,
+                  "value": 1
+                },
+                "onHitEffectName": "default"
+              },
+              "hitPattern": {
+                "hitHaltTimeScale": 0.05000000074505806,
+                "BPIJOAMNKIH": {
+                  "GGOHGMFHHEC": true,
+                  "value": 1
+                },
+                "onHitEffectName": "default"
+              },
+              "INKGMIHAPMA": {
+                "NDIBGPPKGJP": "Shake"
+              },
+              "cameraShake": {
+                "shakeDistance": 20,
+                "extension": {
+                  "rangeAttenuation": 0.5,
+                  "baseOnCamera": true,
+                  "baseCycle": 0.11999999731779099,
+                  "cycleDamping": 0.11999999731779099
+                }
+              },
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "elementType": "Electric",
+                "elementDurability": 50,
+                "enBreak": 30,
+                "elementRank": 1,
+                "attackType": "Default",
+                "strikeType": "None",
+                "damagePercentage": 1
+              }
+            },
+            "attackPattern": {
+              "$type": "ConfigAttackSphere",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.800000011920929
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "MPNIJNGFBIH": {
+                "INOCAOHPEBB": {
+                  "GGOHGMFHHEC": true,
+                  "value": 1
+                }
+              },
+              "triggerType": "TriggerNoRepeat",
+              "radius": 1,
+              "massiveAttackRatio": 1
+            }
+          },
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Test_StaticElecField",
+      "modifiers": {
+        "FlickerWave_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_FlickerWave_Buff",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.800000011920929,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "StaticElec": {
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_StaticElec_COUNT",
+              "useLimitRange": true,
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 3
+            }
+          ],
+          "stacking": "MultipleRefreshNoRemove",
+          "thinkInterval": 0.10000000149011612,
+          "duration": 15,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_StaticElec_COUNT",
+              "useLimitRange": true,
+              "value": -1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 3
+            }
+          ],
+          "stackingOption": {
+            "maxModifierNumForMultipleType": 3
+          },
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target"
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "StaticElec_effect_0": {
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_1",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_2",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_3",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "StaticElec_effect_1": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_StaticElec_01",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_0",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_2",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "StaticElec_effect_2": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_StaticElec_02",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_1",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_3",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "StaticElec_effect_3": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_StaticElec_03",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "StaticElec_effect_2",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_StaticElec_Effect": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "valueSteps": [
+                -1,
+                0.5,
+                1.5,
+                2.5,
+                3.5
+              ],
+              "actorIceSubHurtDelta": -1,
+              "modifierNameSteps": [
+                "StaticElec_effect_0",
+                "StaticElec_effect_1",
+                "StaticElec_effect_2",
+                "StaticElec_effect_3"
+              ],
+              "removeAppliedModifier": true,
+              "globalValueKey": "_ABILITY_StaticElec_COUNT"
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "centerBasedOn": "Target",
+            "shapeName": "CircleR3",
+            "campTargetType": "Enemy",
+            "sizeRatio": 1,
+            "NLNIBNNOOCK": {
+              "APKLAIJMEIL": {
+                "HHNLJKNBKPP": 180
+              },
+              "value": 10,
+              "direction": {
+                "maxAngle": 180
+              },
+              "onGroundRaycastUpDist": 2
+            }
+          },
+          "modifierName": "StaticElec",
+          "predicates": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Target",
+              "value": -1,
+              "entityTypes": [
+                "Monster"
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "centerBasedOn": "Target",
+            "shapeName": "CircleR3",
+            "campTargetType": "Enemy",
+            "sizeRatio": 1,
+            "NLNIBNNOOCK": {
+              "APKLAIJMEIL": {
+                "HHNLJKNBKPP": 180
+              },
+              "value": 10,
+              "direction": {
+                "maxAngle": 180
+              },
+              "onGroundRaycastUpDist": 2
+            }
+          },
+          "modifierName": "UNIQUE_StaticElec_Effect",
+          "predicates": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Target",
+              "value": -1,
+              "entityTypes": [
+                "Monster"
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "target": "Target",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "FlickerWave_Effect",
+          "predicates": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Target",
+              "value": -1,
+              "entityTypes": [
+                "Monster"
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kate_ThunderFall",
+      "modifiers": {
+        "Paralysis": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Common_Paralysis",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 4,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "SelectNearModifier": {
+          "onAdded": [
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default"
+                },
+                "hitPattern": {
+                  "hitHaltTimeScale": 0.05000000074505806,
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default",
+                  "hitLevel": "Light"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "cameraShake": {
+                  "shakeDistance": 20,
+                  "extension": {
+                    "rangeAttenuation": 0.5,
+                    "baseOnCamera": true,
+                    "baseCycle": 0.11999999731779099,
+                    "cycleDamping": 0.11999999731779099
+                  }
+                },
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "elementType": "Electric",
+                  "elementDurability": 50,
+                  "enBreak": 30,
+                  "elementRank": 1,
+                  "attackType": "Default",
+                  "strikeType": "None",
+                  "damagePercentage": 3
+                }
+              },
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target",
+                  "value": 1
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default"
+                },
+                "hitPattern": {
+                  "hitHaltTimeScale": 0.05000000074505806,
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default",
+                  "hitLevel": "Light"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "cameraShake": {
+                  "shakeDistance": 20,
+                  "extension": {
+                    "rangeAttenuation": 0.5,
+                    "baseOnCamera": true,
+                    "baseCycle": 0.11999999731779099,
+                    "cycleDamping": 0.11999999731779099
+                  }
+                },
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "elementType": "Electric",
+                  "elementDurability": 80,
+                  "enBreak": 30,
+                  "elementRank": 1,
+                  "attackType": "Default",
+                  "strikeType": "None",
+                  "damagePercentage": 4.5
+                }
+              },
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target",
+                  "value": 2
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default"
+                },
+                "hitPattern": {
+                  "hitHaltTimeScale": 0.05000000074505806,
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default",
+                  "hitLevel": "Light"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "cameraShake": {
+                  "shakeDistance": 20,
+                  "extension": {
+                    "rangeAttenuation": 0.5,
+                    "baseOnCamera": true,
+                    "baseCycle": 0.11999999731779099,
+                    "cycleDamping": 0.11999999731779099
+                  }
+                },
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "elementType": "Electric",
+                  "elementDurability": 100,
+                  "enBreak": 30,
+                  "elementRank": 1,
+                  "attackType": "Default",
+                  "strikeType": "None",
+                  "damagePercentage": 6
+                }
+              },
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target",
+                  "value": 3
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "modifierName": "ThunderFall_1",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target",
+                  "value": 1
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "modifierName": "ThunderFall_2",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target",
+                  "value": 2
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "modifierName": "ThunderFall_3",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_StaticElec_COUNT",
+                  "target": "Target",
+                  "value": 3
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.5,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ThunderFall_1": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_ThunderFall_01",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_StaticElec_COUNT",
+              "useLimitRange": true,
+              "value": -1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 3
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ThunderFall_2": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_ThunderFall_02",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_StaticElec_COUNT",
+              "useLimitRange": true,
+              "value": -2,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 3
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "ThunderFall_3": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_ThunderFall_03",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_StaticElec_COUNT",
+              "useLimitRange": true,
+              "value": -3,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 3
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "Paralysis",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "cdRatio": 1,
+          "costStaminaRatio": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "skillID": 10012,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "SelectNearModifier",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kate_PierceLightning",
+      "modifiers": {
+        "PierceLightning": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Common_DefenseFall",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 8,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "PierceLightning_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_PierceLightning",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "SelectNearModifier": {
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR10",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "modifierName": "PierceLightning",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.5,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "cdRatio": 1,
+          "costStaminaRatio": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "skillID": 10014,
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "SelectNearModifier",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "PierceLightning_Effect",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kate_ThrowingBomb",
+      "modifiers": {
+        "SkillChange": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "skillID": 10300,
+              "priority": "AvatarSpecial"
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "AimAttack",
+            "Throw"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "SkillChange",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Venti_WindBlade_Test",
+      "modifiers": {
+        "Eff_Venti_Harp": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 0.30000001192092896,
+                  "z": 0.30000001192092896
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Harp",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "SetCamera": {
+          "onAdded": [
+            {
+              "$type": "AvatarEnterCameraShot",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "cameraMoveCfgPath": "Camera_Venti_WindBlade",
+              "enable": true,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "TriggerAttack": {
+          "onAdded": [
+            {
+              "$type": "CreateGadget",
+              "target": "SelfAttackTarget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "campTargetType": "Enemy",
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 0.5
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "onGround": true
+              },
+              "campID": 1001,
+              "KLGHKKGGHEA": {
+                "CBLLACNAMON": true,
+                "DBOLJFPPFGI": 0.5,
+                "JOCOGLBCMEJ": 0.5,
+                "LKEBJHCDOHB": true
+              },
+              "predicates": [
+                {
+                  "$type": "ByHasAttackTarget",
+                  "target": "Target"
+                }
+              ],
+              "gadgetID": 41022003,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "campTargetType": "Enemy",
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "z": 6
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "alongGround": true,
+                "onGround": true
+              },
+              "campID": 1001,
+              "KLGHKKGGHEA": {
+                "CBLLACNAMON": true,
+                "DBOLJFPPFGI": 0.5,
+                "JOCOGLBCMEJ": 0.5,
+                "LKEBJHCDOHB": true
+              },
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasAttackTarget",
+                      "target": "Target"
+                    }
+                  ]
+                }
+              ],
+              "gadgetID": 41022003,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "AvatarSkillStart",
+              "cdRatio": 1,
+              "costStaminaRatio": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "skillID": 10224,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "TriggerAttack_Land": {
+          "onAdded": [
+            {
+              "$type": "CreateGadget",
+              "target": "SelfAttackTarget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "campTargetType": "Enemy",
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 0.5,
+                  "z": 0.5
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "onGround": true
+              },
+              "campID": 1001,
+              "KLGHKKGGHEA": {
+                "CBLLACNAMON": true,
+                "DBOLJFPPFGI": 0.5,
+                "JOCOGLBCMEJ": 0.5,
+                "LKEBJHCDOHB": true
+              },
+              "predicates": [
+                {
+                  "$type": "ByHasAttackTarget",
+                  "target": "Target"
+                }
+              ],
+              "gadgetID": 41022003,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "campTargetType": "Enemy",
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "z": 6
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2,
+                "alongGround": true,
+                "onGround": true
+              },
+              "campID": 1001,
+              "KLGHKKGGHEA": {
+                "CBLLACNAMON": true,
+                "DBOLJFPPFGI": 0.5,
+                "JOCOGLBCMEJ": 0.5,
+                "LKEBJHCDOHB": true
+              },
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasAttackTarget",
+                      "target": "Target"
+                    }
+                  ]
+                }
+              ],
+              "gadgetID": 41022003,
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "AvatarSkillStart",
+              "cdRatio": 1,
+              "costStaminaRatio": 1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "skillID": 10224,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "WindBlade_Rise_Charge_Timer": {
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "SetCamera",
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasAttackTarget",
+                      "target": "Target"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.800000011920929,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Rise_Up",
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR15",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "modifierName": "WindBlade_Trap",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "targetType": "Enemy",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "attackTag": "Avatar_Venti_WindBlade",
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 1,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default",
+                    "hitHaltTime": 1,
+                    "hitImpulseX": 700,
+                    "hitLevel": "Air"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementDurability": 100,
+                    "enBreak": 30,
+                    "elementRank": 1,
+                    "attackType": "Default",
+                    "strikeType": "None"
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 10,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "WindBlade_Trap": {
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Animator_OverallSpeedRatioMultiplied": 0.10000000149011612
+          }
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "WindBlade"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "TriggerAttack",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "WindBlade_Land"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "TriggerAttack_Land",
+          "value": -1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "WindBlade_Rise_Charge"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "WindBlade_Rise_Charge_Timer",
+          "value": -1
+        },
+        {
+          "$type": "SkillButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "nextLoopTriggerID": "NextLoopTrigger",
+          "skillID": 10224,
+          "beforeStateIDs": [
+            "WindBlade_Rise_BS"
+          ],
+          "beforeHoldDuration": -1,
+          "chargeLoopStateIDs": [
+            "WindBlade_Rise_Charge",
+            "WindBlade_RiseUp"
+          ],
+          "chargeLoopDurations": [
+            0.30000001192092896
+          ],
+          "endHoldTrigger": "EndHoldTrigger"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "WindBlade_Rise_Charge",
+            "WindBlade_RiseUp",
+            "WindBlade",
+            "WindBlade_Land"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Eff_Venti_Harp",
+          "value": -1
+        }
+      ]
+    }
+  }
+]

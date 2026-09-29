@@ -1,0 +1,94 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "key": "_ABILITY_Avatar_Camera_Mode",
+          "value": 1,
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "Avatar_Boy_Sword_Durin_AniEvent_Camera",
+      "modifiers": {
+        "Camera_Mode_Default": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "stateID": "Durin_ElementalBurst_Black_AS",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Camera_Mode_Default_Durin_ElementalBurst_Black_AS_Radius_01",
+              "normalizeEnd": 0.8421052694320679,
+              "value": -1
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Camera_Mode_Default_Durin_ElementalBurst_Black_AS_Radius_01": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "HKNMIFLOKGI": {
+                "$type": "NKKHDMFPHAF",
+                "EBKDPDBDHKC": 6,
+                "FDBPFHCIBCF": "Absolute",
+                "GFDODPNCHLE": "CustomRadius",
+                "HANPPPDEEIO": true,
+                "HOAHEELCEAB": 8,
+                "priority": "SkillSpecial",
+                "JCBINFMOIHM": 0.5,
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "PCBFMHNEGKM": "EaseOutCubic",
+                "PGJBNAOBKHH": "EaseOutCubic"
+              },
+              "ODEKOPPBIDO": [
+                "Normal"
+              ]
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Camera_Mode_Invalid": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "enable": true,
+          "actorIceSubHurtDelta": -1,
+          "modifierNameSteps": [
+            "Camera_Mode_Invalid",
+            "Camera_Mode_Default"
+          ],
+          "removeAppliedModifier": true,
+          "globalValueKey": "_ABILITY_Avatar_Camera_Mode",
+          "PNELLOCFHCP": true
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1090 @@
+[
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_Wind_Trigger1",
+      "modifiers": {
+        "Charge1": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "SkillButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "nextLoopTriggerID": "NextLoopTrigger",
+          "skillID": 10011,
+          "beforeStateIDs": [
+            "Attack_Pre"
+          ],
+          "beforeHoldDuration": -1,
+          "chargeLoopStateIDs": [
+            "WindBlade_Charge",
+            "WindBlade_AS"
+          ],
+          "chargeLoopDurations": [
+            1
+          ],
+          "endHoldTrigger": "EndHoldTrigger"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "WindBlade_Charge"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Charge1",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_Wind_Trigger2",
+      "modifiers": {
+        "Charge1": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "SkillButtonHoldChargeMixin",
+          "actorIceSubHurtDelta": -1,
+          "nextLoopTriggerID": "NextLoopTrigger",
+          "skillID": 10012,
+          "beforeStateIDs": [
+            "Turbulence_BS"
+          ],
+          "beforeHoldDuration": -1,
+          "chargeLoopStateIDs": [
+            "StormBlow_Charge",
+            "StormBlow_AS"
+          ],
+          "chargeLoopDurations": [
+            1.5
+          ],
+          "endHoldTrigger": "EndHoldTrigger"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "StormBlow_Charge"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Charge1",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_WindBlade",
+      "modifiers": {
+        "WindBlade": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_WindBlade_COUNT",
+              "useLimitRange": true,
+              "value": 5,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 5
+            }
+          ],
+          "duration": 20,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ReplaceEventPatternMixin",
+              "actorIceSubHurtDelta": -1,
+              "newPatterns": [
+                "Kevin_WindBlade01",
+                "Kevin_WindBlade02",
+                "Kevin_WindBlade03",
+                "Kevin_WindBlade04",
+                "Kevin_WindBlade05"
+              ],
+              "oldPatterns": [
+                "Kevin_Wind_Attack01",
+                "Kevin_Wind_Attack02",
+                "Kevin_Wind_Attack03",
+                "Kevin_Wind_Attack04",
+                "Kevin_Wind_Attack05"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "valueSteps": [
+                -1,
+                0.5
+              ],
+              "actorIceSubHurtDelta": -1,
+              "modifierNameSteps": [
+                "WindBlade_Remove"
+              ],
+              "removeAppliedModifier": true,
+              "globalValueKey": "_ABILITY_WindBlade_COUNT"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_WindBlade_COUNT",
+              "useLimitRange": true,
+              "value": -5,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 5
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "WindBlade_Remove": {
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "WindBlade",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "WindBlade",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_WindBlade_CountDown",
+      "modifiers": {
+        "WindBlade_CountDown": {
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "key": "_ABILITY_WindBlade_COUNT",
+              "useLimitRange": true,
+              "value": -1,
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "canBeHandledOnRecover": true,
+              "maxValue": 5
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "WindBlade_CountDown",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_Turbulence",
+      "modifiers": {
+        "Turbulence": {
+          "onAdded": [
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default"
+                },
+                "hitPattern": {
+                  "hitHaltTimeScale": 0.05000000074505806,
+                  "BPIJOAMNKIH": {
+                    "GGOHGMFHHEC": true,
+                    "value": 1
+                  },
+                  "onHitEffectName": "default",
+                  "hitImpulseX": 700,
+                  "hitLevel": "Heavy"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "cameraShake": {
+                  "shakeDistance": 20,
+                  "extension": {
+                    "rangeAttenuation": 0.5,
+                    "baseOnCamera": true,
+                    "baseCycle": 0.11999999731779099,
+                    "cycleDamping": 0.11999999731779099
+                  }
+                },
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "elementType": "Wind",
+                  "elementDurability": 50,
+                  "enBreak": 30,
+                  "elementRank": 1,
+                  "attackType": "Default",
+                  "strikeType": "None",
+                  "damagePercentage": 2
+                }
+              },
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "SectorR8D50",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "direction": {
+                    "maxAngle": 180
+                  },
+                  "onGroundRaycastUpDist": 2
+                }
+              },
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "offset": {
+                  "x": 1
+                },
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Turbulence_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1.5,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Turbulence",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Turbulence_Effect",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_StormBlow",
+      "modifiers": {
+        "StormBlow": {
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseX": 700,
+                    "hitLevel": "Air",
+                    "hitImpulseY": 700
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Wind",
+                    "elementDurability": 100,
+                    "enBreak": 30,
+                    "elementRank": 1,
+                    "attackType": "Default",
+                    "strikeType": "None",
+                    "damagePercentage": 4
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.800000011920929
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 1,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "StormBlow_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 2,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "shapeName": "CircleR10",
+            "campTargetType": "Enemy",
+            "sizeRatio": 1,
+            "NLNIBNNOOCK": {
+              "APKLAIJMEIL": {
+                "HHNLJKNBKPP": 180
+              },
+              "value": 10,
+              "direction": {
+                "maxAngle": 180
+              },
+              "onGroundRaycastUpDist": 2
+            }
+          },
+          "modifierName": "StormBlow",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "StormBlow_Effect",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_WindWalk",
+      "modifiers": {
+        "SupportInvincible": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "state": "Invincible"
+        },
+        "WindWalk": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 8,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Animator_MoveSpeedRatio": 0.20000000298023224
+          }
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "target": "CurLocalAvatar",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "WindWalk",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Support_WindWalk",
+            "Support_WindWalk_Out"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "SupportInvincible",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_WindWalk_Trigger",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "TriggerElementSupportMixin",
+          "elementType": "Water",
+          "actorIceSubHurtDelta": -1,
+          "duHPRation": 3,
+          "sceneID": 5
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_RockFall",
+      "modifiers": {
+        "RockFall": {
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "attackEvent": {
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    },
+                    "onHitEffectName": "default",
+                    "hitLevel": "Heavy"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "cameraShake": {
+                    "shakeDistance": 20,
+                    "extension": {
+                      "rangeAttenuation": 0.5,
+                      "baseOnCamera": true,
+                      "baseCycle": 0.11999999731779099,
+                      "cycleDamping": 0.11999999731779099
+                    }
+                  },
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "elementType": "Rock",
+                    "elementDurability": 100,
+                    "enBreak": 30,
+                    "elementRank": 1,
+                    "attackType": "Default",
+                    "strikeType": "None",
+                    "damagePercentage": 4
+                  }
+                },
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.800000011920929
+                    },
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "direction": {
+                      "maxAngle": 180
+                    },
+                    "onGroundRaycastUpDist": 2
+                  },
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "GGOHGMFHHEC": true,
+                      "value": 1
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "radius": 1,
+                  "massiveAttackRatio": 1
+                }
+              },
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "modifierName": "RockFall_Stun",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 1,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "RockFall_Effect": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 2,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "RockFall_Stun": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 4,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "shapeName": "CircleR5",
+            "campTargetType": "Enemy",
+            "sizeRatio": 1,
+            "NLNIBNNOOCK": {
+              "APKLAIJMEIL": {
+                "HHNLJKNBKPP": 180
+              },
+              "value": 10,
+              "direction": {
+                "maxAngle": 180
+              },
+              "onGroundRaycastUpDist": 2
+            }
+          },
+          "modifierName": "RockFall",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "RockFall_Effect",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_Taunt",
+      "modifiers": {
+        "Taunt": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 4,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true
+        },
+        "Taunt_Buff": {
+          "duration": 8,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_DefenceRatio": 1
+          }
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "shapeName": "CircleR10",
+            "campTargetType": "Enemy",
+            "sizeRatio": 1,
+            "NLNIBNNOOCK": {
+              "APKLAIJMEIL": {
+                "HHNLJKNBKPP": 180
+              },
+              "value": 10,
+              "direction": {
+                "maxAngle": 180
+              },
+              "onGroundRaycastUpDist": 2
+            }
+          },
+          "modifierName": "Taunt",
+          "canBeHandledOnRecover": true
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "Taunt_Buff",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_RockImpact",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByTarget",
+            "offset": {
+              "x": 0.30000001192092896
+            },
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "direction": {
+              "maxAngle": 180
+            },
+            "onGroundRaycastUpDist": 2
+          },
+          "trackTarget": "SelfAttackTarget",
+          "bulletID": 40000118,
+          "value": true,
+          "canBeHandledOnRecover": true,
+          "lifeByOwnerV2": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_RockShield",
+      "modifiers": {
+        "RockShield": {
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "scale": 1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "direction": {
+                  "maxAngle": 180
+                },
+                "onGroundRaycastUpDist": 2
+              },
+              "effectTempleteID": -1,
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 8,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "properties": {
+            "Actor_DefenceRatio": 0.20000000298023224
+          }
+        },
+        "SupportInvincible": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isLimitedProperties": true,
+          "state": "Invincible"
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "target": "CurLocalAvatar",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": false,
+          "modifierName": "RockShield",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Support_RockShield",
+            "Support_RockShield_Out"
+          ],
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "SupportInvincible",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "Avatar_Kevin_RockShield_Trigger",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      },
+      "abilityMixins": [
+        {
+          "$type": "TriggerElementSupportMixin",
+          "elementType": "Water",
+          "actorIceSubHurtDelta": -1,
+          "duHPRation": 3,
+          "sceneID": 5
+        }
+      ]
+    }
+  }
+]

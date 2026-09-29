@@ -1,0 +1,161 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "modifierName": "UNIQUE_ActivityAbility_Avatar_Eula_Plot_NoHarm",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "ActivityAbility_Avatar_Eula_Plot1",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Avatar_Eula_Plot_NoHarm": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "Predicated",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "predicates": [
+                {
+                  "$type": "ByHitDamage",
+                  "target": "Target"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ServerLuaCall",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "luaCallType": "CurChallengeGroup",
+                  "funcName": "Avatar_Eula_Plot_Fail",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "modifierName": "UNIQUE_ActivityAbility_Avatar_Eula_Plot_Throw",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "ActivityAbility_Avatar_Eula_Plot2",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Avatar_Eula_Plot_Throw": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByAnimatorStateIDMixin",
+              "stateIDs": [
+                "Hit_Throw"
+              ],
+              "actorIceSubHurtDelta": -1,
+              "enterActions": [
+                {
+                  "$type": "ServerLuaCall",
+                  "actorIceSubHurtDelta": -1,
+                  "doOffStage": false,
+                  "luaCallType": "CurChallengeGroup",
+                  "funcName": "Avatar_Eula_Plot_Fail",
+                  "canBeHandledOnRecover": true
+                }
+              ],
+              "value": -1
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "doOffStage": true,
+          "modifierName": "UNIQUE_ActivityAbility_Avatar_Eula_Plot_Nofrozen",
+          "canBeHandledOnRecover": true
+        }
+      ],
+      "abilityName": "ActivityAbility_Avatar_Eula_Plot3",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Avatar_Eula_Plot_Nofrozen": {
+          "elementDurability": 100,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToAbilityStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "abilityStates": [
+                "ElementFreeze"
+              ],
+              "modifierName": "UNIQUE_Eula_Plot_Nofrozen_Fail"
+            }
+          ],
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Eula_Plot_Nofrozen_Fail": {
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "doOffStage": false,
+              "luaCallType": "CurChallengeGroup",
+              "funcName": "Avatar_Eula_Plot_Fail",
+              "canBeHandledOnRecover": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "elementDurability": 100,
+          "minus_one": -1,
+          "IAKPBCLBNKF": -1,
+          "isUnique": true,
+          "isLimitedProperties": true
+        }
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "minus_one": -1,
+        "IAKPBCLBNKF": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]
