@@ -1,0 +1,170 @@
+{
+  "chapterId": 2003,
+  "talks": [
+    {
+      "npcId": [
+        1002
+      ],
+      "id": 48101,
+      "beginCond": [
+        {
+          "param": [
+            "48101",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "7445102631609350247",
+      "questId": 481,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Ambor1_481/Q48101",
+      "initDialog": 4810101
+    }
+  ],
+  "titleTextMapHash": 559170065,
+  "luaPath": "Actor/Quest/LQ481",
+  "rewardIdList": [
+    100481
+  ],
+  "HGFFNBIGPJK": true,
+  "HMJOIJHMGJD": true,
+  "series": 2003,
+  "id": 481,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            48101,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1002
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1002"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 632675855,
+      "subId": 48101,
+      "mainId": 481
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "stepDescTextMapHash": 3966418919,
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3390120839,
+      "subId": 48102,
+      "mainId": 481,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            48103,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "48102",
+            "1"
+          ],
+          "type": "QUEST_EXEC_ADD_QUEST_PROGRESS"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "descTextMapHash": 1727817231,
+      "subId": 48103,
+      "mainId": 481
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            48104,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 4,
+      "isRewind": true,
+      "descTextMapHash": 1067218487,
+      "subId": 48104,
+      "mainId": 481
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            48105,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 5,
+      "isRewind": true,
+      "descTextMapHash": 3002519151,
+      "subId": 48105,
+      "mainId": 481
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            48106,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 6,
+      "isRewind": true,
+      "descTextMapHash": 1127734087,
+      "subId": 48106,
+      "mainId": 481
+    }
+  ],
+  "preloadLuaList": [
+    "5909385756826696338",
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 2003,
+  "descTextMapHash": 4024095311,
+  "suggestTrackMainQuestList": [
+    480
+  ]
+}

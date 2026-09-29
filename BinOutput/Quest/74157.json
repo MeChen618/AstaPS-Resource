@@ -1,0 +1,269 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        21252
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7415702,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "7415704",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7415702",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7415611",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "param": [
+        "[3_6426:3590.477,435.194,4529.384,0.000,69.146,0.000]",
+        "[3_6427:3592.190,435.092,4530.660,0.000,39.858,0.000]",
+        "[3_6428:3591.760,435.092,4531.844,0.000,97.725,0.000]",
+        "[3_6429:3592.852,435.092,4532.181,0.000,234.485,0.000]",
+        "[3_7537:3592.830,435.092,4530.220,0.000,289.018,0.000]",
+        "[3_7538:3593.010,435.092,4531.015,0.000,271.059,0.000]"
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "12214767821812511504",
+      "questId": 74157,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74157/Q7415702",
+      "initDialog": 741570201
+    },
+    {
+      "npcId": [
+        21252
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7415703,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7415704",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7415702",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7415612",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "param": [
+        "[3_6426:3590.477,435.194,4529.384,0.000,69.146,0.000]",
+        "[3_6429:3592.852,435.092,4532.181,0.000,234.485,0.000]",
+        "[3_7537:3592.830,435.092,4530.220,0.000,289.018,0.000]",
+        "[3_7538:3593.010,435.092,4531.015,0.000,271.059,0.000]"
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "6370505329218416807",
+      "questId": 74157,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74157/Q7415703",
+      "initDialog": 741570301
+    },
+    {
+      "npcId": [
+        21253
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7415704,
+      "priority": 10,
+      "beginCond": [
+        {
+          "param": [
+            "99902",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7415608",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "15481495470850210247",
+      "questId": 74157,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 741570401
+    },
+    {
+      "npcId": [
+        21257
+      ],
+      "id": 7415705,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7415704",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "18053965894058420193",
+      "questId": 74157,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 741570501
+    }
+  ],
+  "titleTextMapHash": 2273807295,
+  "luaPath": "Actor/Quest/WQ74157",
+  "rewardIdList": [
+    174157
+  ],
+  "id": 74157,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7415701,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "30"
+        ],
+        "guideScene": 3
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3738687068,
+      "subId": 7415701,
+      "mainId": 74157
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7415702,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7415703,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        21253,
+        21257,
+        21252
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "21252"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1724209764,
+      "subId": 7415702,
+      "mainId": 74157
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7415703,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "21249"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1945046012,
+      "subId": 7415703,
+      "mainId": 74157
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "30"
+        ],
+        "guideScene": 3
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3211299356,
+      "subId": 7415704,
+      "mainId": 74157,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 818918246,
+  "suggestTrackMainQuestList": [
+    74156
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "chapterId": 2001,
+  "talks": [
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 46300,
+      "priority": 4,
+      "beginCond": [
+        {
+          "param": [
+            "46300",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "5585231523921405789",
+      "questId": 463,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Kaeya1_463/Q46300",
+      "initDialog": 4630001
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 46301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "46307",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14518010421280324599",
+      "questId": 463,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Kaeya1_463/Q46301",
+      "initDialog": 4630101
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 46303,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "46303",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "6779647887307059785",
+      "questId": 463,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Kaeya1_463/Q46303",
+      "initDialog": 4630301
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 46305,
+      "priority": 4,
+      "beginCond": [
+        {
+          "param": [
+            "46305",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "3915680637786670538",
+      "questId": 463,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Kaeya1_463/Q46305",
+      "initDialog": 4630501
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 46306,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "46305",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "46205",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "46207",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "15674598542498840171",
+      "questId": 463,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/LQ/Kaeya1_463/Q46306",
+      "initDialog": 4630601
+    }
+  ],
+  "titleTextMapHash": 1990456193,
+  "luaPath": "Actor/Quest/LQ463",
+  "rewardIdList": [
+    100463
+  ],
+  "HGFFNBIGPJK": true,
+  "series": 2001,
+  "id": 463,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            46300,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1005"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1550219847,
+      "subId": 46300,
+      "mainId": 463
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1076,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "52"
+          ],
+          "type": "QUEST_EXEC_UNLOCK_POINT"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q463Dungeon"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      },
+      "JFCJBBCEDGD": [
+        1004
+      ],
+      "isRewind": true,
+      "descTextMapHash": 2541189975,
+      "subId": 46301,
+      "mainId": 463
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1064,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "npcId": [
+        1004
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "Q463Dungeon"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      },
+      "isRewind": true,
+      "descTextMapHash": 998270583,
+      "subId": 46302,
+      "mainId": 463
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            46303,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "6"
+          ],
+          "type": "QUEST_EXEC_GRANT_TRIAL_AVATAR"
+        },
+        {
+          "param": [
+            "20016",
+            "220016008,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "npcId": [
+        1004
+      ],
+      "order": 5,
+      "isMpBlock": true,
+      "banType": "BAN_GROUP_TRANSPORT_ONLY",
+      "descTextMapHash": 2176075535,
+      "subId": 46303,
+      "mainId": 463,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "46302"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        },
+        {
+          "param": [
+            "6"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            24010101,
+            0
+          ],
+          "type": "QUEST_CONTENT_MONSTER_DIE"
+        }
+      ],
+      "npcId": [
+        1004
+      ],
+      "order": 6,
+      "isMpBlock": true,
+      "failCond": [
+        {
+          "param": [
+            2000,
+            0
+          ],
+          "type": "QUEST_CONTENT_FAIL_DUNGEON"
+        },
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        }
+      ],
+      "banType": "BAN_GROUP_TRANSPORT_ONLY",
+      "descTextMapHash": 2478270343,
+      "subId": 46304,
+      "mainId": 463
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            46305,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            46306,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100171",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        },
+        {
+          "param": [
+            "100172",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        },
+        {
+          "param": [
+            "100173",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        },
+        {
+          "param": [
+            "6"
+          ],
+          "type": "QUEST_EXEC_REMOVE_TRIAL_AVATAR"
+        }
+      ],
+      "npcId": [
+        1004
+      ],
+      "order": 7,
+      "isMpBlock": true,
+      "banType": "BAN_GROUP_TRANSPORT_ONLY",
+      "finishParent": true,
+      "descTextMapHash": 1488540647,
+      "subId": 46305,
+      "mainId": 463,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "20016",
+            "220016003"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "order": 8,
+      "descTextMapHash": 1994876831,
+      "subId": 46306,
+      "mainId": 463,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            46301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1004
+      ],
+      "order": 3,
+      "descTextMapHash": 3825483335,
+      "subId": 46307,
+      "mainId": 463,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            46305,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            46306,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "52"
+          ],
+          "type": "QUEST_EXEC_LOCK_POINT"
+        }
+      ],
+      "order": 9,
+      "finishParent": true,
+      "descTextMapHash": 1368546863,
+      "subId": 46308,
+      "mainId": 463,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718",
+    "5575916732172504491"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 2001,
+  "descTextMapHash": 2731205367
+}

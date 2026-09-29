@@ -1,0 +1,57 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        5303
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7413901,
+      "beginCond": [
+        {
+          "param": [
+            "7412003",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7400102",
+            "1"
+          ],
+          "type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "11288521838225201151",
+      "questId": 74139,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 741390101
+    }
+  ],
+  "luaPath": "Actor/Quest/WQ74139",
+  "id": 74139,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7400102,
+            1
+          ],
+          "type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "subId": 7413901,
+      "mainId": 74139,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 687819070,
+  "showType": "QUEST_HIDDEN"
+}

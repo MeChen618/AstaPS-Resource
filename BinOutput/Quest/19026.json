@@ -1,0 +1,370 @@
+{
+  "chapterId": 105501,
+  "freeStyleDic": {
+    "12205": [
+      1270
+    ],
+    "12206": [
+      1230
+    ],
+    "12207": [
+      1270
+    ]
+  },
+  "forcePreloadLuaList": [
+    "8319807629774764171"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        12205
+      ],
+      "id": 1902602,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1902603",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "13162128721632267819",
+      "questId": 19026,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/COOP/CoopGorou/Q1902602",
+      "stayFreeStyle": true,
+      "initDialog": 190260201
+    },
+    {
+      "npcId": [
+        12206
+      ],
+      "id": 1902603,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1902603",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "4780782744519026196",
+      "questId": 19026,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/COOP/CoopGorou/Q1902603",
+      "stayFreeStyle": true,
+      "initDialog": 190260301
+    },
+    {
+      "npcId": [
+        505
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 1902604,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1902601",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "1902602",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "10774342650650337382",
+      "questId": 19026,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/COOP/CoopGorou/Q1902604",
+      "stayFreeStyle": true,
+      "initDialog": 190260401
+    },
+    {
+      "npcId": [
+        12207
+      ],
+      "id": 1902605,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1902603",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "17670461182953686262",
+      "questId": 19026,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/COOP/CoopGorou/Q1902605",
+      "stayFreeStyle": true,
+      "initDialog": 190260501
+    }
+  ],
+  "titleTextMapHash": 2253102607,
+  "luaPath": "Actor/Quest/LQ19026",
+  "HGFFNBIGPJK": true,
+  "series": 105501,
+  "id": 19026,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            1902601,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        1039,
+        12205,
+        12206,
+        12207
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "Q1902601_guide"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1967237892,
+      "subId": 1902601,
+      "exclusivePlaceList": [
+        4005402
+      ],
+      "mainId": 19026
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            105501,
+            1902601
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "npcId": [
+        1039,
+        12205,
+        12206,
+        12207
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "12205"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "descTextMapHash": 761086852,
+      "subId": 1902602,
+      "exclusivePlaceList": [
+        4005402
+      ],
+      "mainId": 19026
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1902603,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "stepDescTextMapHash": 1888484205,
+      "npcId": [
+        1039,
+        12205,
+        12206,
+        12207
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "Q19026_Wulang1"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      },
+      "isRewind": true,
+      "descTextMapHash": 388999956,
+      "subId": 1902603,
+      "exclusivePlaceList": [
+        4005402
+      ],
+      "mainId": 19026
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            105501,
+            1902602
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "npcId": [
+        1039,
+        12205,
+        12206,
+        12207
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "505"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "descTextMapHash": 3565059004,
+      "subId": 1902604,
+      "exclusivePlaceList": [
+        4005402
+      ],
+      "mainId": 19026
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1902605,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        1039,
+        12205,
+        12206,
+        12207
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "Q19026_NPCA",
+          "20"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1816698852,
+      "subId": 1902605,
+      "exclusivePlaceList": [
+        4005402
+      ],
+      "mainId": 19026
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            105501,
+            1902603
+          ],
+          "type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "133220699",
+            "1"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "npcId": [
+        1039,
+        12205,
+        12206,
+        12207
+      ],
+      "order": 6,
+      "guide": {
+        "param": [
+          "505"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "finishParent": true,
+      "descTextMapHash": 4342308,
+      "subId": 1902606,
+      "exclusivePlaceList": [
+        4005402
+      ],
+      "mainId": 19026
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1902607,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133220699"
+          ],
+          "type": "QUEST_EXEC_REGISTER_DYNAMIC_GROUP"
+        }
+      ],
+      "order": 7,
+      "descTextMapHash": 3487409668,
+      "subId": 1902607,
+      "mainId": 19026,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "13531318573631802054",
+    "2923797659421634618",
+    "6180615081615505988"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 3010,
+  "descTextMapHash": 4255817494
+}

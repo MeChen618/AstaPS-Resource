@@ -1,0 +1,111 @@
+{
+  "forcePreloadLuaList": [
+    "9648719989159946122"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        1712
+      ],
+      "id": 7067501,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7067502",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "12360517265823099082",
+      "questId": 70675,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 706750101
+    }
+  ],
+  "titleTextMapHash": 3009059743,
+  "luaPath": "Actor/Quest/WQ70675",
+  "HMJOIJHMGJD": true,
+  "id": 70675,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7067501,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            1076,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROOM"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1712"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 1076,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 727414580,
+      "subId": 7067501,
+      "mainId": 70675
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7067501,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1076",
+            "201076001"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "npcId": [
+        1712
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "1712"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 1076,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3617199100,
+      "subId": 7067502,
+      "mainId": 70675
+    }
+  ],
+  "preloadLuaList": [
+    "15586740256331938425"
+  ],
+  "descTextMapHash": 3034913550,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

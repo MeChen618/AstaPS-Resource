@@ -1,0 +1,90 @@
+{
+  "chapterId": 10041,
+  "talks": [
+    {
+      "npcId": [
+        30067
+      ],
+      "id": 4002301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4002301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "2255641496550485651",
+      "questId": 40023,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/OnmyoMaze_40023/Q4002301",
+      "initDialog": 400230101
+    }
+  ],
+  "titleTextMapHash": 2136626751,
+  "activityId": 2008,
+  "luaPath": "Actor/Quest/EQ40023",
+  "rewardIdList": [
+    140023
+  ],
+  "HMJOIJHMGJD": true,
+  "id": 40023,
+  "type": "EQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            4002301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "40023",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "npcId": [
+        30067
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "30067"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 4285863652,
+      "subId": 4002301,
+      "mainId": 40023
+    },
+    {
+      "order": 2,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "subId": 4002302,
+      "mainId": 40023,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 454140790
+}

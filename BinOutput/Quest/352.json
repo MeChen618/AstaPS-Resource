@@ -1,0 +1,257 @@
+{
+  "chapterId": 1001,
+  "talks": [
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 35216,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "35202",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1709257987523002371",
+      "questId": 352,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Mengde1_352/Q35216",
+      "initDialog": 3521601
+    }
+  ],
+  "titleTextMapHash": 1595243881,
+  "luaPath": "Actor/Quest/AQ352",
+  "rewardIdList": [
+    100352
+  ],
+  "series": 1001,
+  "id": 352,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            1021,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "Q352View"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2150333847,
+      "subId": 35200,
+      "mainId": 352
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1001,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        },
+        {
+          "param": [
+            1095,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q352View"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3934520327,
+      "subId": 35201,
+      "mainId": 352
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            35216,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "1005"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 167165031,
+      "subId": 35202,
+      "mainId": 352
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "35202"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            35203,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            1172,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "1005",
+          "QuestArrow"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "failCond": [
+        {
+          "param": [
+            35203,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_TEAM_DEAD"
+        }
+      ],
+      "descTextMapHash": 2630460567,
+      "subId": 35203,
+      "mainId": 352
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1003,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "1005"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_MOVE_HIDE",
+      "descTextMapHash": 1866107263,
+      "subId": 35204,
+      "mainId": 352
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            35205,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "7"
+          ],
+          "type": "QUEST_EXEC_UNLOCK_POINT"
+        },
+        {
+          "param": [
+            "3",
+            "1"
+          ],
+          "type": "QUEST_EXEC_UNLOCK_AREA"
+        },
+        {
+          "param": [
+            "7"
+          ],
+          "type": "QUEST_EXEC_CHANGE_AVATAR_ELEMET"
+        }
+      ],
+      "order": 6,
+      "guide": {
+        "param": [
+          "Q353Guide2"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 966870527,
+      "subId": 35205,
+      "mainId": 352,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 1001,
+  "descTextMapHash": 4079688719,
+  "suggestTrackMainQuestList": [
+    353
+  ]
+}

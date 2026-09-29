@@ -1,0 +1,122 @@
+{
+  "chapterId": 1302,
+  "forcePreloadLuaList": [
+    "10780955632844890933"
+  ],
+  "titleTextMapHash": 4105550791,
+  "luaPath": "Actor/Quest/AQ3015",
+  "series": 1302,
+  "id": 3015,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            300710,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_IS_GAME_TIME_LOCKED"
+        }
+      ],
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 833183364,
+      "subId": 301501,
+      "mainId": 3015,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            3,
+            230
+          ],
+          "param_str": "Q3007CityCenterPos;1072,1073,1074,1075",
+          "type": "QUEST_CONTENT_LEAVE_SCENE_RANGE_AND_ROOM"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_IS_GAME_TIME_LOCKED"
+        }
+      ],
+      "order": 2,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            300710,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "descTextMapHash": 2463081236,
+      "subId": 301502,
+      "mainId": 3015,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            301503,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_IS_GAME_TIME_LOCKED"
+        },
+        {
+          "param": [
+            "301502"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 3,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            300710,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "descTextMapHash": 4132977164,
+      "subId": 301503,
+      "mainId": 3015,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "12402393102739144428"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2120820230,
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,116 @@
+{
+  "freeStyleDic": {
+    "20678": [
+      1010,
+      1020
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        20678
+      ],
+      "id": 7313801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7313802",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "assetIndex": "404944691335271857",
+      "questId": 73138,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 731380101
+    }
+  ],
+  "titleTextMapHash": 325020023,
+  "luaPath": "Actor/Quest/WQ73138",
+  "rewardIdList": [
+    210009
+  ],
+  "id": 73138,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "subId": 7313801,
+      "mainId": 73138,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            133302562,
+            562001
+          ],
+          "param_str": "201",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "npcId": [
+        20678
+      ],
+      "order": 2,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "subId": 7313802,
+      "mainId": 73138,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7313801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "73100",
+            "1"
+          ],
+          "type": "QUEST_EXEC_INC_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "3",
+            "133302562,3"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "npcId": [
+        20678
+      ],
+      "order": 3,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7313803,
+      "mainId": 73138,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

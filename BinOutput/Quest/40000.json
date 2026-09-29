@@ -1,0 +1,135 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30043
+      ],
+      "id": 4000002,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4000002",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14715027222178862215",
+      "questId": 40000,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/Sealamp2_41314/Q4000001",
+      "initDialog": 400000201
+    },
+    {
+      "npcId": [
+        30043
+      ],
+      "id": 4000003,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "4000003",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "9760155627371135790",
+      "questId": 40000,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/EQ/Sealamp2_41314/Q4000002",
+      "initDialog": 400000213
+    }
+  ],
+  "titleTextMapHash": 402382367,
+  "luaPath": "Actor/Quest/EQ40000",
+  "id": 40000,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            4000001,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "descTextMapHash": 1271153492,
+      "subId": 4000001,
+      "mainId": 40000,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            4000002,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            4000002,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            7000,
+            260
+          ],
+          "type": "QUEST_CONTENT_ENTER_DUNGEON"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "30043"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2025242228,
+      "subId": 4000002,
+      "mainId": 40000
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7000,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_DUNGEON"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "30043"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3143858140,
+      "subId": 4000003,
+      "mainId": 40000
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 218433030
+}

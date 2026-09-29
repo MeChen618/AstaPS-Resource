@@ -1,0 +1,122 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        2318
+      ],
+      "id": 7113001,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7113001",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "14253775396204681886",
+      "questId": 71130,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Liyue_71130/Q7113001",
+      "initDialog": 711300101
+    },
+    {
+      "npcId": [
+        2318
+      ],
+      "id": 7113002,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7113003",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "7824979841679198726",
+      "questId": 71130,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 711300201
+    }
+  ],
+  "titleTextMapHash": 3348411959,
+  "luaPath": "Actor/Quest/WQ71130",
+  "id": 71130,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7113001,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133115160"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2498599556,
+      "subId": 7113001,
+      "mainId": 71130,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "711300201",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2259050276,
+      "subId": 7113002,
+      "mainId": 71130,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7113003,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 691603444,
+      "subId": 7113003,
+      "mainId": 71130,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 1338518270,
+  "showType": "QUEST_HIDDEN"
+}

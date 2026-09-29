@@ -1,0 +1,152 @@
+{
+  "forcePreloadLuaList": [
+    "6888501237827988840"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        30423
+      ],
+      "id": 7450602,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7450602",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "forceNpcNotDestroy": true,
+      "param": [
+        "[3_340100328:3569.768,445.895,4444.653,0.000,255.960,0.000]",
+        "[3_6271:3559.818,446.167,4448.293,0.000,147.600,0.000]",
+        "[3_6562:3552.219,446.167,4434.630,0.000,354.140,0.000]"
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "4888644780346797175",
+      "questId": 74506,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Fontaine_74506/Q7450602",
+      "initDialog": 745060201
+    }
+  ],
+  "titleTextMapHash": 2619910239,
+  "luaPath": "Actor/Quest/WQ74506",
+  "rewardIdList": [
+    174506
+  ],
+  "HMJOIJHMGJD": true,
+  "id": 74506,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7450601,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3250451900,
+      "subId": 7450601,
+      "mainId": 74506,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7450602,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "133401172"
+          ],
+          "type": "QUEST_EXEC_UNREGISTER_DYNAMIC_GROUP"
+        },
+        {
+          "param": [
+            "7450601",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "npcId": [
+        30423,
+        5075
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "30423"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1182537740,
+      "subId": 7450602,
+      "exclusivePlaceList": [
+        340135,
+        340111
+      ],
+      "mainId": 74506
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7450603,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        30423,
+        5075
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "[3_340100327:3559.953,445.895,4442.229,0.000,251.840,0.000]",
+          "15"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3121529276,
+      "subId": 7450603,
+      "exclusivePlaceList": [
+        340135,
+        340111
+      ],
+      "mainId": 74506
+    }
+  ],
+  "preloadLuaList": [
+    "5773025442615903666"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 586129862,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

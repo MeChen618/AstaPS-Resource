@@ -1,0 +1,210 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        12091,
+        20457,
+        20458,
+        20459,
+        20460
+      ],
+      "id": 202201,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "202201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "485602411692417706",
+      "questId": 2022,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 20220101
+    },
+    {
+      "npcId": [
+        12093,
+        20469,
+        20470,
+        20471
+      ],
+      "id": 202202,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "202201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "13227133080797519972",
+      "questId": 2022,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 20220201
+    },
+    {
+      "npcId": [
+        12092,
+        20472,
+        20473,
+        20474
+      ],
+      "id": 202203,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "202201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "7862310301895561592",
+      "questId": 2022,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 20220301
+    },
+    {
+      "npcId": [
+        12094
+      ],
+      "id": 202204,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "202201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "6050572859133507841",
+      "questId": 2022,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 20220401
+    }
+  ],
+  "titleTextMapHash": 3255389847,
+  "luaPath": "Actor/Quest/AQ2022",
+  "id": 2022,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "202201,202202,202203,202204",
+          "type": "QUEST_CONTENT_COMPLETE_ANY_TALK"
+        }
+      ],
+      "npcId": [
+        12091,
+        12092,
+        12093,
+        12094,
+        20457,
+        20458,
+        20459,
+        20460,
+        20469,
+        20470,
+        20471,
+        20472,
+        20473,
+        20474
+      ],
+      "order": 1,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            202201,
+            0
+          ],
+          "type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+          "count": 1
+        },
+        {
+          "param": [
+            202101,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        },
+        {
+          "param": [
+            202102,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "descTextMapHash": 3924420340,
+      "subId": 202201,
+      "mainId": 2022,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            202202,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "202201"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 3733013460,
+      "subId": 202202,
+      "mainId": 2022,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            202203,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1394969108,
+      "subId": 202203,
+      "mainId": 2022,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

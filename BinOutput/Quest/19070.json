@@ -1,0 +1,106 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1027
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 1907001,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "1907001",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1411040780603352078",
+      "questId": 19070,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 190700101
+    }
+  ],
+  "titleTextMapHash": 575512535,
+  "luaPath": "Actor/Quest/LQ19070",
+  "id": 19070,
+  "type": "LQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            1907001,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            3,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_MY_WORLD"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "type": "QUEST_CONTENT_ANY_MANUAL_TRANSPORT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1004",
+            "201004005,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 3392594804,
+      "subId": 1907001,
+      "mainId": 19070,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1906806,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3
+      },
+      "failParentShow": "QUEST_HIDDEN",
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 3621864004,
+      "subId": 1907002,
+      "mainId": 19070,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 1810839270,
+  "showType": "QUEST_HIDDEN"
+}

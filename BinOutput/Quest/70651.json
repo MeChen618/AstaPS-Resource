@@ -1,0 +1,110 @@
+{
+  "AHBDGODKBDF": 745118766,
+  "talks": [
+    {
+      "nextTalks": [
+        7065102,
+        7065103,
+        7065104
+      ],
+      "npcId": [
+        1417
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7065101,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "7065101",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "16042187713776267728",
+      "questId": 70651,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 706510101
+    },
+    {
+      "npcId": [
+        1417
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7065102,
+      "priority": 6,
+      "beginCond": [
+        {
+          "type": "QUEST_COND_NOT_HAVE_BLOSSOM_TALK"
+        },
+        {
+          "param": [
+            "7065101",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "7189296001039499010",
+      "questId": 70651,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 706510201
+    }
+  ],
+  "titleTextMapHash": 2065376391,
+  "luaPath": "Actor/Quest/WQ70651",
+  "rewardIdList": [
+    170651
+  ],
+  "id": 70651,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7065102,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7065103,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        },
+        {
+          "param": [
+            7065104,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1417
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1417"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 823973932,
+      "subId": 7065101,
+      "mainId": 70651
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 3910592646,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

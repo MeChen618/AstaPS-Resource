@@ -1,0 +1,200 @@
+{
+  "taskId": 25302,
+  "talks": [
+    {
+      "npcId": [
+        2202
+      ],
+      "id": 2210201,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "2210201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "14532870223255470970",
+      "questId": 22102,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 221020101
+    },
+    {
+      "npcId": [
+        2202
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2210202,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "2210201",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2210202",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "7316829573318416117",
+      "questId": 22102,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 221020201
+    },
+    {
+      "npcId": [
+        2202
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2210203,
+      "priority": 6,
+      "beginCond": [
+        {
+          "param": [
+            "2210202",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2210203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "11734138863457045813",
+      "questId": 22102,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 221020301
+    }
+  ],
+  "titleTextMapHash": 1827464985,
+  "id": 22102,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2210201,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        2202
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "2202"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3878537158,
+      "subId": 2210201,
+      "mainId": 22102
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "3",
+            "133102390,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "13310239001",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        2202
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Event_25300_03",
+          "40"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2770422638,
+      "subId": 2210202,
+      "mainId": 22102
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2210203,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133102390,1"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        },
+        {
+          "param": [
+            "25302"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_DAILY_TASK"
+        }
+      ],
+      "npcId": [
+        2202
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "2202"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2906469006,
+      "subId": 2210203,
+      "mainId": 22102
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 1704921767
+}

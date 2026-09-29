@@ -1,0 +1,120 @@
+{
+  "talks": [
+    {
+      "dontBlockDaily": true,
+      "npcId": [
+        2204
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7170501,
+      "priority": 1,
+      "beginCond": [
+        {
+          "param": [
+            "7170501",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7170501"
+          ],
+          "type": "QUEST_COND_ITEM_GIVING_ACTIVED"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "15141700440385919266",
+      "questId": 71705,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 717050101
+    },
+    {
+      "npcId": [
+        2204
+      ],
+      "id": 7170502,
+      "priority": 1,
+      "beginCond": [
+        {
+          "param": [
+            "7170502",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14767172559978953372",
+      "questId": 71705,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 717050201
+    }
+  ],
+  "titleTextMapHash": 3394227975,
+  "luaPath": "Actor/Quest/WQ71705",
+  "HGFFNBIGPJK": true,
+  "id": 71705,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7170501,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_ITEM_GIVING"
+        }
+      ],
+      "npcId": [
+        2204
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "2204"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1066403604,
+      "subId": 7170501,
+      "mainId": 71705
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7170502,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        2204
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "2204"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2781002644,
+      "subId": 7170502,
+      "mainId": 71705
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 4190144326,
+  "mainQuestTag": "MAINQUEST_TAG_REPUTATION"
+}

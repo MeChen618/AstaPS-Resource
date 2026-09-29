@@ -1,0 +1,292 @@
+{
+  "chapterId": 10156,
+  "forcePreloadLuaList": [
+    "14090552519646440729"
+  ],
+  "talks": [
+    {
+      "talkMarkType": "TALK_MARK_COMMON",
+      "npcId": [
+        5238
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 7403202,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7403201",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7403205",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7403202",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "16992352443852365196",
+      "questId": 74032,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/Q7403202",
+      "initDialog": 740320201
+    },
+    {
+      "npcId": [
+        5250
+      ],
+      "id": 7403203,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7403203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "4027433691786763822",
+      "questId": 74032,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/Q7403203",
+      "initDialog": 740320301
+    },
+    {
+      "npcId": [
+        5238
+      ],
+      "id": 7403204,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7403204",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "8107407149702381642",
+      "questId": 74032,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/Q7403204",
+      "initDialog": 740320401
+    },
+    {
+      "npcId": [
+        5238
+      ],
+      "id": 7403205,
+      "beginCond": [
+        {
+          "param": [
+            "7403203",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "6378282838428113558",
+      "questId": 74032,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 740320501
+    },
+    {
+      "npcId": [
+        5250
+      ],
+      "id": 7403206,
+      "beginCond": [
+        {
+          "param": [
+            "7403204",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "3318330169670814769",
+      "questId": 74032,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 740320601
+    }
+  ],
+  "titleTextMapHash": 4282628671,
+  "luaPath": "Actor/Quest/WQ74032",
+  "rewardIdList": [
+    174032
+  ],
+  "id": 74032,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7403201,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "[3_4528:4495.357,6.600,4657.685]",
+          "10"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 575271668,
+      "subId": 7403201,
+      "mainId": 74032,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7403202,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "5238"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1835047828,
+      "subId": 7403202,
+      "mainId": 74032,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7403203,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        5238,
+        5250
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "5250"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 610023268,
+      "subId": 7403203,
+      "exclusivePlaceList": [
+        340838
+      ],
+      "mainId": 74032
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7403204,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "74025",
+            "1"
+          ],
+          "type": "QUEST_EXEC_INC_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "npcId": [
+        5238,
+        5250
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "5238"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1885968052,
+      "subId": 7403204,
+      "exclusivePlaceList": [
+        340838
+      ],
+      "mainId": 74032
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7403205,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "subId": 7403205,
+      "mainId": 74032,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "8948070788259359079"
+  ],
+  "descTextMapHash": 1454279366,
+  "suggestTrackMainQuestList": [
+    74025
+  ]
+}

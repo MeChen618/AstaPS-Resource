@@ -1,0 +1,79 @@
+{
+  "taskId": 22400,
+  "talks": [
+    {
+      "npcId": [
+        1605
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2006401,
+      "priority": 8,
+      "beginCond": [
+        {
+          "param": [
+            "2006401",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2006402",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "3537051538648995938",
+      "questId": 20064,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200640101
+    }
+  ],
+  "titleTextMapHash": 2793240633,
+  "luaPath": "Actor/Quest/IQ20064",
+  "id": 20064,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "1330042801",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 154809736,
+      "subId": 2006401,
+      "mainId": 20064,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2006401,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3619986808,
+      "subId": 2006402,
+      "mainId": 20064,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 699198871,
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,303 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        20429
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7220701,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7220702",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "13950382253156407741",
+      "questId": 72207,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "initDialog": 722070101
+    },
+    {
+      "npcId": [
+        20429
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7220702,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7220702",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7220703",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "18425134896325556605",
+      "questId": 72207,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 722070201
+    },
+    {
+      "npcId": [
+        20429
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7220703,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7220704",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7220703",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "4663959194763279900",
+      "questId": 72207,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 722070301
+    }
+  ],
+  "titleTextMapHash": 3112858255,
+  "luaPath": "Actor/Quest/WQ72207",
+  "id": 72207,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            101576,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        },
+        {
+          "param": [
+            101577,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        },
+        {
+          "param": [
+            101578,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        },
+        {
+          "param": [
+            101579,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 3653459620,
+      "subId": 7220701,
+      "mainId": 72207,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7220701,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        20429
+      ],
+      "order": 3,
+      "isRewind": true,
+      "descTextMapHash": 1033110252,
+      "subId": 7220702,
+      "mainId": 72207,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            101576,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        },
+        {
+          "param": [
+            101577,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        },
+        {
+          "param": [
+            101578,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        },
+        {
+          "param": [
+            101579,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM",
+          "count": 1
+        }
+      ],
+      "npcId": [
+        20429
+      ],
+      "order": 4,
+      "isRewind": true,
+      "descTextMapHash": 815861372,
+      "subId": 7220703,
+      "mainId": 72207,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7220703,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "101576",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        },
+        {
+          "param": [
+            "101577",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        },
+        {
+          "param": [
+            "101578",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        },
+        {
+          "param": [
+            "101579",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        20429
+      ],
+      "order": 5,
+      "isRewind": true,
+      "descTextMapHash": 2988278580,
+      "subId": 7220704,
+      "mainId": 72207,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7220705_finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "72207",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "72174",
+            "1"
+          ],
+          "type": "QUEST_EXEC_INC_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "order": 6,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1222922948,
+      "subId": 7220705,
+      "mainId": 72207,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7220705,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7220706,
+      "mainId": 72207,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

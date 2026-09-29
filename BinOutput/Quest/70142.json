@@ -1,0 +1,93 @@
+{
+  "talks": [
+    {
+      "lockGameTime": true,
+      "npcId": [
+        1005
+      ],
+      "id": 7014201,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7014202",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "3404428574442545296",
+      "questId": 70142,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 701420101
+    }
+  ],
+  "titleTextMapHash": 3542360903,
+  "luaPath": "Actor/Quest/WQ70142",
+  "id": 70142,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7014201,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3926855540,
+      "subId": 7014201,
+      "mainId": 70142,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7014201,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 935145452,
+      "subId": 7014202,
+      "mainId": 70142,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "13300859601",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 723331852,
+      "subId": 7014203,
+      "mainId": 70142,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "descTextMapHash": 2156217214,
+  "showType": "QUEST_HIDDEN"
+}

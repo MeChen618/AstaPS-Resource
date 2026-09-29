@@ -1,0 +1,147 @@
+{
+  "titleTextMapHash": 1355891481,
+  "luaPath": "Actor/Quest/SQ407",
+  "id": 407,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            40702,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1105"
+        ],
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "isRewind": true,
+      "subId": 40701,
+      "mainId": 407,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            9,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_MATERIAL_WITH_SUBTYPE"
+        },
+        {
+          "param": [
+            40702,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "1105"
+        ],
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "failCond": [
+        {
+          "param": [
+            40702,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "subId": 40702,
+      "mainId": 407
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            40704,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "1105"
+        ],
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "subId": 40703,
+      "mainId": 407
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            40705,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "1105"
+        ],
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 40704,
+      "mainId": 407
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "40701"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            40705,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 5,
+      "failCond": [
+        {
+          "param": [
+            40705,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "subId": 40705,
+      "mainId": 407,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "7433289185190989870",
+    "3577557779278260169",
+    "14427653606798705944"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 2643813111
+}

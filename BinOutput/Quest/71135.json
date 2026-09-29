@@ -1,0 +1,84 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        21094
+      ],
+      "id": 7113502,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7113502",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "param": [
+        "[3_311600081:1500.751,-45.099,2743.810,0.000,132.497,0.000]",
+        "[3_311600084:1501.650,-45.031,2743.523,0.000,272.336,0.000]",
+        "[3_311600092:1502.263,-44.817,2746.826,0.000,203.550,0.000]"
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "10951511207869022777",
+      "questId": 71135,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Liyue_71135/Q7113502",
+      "initDialog": 711350201
+    }
+  ],
+  "titleTextMapHash": 1391977855,
+  "luaPath": "Actor/Quest/WQ71135",
+  "id": 71135,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7113501",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "2223",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_WEATHER_GADGET"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7113501,
+      "mainId": 71135,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7113502,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7113502,
+      "mainId": 71135,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,89 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30342,
+        30343
+      ],
+      "id": 7351501,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7351501",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "forceNpcNotDestroy": true,
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "12640850067795595076",
+      "questId": 73515,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/V3.6SandSworm/Q7351501",
+      "initDialog": 735150101
+    }
+  ],
+  "titleTextMapHash": 1043316295,
+  "activityId": 5128,
+  "luaPath": "Actor/Quest/WQ73515",
+  "rewardIdList": [
+    173515
+  ],
+  "id": 73515,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7351501,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        30342,
+        30343
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "30342"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 3635123852,
+      "subId": 7351501,
+      "mainId": 73515
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1,
+            0
+          ],
+          "param_str": "8,12",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 1557685860,
+      "subId": 7351502,
+      "mainId": 73515
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 442304062,
+  "mainQuestTag": "MAINQUEST_TAG_ACTIVITY"
+}

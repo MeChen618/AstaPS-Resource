@@ -1,0 +1,212 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        21108
+      ],
+      "beginCondComb": "LOGIC_OR",
+      "id": 7905801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7905801",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7905802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1435020799639622724",
+      "questId": 79058,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 790580101
+    },
+    {
+      "npcId": [
+        21109
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7905802,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7905802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "1",
+            "0",
+            "79058"
+          ],
+          "type": "QUEST_COND_QUEST_VAR_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "17654346966446727458",
+      "questId": 79058,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Penumbra_79044/Q7905802"
+    }
+  ],
+  "titleTextMapHash": 3971760799,
+  "luaPath": "Actor/Quest/WQ79058",
+  "id": 79058,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7905801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        21108
+      ],
+      "order": 1,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2458356612,
+      "subId": 7905801,
+      "mainId": 79058,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7905802,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1",
+            "1",
+            "7905802"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_VAR"
+        }
+      ],
+      "npcId": [
+        21108,
+        21109
+      ],
+      "order": 6,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 1180655284,
+      "subId": 7905802,
+      "mainId": 79058,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "Q7905803Finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2310353868,
+      "subId": 7905803,
+      "mainId": 79058,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "Q7905804Finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3806740396,
+      "subId": 7905804,
+      "mainId": 79058,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7905805,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 4,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 2197255988,
+      "subId": 7905805,
+      "mainId": 79058,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "Q7905806Finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "510020173,5"
+          ],
+          "type": "QUEST_EXEC_REFRESH_WORLD_QUEST_FLOW_GROUP_SUITE"
+        }
+      ],
+      "order": 5,
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "finishParent": true,
+      "descTextMapHash": 2815989284,
+      "subId": 7905806,
+      "mainId": 79058,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

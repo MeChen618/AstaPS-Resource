@@ -1,0 +1,92 @@
+{
+  "titleTextMapHash": 2670288841,
+  "luaPath": "Actor/Quest/SQ993",
+  "id": 993,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            1023,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROOM"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 3964310503,
+      "subId": 99301,
+      "mainId": 993
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            99302,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            99302,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "descTextMapHash": 2981091231,
+      "subId": 99302,
+      "mainId": 993
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            99303,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "99302"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "descTextMapHash": 3860543063,
+      "subId": 99303,
+      "mainId": 993
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            99304,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 4,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 4176619287,
+      "subId": 99304,
+      "mainId": 993
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 79649711
+}

@@ -1,0 +1,78 @@
+{
+  "titleTextMapHash": 1847476751,
+  "luaPath": "Actor/Quest/WQ74145",
+  "id": 74145,
+  "showRedPoint": true,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7407828,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "5225",
+            "1"
+          ],
+          "type": "QUEST_EXEC_MODIFY_WEATHER_AREA"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7414501,
+      "mainId": 74145,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7414502_FINISH",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        },
+        {
+          "param": [
+            133404453,
+            453002
+          ],
+          "param_str": "201",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "5225",
+            "0"
+          ],
+          "type": "QUEST_EXEC_MODIFY_WEATHER_AREA"
+        },
+        {
+          "param": [
+            "3",
+            "133404369,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7414502,
+      "mainId": 74145,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

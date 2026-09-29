@@ -1,0 +1,119 @@
+{
+  "talks": [
+    {
+      "lockGameTime": true,
+      "npcId": [
+        20214
+      ],
+      "id": 7012701,
+      "assetIndex": "14074727387884197887",
+      "questId": 70127,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 701270101
+    },
+    {
+      "lockGameTime": true,
+      "npcId": [
+        20215
+      ],
+      "id": 7012702,
+      "assetIndex": "1722444960961699780",
+      "questId": 70127,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 701270201
+    }
+  ],
+  "titleTextMapHash": 2300022351,
+  "luaPath": "Actor/Quest/WQ70127",
+  "id": 70127,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7012701,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133008597"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "7012704",
+            "1"
+          ],
+          "type": "QUEST_EXEC_ADD_QUEST_PROGRESS"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 1379394236,
+      "subId": 7012701,
+      "mainId": 70127,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7012702,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133008598"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "7012704",
+            "1"
+          ],
+          "type": "QUEST_EXEC_ADD_QUEST_PROGRESS"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 16720844,
+      "subId": 7012702,
+      "mainId": 70127,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7012704,
+            0
+          ],
+          "type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+          "count": 2
+        }
+      ],
+      "stepDescTextMapHash": 2844921661,
+      "order": 3,
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 971499260,
+      "subId": 7012704,
+      "mainId": 70127,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "showType": "QUEST_HIDDEN"
+}

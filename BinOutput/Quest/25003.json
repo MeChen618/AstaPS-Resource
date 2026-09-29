@@ -1,0 +1,71 @@
+{
+  "titleTextMapHash": 90154033,
+  "rewardIdList": [
+    125003
+  ],
+  "id": 25003,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2010,
+            48
+          ],
+          "type": "QUEST_CONTENT_ENTER_DUNGEON"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "Q25003Target"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3442978071,
+      "subId": 2500301,
+      "mainId": 25003
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "2500301"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            2010,
+            48
+          ],
+          "type": "QUEST_CONTENT_FINISH_DUNGEON"
+        }
+      ],
+      "order": 2,
+      "failCond": [
+        {
+          "param": [
+            2010,
+            0
+          ],
+          "type": "QUEST_CONTENT_FAIL_DUNGEON"
+        }
+      ],
+      "finishParent": true,
+      "descTextMapHash": 3957139775,
+      "subId": 2500302,
+      "mainId": 25003
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 4095852639,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

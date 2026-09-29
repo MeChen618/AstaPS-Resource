@@ -1,0 +1,317 @@
+{
+  "forcePreloadLuaList": [
+    "8427695945679514091"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        20453
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7222701,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7222701",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7216712",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "17490991861439146572",
+      "questId": 72227,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72227/Q7222701",
+      "initDialog": 722270101
+    },
+    {
+      "npcId": [
+        20453
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7222702,
+      "priority": 3,
+      "beginCond": [
+        {
+          "param": [
+            "7222701",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "7325420822629944133",
+      "questId": 72227,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 722270201
+    },
+    {
+      "lockGameTime": true,
+      "npcId": [
+        20453
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7222703,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7222705",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "5042063095730779474",
+      "questId": 72227,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Inazuma_72227/Q7222703",
+      "initDialog": 722270301
+    },
+    {
+      "questIdleTalk": true,
+      "npcId": [
+        20453
+      ],
+      "id": 7222706,
+      "priority": 2,
+      "beginCond": [
+        {
+          "param": [
+            "7222705",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "8713831399406326770",
+      "questId": 72227,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 722270601
+    }
+  ],
+  "titleTextMapHash": 458061567,
+  "luaPath": "Actor/Quest/WQ72227",
+  "id": 72227,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7222701,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133223497"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "npcId": [
+        20453
+      ],
+      "order": 2,
+      "isRewind": true,
+      "descTextMapHash": 1491221308,
+      "subId": 7222701,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7222702_finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "72167",
+            "1"
+          ],
+          "type": "QUEST_EXEC_INC_QUEST_GLOBAL_VAR"
+        },
+        {
+          "param": [
+            "3112",
+            "0"
+          ],
+          "type": "QUEST_EXEC_SET_WEATHER_GADGET"
+        }
+      ],
+      "npcId": [
+        20453
+      ],
+      "order": 5,
+      "isRewind": true,
+      "descTextMapHash": 133990052,
+      "subId": 7222702,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7222703,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133223125"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "6",
+            "0"
+          ],
+          "type": "QUEST_EXEC_CHANGE_MAP_AREA_STATE"
+        }
+      ],
+      "npcId": [
+        20453
+      ],
+      "order": 6,
+      "isRewind": true,
+      "banType": "BAN_GROUP_TRANSPORT_MAP",
+      "descTextMapHash": 3303266020,
+      "subId": 7222703,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7222703,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "order": 7,
+      "descTextMapHash": 3911440052,
+      "subId": 7222704,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7222703,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        20453
+      ],
+      "order": 8,
+      "isRewind": true,
+      "banType": "BAN_GROUP_TRANSPORT_MAP",
+      "finishParent": true,
+      "descTextMapHash": 916900700,
+      "subId": 7222705,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7222706_finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "descTextMapHash": 3913403980,
+      "subId": 7222706,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7222707_finish",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "descTextMapHash": 3398115260,
+      "subId": 7222707,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7222708,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 4,
+      "isRewind": true,
+      "descTextMapHash": 498207580,
+      "subId": 7222708,
+      "mainId": 72227,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "18192838937901252268",
+    "7836273839602214382"
+  ],
+  "showType": "QUEST_HIDDEN"
+}

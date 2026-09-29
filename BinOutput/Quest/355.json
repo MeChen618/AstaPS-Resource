@@ -1,0 +1,197 @@
+{
+  "chapterId": 1001,
+  "freeStyleDic": {
+    "1005": [
+      1200
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 35506,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "35505",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "9248401430127186592",
+      "questId": 355,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Mengde1_355/Q35506",
+      "initDialog": 3550601
+    },
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 35507,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "35503",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "8533941914901807206",
+      "questId": 355,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Mengde1_355/Q35507",
+      "initDialog": 3550701
+    }
+  ],
+  "titleTextMapHash": 1760867577,
+  "luaPath": "Actor/Quest/AQ355",
+  "rewardIdList": [
+    100355
+  ],
+  "series": 1001,
+  "id": 355,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            36101,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "Q301WendyPlay"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 1480972647,
+      "subId": 35501,
+      "mainId": 355
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1022,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q355Stone"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "autoGuide": "QUEST_GUIDE_AUTO_DISABLE"
+      },
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 3003852887,
+      "subId": 35502,
+      "mainId": 355
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            35507,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "1005"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2752259327,
+      "subId": 35503,
+      "mainId": 355
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100135,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM"
+        }
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "Q355Stone2"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2764279223,
+      "subId": 35504,
+      "mainId": 355
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            35506,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "1005"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 4123189479,
+      "subId": 35505,
+      "mainId": 355
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 1001,
+  "descTextMapHash": 70357383,
+  "suggestTrackMainQuestList": [
+    354
+  ]
+}

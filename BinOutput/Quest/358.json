@@ -1,0 +1,152 @@
+{
+  "chapterId": 1001,
+  "forcePreloadLuaList": [
+    "6495836611823195172"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 35724,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "35801",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "953059573397316472",
+      "questId": 358,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 3572401
+    },
+    {
+      "npcId": [
+        1006
+      ],
+      "id": 35801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "35802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1216393231763144916",
+      "questId": 358,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Mengde1_358/Q35801",
+      "initDialog": 3580101
+    }
+  ],
+  "titleTextMapHash": 4251075033,
+  "luaPath": "Actor/Quest/AQ358",
+  "rewardIdList": [
+    100358
+  ],
+  "series": 1001,
+  "id": 358,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "0,24",
+          "type": "QUEST_CONTENT_GAME_TIME_TICK"
+        }
+      ],
+      "order": 1,
+      "descTextMapHash": 2056537383,
+      "subId": 35800,
+      "mainId": 358,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1004,
+            0
+          ],
+          "type": "QUEST_CONTENT_ENTER_ROOM"
+        }
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "QuestKnighthood"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2846281071,
+      "subId": 35801,
+      "mainId": 358
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            35801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1004",
+            "201004902,2"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "stepDescTextMapHash": 1679041023,
+      "order": 3,
+      "guide": {
+        "param": [
+          "1006"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 1004,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 1519184903,
+      "subId": 35802,
+      "mainId": 358
+    }
+  ],
+  "preloadLuaList": [
+    "4543246233805805157",
+    "5909385756826696338",
+    "5575916732172504491",
+    "3958618578976986035",
+    "14457059026087496718",
+    "3841318294950499357"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 1001,
+  "descTextMapHash": 3824461879,
+  "suggestTrackMainQuestList": [
+    306,
+    307,
+    308
+  ]
+}

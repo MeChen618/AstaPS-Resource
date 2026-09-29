@@ -1,0 +1,116 @@
+{
+  "forcePreloadLuaList": [
+    "7127758768363301960"
+  ],
+  "luaPath": "Actor/Quest/WQ79036",
+  "id": 79036,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "failExec": [
+        {
+          "param": [
+            "7903603"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7903601",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            20135,
+            0
+          ],
+          "type": "QUEST_CONTENT_LEAVE_SCENE"
+        }
+      ],
+      "subId": 7903601,
+      "mainId": 79036,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7903603"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7903602,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        },
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7903602",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7903601"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "order": 3,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            20135,
+            0
+          ],
+          "type": "QUEST_CONTENT_LEAVE_SCENE"
+        }
+      ],
+      "subId": 7903602,
+      "mainId": 79036,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1138,
+            11
+          ],
+          "type": "QUEST_CONTENT_ENTER_DUNGEON"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7903603,
+      "mainId": 79036,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "13388410697971288207"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,57 @@
+{
+  "luaPath": "Actor/Quest/WQ72277",
+  "id": 72277,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7227701,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "7227701"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        },
+        {
+          "param": [
+            "5",
+            "155005024"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7227701,
+      "mainId": 72277,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7224214,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7227702,
+      "mainId": 72277,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 3268310854,
+  "showType": "QUEST_HIDDEN"
+}

@@ -1,0 +1,117 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30551
+      ],
+      "id": 7468401,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7468401",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "9437642062956954522",
+      "questId": 74684,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/EffigyChallenge_V5_74684/Q7468401",
+      "initDialog": 746840101
+    }
+  ],
+  "titleTextMapHash": 1818126127,
+  "activityId": 5188,
+  "luaPath": "Actor/Quest/WQ74684",
+  "rewardIdList": [
+    174684
+  ],
+  "HMJOIJHMGJD": true,
+  "id": 74684,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7468401,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        30551
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "30551"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 4101455676,
+      "subId": 7468401,
+      "mainId": 74684
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            48013,
+            0
+          ],
+          "type": "QUEST_CONTENT_LEAVE_SCENE"
+        }
+      ],
+      "DMCMNPLMCKL": "QUEST_HIDDEN",
+      "order": 2,
+      "failParentShow": "QUEST_HIDDEN",
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 701240988,
+      "subId": 7468402,
+      "mainId": 74684,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7468403,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "DMCMNPLMCKL": "QUEST_HIDDEN",
+      "order": 1,
+      "failParentShow": "QUEST_HIDDEN",
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            7468403,
+            0
+          ],
+          "type": "QUEST_CONTENT_NOT_FINISH_PLOT"
+        }
+      ],
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 907293444,
+      "subId": 7468403,
+      "mainId": 74684,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 4262556238,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

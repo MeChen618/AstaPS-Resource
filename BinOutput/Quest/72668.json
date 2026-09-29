@@ -1,0 +1,71 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1005
+      ],
+      "id": 7266801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7266802",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "5173428060733379821",
+      "questId": 72668,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 726680101
+    }
+  ],
+  "titleTextMapHash": 106875695,
+  "luaPath": "Actor/Quest/WQ72668",
+  "id": 72668,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "7266801",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "subId": 7266801,
+      "mainId": 72668,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7266801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 2,
+      "finishParent": true,
+      "subId": 7266802,
+      "mainId": 72668,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

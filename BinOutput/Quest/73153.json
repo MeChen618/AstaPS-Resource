@@ -1,0 +1,77 @@
+{
+  "titleTextMapHash": 70134959,
+  "luaPath": "Actor/Quest/WQ73153",
+  "id": 73153,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            0,
+            0
+          ],
+          "param_str": "73153_SeedingCompleted",
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "count": 1
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1"
+          ],
+          "type": "QUEST_EXEC_INIT_TIME_VAR"
+        }
+      ],
+      "order": 1,
+      "descTextMapHash": 352060500,
+      "subId": 7315301,
+      "mainId": 73153,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            73153,
+            1
+          ],
+          "param_str": "1",
+          "type": "QUEST_CONTENT_TIME_VAR_PASS_DAY"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133301057"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "3",
+            "133301161"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        },
+        {
+          "param": [
+            "3",
+            "133301162"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"
+        }
+      ],
+      "order": 2,
+      "finishParent": true,
+      "descTextMapHash": 2745384972,
+      "subId": 7315302,
+      "mainId": 73153,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 66029006,
+  "showType": "QUEST_HIDDEN"
+}

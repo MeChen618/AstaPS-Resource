@@ -1,0 +1,197 @@
+{
+  "taskId": 20400,
+  "freeStyleDic": {
+    "155101": [
+      1240,
+      1300
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        155101
+      ],
+      "id": 2000501,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2000501",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "10061054037689138756",
+      "questId": 20005,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200050101
+    },
+    {
+      "npcId": [
+        155101
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 2000502,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2000501",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "2000502",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "13310518195883218521",
+      "questId": 20005,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200050201
+    },
+    {
+      "npcId": [
+        155101
+      ],
+      "id": 2000504,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "2000502",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "14481562732004970093",
+      "questId": 20005,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 200050401
+    }
+  ],
+  "titleTextMapHash": 2914246041,
+  "luaPath": "Actor/Quest/IQ20005",
+  "id": 20005,
+  "type": "IQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2000501,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "100301",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "155101"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_UI",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3835235824,
+      "subId": 2000501,
+      "mainId": 20005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            100301,
+            0
+          ],
+          "type": "QUEST_CONTENT_OBTAIN_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q20005KEY01_Reminder",
+          "80"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 3482584272,
+      "subId": 2000502,
+      "mainId": 20005
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2000504,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "20400"
+          ],
+          "type": "QUEST_EXEC_NOTIFY_DAILY_TASK"
+        },
+        {
+          "param": [
+            "100301",
+            "1"
+          ],
+          "type": "QUEST_EXEC_DEL_PACK_ITEM"
+        }
+      ],
+      "npcId": [
+        155101
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "155101"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_FINISH"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2058911752,
+      "subId": 2000504,
+      "mainId": 20005
+    }
+  ],
+  "repeatable": true,
+  "descTextMapHash": 3714098359
+}

@@ -1,0 +1,71 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        30046
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 7065801,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7065801",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "7065401",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "15343720540716106390",
+      "questId": 70658,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 706580101
+    }
+  ],
+  "titleTextMapHash": 2735690655,
+  "luaPath": "Actor/Quest/WQ70658",
+  "rewardIdList": [
+    170658
+  ],
+  "id": 70658,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7065801,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "30046",
+          "SELECT_NPC_NONE"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "finishParent": true,
+      "descTextMapHash": 3308788636,
+      "subId": 7065801,
+      "mainId": 70658
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 761197390,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

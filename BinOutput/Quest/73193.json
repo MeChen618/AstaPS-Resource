@@ -1,0 +1,210 @@
+{
+  "freeStyleDic": {
+    "4235": [
+      5010
+    ]
+  },
+  "talks": [
+    {
+      "npcId": [
+        4232
+      ],
+      "id": 7319307,
+      "priority": 4,
+      "beginCond": [
+        {
+          "param": [
+            "7319302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "11014372811252961096",
+      "questId": 73193,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "lowPriority": true,
+      "initDialog": 731930701
+    },
+    {
+      "npcId": [
+        4232
+      ],
+      "id": 7319309,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7319305",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_HOST",
+      "assetIndex": "7418012861681425441",
+      "questId": 73193,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/Sumeru_73193/Q7319309",
+      "initDialog": 731930901
+    }
+  ],
+  "titleTextMapHash": 4031030247,
+  "luaPath": "Actor/Quest/WQ73193",
+  "rewardIdList": [
+    173193
+  ],
+  "series": 73193,
+  "id": 73193,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7319301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "73193",
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_QUEST_GLOBAL_VAR"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "4232"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2404601524,
+      "subId": 7319301,
+      "mainId": 73193,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            133308032,
+            32027
+          ],
+          "param_str": "201",
+          "type": "QUEST_CONTENT_GADGET_STATE_CHANGE"
+        }
+      ],
+      "npcId": [
+        4232
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "guide_Q7319302",
+          "8"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1774476156,
+      "subId": 7319302,
+      "mainId": 73193
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7319309,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        4232
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "4232"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 528972780,
+      "subId": 7319305,
+      "mainId": 73193
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7319305,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 5,
+      "guide": {
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET"
+      },
+      "isRewind": true,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 1224682492,
+      "subId": 7319308,
+      "mainId": 73193,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7319309,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "3",
+            "133308032,3"
+          ],
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE"
+        }
+      ],
+      "order": 4,
+      "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
+      "descTextMapHash": 4027246164,
+      "subId": 7319309,
+      "mainId": 73193,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "descTextMapHash": 2860638838
+}

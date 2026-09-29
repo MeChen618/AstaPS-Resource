@@ -1,0 +1,119 @@
+{
+  "talks": [
+    {
+      "npcId": [
+        1435
+      ],
+      "id": 2050401,
+      "priority": 9,
+      "beginCond": [
+        {
+          "param": [
+            "2050401",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "12946298054881164342",
+      "questId": 20504,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205040101,
+      "freeStyleList": [
+        9000
+      ]
+    },
+    {
+      "npcId": [
+        1435
+      ],
+      "id": 2050403,
+      "priority": 9,
+      "beginCond": [
+        {
+          "param": [
+            "2050403",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1285676083492921505",
+      "questId": 20504,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "initDialog": 205040301,
+      "freeStyleList": [
+        9000
+      ]
+    }
+  ],
+  "titleTextMapHash": 2871858105,
+  "luaPath": "Actor/Quest/IQ20504",
+  "HMJOIJHMGJD": true,
+  "id": 20504,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            2050401,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1435"
+        ],
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_START"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1937392280,
+      "subId": 2050401,
+      "mainId": 20504
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            1141,
+            0
+          ],
+          "type": "QUEST_CONTENT_TRIGGER_FIRE"
+        }
+      ],
+      "order": 2,
+      "descTextMapHash": 16094912,
+      "subId": 2050402,
+      "mainId": 20504,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            2050403,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 3,
+      "finishParent": true,
+      "descTextMapHash": 4171602704,
+      "subId": 2050403,
+      "mainId": 20504,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 3443928831,
+  "mainQuestTag": "MAINQUEST_TAG_GUIDE"
+}

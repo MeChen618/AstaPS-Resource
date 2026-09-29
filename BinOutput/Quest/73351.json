@@ -1,0 +1,86 @@
+{
+  "luaPath": "Actor/Quest/WQ73351",
+  "id": 73351,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7335101,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1075",
+            "1209"
+          ],
+          "type": "QUEST_EXEC_DEL_SCENE_TAG"
+        },
+        {
+          "param": [
+            "1075",
+            "1210"
+          ],
+          "type": "QUEST_EXEC_ADD_SCENE_TAG"
+        }
+      ],
+      "order": 1,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            7335102,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishParent": true,
+      "subId": 7335101,
+      "mainId": 73351,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7335102,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "finishExec": [
+        {
+          "param": [
+            "1075",
+            "1209"
+          ],
+          "type": "QUEST_EXEC_DEL_SCENE_TAG"
+        }
+      ],
+      "order": 2,
+      "isRewind": true,
+      "failCond": [
+        {
+          "param": [
+            7335101,
+            3
+          ],
+          "type": "QUEST_CONTENT_QUEST_STATE_EQUAL"
+        }
+      ],
+      "finishParent": true,
+      "subId": 7335102,
+      "mainId": 73351,
+      "showType": "QUEST_HIDDEN"
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "showType": "QUEST_HIDDEN"
+}

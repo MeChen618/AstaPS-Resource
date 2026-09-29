@@ -1,0 +1,353 @@
+{
+  "chapterId": 1202,
+  "forcePreloadLuaList": [
+    "7428875993721553365"
+  ],
+  "talks": [
+    {
+      "npcId": [
+        1005,
+        1033
+      ],
+      "id": 200301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "1497013765691029443",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200301",
+      "initDialog": 20030101
+    },
+    {
+      "npcId": [
+        1033
+      ],
+      "id": 200302,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "10255572446056934481",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200302",
+      "initDialog": 20030201
+    },
+    {
+      "npcId": [
+        12021
+      ],
+      "id": 200303,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200303",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "16499192244854132493",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200303",
+      "initDialog": 20030301
+    },
+    {
+      "npcId": [
+        1013
+      ],
+      "id": 200304,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200304",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14600152336039492461",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200304",
+      "initDialog": 20030401
+    },
+    {
+      "npcId": [
+        3010,
+        1005
+      ],
+      "id": 200305,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200305",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "3601803496206847225",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_AUTO",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200305",
+      "initDialog": 20030501
+    },
+    {
+      "questIdleTalk": true,
+      "npcId": [
+        1033
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 200306,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200304",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "14542032418017682244",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200306",
+      "lowPriority": true,
+      "initDialog": 20030601
+    },
+    {
+      "npcId": [
+        3010
+      ],
+      "beginCondComb": "LOGIC_AND",
+      "id": 200307,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "200305",
+            "3"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        },
+        {
+          "param": [
+            "200301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "heroTalk": "TALK_HERO_MAIN",
+      "activeMode": "PLAY_MODE_SINGLE",
+      "assetIndex": "883088121221636882",
+      "questId": 2003,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/AQ/Inazuma1_2003/Q200307",
+      "initDialog": 20030701
+    }
+  ],
+  "titleTextMapHash": 55039543,
+  "luaPath": "Actor/Quest/AQ2003",
+  "rewardIdList": [
+    102003
+  ],
+  "HGFFNBIGPJK": true,
+  "series": 1201,
+  "id": 2003,
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            200301,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1033,
+        3009,
+        3010
+      ],
+      "order": 2,
+      "guide": {
+        "param": [
+          "Q2003tuoma"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 1060,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 1691568772,
+      "subId": 200301,
+      "mainId": 2003
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            200302,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1033
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "Q200302paimon"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 4241962932,
+      "subId": 200302,
+      "mainId": 2003
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            200303,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "order": 4,
+      "guide": {
+        "param": [
+          "12021"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 2754217796,
+      "subId": 200303,
+      "mainId": 2003
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            200304,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        1013
+      ],
+      "order": 5,
+      "guide": {
+        "param": [
+          "Q2004tuoma"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 1061,
+        "type": "QUEST_GUIDE_LOCATION",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "descTextMapHash": 2169017924,
+      "subId": 200304,
+      "mainId": 2003
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            200305,
+            0
+          ],
+          "type": "QUEST_CONTENT_COMPLETE_TALK"
+        }
+      ],
+      "npcId": [
+        3010
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "3010"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "descTextMapHash": 104139516,
+      "subId": 200305,
+      "exclusivePlaceList": [
+        322009
+      ],
+      "mainId": 2003
+    }
+  ],
+  "preloadLuaList": [
+    "14457059026087496718",
+    "11979119750132919924",
+    "15171274567631076351",
+    "4836875411990741521",
+    "5562642429489138982"
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "resId": 1009,
+  "descTextMapHash": 2497041318,
+  "suggestTrackMainQuestList": [
+    2004
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "talks": [
+    {
+      "nextTalks": [
+        7201302
+      ],
+      "npcId": [
+        1036
+      ],
+      "id": 7201301,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7201301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "12480469141759491622",
+      "questId": 72013,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/72013/Q7201301",
+      "initDialog": 720130101
+    },
+    {
+      "npcId": [
+        1036
+      ],
+      "id": 7201302,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7201301",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "forceNpcNotDestroy": true,
+      "assetIndex": "3080609997065604696",
+      "questId": 72013,
+      "performCfg": "QuestDialogue/WQ/72013/Q7201302",
+      "initDialog": 720130201
+    },
+    {
+      "nextTalks": [
+        7201304
+      ],
+      "npcId": [
+        1036
+      ],
+      "id": 7201303,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7201302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "forceNpcNotDestroy": true,
+      "assetIndex": "2238574205859919703",
+      "questId": 72013,
+      "beginWay": "TALK_BEGIN_MANUAL",
+      "performCfg": "QuestDialogue/WQ/72013/Q7201303",
+      "initDialog": 720130301
+    },
+    {
+      "npcId": [
+        1036
+      ],
+      "id": 7201304,
+      "priority": 5,
+      "beginCond": [
+        {
+          "param": [
+            "7201302",
+            "2"
+          ],
+          "type": "QUEST_COND_STATE_EQUAL"
+        }
+      ],
+      "assetIndex": "9135445430284260696",
+      "questId": 72013,
+      "performCfg": "QuestDialogue/WQ/72013/Q7201304",
+      "initDialog": 720130401
+    }
+  ],
+  "titleTextMapHash": 1003978527,
+  "luaPath": "Actor/Quest/WQ72013",
+  "id": 72013,
+  "type": "WQ",
+  "subQuests": [
+    {
+      "finishCond": [
+        {
+          "param": [
+            7201301,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 1,
+      "guide": {
+        "param": [
+          "1036"
+        ],
+        "type": "QUEST_GUIDE_NPC"
+      },
+      "isRewind": true,
+      "subId": 7201301,
+      "mainId": 72013,
+      "showType": "QUEST_HIDDEN"
+    },
+    {
+      "failExec": [
+        {
+          "param": [
+            "7201301"
+          ],
+          "type": "QUEST_EXEC_ROLLBACK_QUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "param": [
+            7201302,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "order": 2,
+      "finishParent": true,
+      "subId": 7201302,
+      "mainId": 72013
+    },
+    {
+      "finishCond": [
+        {
+          "param": [
+            7201303,
+            0
+          ],
+          "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "npcId": [
+        1088
+      ],
+      "order": 3,
+      "guide": {
+        "param": [
+          "1088"
+        ],
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE",
+        "guideScene": 3,
+        "type": "QUEST_GUIDE_NPC",
+        "autoGuide": "QUEST_GUIDE_AUTO_ENABLE"
+      },
+      "isRewind": true,
+      "finishParent": true,
+      "subId": 7201303,
+      "mainId": 72013
+    }
+  ],
+  "activeMode": "PLAY_MODE_SINGLE",
+  "descTextMapHash": 1796009582
+}
