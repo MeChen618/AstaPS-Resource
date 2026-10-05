@@ -117,7 +117,18 @@
       "isRewind": true,
       "descTextMapHash": 3416483463,
       "subId": 37101,
-      "mainId": 371
+      "mainId": 371,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            37005,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -421,7 +432,18 @@
       "descTextMapHash": 1536121527,
       "subId": 37114,
       "mainId": 371,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            37108,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -437,7 +459,28 @@
       "descTextMapHash": 2565408671,
       "subId": 37115,
       "mainId": 371,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            37114,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_NOT_EQUAL",
+          "param": [
+            37109,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     }
   ],
   "preloadLuaList": [

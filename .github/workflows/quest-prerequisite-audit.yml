@@ -1,0 +1,164 @@
+name: Quest prerequisite audit
+
+on:
+  push:
+    branches: [main, sync/upstream-quest-repairs]
+    paths:
+      - "tools/fix_quest_prerequisites.py"
+      - "tools/fix_liyue_prerequisites.py"
+      - "tools/fix_liyue_act1_branches.py"
+      - "tools/fix_liyue_chapter1102.py"
+      - "tools/fix_liyue_chapter1103.py"
+      - "tools/fix_chapter1104_quest_rows.py"
+      - "tools/fix_liyue_chapter1105.py"
+      - "tools/fix_inazuma_chapter1201.py"
+      - "tools/fix_inazuma_chapter1202.py"
+      - "tools/fix_inazuma_chapter1203.py"
+      - "tools/fix_inazuma_chapter1204.py"
+      - "tools/fix_liyue_chapter1205.py"
+      - "tools/fix_chapter1206_quest_rows.py"
+      - "tools/fix_chapter1207_prerequisites.py"
+      - "BinOutput/Quest/**.json"
+      - "ExcelBinOutput/QuestExcelConfigData.json"
+      - ".github/workflows/quest-prerequisite-audit.yml"
+  pull_request:
+    paths:
+      - "tools/fix_quest_prerequisites.py"
+      - "tools/fix_liyue_prerequisites.py"
+      - "tools/fix_liyue_act1_branches.py"
+      - "tools/fix_liyue_chapter1102.py"
+      - "tools/fix_liyue_chapter1103.py"
+      - "tools/fix_chapter1104_quest_rows.py"
+      - "tools/fix_liyue_chapter1105.py"
+      - "tools/fix_inazuma_chapter1201.py"
+      - "tools/fix_inazuma_chapter1202.py"
+      - "tools/fix_inazuma_chapter1203.py"
+      - "tools/fix_inazuma_chapter1204.py"
+      - "tools/fix_liyue_chapter1205.py"
+      - "tools/fix_chapter1206_quest_rows.py"
+      - "tools/fix_chapter1207_prerequisites.py"
+      - "BinOutput/Quest/**.json"
+      - "ExcelBinOutput/QuestExcelConfigData.json"
+      - ".github/workflows/quest-prerequisite-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            tools
+            BinOutput/Quest/400.json
+            BinOutput/Quest/1000.json
+            BinOutput/Quest/1002.json
+            BinOutput/Quest/1003.json
+            BinOutput/Quest/1008.json
+            BinOutput/Quest/1009.json
+            BinOutput/Quest/1010.json
+            BinOutput/Quest/1011.json
+            BinOutput/Quest/1012.json
+            BinOutput/Quest/1013.json
+            BinOutput/Quest/1014.json
+            BinOutput/Quest/1015.json
+            BinOutput/Quest/1016.json
+            BinOutput/Quest/1018.json
+            BinOutput/Quest/1020.json
+            BinOutput/Quest/1021.json
+            BinOutput/Quest/1022.json
+            BinOutput/Quest/1023.json
+            BinOutput/Quest/1024.json
+            BinOutput/Quest/1025.json
+            BinOutput/Quest/8000.json
+            BinOutput/Quest/8001.json
+            BinOutput/Quest/8002.json
+            BinOutput/Quest/8003.json
+            BinOutput/Quest/18000.json
+            BinOutput/Quest/2000.json
+            BinOutput/Quest/2001.json
+            BinOutput/Quest/2002.json
+            BinOutput/Quest/2011.json
+            BinOutput/Quest/2012.json
+            BinOutput/Quest/2013.json
+            BinOutput/Quest/2003.json
+            BinOutput/Quest/2004.json
+            BinOutput/Quest/2005.json
+            BinOutput/Quest/2006.json
+            BinOutput/Quest/2007.json
+            BinOutput/Quest/2008.json
+            BinOutput/Quest/2009.json
+            BinOutput/Quest/2010.json
+            BinOutput/Quest/2014.json
+            BinOutput/Quest/2015.json
+            BinOutput/Quest/2016.json
+            BinOutput/Quest/2017.json
+            BinOutput/Quest/2018.json
+            BinOutput/Quest/2019.json
+            BinOutput/Quest/2020.json
+            BinOutput/Quest/2021.json
+            BinOutput/Quest/11009.json
+            BinOutput/Quest/11013.json
+            BinOutput/Quest/11014.json
+            BinOutput/Quest/11015.json
+            BinOutput/Quest/8004.json
+            BinOutput/Quest/8005.json
+            BinOutput/Quest/8006.json
+            BinOutput/Quest/8007.json
+            BinOutput/Quest/1019.json
+            BinOutput/Quest/1028.json
+            BinOutput/Quest/1029.json
+            BinOutput/Quest/1030.json
+            BinOutput/Quest/1031.json
+            ExcelBinOutput/QuestExcelConfigData.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile prerequisite tools
+        run: |
+          python -m py_compile \
+            tools/fix_quest_prerequisites.py \
+            tools/fix_liyue_prerequisites.py \
+            tools/fix_liyue_act1_branches.py \
+            tools/fix_liyue_chapter1102.py \
+            tools/fix_liyue_chapter1103.py \
+            tools/fix_chapter1104_quest_rows.py \
+            tools/fix_liyue_chapter1105.py \
+            tools/fix_inazuma_chapter1201.py \
+            tools/fix_inazuma_chapter1202.py \
+            tools/fix_inazuma_chapter1203.py \
+            tools/fix_inazuma_chapter1204.py \
+            tools/fix_liyue_chapter1205.py \
+            tools/fix_chapter1206_quest_rows.py \
+            tools/fix_chapter1207_prerequisites.py
+
+      - name: Verify cumulative prerequisite graph through Chapter 1207
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "tools")
+          import fix_chapter1207_prerequisites as entry
+          import fix_liyue_prerequisites as base
+
+          ids = [repair.sub_id for repair in base.REPAIRS]
+          assert len(ids) == 678, f"expected 678 cumulative repair rows, got {len(ids)}"
+          assert len(ids) == len(set(ids)), "duplicate subId in cumulative repair manifest"
+          assert base.patch_sources(Path("BinOutput/Quest"), check=True) == 0
+          assert base.patch_excel(Path("ExcelBinOutput/QuestExcelConfigData.json"), check=True) == 0
+          print("Cumulative prerequisite graph through Chapter 1207 is clean and idempotent.")
+          PY
+
+      - name: Verify Chapter 1104 quest rows and prerequisites
+        run: |
+          python tools/fix_chapter1104_quest_rows.py --check
+
+      - name: Verify Chapter 1206 quest rows and prerequisites
+        run: |
+          python tools/fix_chapter1206_quest_rows.py --check
