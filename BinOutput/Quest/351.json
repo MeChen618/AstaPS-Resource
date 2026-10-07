@@ -8,6 +8,7 @@
   "id": 351,
   "subQuests": [
     {
+      "finishCondComb": "LOGIC_OR",
       "finishCond": [
         {
           "param": [
@@ -77,9 +78,21 @@
       "showGuide": "QUEST_GUIDE_ITEM_MOVE_HIDE",
       "descTextMapHash": 3236261087,
       "subId": 35101,
-      "mainId": 351
+      "mainId": 351,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            35100,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
+      "acceptCondComb": "LOGIC_OR",
       "finishCond": [
         {
           "param": [
@@ -102,9 +115,39 @@
       "finishParent": true,
       "descTextMapHash": 1403458759,
       "subId": 35102,
-      "mainId": 351
+      "mainId": 351,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            35103,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            35105,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            35105,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
+      "acceptCondComb": "LOGIC_AND",
       "finishCond": [
         {
           "param": [
@@ -126,7 +169,36 @@
       "showGuide": "QUEST_GUIDE_ITEM_MOVE_HIDE",
       "subId": 35103,
       "mainId": 351,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            35106,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_NOT_EQUAL",
+          "param": [
+            35105,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_NOT_EQUAL",
+          "param": [
+            35105,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -136,6 +208,14 @@
             0
           ],
           "type": "QUEST_CONTENT_FINISH_PLOT"
+        }
+      ],
+      "beginExec": [
+        {
+          "param": [
+            "1"
+          ],
+          "type": "QUEST_EXEC_SET_IS_GAME_TIME_LOCKED"
         }
       ],
       "order": 1,

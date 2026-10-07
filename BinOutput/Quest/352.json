@@ -55,9 +55,21 @@
       "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
       "descTextMapHash": 2150333847,
       "subId": 35200,
-      "mainId": 352
+      "mainId": 352,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            35102,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
+      "finishCondComb": "LOGIC_OR",
       "finishCond": [
         {
           "param": [
@@ -115,6 +127,8 @@
       "mainId": 352
     },
     {
+      "finishCondComb": "LOGIC_AND",
+      "failCondComb": "LOGIC_OR",
       "failExec": [
         {
           "param": [

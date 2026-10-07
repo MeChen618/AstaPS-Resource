@@ -139,7 +139,39 @@
       "isRewind": true,
       "descTextMapHash": 3121911476,
       "subId": 800001,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            1800027,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            45406,
+            3,
+            0
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_ACTIVITY_END",
+          "param": [
+            2003001,
+            0,
+            0,
+            0,
+            0
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     },
     {
       "finishCond": [
@@ -174,7 +206,18 @@
       "isRewind": true,
       "descTextMapHash": 641250884,
       "subId": 800002,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800001,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "failExec": [
@@ -219,7 +262,18 @@
       ],
       "descTextMapHash": 259877468,
       "subId": 800003,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800002,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "failExec": [
@@ -281,7 +335,18 @@
       ],
       "descTextMapHash": 2918034276,
       "subId": 800004,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800003,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "failExec": [
@@ -328,7 +393,18 @@
       ],
       "descTextMapHash": 122254988,
       "subId": 800005,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800004,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "failExec": [
@@ -370,7 +446,18 @@
       ],
       "descTextMapHash": 2632875724,
       "subId": 800006,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800009,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -397,7 +484,18 @@
       "finishParent": true,
       "descTextMapHash": 3943814084,
       "subId": 800007,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800008,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "failExec": [
@@ -450,7 +548,18 @@
       ],
       "descTextMapHash": 2202146596,
       "subId": 800008,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800006,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "failExec": [
@@ -502,7 +611,18 @@
       ],
       "descTextMapHash": 2507660860,
       "subId": 800009,
-      "mainId": 8000
+      "mainId": 8000,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            800005,
+            3,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -533,7 +653,20 @@
       "descTextMapHash": 254385828,
       "subId": 800010,
       "mainId": 8000,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+          "param": [
+            10006,
+            1,
+            0,
+            0,
+            0
+          ],
+          "param_str": ""
+        }
+      ]
     }
   ],
   "preloadLuaList": [
