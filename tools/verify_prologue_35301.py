@@ -30,6 +30,10 @@ def main():
     assert {"type": "QUEST_EXEC_REFRESH_GROUP_SUITE", "param": ["3", "133003002,2"]} in skills.get("beginExec", [])
     amber = quest(354, 35401)
     assert any(c.get("type") == "QUEST_COND_STATE_EQUAL" and c.get("param", [])[:2] == [35505, 3] for c in amber.get("acceptCond", []))
+    amber_dialogue = quest(354, 35402)
+    assert amber_dialogue.get("gainItems") == [{"itemId": 1021, "count": 1}], (
+        "Native 35402 must grant permanent Amber item 1021 after the encounter"
+    )
 
     excel_path = Path("ExcelBinOutput/QuestExcelConfigData.json")
     if excel_path.is_file():
@@ -38,7 +42,7 @@ def main():
         assert len(matches) == 1, f"QuestExcel 35301 count: {len(matches)}"
         assert_no_trial(matches[0], "QuestExcelConfigData.json#35301")
 
-    print("PASS: 35301 no early Amber, 35302 slime suite, 35401 after forest")
+    print("PASS: 35301 no early Amber, 35302 slime suite, 35401 after forest, 35402 Amber reward")
 
 
 if __name__ == "__main__":
