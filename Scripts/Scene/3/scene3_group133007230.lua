@@ -124,6 +124,9 @@ suites = {
 
 -- 触发条件
 function condition_EVENT_SELECT_OPTION_302(context, evt)
+	if ScriptLib.GetGroupVariableValue(context, "seal_battle_done") == 1 then
+		return false
+	end
 	if evt.param1 ~= defs.seal_model then 
 		return false
 	end
@@ -161,6 +164,8 @@ function action_EVENT_SEAL_BATTLE_END_303(context, evt)
 		ScriptLib.SetWorktopOptionsByGroupId(context, defs.group_id, defs.seal_model, {24})
 	elseif evt.param2 == 1 then
 		ScriptLib.SetGroupVariableValue(context, "seal_battle_done", 1)
+		ScriptLib.DelWorktopOptionByGroupId(context, defs.group_id, defs.seal_model, 24)
+		ScriptLib.RemoveExtraGroupSuite(context, defs.group_id, 3)
 		ScriptLib.SetGadgetStateByConfigId(context, defs.seal_model, GadgetState.Default)
 		ScriptLib.SetGadgetStateByConfigId(context, defs.seal_id, GadgetState.Default)
 	end
@@ -184,7 +189,7 @@ function action_EVENT_GROUP_LOAD_318(context, evt)
 	local qf = ScriptLib.GetGroupVariableValue(context, "Quest_Flag")
 	if qf == 1 then
 		ScriptLib.AddExtraGroupSuite(context, defs.group_id, 2)
-		if ScriptLib.GetGroupVariableValue(context, "first_touch_done") == 1 then
+		if ScriptLib.GetGroupVariableValue(context, "first_touch_done") == 1 and ScriptLib.GetGroupVariableValue(context, "seal_battle_done") ~= 1 then
 			ScriptLib.SetWorktopOptionsByGroupId(context, defs.group_id, defs.seal_model, {24})
 		end
 	end
