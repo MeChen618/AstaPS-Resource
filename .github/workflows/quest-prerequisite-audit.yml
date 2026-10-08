@@ -18,6 +18,7 @@ on:
       - "tools/fix_liyue_chapter1205.py"
       - "tools/fix_chapter1206_quest_rows.py"
       - "tools/fix_chapter1207_prerequisites.py"
+      - "tools/verify_prologue_35301.py"
       - "BinOutput/Quest/**.json"
       - "ExcelBinOutput/QuestExcelConfigData.json"
       - ".github/workflows/quest-prerequisite-audit.yml"
@@ -37,6 +38,7 @@ on:
       - "tools/fix_liyue_chapter1205.py"
       - "tools/fix_chapter1206_quest_rows.py"
       - "tools/fix_chapter1207_prerequisites.py"
+      - "tools/verify_prologue_35301.py"
       - "BinOutput/Quest/**.json"
       - "ExcelBinOutput/QuestExcelConfigData.json"
       - ".github/workflows/quest-prerequisite-audit.yml"
@@ -53,6 +55,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             tools
+            BinOutput/Quest/353.json
             BinOutput/Quest/400.json
             BinOutput/Quest/1000.json
             BinOutput/Quest/1002.json
@@ -162,3 +165,6 @@ jobs:
       - name: Verify Chapter 1206 quest rows and prerequisites
         run: |
           python tools/fix_chapter1206_quest_rows.py --check
+
+      - name: Verify wind tutorial has no premature trial Amber
+        run: python tools/verify_prologue_35301.py
