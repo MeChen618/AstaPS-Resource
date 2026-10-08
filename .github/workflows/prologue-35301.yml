@@ -1,0 +1,40 @@
+name: Native prologue 35301 / 35401 regression
+
+on:
+  push:
+    branches:
+      - fix/35301-native-trial-sequence
+    paths:
+      - "BinOutput/Quest/353.json"
+      - "BinOutput/Quest/354.json"
+      - "ExcelBinOutput/QuestExcelConfigData.json"
+      - "tools/verify_prologue_35301.py"
+      - ".github/workflows/prologue-35301.yml"
+  pull_request:
+    paths:
+      - "BinOutput/Quest/353.json"
+      - "BinOutput/Quest/354.json"
+      - "ExcelBinOutput/QuestExcelConfigData.json"
+      - "tools/verify_prologue_35301.py"
+      - ".github/workflows/prologue-35301.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            BinOutput/Quest/353.json
+            BinOutput/Quest/354.json
+            ExcelBinOutput/QuestExcelConfigData.json
+            tools/verify_prologue_35301.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate 7.1 Anemo tutorial and Amber encounter
+        run: python tools/verify_prologue_35301.py
