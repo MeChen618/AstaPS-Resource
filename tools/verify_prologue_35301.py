@@ -35,6 +35,17 @@ def main():
         "Native 35402 must grant permanent Amber item 1021 after the encounter"
     )
 
+    floating_target = quest(354, 35404)
+    assert floating_target.get("beginExec") == [
+        {"param": ["3", "133003439"], "type": "QUEST_EXEC_NOTIFY_GROUP_LUA"}
+    ], "35404 must notify scene group 133003439 when Amber's bow tutorial starts"
+
+    group_lua = Path("Scripts/Scene/3/scene3_group133003439.lua").read_text(encoding="utf-8")
+    assert 'source = "35404"' in group_lua
+    assert 'ScriptLib.CreateGroupTimerEvent(context, 133003439, "born", 1)' in group_lua
+    assert 'ScriptLib.CreateGadget(context, { config_id = 3834 })' in group_lua
+    assert 'ScriptLib.AddQuestProgress(context, "133003079")' in group_lua
+
     excel_path = Path("ExcelBinOutput/QuestExcelConfigData.json")
     if excel_path.is_file():
         excel = json.loads(excel_path.read_text(encoding="utf-8"))
@@ -42,7 +53,7 @@ def main():
         assert len(matches) == 1, f"QuestExcel 35301 count: {len(matches)}"
         assert_no_trial(matches[0], "QuestExcelConfigData.json#35301")
 
-    print("PASS: 35301 no early Amber, 35302 slime suite, 35401 after forest, 35402 Amber reward")
+    print("PASS: 35301 no early Amber, 35302 slime suite, 35401 after forest, 35402 Amber reward, 35404 scripted moving target")
 
 
 if __name__ == "__main__":
