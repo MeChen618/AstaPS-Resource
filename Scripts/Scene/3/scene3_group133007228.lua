@@ -155,7 +155,9 @@ function action_EVENT_GADGET_STATE_CHANGE_304(context, evt)
 		end
 		return 0
 	else
-		return -1
+		-- Other gadgets, including the seal model, also emit state changes.
+		-- Ignore them successfully so this repeating trigger stays registered.
+		return 0
 	end
 end
 
