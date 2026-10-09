@@ -1,0 +1,125 @@
+name: One-time 7.1 prologue flattened Excel correction
+on:
+  push:
+    branches:
+      - fix/35301-native-trial-sequence
+    paths:
+      - ".github/workflows/repair-prologue-excel-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  correct-excel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            ExcelBinOutput/QuestExcelConfigData.json
+            .github/workflows/repair-prologue-excel-once.yml
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Remove only the non-native early Amber grant from 35301
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import pathlib
+          import re
+
+          path = pathlib.Path("ExcelBinOutput/QuestExcelConfigData.json")
+          source = path.read_text(encoding="utf-8")
+          matches = list(re.finditer(r'"subId"\s*:\s*35301\b', source))
+          if len(matches) != 1:
+              raise AssertionError(f"Expected exactly one QuestExcel 35301, found {len(matches)}")
+          needle = matches[0].start()
+          # Locate the enclosing JSON row without reserializing the 80+ MB file.
+          in_string = False
+          escaped = False
+          depth = 0
+          start = None
+          for i, char in enumerate(source[:needle]):
+              if in_string:
+                  if escaped:
+                      escaped = False
+                  elif char == "\\":
+                      escaped = True
+                  elif char == '"':
+                      in_string = False
+              elif char == '"':
+                  in_string = True
+              elif char == '{':
+                  if depth == 0:
+                      start = i
+                  depth += 1
+              elif char == '}':
+                  depth -= 1
+          if start is None or depth != 1 or in_string:
+              raise AssertionError("Could not isolate the top-level 35301 row")
+          end = None
+          for i in range(needle, len(source)):
+              char = source[i]
+              if in_string:
+                  if escaped:
+                      escaped = False
+                  elif char == "\\":
+                      escaped = True
+                  elif char == '"':
+                      in_string = False
+              elif char == '"':
+                  in_string = True
+              elif char == '{':
+                  depth += 1
+              elif char == '}':
+                  depth -= 1
+                  if depth == 0:
+                      end = i + 1
+                      break
+          if end is None:
+              raise AssertionError("Unterminated QuestExcel 35301 row")
+          row_text = source[start:end]
+          row = json.loads(row_text)
+          if row.get("subId") != 35301:
+              raise AssertionError("Identified the wrong quest")
+          action = {"param": ["1"], "type": "QUEST_EXEC_GRANT_TRIAL_AVATAR"}
+          if row.get("finishExec") != [action]:
+              raise AssertionError(f"Unexpected 35301 finish actions: {row.get('finishExec')}")
+          field = re.search(r'"finishExec"\s*:', row_text)
+          if field is None:
+              raise AssertionError("35301 finishExec field missing")
+          array_start = row_text.index('[', field.end())
+          value, array_size = json.JSONDecoder().raw_decode(row_text[array_start:])
+          if value != [action]:
+              raise AssertionError("Array selection mismatch")
+          corrected = row_text[:array_start] + "[]" + row_text[array_start + array_size:]
+          if json.loads(corrected).get("finishExec") != []:
+              raise AssertionError("35301 flattened action was not removed")
+          new_source = source[:start] + corrected + source[end:]
+          if new_source == source:
+              raise AssertionError("No change made")
+          path.write_text(new_source, encoding="utf-8")
+          print("Removed only QuestExcel 35301 premature trial-avatar finish action")
+          PY
+          git diff --check
+          python - <<'PY'
+          import subprocess
+          stats = subprocess.check_output(
+              ["git", "diff", "--numstat", "--", "ExcelBinOutput/QuestExcelConfigData.json"],
+              text=True,
+          ).strip().split()
+          if len(stats) != 3 or int(stats[0]) + int(stats[1]) > 20:
+              raise AssertionError(f"Unexpectedly broad Excel edit: {stats}")
+          print("Targeted Excel diff:", stats)
+          PY
+      - name: Commit targeted fix and remove this one-time workflow
+        shell: bash
+        run: |
+          git add ExcelBinOutput/QuestExcelConfigData.json
+          git rm .github/workflows/repair-prologue-excel-once.yml
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "fix(quest): remove premature Amber grant from flattened 7.1 QuestExcel 35301"
+          git push origin HEAD:fix/35301-native-trial-sequence
