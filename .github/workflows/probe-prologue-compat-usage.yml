@@ -1,0 +1,58 @@
+name: Probe Mondstadt compatibility usage
+
+on:
+  push:
+    branches:
+      - fix/35301-native-trial-sequence
+    paths:
+      - .github/workflows/probe-prologue-compat-usage.yml
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: Classify reviewed compatibility fields
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, runpy
+          from pathlib import Path
+
+          ns = runpy.run_path("tools/verify_prologue_compat.py")
+          expected = ns["EXPECTED"]
+          flat = {str(r.get("subId")): r for r in json.loads(
+              Path("ExcelBinOutput/QuestExcelConfigData.json").read_text()) if isinstance(r, dict)}
+
+          counts = {"fallback":0,"shadowed_same":0,"dead":0}
+          for main, tasks in expected.items():
+              subs = {str(r["subId"]): r for r in json.loads(
+                  Path(f"BinOutput/Quest/{main}.json").read_text())["subQuests"]}
+              for sub, fields in tasks.items():
+                  for key, want in fields.items():
+                      x = flat[sub]
+                      if key in ("beginExec","finishExec","failExec"):
+                          usable = [v for v in (x.get(key) or []) if isinstance(v,dict) and v.get("type")]
+                          status = "shadowed_same" if usable else "fallback"
+                      elif key == "gainItems":
+                          usable = [v for v in (x.get(key) or []) if isinstance(v,dict)
+                                    and v.get("itemId",0)>0 and v.get("count",0)>0]
+                          status = "shadowed_same" if usable else "fallback"
+                      elif key in ("finishCondComb","failCondComb"):
+                          cond_key = "finishCond" if key=="finishCondComb" else "failCond"
+                          conds = x.get(cond_key) or subs[sub].get(cond_key) or []
+                          if len(conds) <= 1:
+                              status = "dead"
+                          else:
+                              xv=x.get(key)
+                              status = "shadowed_same" if xv and xv!="LOGIC_NONE" else "fallback"
+                      else:
+                          status = "fallback"
+                      counts[status]+=1
+                      print(status, main, sub, key, json.dumps(want,separators=(",",":")))
+          print("COUNTS", json.dumps(counts,sort_keys=True))
+          PY
