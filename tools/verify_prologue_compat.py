@@ -15,6 +15,7 @@ def verify():
     flattened = {str(r.get("subId")):r for r in read("ExcelBinOutput/QuestExcelConfigData.json")
                  if isinstance(r, dict)}
     n = 0
+    conflicts = []
     for main, tasks in EXPECTED.items():
         subs = {str(r["subId"]):r for r in read(f"BinOutput/Quest/{main}.json")["subQuests"]}
         for sub, fields in tasks.items():
@@ -25,14 +26,19 @@ def verify():
                 excel = flattened[sub].get(key)
                 if key in ("beginExec","finishExec","failExec","gainItems"):
                     if excel:
-                        assert all(i in excel for i in value), (
-                            f"QuestExcel shadows repaired {sub}.{key}")
+                        if not all(i in excel for i in value):
+                            conflicts.append((sub, key, "BinOutput", value, "QuestExcel", excel))
                 elif excel and excel != "LOGIC_NONE":
-                    assert excel == value, f"QuestExcel contradicts repaired {sub}.{key}"
+                    if excel != value:
+                        conflicts.append((sub, key, "BinOutput", value, "QuestExcel", excel))
                 n += 1
     dungeon = {r["subId"]:r for r in read("BinOutput/Quest/309.json")["subQuests"]}[30901]
     assert [c["param"][0] for c in dungeon["finishCond"]] == [1001,1,1003]
     assert dungeon["finishCondComb"] == "LOGIC_AND"
+    if conflicts:
+        for conflict in conflicts:
+            print("CONFLICT", repr(conflict))
+        raise AssertionError(f"{len(conflicts)} QuestExcel precedence conflict(s)")
     print(f"PASS: {len(EXPECTED)} main quests, {n} reviewed compatibility fields, no Excel masks")
 
 if __name__ == "__main__":
