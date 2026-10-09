@@ -53,7 +53,7 @@ def main():
         assert len(matches) == 1, f"QuestExcel 35301 count: {len(matches)}"
         assert_no_trial(matches[0], "QuestExcelConfigData.json#35301")
 
-    print("PASS: 35301 no early Amber, 35302 slime suite, 35401 after forest, 35402 Amber reward, 35404 scripted moving target")
+    print("PASS: BinOutput + flattened QuestExcel 35301 no premature Amber; 35302 slime, 35402 reward, 35404 target")
 
 
 if __name__ == "__main__":
