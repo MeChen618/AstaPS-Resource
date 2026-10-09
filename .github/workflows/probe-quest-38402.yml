@@ -1,0 +1,33 @@
+name: Probe Quest 38402 compatibility
+
+on:
+  push:
+    branches:
+      - fix/35301-native-trial-sequence
+    paths:
+      - .github/workflows/probe-quest-38402.yml
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: Inspect 38402 representations
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          flat = json.loads(Path("ExcelBinOutput/QuestExcelConfigData.json").read_text())
+          row = next(r for r in flat if r.get("subId") == 38402)
+          quest = json.loads(Path("BinOutput/Quest/384.json").read_text())
+          brow = next(r for r in quest["subQuests"] if r.get("subId") == 38402)
+          keys = ("subId","mainId","isRewind","finishParent","finishCond","failCond","beginExec","finishExec","failExec")
+          print("QUEST_EXCEL_38402", json.dumps({k:row.get(k) for k in keys if k in row}, ensure_ascii=False))
+          print("BINOUTPUT_38402", json.dumps({k:brow.get(k) for k in keys if k in brow}, ensure_ascii=False))
+          PY
