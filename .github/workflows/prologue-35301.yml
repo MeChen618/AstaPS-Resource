@@ -1,0 +1,110 @@
+name: Mondstadt 7.1 prologue resource contract
+
+on:
+  push:
+    branches:
+      - fix/35301-native-trial-sequence
+    paths:
+      - "BinOutput/Quest/307.json"
+      - "BinOutput/Quest/308.json"
+      - "BinOutput/Quest/309.json"
+      - "BinOutput/Quest/353.json"
+      - "BinOutput/Quest/354.json"
+      - "BinOutput/Quest/359.json"
+      - "BinOutput/Quest/372.json"
+      - "BinOutput/Quest/373.json"
+      - "BinOutput/Quest/376.json"
+      - "BinOutput/Quest/382.json"
+      - "BinOutput/Quest/383.json"
+      - "BinOutput/Quest/384.json"
+      - "BinOutput/Quest/388.json"
+      - "BinOutput/Quest/389.json"
+      - "BinOutput/Quest/390.json"
+      - "BinOutput/Quest/394.json"
+      - "BinOutput/Quest/396.json"
+      - "BinOutput/Quest/397.json"
+      - "BinOutput/Quest/398.json"
+      - "BinOutput/Quest/20101.json"
+      - "ExcelBinOutput/QuestExcelConfigData.json"
+      - "ExcelBinOutput/WeatherExcelConfigData.json"
+      - "Scripts/Scene/3/scene3_group133003439.lua"
+      - "tools/verify_prologue_35301.py"
+      - "tools/verify_prologue_35901.py"
+      - "tools/verify_prologue_compat.py"
+      - ".github/workflows/prologue-35301.yml"
+  pull_request:
+    paths:
+      - "BinOutput/Quest/307.json"
+      - "BinOutput/Quest/308.json"
+      - "BinOutput/Quest/309.json"
+      - "BinOutput/Quest/353.json"
+      - "BinOutput/Quest/354.json"
+      - "BinOutput/Quest/359.json"
+      - "BinOutput/Quest/372.json"
+      - "BinOutput/Quest/373.json"
+      - "BinOutput/Quest/376.json"
+      - "BinOutput/Quest/382.json"
+      - "BinOutput/Quest/383.json"
+      - "BinOutput/Quest/384.json"
+      - "BinOutput/Quest/388.json"
+      - "BinOutput/Quest/389.json"
+      - "BinOutput/Quest/390.json"
+      - "BinOutput/Quest/394.json"
+      - "BinOutput/Quest/396.json"
+      - "BinOutput/Quest/397.json"
+      - "BinOutput/Quest/398.json"
+      - "BinOutput/Quest/20101.json"
+      - "ExcelBinOutput/QuestExcelConfigData.json"
+      - "ExcelBinOutput/WeatherExcelConfigData.json"
+      - "Scripts/Scene/3/scene3_group133003439.lua"
+      - "tools/verify_prologue_35301.py"
+      - "tools/verify_prologue_35901.py"
+      - "tools/verify_prologue_compat.py"
+      - ".github/workflows/prologue-35301.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            BinOutput/Quest/307.json
+            BinOutput/Quest/308.json
+            BinOutput/Quest/309.json
+            BinOutput/Quest/353.json
+            BinOutput/Quest/354.json
+            BinOutput/Quest/359.json
+            BinOutput/Quest/372.json
+            BinOutput/Quest/373.json
+            BinOutput/Quest/376.json
+            BinOutput/Quest/382.json
+            BinOutput/Quest/383.json
+            BinOutput/Quest/384.json
+            BinOutput/Quest/388.json
+            BinOutput/Quest/389.json
+            BinOutput/Quest/390.json
+            BinOutput/Quest/394.json
+            BinOutput/Quest/396.json
+            BinOutput/Quest/397.json
+            BinOutput/Quest/398.json
+            BinOutput/Quest/20101.json
+            ExcelBinOutput/QuestExcelConfigData.json
+            ExcelBinOutput/WeatherExcelConfigData.json
+            Scripts/Scene/3/scene3_group133003439.lua
+            tools/verify_prologue_35301.py
+            tools/verify_prologue_35901.py
+            tools/verify_prologue_compat.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify 35301 Amber tutorial and 35901 weather sources
+        run: |
+          python tools/verify_prologue_35301.py
+          python tools/verify_prologue_35901.py
+      - name: Verify sourced Acts I-III compatibility and QuestExcel precedence
+        run: python tools/verify_prologue_compat.py

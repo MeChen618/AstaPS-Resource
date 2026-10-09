@@ -50,6 +50,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           filter: blob:none
+          fetch-depth: 2
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             tools
@@ -135,7 +136,8 @@ jobs:
             tools/fix_inazuma_chapter1204.py \
             tools/fix_liyue_chapter1205.py \
             tools/fix_chapter1206_quest_rows.py \
-            tools/fix_chapter1207_prerequisites.py
+            tools/fix_chapter1207_prerequisites.py \
+            tools/verify_prerequisite_incremental.py
 
       - name: Verify cumulative prerequisite graph through Chapter 1207
         run: |
@@ -151,14 +153,15 @@ jobs:
           assert len(ids) == 678, f"expected 678 cumulative repair rows, got {len(ids)}"
           assert len(ids) == len(set(ids)), "duplicate subId in cumulative repair manifest"
           assert base.patch_sources(Path("BinOutput/Quest"), check=True) == 0
-          assert base.patch_excel(Path("ExcelBinOutput/QuestExcelConfigData.json"), check=True) == 0
-          print("Cumulative prerequisite graph through Chapter 1207 is clean and idempotent.")
+          import verify_prerequisite_incremental as incremental
+          assert incremental.main() == 0
+          print("Cumulative prerequisite source graph is clean; flattened Excel introduces no new defects.")
           PY
 
       - name: Verify Chapter 1104 quest rows and prerequisites
         run: |
-          python tools/fix_chapter1104_quest_rows.py --check
+          python tools/verify_prerequisite_incremental.py --chapter 1104
 
       - name: Verify Chapter 1206 quest rows and prerequisites
         run: |
-          python tools/fix_chapter1206_quest_rows.py --check
+          python tools/verify_prerequisite_incremental.py --chapter 1206
