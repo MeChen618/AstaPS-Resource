@@ -12,9 +12,11 @@ the PR test merge commit (upstream target), or the previous push commit.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import subprocess
 import sys
+from pathlib import Path
 
 # Register the complete cumulative manifest, including Chapter 1207.
 import fix_chapter1207_prerequisites as entry  # noqa: F401
@@ -78,20 +80,21 @@ def regression_errors(before: dict[int, str], after: dict[int, str]) -> list[str
     return errors
 
 
-def main() -> int:
-    ids = [repair.sub_id for repair in base.REPAIRS]
-    if len(ids) != EXPECTED_ROWS or len(ids) != len(set(ids)):
-        raise ValueError(f"Expected {EXPECTED_ROWS} unique cumulative prerequisite repairs")
-
-    # Explicit first-parent ref: HEAD^ on GitHub's PR merge commit is the
-    # upstream base, not the contributing fork's previous commit.
+def read_base_and_head() -> tuple[str, str]:
+    # Explicit first-parent ref: HEAD^ on a PR merge commit is the upstream
+    # target, not the contributing fork's preceding commit.
     previous = subprocess.run(
         ["git", "show", f"HEAD^:{EXCEL_PATH}"],
         check=True,
         capture_output=True,
     ).stdout.decode("utf-8")
-    with open(EXCEL_PATH, encoding="utf-8") as stream:
-        current = stream.read()
+    return previous, Path(EXCEL_PATH).read_text(encoding="utf-8")
+
+
+def check_cumulative(previous: str, current: str) -> int:
+    ids = [repair.sub_id for repair in base.REPAIRS]
+    if len(ids) != EXPECTED_ROWS or len(ids) != len(set(ids)):
+        raise ValueError(f"Expected {EXPECTED_ROWS} unique cumulative prerequisite repairs")
 
     before = pending_rows(previous)
     after = pending_rows(current)
@@ -109,6 +112,73 @@ def main() -> int:
     if after:
         print("NOTICE: Existing upstream debt is not silently counted as repaired.")
     return 0
+
+
+def check_chapter(number: str, previous: str, current: str) -> int:
+    if number == "1104":
+        import fix_chapter1104_quest_rows as chapter
+    elif number == "1206":
+        import fix_chapter1206_quest_rows as chapter
+    else:
+        raise ValueError(f"Unknown chapter: {number}")
+
+    # Keep the source check absolute: only the already-broken flattened Excel
+    # is eligible for baseline-aware checks.
+    source_status, source_rows = chapter.patch_sources(
+        Path("BinOutput/Quest"), check=True
+    )
+    if source_status:
+        return 1
+
+    before_rows = json.loads(previous)
+    after_rows = json.loads(current)
+    expected = chapter.EXPECTED_SUB_IDS
+    before_missing, before_errors = chapter.validate_excel_rows(before_rows, source_rows)
+    after_missing, after_errors = chapter.validate_excel_rows(after_rows, source_rows)
+
+    # Match the original 1104 verifier's external prerequisite guard.
+    if number == "1104":
+        present = {int(row.get("subId") or 0) for row in after_rows if isinstance(row, dict)}
+        external_missing = {1800027, 45406} - present
+        if external_missing:
+            raise ValueError(f"Chapter 1104 external prerequisites missing: {sorted(external_missing)}")
+
+    introduced_missing = set(after_missing) - set(before_missing)
+    introduced_errors = set(after_errors) - set(before_errors)
+    if after_missing and set(after_missing) != expected:
+        print(
+            f"ERROR: Chapter {number} has a partial flattened-row state: "
+            f"{sorted(after_missing)}", file=sys.stderr
+        )
+        return 1
+    if introduced_missing or introduced_errors:
+        for sub_id in sorted(introduced_missing):
+            print(f"ERROR: Chapter {number} newly missing row {sub_id}", file=sys.stderr)
+        for error in sorted(introduced_errors):
+            print(f"ERROR: Chapter {number} {error}", file=sys.stderr)
+        return 1
+
+    print(
+        f"Chapter {number}: {len(expected)} expected rows, "
+        f"{len(after_missing)} still missing, "
+        f"{len(after_errors)} existing semantic errors; "
+        "new defects: 0."
+    )
+    if after_missing or after_errors:
+        print(f"NOTICE: Chapter {number} upstream baseline remains incomplete.")
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--chapter", choices=("cumulative", "1104", "1206"),
+                        default="cumulative")
+    args = parser.parse_args()
+
+    previous, current = read_base_and_head()
+    if args.chapter == "cumulative":
+        return check_cumulative(previous, current)
+    return check_chapter(args.chapter, previous, current)
 
 
 if __name__ == "__main__":
