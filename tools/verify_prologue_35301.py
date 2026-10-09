@@ -47,11 +47,11 @@ def main():
     assert 'ScriptLib.AddQuestProgress(context, "133003079")' in group_lua
 
     excel_path = Path("ExcelBinOutput/QuestExcelConfigData.json")
-    if excel_path.is_file():
-        excel = json.loads(excel_path.read_text(encoding="utf-8"))
-        matches = [r for r in excel if r.get("subId") == 35301]
-        assert len(matches) == 1, f"QuestExcel 35301 count: {len(matches)}"
-        assert_no_trial(matches[0], "QuestExcelConfigData.json#35301")
+    assert excel_path.is_file(), "Missing flattened QuestExcel: cannot verify the server-priority 35301 source"
+    excel = json.loads(excel_path.read_text(encoding="utf-8"))
+    matches = [r for r in excel if r.get("subId") == 35301]
+    assert len(matches) == 1, f"QuestExcel 35301 count: {len(matches)}"
+    assert_no_trial(matches[0], "QuestExcelConfigData.json#35301")
 
     print("PASS: BinOutput + flattened QuestExcel 35301 no premature Amber; 35302 slime, 35402 reward, 35404 target")
 
