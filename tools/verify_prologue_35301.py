@@ -46,12 +46,31 @@ def main():
     assert 'ScriptLib.CreateGadget(context, { config_id = 3834 })' in group_lua
     assert 'ScriptLib.AddQuestProgress(context, "133003079")' in group_lua
 
+    storm = quest(359, 35901)
+    assert storm.get("beginExec") == [
+        {"param": ["3", "1"], "type": "QUEST_EXEC_SET_WEATHER_GADGET"}
+    ], "35901 must activate the Mondstadt weather area at quest start"
+    assert storm.get("finishExec") == [
+        {"param": ["3", "0"], "type": "QUEST_EXEC_SET_WEATHER_GADGET"},
+        {"param": ["1", "0"], "type": "QUEST_EXEC_SET_WEATHER_GADGET"},
+    ], "35901 must clear both quest weather areas when it ends"
+
     excel_path = Path("ExcelBinOutput/QuestExcelConfigData.json")
     assert excel_path.is_file(), "Missing flattened QuestExcel: cannot verify the server-priority 35301 source"
     excel = json.loads(excel_path.read_text(encoding="utf-8"))
     matches = [r for r in excel if r.get("subId") == 35301]
     assert len(matches) == 1, f"QuestExcel 35301 count: {len(matches)}"
     assert_no_trial(matches[0], "QuestExcelConfigData.json#35301")
+    # QuestExcel is authoritative if it contains actions. An empty list must
+    # allow the reviewed BinOutput begin-action compatibility fallback.
+    storm_excel = [r for r in excel if r.get("subId") == 35901]
+    assert len(storm_excel) == 1, "Missing flattened 35901"
+    populated_begin = [x for x in storm_excel[0].get("beginExec", []) if x.get("type")]
+    if populated_begin:
+        assert {"param": ["3", "1"], "type": "QUEST_EXEC_SET_WEATHER_GADGET"} in populated_begin, (
+            "QuestExcel beginExec masks 35901 storm activation"
+        )
+
 
     print("PASS: BinOutput + flattened QuestExcel 35301 no premature Amber; 35302 slime, 35402 reward, 35404 target")
 
