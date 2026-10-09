@@ -7,6 +7,9 @@ on:
     paths:
       - "BinOutput/Quest/353.json"
       - "BinOutput/Quest/354.json"
+      - "BinOutput/Quest/359.json"
+      - "ExcelBinOutput/WeatherExcelConfigData.json"
+      - "tools/verify_prologue_35901.py"
       - "Scripts/Scene/3/scene3_group133003439.lua"
       - "ExcelBinOutput/QuestExcelConfigData.json"
       - "tools/verify_prologue_35301.py"
@@ -15,6 +18,9 @@ on:
     paths:
       - "BinOutput/Quest/353.json"
       - "BinOutput/Quest/354.json"
+      - "BinOutput/Quest/359.json"
+      - "ExcelBinOutput/WeatherExcelConfigData.json"
+      - "tools/verify_prologue_35901.py"
       - "ExcelBinOutput/QuestExcelConfigData.json"
       - "tools/verify_prologue_35301.py"
       - ".github/workflows/prologue-35301.yml"
@@ -32,6 +38,9 @@ jobs:
           sparse-checkout: |
             BinOutput/Quest/353.json
             BinOutput/Quest/354.json
+            BinOutput/Quest/359.json
+            ExcelBinOutput/WeatherExcelConfigData.json
+            tools/verify_prologue_35901.py
             Scripts/Scene/3/scene3_group133003439.lua
             ExcelBinOutput/QuestExcelConfigData.json
             tools/verify_prologue_35301.py
@@ -39,4 +48,6 @@ jobs:
         with:
           python-version: "3.11"
       - name: Validate 7.1 Anemo tutorial and Amber encounter
-        run: python tools/verify_prologue_35301.py
+        run: |
+          python tools/verify_prologue_35301.py
+          python tools/verify_prologue_35901.py
