@@ -1,0 +1,40 @@
+name: One-time reconcile 7.1 flattened QuestExcel 35301
+on:
+  push:
+    branches:
+      - fix/35301-native-trial-sequence
+    paths:
+      - ".github/workflows/one-time-35301-excel-reconcile.yml"
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    if: github.repository == 'RinoPaw/AstaPS-Resource'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            ExcelBinOutput/QuestExcelConfigData.json
+            tools/reconcile_flattened_35301.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Patch only verified flattened quest row
+        run: python tools/reconcile_flattened_35301.py
+      - name: Commit corrected materialization
+        run: |
+          if git diff --quiet -- ExcelBinOutput/QuestExcelConfigData.json; then
+            echo 'Already corrected'
+            exit 0
+          fi
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ExcelBinOutput/QuestExcelConfigData.json
+          git commit -m 'fix(quest): remove invalid 35301 Amber grant from flattened QuestExcel'
+          git push origin HEAD:fix/35301-native-trial-sequence
