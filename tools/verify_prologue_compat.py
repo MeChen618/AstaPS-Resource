@@ -25,9 +25,22 @@ def verify():
                 assert actual == value, f"{sub}.{key}: expected {value}, got {actual}"
                 excel = flattened[sub].get(key)
                 if key in ("beginExec","finishExec","failExec","gainItems"):
-                    if excel:
-                        if not all(i in excel for i in value):
-                            conflicts.append((sub, key, "BinOutput", value, "QuestExcel", excel))
+                    # Match QuestData.effectiveExecList: type-less materialized
+                    # entries are placeholders, not executable overrides.
+                    # param_str is metadata and is irrelevant to action identity.
+                    usable = ([
+                        x for x in (excel or [])
+                        if isinstance(x, dict) and x.get("type")]
+                        if key != "gainItems" else [
+                        x for x in (excel or [])
+                        if isinstance(x, dict) and x.get("itemId", 0) > 0
+                        and x.get("count", 0) > 0])
+                    if usable:
+                        def matches(want, candidate):
+                            keys = ("itemId", "count") if key == "gainItems" else ("type", "param")
+                            return all(want.get(k) == candidate.get(k) for k in keys)
+                        if not all(any(matches(i, j) for j in usable) for i in value):
+                            conflicts.append((sub, key, "BinOutput", value, "QuestExcel", usable))
                 elif excel and excel != "LOGIC_NONE":
                     if excel != value:
                         conflicts.append((sub, key, "BinOutput", value, "QuestExcel", excel))
