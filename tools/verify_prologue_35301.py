@@ -32,7 +32,7 @@ def main():
     assert any(c.get("type") == "QUEST_COND_STATE_EQUAL" and c.get("param", [])[:2] == [35505, 3] for c in amber.get("acceptCond", []))
     amber_dialogue = quest(354, 35402)
     assert amber_dialogue.get("gainItems") == [{"itemId": 1021, "count": 1}], (
-        "Native 35402 must grant permanent Amber item 1021 after the encounter"
+        "Compatibility 35402 must grant permanent Amber item 1021 after the encounter"
     )
 
     floating_target = quest(354, 35404)
