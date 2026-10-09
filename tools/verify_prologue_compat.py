@@ -48,6 +48,14 @@ def verify():
     dungeon = {r["subId"]:r for r in read("BinOutput/Quest/309.json")["subQuests"]}[30901]
     assert [c["param"][0] for c in dungeon["finishCond"]] == [1001,1,1003]
     assert dungeon["finishCondComb"] == "LOGIC_AND"
+
+    # 38402 has no fail condition in exact 7.1 or flattened QuestExcel. A failExec on this row is
+    # unreachable in AstaPS and must not be reintroduced as compatibility data.
+    q38402 = {r["subId"]:r for r in read("BinOutput/Quest/384.json")["subQuests"]}[38402]
+    x38402 = flattened["38402"]
+    assert not q38402.get("failExec"), "38402 must not carry a dead failExec"
+    assert not x38402.get("failCond"), "38402 flattened QuestExcel unexpectedly gained failCond"
+    assert not x38402.get("failExec"), "38402 flattened QuestExcel unexpectedly gained failExec"
     if conflicts:
         for conflict in conflicts:
             print("CONFLICT", repr(conflict))
