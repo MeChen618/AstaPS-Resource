@@ -48,7 +48,7 @@ def collect_repairs(ref37: Path, ref40: Path) -> dict[int, object]:
     mains = {r.main_id for r in repairs}
     historical = [read_reference(root, mains) for root in (ref37, ref40)]
     for sub_id, repair in by_sub_id.items():
-        expect = normalize_accept(repair.expected_accept)
+        expect = normalize_accept(list(repair.expected_accept))
         for index, reference in enumerate(historical):
             old = reference.get(sub_id)
             assert old is not None, (index, sub_id, "historical row missing")
@@ -134,7 +134,7 @@ def main() -> int:
                     if before.get(key) != patch.get(key)}
             assert keys <= {"acceptCond", "acceptCondComb"}, (sid, keys)
             repair = fixes[sid]
-            assert normalize_accept(patch.get("acceptCond")) == normalize_accept(repair.expected_accept)
+            assert normalize_accept(patch.get("acceptCond")) == normalize_accept(list(repair.expected_accept))
             if repair.expected_comb is not None:
                 assert patch.get("acceptCondComb") == repair.expected_comb
     assert changed == len(touched)
