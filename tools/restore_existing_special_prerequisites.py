@@ -76,8 +76,17 @@ def main() -> int:
     current = read_excel(args.excel)
     baseline = read_excel(args.baseline)
     assert set(current) == set(baseline)
-    assert all(current.get(sid) is not None and current[sid] == baseline[sid]
-               for sid in fixes), "Special-chapter rows drifted from pinned main; abort"
+    for sid, repair in fixes.items():
+        original_row = baseline[sid]
+        expected_row = dict(original_row)
+        target = [dict(x) for x in repair.expected_accept]
+        if normalize_accept(original_row.get("acceptCond")) != normalize_accept(target):
+            expected_row["acceptCond"] = target
+        if repair.expected_comb is not None and original_row.get("acceptCondComb") != repair.expected_comb:
+            expected_row["acceptCondComb"] = repair.expected_comb
+        assert current.get(sid) in (original_row, expected_row), (
+            "Special-chapter row changed outside the verified patch", sid
+        )
 
     original = args.excel.read_text(encoding="utf-8")
     edits = []
