@@ -1,0 +1,107 @@
+name: Apply verified special-chapter QuestExcel prerequisite repairs
+
+on:
+  push:
+    branches: [fix/questexcel-verified-special-chapters-71]
+    paths:
+      - .github/workflows/apply-verified-special-quests-71.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-and-apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/questexcel-verified-special-chapters-71
+          fetch-depth: 2
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            tools
+            ExcelBinOutput/QuestExcelConfigData.json
+            .github/workflows/apply-verified-special-quests-71.yml
+
+      - uses: actions/checkout@v4
+        with:
+          ref: 1b8854b7fab610981dd2115956f0bceee6503c5c
+          path: baseline
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            ExcelBinOutput/QuestExcelConfigData.json
+
+      - uses: actions/checkout@v4
+        with:
+          repository: TomyJan/GCResource
+          ref: '3700'
+          path: reference3700
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            BinOutput/Quest/8000.json
+            BinOutput/Quest/8001.json
+            BinOutput/Quest/8002.json
+            BinOutput/Quest/8003.json
+            BinOutput/Quest/8004.json
+            BinOutput/Quest/8005.json
+            BinOutput/Quest/8006.json
+            BinOutput/Quest/8007.json
+
+      - uses: actions/checkout@v4
+        with:
+          repository: TomyJan/GCResource
+          ref: '4000'
+          path: reference4000
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            BinOutput/Quest/8000.json
+            BinOutput/Quest/8001.json
+            BinOutput/Quest/8002.json
+            BinOutput/Quest/8003.json
+            BinOutput/Quest/8004.json
+            BinOutput/Quest/8005.json
+            BinOutput/Quest/8006.json
+            BinOutput/Quest/8007.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate sources, patch only known prerequisite fields, check idempotence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/restore_existing_special_prerequisites.py
+          python tools/restore_existing_special_prerequisites.py \
+            --baseline baseline/ExcelBinOutput/QuestExcelConfigData.json \
+            --reference-3700 reference3700 \
+            --reference-4000 reference4000
+          python tools/restore_existing_special_prerequisites.py --check \
+            --baseline baseline/ExcelBinOutput/QuestExcelConfigData.json \
+            --reference-3700 reference3700 \
+            --reference-4000 reference4000
+          git diff --check
+          git diff --name-only | grep -qx 'ExcelBinOutput/QuestExcelConfigData.json'
+
+      - name: Commit checked QuestExcel data to isolated fix branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- ExcelBinOutput/QuestExcelConfigData.json; then
+            echo 'No QuestExcel repair needed'
+            exit 0
+          fi
+          git config user.name "Rino"
+          git config user.email "71957726+RinoPaw@users.noreply.github.com"
+          git add ExcelBinOutput/QuestExcelConfigData.json
+          git commit -m 'fix(resources): restore reviewed 1104 and 1206 prerequisites [skip ci]'
+          git push origin HEAD:fix/questexcel-verified-special-chapters-71
