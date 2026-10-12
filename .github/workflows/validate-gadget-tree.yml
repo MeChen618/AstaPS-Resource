@@ -1,0 +1,56 @@
+name: Validate gadget tree script
+
+on:
+  push:
+    paths:
+      - Scripts/Gadget/tree.lua
+      - .github/workflows/validate-gadget-tree.yml
+  pull_request:
+    paths:
+      - Scripts/Gadget/tree.lua
+      - .github/workflows/validate-gadget-tree.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            Scripts/Gadget/tree.lua
+          sparse-checkout-cone-mode: false
+      - name: Install Lua 5.4
+        run: sudo apt-get update && sudo apt-get install -y lua5.4
+      - name: Verify tree on-hurt dispatch
+        shell: bash
+        run: |
+          lua5.4 - <<'LUA'
+          local ids = {}
+          local calls = {}
+          GadgetState = { GatherDrop = 99 }
+          ScriptLib = {
+            GetGatherConfigIdList = function() return ids end,
+            SetGadgetStateByConfigId = function(_, id, state)
+              calls[#calls + 1] = { id, state }
+            end,
+          }
+          dofile("Scripts/Gadget/tree.lua")
+
+          OnBeHurt({}, 0, 0, false)
+          assert(#calls == 0, "empty list must not update a gadget")
+
+          ids = { 1234, 5678 }
+          OnBeHurt({}, 0, 0, true)
+          assert(#calls == 1, "expected exactly one update")
+          assert(calls[1][1] == 1234, "must use first config ID")
+          assert(calls[1][2] == GadgetState.GatherDrop, "wrong gadget state")
+
+          ids = {}
+          OnBeHurt({}, 0, 0, false)
+          assert(#calls == 1, "empty list must not update a gadget")
+          LUA

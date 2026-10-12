@@ -91,16 +91,20 @@ suites = {
 
 -- Recover only an active cooking sequence, using the native hidden stage quests.
 function action_EVENT_GROUP_LOAD_377020(context, evt)
-	if ScriptLib.GetQuestState(context, 0, 101104) ~= 3 or
-	   ScriptLib.GetQuestState(context, 0, 101127) ~= 2 then return 0 end
+	local uid_list = ScriptLib.GetSceneUidList(context)
+	if uid_list == nil or #uid_list == 0 then return 0 end
+	local avatar_eid = ScriptLib.GetAvatarEntityIdByUid(context, uid_list[1])
+	if avatar_eid == nil or avatar_eid == 0 then return 0 end
+	if ScriptLib.GetQuestState(context, avatar_eid, 101104) ~= 3 or
+	   ScriptLib.GetQuestState(context, avatar_eid, 101127) ~= 2 then return 0 end
 	local state = GadgetState.GearAction2
-	if ScriptLib.GetQuestState(context, 0, 101126) == 3 then
+	if ScriptLib.GetQuestState(context, avatar_eid, 101126) == 3 then
 		state = GadgetState.GearStop
-	elseif ScriptLib.GetQuestState(context, 0, 101125) == 3 then
+	elseif ScriptLib.GetQuestState(context, avatar_eid, 101125) == 3 then
 		state = GadgetState.Action02
-	elseif ScriptLib.GetQuestState(context, 0, 101124) == 3 then
+	elseif ScriptLib.GetQuestState(context, avatar_eid, 101124) == 3 then
 		state = GadgetState.GearStart
-	elseif ScriptLib.GetQuestState(context, 0, 101123) == 3 then
+	elseif ScriptLib.GetQuestState(context, avatar_eid, 101123) == 3 then
 		state = GadgetState.Action01
 	end
 	if ScriptLib.GetGadgetStateByConfigId(context, 133001377, 377001) ~= state then
