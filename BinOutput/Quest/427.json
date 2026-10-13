@@ -227,14 +227,6 @@
           "param_str": "11330041481",
           "type": "QUEST_CONTENT_LUA_NOTIFY",
           "count": 1
-        },
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            42702,
-            0
-          ],
-          "param_str": ""
         }
       ],
       "npcId": [
@@ -260,14 +252,6 @@
           ],
           "param_str": "Q70010ChurchArea",
           "type": "QUEST_CONTENT_LEAVE_SCENE_RANGE"
-        },
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            42702,
-            0
-          ],
-          "param_str": ""
         }
       ],
       "descTextMapHash": 3311919919,
@@ -284,7 +268,24 @@
         }
       ],
       "finishCondComb": "LOGIC_OR",
-      "failCondComb": "LOGIC_OR"
+      "failCondComb": "LOGIC_OR",
+      "beginExec": [
+        {
+          "type": "QUEST_EXEC_REGISTER_DYNAMIC_GROUP",
+          "param": [
+            "3",
+            "133004148"
+          ]
+        }
+      ],
+      "guide": {
+        "type": "QUEST_GUIDE_LOCATION",
+        "param": [
+          "Ambor_FlyBegin"
+        ],
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      }
     },
     {
       "finishCond": [
@@ -389,14 +390,6 @@
           "param_str": "11330041491",
           "type": "QUEST_CONTENT_LUA_NOTIFY",
           "count": 1
-        },
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            42705,
-            0
-          ],
-          "param_str": ""
         }
       ],
       "finishExec": [
@@ -438,14 +431,6 @@
           ],
           "param_str": "NpcFemaleDayPatrol05Pos06",
           "type": "QUEST_CONTENT_LEAVE_SCENE_RANGE"
-        },
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            42705,
-            0
-          ],
-          "param_str": ""
         }
       ],
       "descTextMapHash": 996370375,
@@ -462,7 +447,24 @@
         }
       ],
       "finishCondComb": "LOGIC_OR",
-      "failCondComb": "LOGIC_OR"
+      "failCondComb": "LOGIC_OR",
+      "beginExec": [
+        {
+          "type": "QUEST_EXEC_REGISTER_DYNAMIC_GROUP",
+          "param": [
+            "3",
+            "133004149"
+          ]
+        }
+      ],
+      "guide": {
+        "type": "QUEST_GUIDE_LOCATION",
+        "param": [
+          "Knight_Roof_Ambor"
+        ],
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+      }
     },
     {
       "finishCond": [
@@ -648,7 +650,17 @@
       "descTextMapHash": 572063399,
       "subId": 42710,
       "mainId": 427,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            42702,
+            2
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -673,7 +685,17 @@
       "descTextMapHash": 3425890855,
       "subId": 42711,
       "mainId": 427,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            42705,
+            2
+          ],
+          "param_str": ""
+        }
+      ]
     }
   ],
   "preloadLuaList": [
