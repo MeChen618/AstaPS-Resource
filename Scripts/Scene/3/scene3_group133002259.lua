@@ -478,7 +478,9 @@ function action_EVENT_ENTER_REGION_259007(context, evt)
 					big_region=regions[i]
 				end
 			end
-			ScriptLib.TrySetPlayerEyePoint(context, small_region, big_region, 0, {0})
+			if ScriptLib.TrySetPlayerEyePoint then
+				ScriptLib.TrySetPlayerEyePoint(context, small_region, big_region, 0, {0})
+			end
 	
 	return 0
 end
@@ -501,7 +503,9 @@ function action_EVENT_LEAVE_REGION_259008(context, evt)
 		ScriptLib.RemoveExtraGroupSuite(context, 133002259, 6)
 		ScriptLib.RemoveExtraGroupSuite(context, 133002259, 3)
 	else
-		ScriptLib.TryReallocateEntityAuthority(context, context.uid, 259009, 259008)
+		if ScriptLib.TryReallocateEntityAuthority then
+			ScriptLib.TryReallocateEntityAuthority(context, context.uid, 259009, 259008)
+		end
 	end
 	return 0
 end
