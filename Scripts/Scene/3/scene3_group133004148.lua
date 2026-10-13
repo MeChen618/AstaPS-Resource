@@ -123,7 +123,8 @@ end
 function can_start(context, evt)
     return evt.param1 == REGION_BASE and ScriptLib.GetQuestState(context, 0, QUEST) == 2
         and ScriptLib.GetGroupVariableValue(context, "started") == 0
-        and ScriptLib.GetRegionEntityCount(context, { region_eid = evt.source_eid, entity_type = EntityType.AVATAR }) > 0
+        -- Test the captured entering entity, not membership after a queued fast flight has left.
+        and evt.source == tostring(EntityType.AVATAR) and evt.target_eid > 0
 end
 
 function start_exam(context, evt)
@@ -144,7 +145,8 @@ function can_collect_coin(context, evt)
     local batch = ScriptLib.GetGroupVariableValue(context, "batch")
     return batch_starts[batch] ~= nil and index >= batch_starts[batch] and index <= batch_ends[batch]
         and ScriptLib.GetGroupVariableValue(context, "seen_" .. index) == 0
-        and ScriptLib.GetRegionEntityCount(context, { region_eid = evt.source_eid, entity_type = EntityType.AVATAR }) > 0
+        -- Test the captured entering entity, not membership after a queued fast flight has left.
+        and evt.source == tostring(EntityType.AVATAR) and evt.target_eid > 0
 end
 
 function collect_coin(context, evt)
