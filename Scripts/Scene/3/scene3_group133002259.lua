@@ -11,8 +11,8 @@ local base_info = {
 
 -- 怪物
 monsters = {
-	{ config_id = 913, monster_id = 29020101, pos = { x = 1981.685, y = 250.080, z = -238.965 }, rot = { x = 0.000, y = 155.057, z = 0.000 }, level = 26, drop_id = 1000100, title_id = 111, special_name_id = 3, area_id = 3 },
-	{ config_id = 954, monster_id = 29020102, pos = { x = 1981.685, y = 250.080, z = -238.965 }, rot = { x = 0.000, y = 155.057, z = 0.000 }, level = 38, drop_id = 1000100, title_id = 112, special_name_id = 4, area_id = 3 }
+	{ config_id = 913, monster_id = 29020101, pos = { x = 1981.685, y = 250.080, z = -238.965 }, rot = { x = 0.000, y = 155.057, z = 0.000 }, level = 26, drop_id = 1000100, title_id = 111, special_name_id = 2011101, area_id = 3 },
+	{ config_id = 954, monster_id = 29020102, pos = { x = 1981.685, y = 250.080, z = -238.965 }, rot = { x = 0.000, y = 155.057, z = 0.000 }, level = 38, drop_id = 1000100, title_id = 112, special_name_id = 2011102, area_id = 3 }
 }
 
 -- NPC
@@ -374,8 +374,10 @@ end
 
 -- 触发操作
 function action_EVENT_QUEST_FINISH_401(context, evt)
-	-- 杀死Group内所有monster
-		if 0 ~= ScriptLib.KillGroupEntity(context, { group_id = 133002259, kill_policy = GroupKillPolicy.GROUP_KILL_MONSTER }) then
+	-- A delayed story notification must not reset the weekly arena after suite 1 ends.
+	if ScriptLib.GetGroupSuite(context, 133002259) ~= 1 then return 0 end
+	-- Only recycle the story wolf; the weekly wolf uses config_id 954.
+		if 0 ~= ScriptLib.KillGroupEntity(context, { group_id = 133002259, monsters = {913}, gadgets = {2222, 2223, 2238} }) then
 	    ScriptLib.PrintContextLog(context, "@@ LUA_WARNING : kill_monster_by_group")
 			return -1
 		end
