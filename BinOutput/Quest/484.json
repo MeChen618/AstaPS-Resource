@@ -178,7 +178,17 @@
       "isRewind": true,
       "descTextMapHash": 3440040495,
       "subId": 48401,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            42708,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -206,7 +216,26 @@
       "isRewind": true,
       "descTextMapHash": 661380719,
       "subId": 48402,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48401,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "beginExec": [
+        {
+          "type": "QUEST_EXEC_DEL_PACK_ITEM_BATCH",
+          "param": [
+            "100210:1,100211:1,100212:1"
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -235,7 +264,17 @@
       "exclusivePlaceList": [
         30020676
       ],
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48402,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -256,7 +295,26 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48403,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_NOT_EQUAL",
+          "param": [
+            48407,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     },
     {
       "finishCond": [
@@ -291,7 +349,18 @@
       "exclusivePlaceList": [
         30020676
       ],
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48402,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "finishCondComb": "LOGIC_OR"
     },
     {
       "finishCond": [
@@ -312,7 +381,17 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48405,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -341,7 +420,17 @@
       "exclusivePlaceList": [
         30020676
       ],
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48402,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -362,7 +451,26 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48407,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_NOT_EQUAL",
+          "param": [
+            48403,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     },
     {
       "finishCond": [
@@ -393,7 +501,34 @@
       "exclusivePlaceList": [
         30020676
       ],
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48407,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48403,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48404,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     },
     {
       "finishCond": [
@@ -424,7 +559,34 @@
       "exclusivePlaceList": [
         30020676
       ],
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48407,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48403,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48408,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     },
     {
       "finishCond": [
@@ -450,7 +612,18 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48402,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "finishCondComb": "LOGIC_OR"
     },
     {
       "finishCond": [
@@ -466,7 +639,17 @@
       "descTextMapHash": 2342009391,
       "subId": 48412,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            99902,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -494,7 +677,17 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48412,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -521,7 +714,17 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48413,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -548,7 +751,26 @@
       "isRewind": true,
       "descTextMapHash": 2524321583,
       "subId": 48415,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48414,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48432,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_OR"
     },
     {
       "finishCond": [
@@ -577,7 +799,27 @@
       "isRewind": true,
       "descTextMapHash": 1513507623,
       "subId": 48416,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48415,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "beginExec": [
+        {
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+          "param": [
+            "3",
+            "133002255,2"
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -605,7 +847,17 @@
       "descTextMapHash": 845048447,
       "subId": 48417,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48416,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -632,7 +884,17 @@
       "isRewind": true,
       "descTextMapHash": 1010398047,
       "subId": 48418,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48417,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -658,7 +920,17 @@
       },
       "descTextMapHash": 2662642319,
       "subId": 48419,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48418,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -684,7 +956,17 @@
       },
       "descTextMapHash": 2573038575,
       "subId": 48420,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48419,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -710,7 +992,17 @@
       },
       "descTextMapHash": 772516615,
       "subId": 48421,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48420,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -736,7 +1028,17 @@
       },
       "descTextMapHash": 4273693503,
       "subId": 48422,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48421,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -773,7 +1075,17 @@
       "finishParent": true,
       "descTextMapHash": 2306371167,
       "subId": 48423,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48422,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -799,7 +1111,18 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48402,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "finishCondComb": "LOGIC_OR"
     },
     {
       "finishCond": [
@@ -823,7 +1146,17 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48411,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -850,7 +1183,17 @@
       "descTextMapHash": 2339485687,
       "subId": 48426,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            99902,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -877,7 +1220,17 @@
       "descTextMapHash": 2249870871,
       "subId": 48427,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            99902,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -904,7 +1257,17 @@
       "descTextMapHash": 1464702679,
       "subId": 48428,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            99902,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -921,7 +1284,34 @@
       "descTextMapHash": 4261910295,
       "subId": 48429,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48426,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48427,
+            3
+          ],
+          "param_str": ""
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48428,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "acceptCondComb": "LOGIC_AND"
     },
     {
       "finishCond": [
@@ -946,7 +1336,17 @@
       "descTextMapHash": 315293327,
       "subId": 48430,
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            99902,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -976,7 +1376,27 @@
       "showGuide": "QUEST_GUIDE_ITEM_DISABLE",
       "descTextMapHash": 1153071895,
       "subId": 48431,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48425,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "beginExec": [
+        {
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+          "param": [
+            "3",
+            "133002305,2"
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -1004,7 +1424,17 @@
       "isRewind": true,
       "descTextMapHash": 458110559,
       "subId": 48432,
-      "mainId": 484
+      "mainId": 484,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48431,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -1024,7 +1454,17 @@
         30020676
       ],
       "mainId": 484,
-      "showType": "QUEST_HIDDEN"
+      "showType": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48402,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     }
   ],
   "preloadLuaList": [

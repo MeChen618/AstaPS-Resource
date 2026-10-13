@@ -30,7 +30,17 @@
       "isRewind": true,
       "descTextMapHash": 3682077583,
       "subId": 48201,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            99902,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -58,7 +68,17 @@
       "isRewind": true,
       "descTextMapHash": 1884072599,
       "subId": 48202,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48201,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -77,7 +97,17 @@
       "isRewind": true,
       "descTextMapHash": 1221877671,
       "subId": 48203,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48202,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -113,7 +143,17 @@
       "isRewind": true,
       "descTextMapHash": 261771079,
       "subId": 48204,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48207,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -142,7 +182,17 @@
       "finishParent": true,
       "descTextMapHash": 2251932407,
       "subId": 48205,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48208,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -161,7 +211,17 @@
       "isRewind": true,
       "descTextMapHash": 2830168063,
       "subId": 48207,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48209,
+            4
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -180,7 +240,17 @@
       "isRewind": true,
       "descTextMapHash": 3416879703,
       "subId": 48208,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48209,
+            3
+          ],
+          "param_str": ""
+        }
+      ]
     },
     {
       "finishCond": [
@@ -215,7 +285,28 @@
       "banType": "BAN_GROUP_TRANSPORT_ONLY",
       "descTextMapHash": 2852509615,
       "subId": 48209,
-      "mainId": 482
+      "mainId": 482,
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [
+            48203,
+            3
+          ],
+          "param_str": ""
+        }
+      ],
+      "beginExec": [
+        {
+          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+          "param": [
+            "1015",
+            "201015001,1"
+          ],
+          "param_str": ""
+        }
+      ],
+      "failCondComb": "LOGIC_OR"
     }
   ],
   "preloadLuaList": [
