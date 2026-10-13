@@ -215,6 +215,7 @@ groups = {
 	{ id = 133001226, area = 2, pos = { x = 1885.992, y = 203.686, z = -1268.927 }, dynamic_load = true, is_replaceable = { value = false, version = 0, new_bin_only = true }, business = { type = 4 } },
 	{ id = 133001229, refresh_id = 1002, area = 3, pos = { x = 1428.009, y = 312.165, z = -1217.425 }, is_replaceable = { value = false, version = 0, new_bin_only = true }, vision_type = 3 },
 	{ id = 133001231, refresh_id = 1001, area = 3, pos = { x = 1717.220, y = 269.154, z = -1305.787 }, is_replaceable = { value = false, version = 0, new_bin_only = true } },
+	{ id = 133001244, area = 3, pos = { x = 1723.400000, y = 263.249000, z = -1310.966000 }, dynamic_load = true, is_replaceable = { value = false, version = 0, new_bin_only = true } },
 	{ id = 133001232, refresh_id = 1002, area = 2, pos = { x = 1513.554, y = 291.952, z = -1206.041 }, is_replaceable = { value = true, version = 0, new_bin_only = true } },
 	{ id = 133001233, refresh_id = 1001, area = 2, pos = { x = 1532.516, y = 288.019, z = -1292.204 }, is_replaceable = { value = false, version = 0, new_bin_only = true } },
 	{ id = 133001234, refresh_id = 1000, area = 2, pos = { x = 1854.365, y = 224.880, z = -1094.247 }, is_replaceable = { value = true, version = 0, new_bin_only = true } },
