@@ -1,5 +1,7 @@
 -- 所有的group
 groups = {
+	{ id = 133004148, area = 1, pos = { x = 2349.575000, y = 260.030000, z = -700.192000 }, dynamic_load = true, is_replaceable = { value = false, version = 0, new_bin_only = true } },
+	{ id = 133004149, area = 1, pos = { x = 2243.797000, y = 258.259000, z = -773.534000 }, dynamic_load = true, is_replaceable = { value = false, version = 0, new_bin_only = true } },
 	{ id = 133004001, area = 1, pos = { x = 2435.709, y = 208.650, z = -767.690 }, is_replaceable = { value = false, version = 0, new_bin_only = true } },
 	{ id = 133004002, pos = { x = 2193.201, y = 229.359, z = 557.059 }, dynamic_load = true, is_replaceable = { value = true, version = 0, new_bin_only = true }, business = { type = 4 }, vision_type = 0 },
 	{ id = 133004003, refresh_id = 1, area = 1, pos = { x = 2372.076, y = 208.127, z = -899.749 }, is_replaceable = { value = false, version = 0, new_bin_only = true } },
