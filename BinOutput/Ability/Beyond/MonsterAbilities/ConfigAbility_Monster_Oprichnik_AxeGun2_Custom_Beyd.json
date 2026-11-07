@@ -1,0 +1,63 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ForceShowWeapon",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "ForceShowWeapon": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "MonEquip_Oprichnik_Gun_AxeGun_01_Model"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 2,
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "TriggerSetRenderersEnableV2",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "MonEquip_Oprichnik_Gun_AxeGun_01_Model"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Oprichnik_AxeGun2_Custom_Beyd_ForceShowWeapon",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

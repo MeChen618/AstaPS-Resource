@@ -1,0 +1,598 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "HoldItemListener",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "WidgetDisableMixin",
+          "actorIceSubHurtDelta": -1,
+          "HJGHNBCIBIP": true,
+          "MFCHONIKBEH": true
+        },
+        {
+          "$type": "HideActionSlotMixin",
+          "actorIceSubHurtDelta": -1,
+          "slotType": "SlotQuickUse"
+        },
+        {
+          "$type": "HideActionSlotMixin",
+          "actorIceSubHurtDelta": -1,
+          "slotType": "Slot1"
+        },
+        {
+          "$type": "HideActionSlotMixin",
+          "actorIceSubHurtDelta": -1,
+          "slotType": "Slot4"
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "modifierName": "UNIQUE_Vehicle_Paimon_01_HoldingItem",
+          "normalizedStateIDList": [
+            {
+              "normalizeEnd": 1,
+              "stateID": "HoldStandby"
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "HoldRun"
+            }
+          ]
+        },
+        {
+          "$type": "DisableVehicleTurnMixin",
+          "actorIceSubHurtDelta": -1
+        },
+        {
+          "$type": "ScaleVehicleMoveYawSpeedMixin",
+          "AFNAIHCFONA": 4,
+          "actorIceSubHurtDelta": -1,
+          "BINNNINLFON": 4,
+          "FMGPONGEPPL": 1,
+          "PBIEMFCAMLL": 1
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "Appear"
+          ],
+          "modifierName": "Appear_Eff"
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "Standby",
+            "Run",
+            "HoldStandby",
+            "HoldRun"
+          ],
+          "modifierName": "Move_Eff"
+        },
+        {
+          "$type": "DoActionOnVehicleInteractPostMixin",
+          "actorIceSubHurtDelta": -1,
+          "onVehicleIn": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Paimon_Camera",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Behit_Listener",
+              "doOffStage": false
+            }
+          ],
+          "NFPAFDMIGFA": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Paimon_Camera",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Behit_Listener",
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "GFHCOKDKKJA",
+          "actorIceSubHurtDelta": -1,
+          "globalValueKey": "_ABILITY_Vehicle_Driving_Flag"
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_ABILITY_Vehicle_Driving_Flag",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Paimon_Common_Vehicle_Unoccupied",
+            "Paimon_Common_Vehicle_Occupied"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "StageReadyMixin",
+          "actorIceSubHurtDelta": -1,
+          "onStageReady": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "killSelfType": "Normal",
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Team",
+                      "modifierName": "Team_Gallery_Ability_Paimon_01"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Appear_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_NPC_Kanban_Paimon_Appear",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Behit_Listener": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "CrystalPalace_PaimonHit",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                133723025,
+                133723026
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Disappear_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_NPC_Kanban_Paimon_Disappear_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_NPC_Kanban_Paimon_Disappear_02",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "HoldItemListener": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_CarryingFaerieFire",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "HoldItemState"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "HoldItemState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HoldItemState_Triggered"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "HoldItem"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "gadgetID": 73154082,
+              "KLGHKKGGHEA": {
+                "DBOLJFPPFGI": 0.5,
+                "CGDBBHHIINM": true,
+                "JOCOGLBCMEJ": 0.5,
+                "JAILLBHLHNO": true
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_HoldItemState_Triggered"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true,
+              "doOffStage": false,
+              "campID": 5001,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_HoldItemState_Triggered"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "HoldItem"
+            },
+            {
+              "$type": "KillGadgetV2",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 73154082
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": true
+            }
+          ],
+          "thinkInterval": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Move_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_NPC_Kanban_Paimon_Standby",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Paimon_Camera": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SpawnCameraStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "sceneID": -1,
+              "HHDAFCDMDLO": {
+                "duHPRation": 1
+              },
+              "AFDENKPAECI": {
+                "$type": "CLEANJKFEOK",
+                "DDLICBIPOEC": {
+                  "lerpDuration": 1
+                },
+                "IDIKEPGBBOM": 3,
+                "POGOADOBODM": -35,
+                "LEDOKOFLBKB": 20,
+                "CBNECBFIACD": 89,
+                "EJLLFLLAMPP": 6,
+                "ABGHAGPLMAB": 5.5,
+                "DOLBKNCDDGB": 1.399999976158142,
+                "FAKFJBDJLKI": 12
+              },
+              "DGPDJMGNEHP": {
+                "NAOIPIIJHAJ": 4,
+                "blendType": 1,
+                "DAGICMOAFJP": 2,
+                "BJFFNFAIGBM": 3,
+                "duHPRation": 1.399999976158142
+              }
+            },
+            {
+              "$type": "BDJCOJICDID",
+              "actorIceSubHurtDelta": -1,
+              "MFPKIAGJIJI": true
+            },
+            {
+              "$type": "OverrideCameraModuleParamMixin",
+              "actorIceSubHurtDelta": -1,
+              "LKEEIOFIMMG": [
+                {
+                  "$type": "AHFNHIOGAPD",
+                  "GJBAJGLBEBK": {
+                    "_y": 0.8999999761581421
+                  },
+                  "priority": "SkillSpecial",
+                  "GHHFMOPEHPG": 0.4000000059604645
+                }
+              ],
+              "stateName": "LandVehicle"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Paimon_Common_Vehicle_Occupied": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Team_Paimon_Vehicle_DisableMainPageMixin",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Paimon_Common_Vehicle_Unoccupied": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Team_Paimon_Vehicle_DisableMainPageMixin": {
+          "JBIJJOJPICN": true,
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "BONBLHALJBI",
+              "actorIceSubHurtDelta": -1,
+              "EIPHAHAIEPL": "PaimonVehicleControlState"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Vehicle_Paimon_01_HoldingItem": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_NPC_Kanban_Paimon_Disappear_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "HasDefaultBallEffect"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Vehicle_Paimon_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Team_Gallery_Ability_Paimon_01",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Team_Gallery_Ability_Paimon_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "StageReadyMixin",
+              "actorIceSubHurtDelta": -1,
+              "onStageReady": [
+                {
+                  "$type": "ServerLuaCall",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "luaCallType": "AbilityGroupSourceGroup",
+                  "funcName": "SLC_StageReady_In_Gallery"
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Team_Gallery_Ability_Paimon_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

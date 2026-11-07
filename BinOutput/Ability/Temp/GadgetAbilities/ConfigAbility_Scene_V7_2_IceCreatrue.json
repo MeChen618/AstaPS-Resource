@@ -1,0 +1,1476 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_Flag_FairyLampBase_IsEmpty",
+        "SGV_Init_NoLamp"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "StateMachineHandler",
+          "doOffStage": false
+        },
+        {
+          "$type": "CopyGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "srcKey": "_Flag_FairyLampBase_IsEmpty",
+          "dstKey": "GV_ForceDisableState",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_HideBase",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "SGV_HideBase_0",
+            "SGV_HideBase_1"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "actorIceSubHurtDelta": -1,
+          "gvInTalk": true,
+          "globalValueKey": "_Flag_FairyLampBase_IsEmpty",
+          "actions": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "_Flag_FairyLampBase_IsEmpty",
+              "dstKey": "GV_ForceDisableState",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "value": 1,
+                  "key": "_Flag_FairyLampBase_IsEmpty"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "value": 1,
+                      "key": "GV_CarryingFaerieFire"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "GV_CarryingFaerieFire"
+                    },
+                    {
+                      "$type": "AttachModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TrySetLightGadget",
+                      "doOffStage": false
+                    }
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Other",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Avatar_TryGetFairyLampGadget",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Avatar_TryGetFairyLampGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerSkillEvent",
+              "actorIceSubHurtDelta": -1,
+              "radius": 20,
+              "canBeHandledOnRecover": true,
+              "LABOIMCPHOD": "IceCreatureEquipment_TriggerDrop",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_CarryingFaerieFire"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "canBeHandledOnRecover": true,
+              "modifierName": "TryGetLightGadget",
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DisableWidgetMpSupport": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "EnableWidgetMpSupport": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SGV_HideBase_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Base"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SGV_HideBase_1": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Base"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "StateMachineHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": "SGV_Init_NoLamp",
+              "key": "_Flag_FairyLampBase_IsEmpty"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_Flag_FairyLampBase_IsEmpty",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "State_0_HasLight",
+                "State_1_NoLight"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": "SGV_Init_NoLamp",
+              "key": "_Flag_FairyLampBase_IsEmpty"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_0_HasLight": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "LightNode"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "LightNode"
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Lamp"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ForceDisableState"
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "FairyLampBase_HasLight",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "FromGroup"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_1_NoLight": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "LightNode"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Lamp"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ForceDisableState"
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "FairyLampBase_NoLight",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "FromGroup"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_CarryingFaerieFire",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "DisableWidgetMpSupport",
+                "EnableWidgetMpSupport"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "GadgetUIInteractHintTextMixin",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_ICECREATURE_CREATURE_RETURNLAMP"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TryGetLightGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_Flag_FairyLampBase_IsEmpty"
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TrySetLightGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Flag_FairyLampBase_IsEmpty"
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_Fairy_Lamp_Base",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_IceCreature_HasMirror"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "GV_IceCreature_HasMirror",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "MirrorHandler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "MirrorHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Widget_Shikishogun_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Auto",
+              "PEONHILPDLC": 20207
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_MirrorAbility_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "StateMachineHandler",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "modifierName": "TriggerWidgetMp",
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "AvatarCombatMixin",
+          "actorIceSubHurtDelta": -1,
+          "onExitCombat": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBaseBtn_EnterCombat",
+              "doOffStage": true
+            }
+          ],
+          "onEnterCombat": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBaseBtn_EnterCombat",
+              "doOffStage": true
+            }
+          ],
+          "NEMFMKPFDLO": true
+        }
+      ],
+      "modifiers": {
+        "ReturnHint_Off": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ReturnHint_On": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "GKJHPJKDANC": true,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBaseBtn_EnterCombat"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "StateMachineHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_State"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByIsCombat",
+                  "target": "Target"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBaseBtn_EnterCombat",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_State",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "State_0_HasIceCraftedPickaxe",
+                "State_1_NoIceCraftedPickaxe"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_State"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_0_HasIceCraftedPickaxe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "PickaxeNode"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Idle",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "RootNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_BlinkIn",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "PickaxeNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LGIPNLHMLNM",
+              "actorIceSubHurtDelta": -1,
+              "LCLFNBNKDAN": "_IS_IN_STARSUPERCONDUCTOR_FIELD"
+            },
+            {
+              "$type": "GadgetUIInteractHintTextMixin",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_ICECREATURE_CREATURE_TAKEPICKAXE"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_1_NoIceCraftedPickaxe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "PickaxeNode"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_CarryingIceCraftedPickaxe",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "ReturnHint_Off",
+                "ReturnHint_On"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "GadgetUIInteractHintTextMixin",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_ICECREATURE_CREATURE_RETURNPICKAXE"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TriggerWidgetMp": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "FODKMMKKJFM",
+                  "target": "CurLocalAvatar",
+                  "KKGICJMCBGN": true,
+                  "IFKACJEBAKF": [
+                    "Standby",
+                    "RunToIdle",
+                    "WalkToIdle",
+                    "SprintToIdle",
+                    "StandbyShow_01",
+                    "StandbyShow_02",
+                    "Run",
+                    "Walk",
+                    "FallOnGround",
+                    "FallOnGroundLit",
+                    "FallToGroundRun",
+                    "FallToGroundRunHard",
+                    "Sprint",
+                    "SprintBS"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "NoneOrEqual",
+                  "key": "IceCreature_Preparing"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Caster",
+                      "compareType": "NoneOrEqual",
+                      "key": "_State"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TryGetIceCraftedPickaxeGadget",
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "compareType": "NoneOrEqual",
+                          "key": "GV_CarryingIceCraftedPickaxe"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "SetGlobalValueV2",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Team",
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "key": "GV_CarryingIceCraftedPickaxe"
+                        },
+                        {
+                          "$type": "ApplyModifier",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Caster",
+                          "canBeHandledOnRecover": true,
+                          "modifierName": "TrySetIceCraftedPickaxeGadget",
+                          "doOffStage": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ShowReminder",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "canBeHandledOnRecover": true,
+                  "id": 1004550040,
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 0.009999999776482582,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TryGetIceCraftedPickaxeGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "CurLocalAvatar",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerSkillEvent",
+                  "actorIceSubHurtDelta": -1,
+                  "radius": 20,
+                  "canBeHandledOnRecover": true,
+                  "LABOIMCPHOD": "IceCreatureEquipment_TriggerDrop",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ShowReminder",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "canBeHandledOnRecover": true,
+                  "id": 1004550040,
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "CurLocalAvatar",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Caster",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "_State"
+                }
+              ]
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TrySetIceCraftedPickaxeGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_State"
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Disable_IceCraftedPickaxeBaseBtn_EnterCombat": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "GKJHPJKDANC": true,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "modifierName": "ReturnHint_Off"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByIsCombat",
+                  "target": "Target"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBaseBtn_EnterCombat",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCraftedPickaxe_Base_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ClearAreaTick",
+          "doOffStage": false
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "DebugLog",
+          "actorIceSubHurtDelta": -1,
+          "content": "【测试】进入冰造物清除器范围",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Other",
+          "predicates": [
+            {
+              "$type": "ILMHBGFOAJN",
+              "target": "Other",
+              "configIdArray": [
+                73151003,
+                73154003
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "successActions": [
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "【测试】清除范围内地上的臻冰十字镐/妖精灯",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "FEFHBHCKEPE": true,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73151003,
+                73154003
+              ],
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Other",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Other",
+              "value": -1,
+              "entityTypes": [
+                "Avatar"
+              ]
+            },
+            {
+              "$type": "ByAny",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "TargetTeam",
+                  "value": 1,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "TargetTeam",
+                  "value": 1,
+                  "key": "GV_CarryingFaerieFire"
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "【测试】清除范围内玩家携带的臻冰十字镐/妖精灯",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "TargetTeam",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_CarryingIceCraftedPickaxe"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "TargetTeam",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_CarryingFaerieFire"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "ClearAreaTick": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByLCTriggerAll"
+              },
+              "predicates": [
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "target": "Other",
+                  "configIdArray": [
+                    73151003,
+                    73154003
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "【测试】Tick检测清除范围内地上的臻冰十字镐/妖精灯",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Other",
+                  "FEFHBHCKEPE": true,
+                  "killSelfType": "Normal",
+                  "canBeHandledOnRecover": true,
+                  "configIdArray": [
+                    73151003,
+                    73154003
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByLCTriggerAll"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "TargetTeam",
+                      "value": 1,
+                      "key": "GV_CarryingIceCraftedPickaxe"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "TargetTeam",
+                      "value": 1,
+                      "key": "GV_CarryingFaerieFire"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "【测试】Tick检测清除范围内玩家携带的臻冰十字镐/妖精灯",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "TargetTeam",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "TargetTeam",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_CarryingFaerieFire"
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCreatureEquipmentCleaner_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "IceCreatureCommon_DestroyByHighTest",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "IceCreatureCommon_DestroyByHighTest": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ThinkIntervalMixin",
+              "actorIceSubHurtDelta": -1,
+              "onThinkInterval": [
+                {
+                  "$type": "SetCollisionPointToGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "LANEADNAMOA": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 0.10000000149011612
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "ConfigDirectionByWorld",
+                      "useCorrectDir": true,
+                      "maxAngle": 180,
+                      "eularAngles": {
+                        "_x": 90,
+                        "_y": 0.10000000149011612,
+                        "_z": 0.10000000149011612
+                      }
+                    }
+                  },
+                  "GIIKFCBIECE": 3,
+                  "canBeHandledOnRecover": true,
+                  "setTarget": true,
+                  "doOffStage": false,
+                  "IFAGEOOENNG": "SceneWithWater",
+                  "key": "_IceCreatureCommon_GroundPos"
+                },
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "FEFHBHCKEPE": true,
+                  "killSelfType": "Normal",
+                  "predicates": [
+                    {
+                      "$type": "HPANBNKJCMI",
+                      "target": "Target",
+                      "logic": "GreaterOrEqual",
+                      "positionKey": "_IceCreatureCommon_GroundPos",
+                      "compareType": "Y",
+                      "value": 0.20000000298023224
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "configIdArray": [
+                    73151003,
+                    73154003
+                  ],
+                  "doOffStage": false
+                }
+              ],
+              "thinkInterval": 0.30000001192092896
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCreatureCommon_DestroyByHighTest",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

@@ -1,0 +1,1536 @@
+[
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_CarryingFaerieFire"
+        },
+        {
+          "$type": "CreateGadget",
+          "actorIceSubHurtDelta": -1,
+          "gadgetID": 73154003,
+          "KLGHKKGGHEA": {
+            "DBOLJFPPFGI": 0.5,
+            "CGDBBHHIINM": true,
+            "JOCOGLBCMEJ": 0.5,
+            "JAILLBHLHNO": true
+          },
+          "canBeHandledOnRecover": true,
+          "lifeByOwnerV2": true,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "bornRandom": {
+              "$type": "BornRandomFromCenter",
+              "maxRandomRange": 1,
+              "minRandomRange": 1
+            },
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "onGround": true,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "DynamicAbility_Fairy_LampAbilityManager_Team",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CarryingFaerieFire_Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "_Team_Clear_LocalGadget",
+              "doOffStage": false
+            },
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "gadgetID": 73154078,
+              "KLGHKKGGHEA": {
+                "DBOLJFPPFGI": 0.5,
+                "CGDBBHHIINM": true,
+                "JOCOGLBCMEJ": 0.5,
+                "JAILLBHLHNO": true
+              },
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "INDLMKKFAEP",
+                      "target": "Target",
+                      "GOMCOCMHDIJ": [
+                        "Natsaurus"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true,
+              "target": "Caster",
+              "doOffStage": false,
+              "campID": 5001,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "FairyLampCreateOnAvatar"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "CarryingFaerieFire_Forbidden": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "GV_CarryingFaerieFire_Forbidden"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_CarryingFaerieFire_Forbidden"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ClearFollowPet": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DynamicAbility_Fairy_LampAbilityManager_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ThrowFaerieFire"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "gvInTalk": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_CarryingFaerieFire",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "TeamNoFaerieFire",
+                "TeamHasFaerieFire"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "useLimitRange": true,
+              "maxValue": 1,
+              "key": "GV_CarryingFaerieFire"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "useLimitRange": true,
+              "maxValue": 1,
+              "key": "GV_ThrowFaerieFire"
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_ThrowFaerieFire",
+              "actions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "GV_ThrowFaerieFire"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ThrowFaerieFire",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "FairyLampCreateOnAvatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "GV_CarryingFaerieFire"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "_Team_Clear_LocalGadget",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_CarryingFaerieFire"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TeamHasFaerieFire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "KillGadgetV2",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 73154078
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_CarryingFaerieFire"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "StageReadyMixin",
+              "actorIceSubHurtDelta": -1,
+              "onStageReady": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_CarryingFaerieFire"
+                }
+              ]
+            },
+            {
+              "$type": "FollowAttachPointEffectMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "ClearFollowPet"
+            },
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Activity",
+              "PEONHILPDLC": 20211
+            },
+            {
+              "$type": "OEGEKDLKONE",
+              "actorIceSubHurtDelta": -1,
+              "GOEOCLKDLOC": {
+                "PHGMKDCPOJO": 20211
+              }
+            },
+            {
+              "$type": "DoActionBySkillEventMixin",
+              "actorIceSubHurtDelta": -1,
+              "onEvent": [
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "abilityName": "DynamicAbility_Fairy_LampAbilityManager_Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "LPFPKHHKGIB": "Other"
+                }
+              ],
+              "LABOIMCPHOD": "IceCreatureEquipment_TriggerDrop"
+            },
+            {
+              "$type": "GHELHGMGNHP",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "CurLocalAvatar",
+              "BPGPEGLFMPJ": "RegisterAlways",
+              "HPFCGICMFMF": [
+                "GV_Using_SpotlightPlatform"
+              ],
+              "modifierNameSteps": [
+                {
+                  "OKBHOLPKEEJ": [
+                    [
+                      0.5,
+                      1.5
+                    ]
+                  ],
+                  "MPHKAKNKCGC": "CarryingFaerieFire_Forbidden",
+                  "conditionType": "OR"
+                }
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "GV_CarryingFaerieFire_Forbidden",
+              "valueSteps": [
+                -0.5,
+                0.5
+              ],
+              "modifierNameSteps": [
+                "CarryingFaerieFire_Active"
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_CarryingFaerieFire"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TeamNoFaerieFire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ThrowFaerieFire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 1,
+                  "key": "GV_CarryingFaerieFire"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "abilityName": "DynamicAbility_Fairy_LampAbilityManager_Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "LPFPKHHKGIB": "Other"
+                }
+              ]
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ThrowFaerieFire"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ThrowFaerieFire"
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "_Team_Clear_LocalGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "KillGadgetV2",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 73154078
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Fairy_LampAbilityManager_Team",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "FairyLampBase_ProtoType_Effect",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "FairyLampBase_ProtoType_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "LightNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_Fairy_LampBase_ProtoType_Effect",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "FairyLampCarryingEffect",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "FairyLampCarryingEffect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "FairyLampCarryingEffect_Triggered"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "FairyLampCarryingEffect_Triggered"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Loop",
+                  "scale": 0.6000000238418579,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Appear",
+                  "scale": 0.6000000238418579,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "FairyLampCarryingEffect_Triggered"
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_FairyLampCarrying",
+      "onKill": [
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Die",
+          "scale": 0.6000000238418579,
+          "canBeHandledOnRecover": true,
+          "effectTempleteID": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "attachPointName": "LightNode",
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "FairyLampEffect_Delay",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "target": "Target",
+                  "configIdArray": [
+                    73154203
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "DistanceCheck_ToTeam",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ShaderState_FairyLamp",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "HideInTalk",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Avatar_TryGetLocalFairyLampGadget",
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Avatar_TryGetLocalFairyLampGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerSkillEvent",
+              "actorIceSubHurtDelta": -1,
+              "radius": 20,
+              "canBeHandledOnRecover": true,
+              "LABOIMCPHOD": "IceCreatureEquipment_TriggerDrop",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_CarryingFaerieFire"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "canBeHandledOnRecover": true,
+              "modifierName": "TryGetLocalFairyLampGadget_ReturnKillself",
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DistanceCheck_ToTeam": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueByTargetDistance",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "value": true,
+              "BFCMGKNHJAG": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "key": "_Dist_ToTeam"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": 100,
+                  "key": "_Dist_ToTeam"
+                },
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "configIdArray": [
+                    73154003
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "killSelfType": "Normal",
+                  "canBeHandledOnRecover": true,
+                  "configIdArray": [
+                    73154003
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "StageReadyMixin",
+              "actorIceSubHurtDelta": -1,
+              "onStageReady": [
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Caster",
+                  "killSelfType": "Normal",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "FairyLampEffect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Loop",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Appear",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FairyLampEffect_Delay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "AttachModifierToAbility",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "FairyLampEffect",
+              "doOffStage": false,
+              "BFEHEAKKJJP": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "HideInTalk": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "InvisibleInTalkAndCSMixin",
+              "actorIceSubHurtDelta": -1,
+              "pushColliderNames": [
+                "Collider"
+              ],
+              "EMNIAOMNIEF": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ShaderState_FairyLamp": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "HIJJCMPHDLA": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TryGetLocalFairyLampGadget_ReturnKillself": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_FairyLamp",
+      "onKill": [
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Die",
+          "scale": 1,
+          "canBeHandledOnRecover": true,
+          "effectTempleteID": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "attachPointName": "LightNode",
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "DoActionByRayCastTarget",
+          "actorIceSubHurtDelta": -1,
+          "LANEADNAMOA": {
+            "$type": "ConfigBornBySelf",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "x": 0.30000001192092896
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "$type": "ConfigDirectionByEntity",
+              "useCorrectDir": true,
+              "angleOffsetCorrect": {
+                "y": 90
+              },
+              "maxAngle": 180
+            }
+          },
+          "EBPKJFIJAHG": 1.5,
+          "canBeHandledOnRecover": true,
+          "JMMDCBJBMEG": -1,
+          "KGNBFGFCPOF": -1,
+          "doOffStage": false,
+          "IFAGEOOENNG": "Scene",
+          "targetPredicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "target": "Target",
+                  "configIdArray": [
+                    73154003
+                  ]
+                }
+              ]
+            }
+          ],
+          "PIPMOICDFNF": [
+            {
+              "$type": "SetGlobalValueByTargetConfigID",
+              "actorIceSubHurtDelta": -1,
+              "target": "Target",
+              "MDOCLJFGCMP": "GV_FairyLamp_HitDebug",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "[FairyLampFollow] ray hit platform entity",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "BMFHBAHPHCG",
+              "actorIceSubHurtDelta": -1,
+              "target": "Target",
+              "BFNNDCPOFOJ": true,
+              "HJIFOEOFEGG": "GV_FairyLamp_FollowMoveOffset",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "Target",
+              "targetKey": "GV_FairyLamp_FollowMoveTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_FairyLamp_FollowPlatform",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_DisableAura",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "FairyLampHangingEffect"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "CollisionHandler"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "State_202",
+          "gadgetState": 202
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "State_201",
+          "gadgetState": 201
+        }
+      ],
+      "modifiers": {
+        "CollisionEffect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_HangingFairyLamp_04",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "RootNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "CollisionHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "FGDBFNPOELJ",
+              "PEKHKMILCOE": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "CollisionEffect",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "CollisionHandler",
+                  "doOffStage": false
+                }
+              ],
+              "actorIceSubHurtDelta": -1,
+              "DGDHNOKAOKA": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "CollisionEffect",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "CollisionHandler",
+                  "doOffStage": false
+                }
+              ],
+              "MDGNDIKMCDP": {
+                "type": "Always",
+                "enable": true
+              },
+              "JIKGKHNOFFK": "Collider",
+              "targetType": "AllExceptSelf",
+              "IGKGIJKGCDI": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "FairyLampHangingEffect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "scale": 2.200000047683716,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "GlowEffectPoint"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 201
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "CollisionEffect",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "CollisionHandler",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_202": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_HangingFairyLamp",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "State_0"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "State_201",
+          "gadgetState": 201
+        },
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGadgetState"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "NoneOrEqual",
+                      "key": "GV_CarryingFaerieFire"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ShowReminder",
+                      "actorIceSubHurtDelta": -1,
+                      "muteRemoteAction": true,
+                      "canBeHandledOnRecover": true,
+                      "id": 1004390048,
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "GV_CarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ChangeGadgetState",
+                      "actorIceSubHurtDelta": -1,
+                      "BOEADPKMKGC": "WhiteList",
+                      "value": 201,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "PLNNNJAHCBP": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "State_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "LightNode"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Lamp"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ForceDisableState"
+            },
+            {
+              "$type": "ChangeGadgetUIInteractHint",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_LEVEL_HangFairyLamp",
+              "enable": true,
+              "iconName": "UI_Icon_Intee_PickUp",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "LightNode"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01_Glow",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "LightNode"
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Lamp"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ForceDisableState"
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_FairyLamp_HangingPoint_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

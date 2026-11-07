@@ -1,0 +1,577 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "_IsAuraSource_CarryingFaerieFire"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "TickThread_CarryingFaerieFireAura",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AJBLFBJKGGC",
+          "actorIceSubHurtDelta": -1,
+          "sceneID": 9.5
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Other",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "value": 1,
+              "key": "_CanBeAura_CarryingFaerieFire"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_CarryingFaerieFire_Aura",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "TickThread_CarryingFaerieFireAura": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByLCTriggerAll"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_CanBeAura_CarryingFaerieFire"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_CarryingFaerieFire_Aura",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.25,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_CarryingFaerieFire_Aura": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_HasCarryingFaerieFire"
+            }
+          ],
+          "stacking": "RefreshUniqueDurability",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasCarryingFaerieFire"
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_CarryingFaerieFire_Aura",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_AuraColliderRadiusScaleRatio"
+      ],
+      "onAdded": [
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "_IsAuraSource_StableFaerieFire"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "TickThread_StableFaerieFireAura",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetPartScaleByTransform",
+          "actorIceSubHurtDelta": -1,
+          "NFHGCPEPCOK": "AuraCollider",
+          "BMIODAODPLA": {
+            "y": "SGV_AuraColliderRadiusScaleRatio",
+            "x": "SGV_AuraColliderRadiusScaleRatio",
+            "z": "SGV_AuraColliderRadiusScaleRatio"
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "compareType": "MoreThan",
+              "key": "SGV_AuraColliderRadiusScaleRatio"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AJBLFBJKGGC",
+          "actorIceSubHurtDelta": -1,
+          "sceneID": 9.5
+        },
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueKey": "SGV_AuraColliderRadiusScaleRatio",
+          "actions": [
+            {
+              "$type": "SetPartScaleByTransform",
+              "actorIceSubHurtDelta": -1,
+              "NFHGCPEPCOK": "AuraCollider",
+              "BMIODAODPLA": {
+                "y": "SGV_AuraColliderRadiusScaleRatio",
+                "x": "SGV_AuraColliderRadiusScaleRatio",
+                "z": "SGV_AuraColliderRadiusScaleRatio"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "MoreThan",
+                  "key": "SGV_AuraColliderRadiusScaleRatio"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Other",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "value": 1,
+              "key": "_CanBeAura_StableFaerieFire"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_StableFaerieFire_Aura",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "TickThread_StableFaerieFireAura": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByLCTriggerAll"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_CanBeAura_StableFaerieFire"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "NoneOrEqual",
+                  "key": "SGV_DisableAura"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_ForceDisableState"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_StableFaerieFire_Aura",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.25,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_StableFaerieFire_Aura": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_HasStableFaerieFire"
+            }
+          ],
+          "stacking": "RefreshUniqueDurability",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasStableFaerieFire"
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_StableFaerieFire_Aura",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_AuraColliderRadiusScaleRatio"
+      ],
+      "onAdded": [
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "_IsAuraSource_Crystalfly"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "TickThread_CrystalflyAura",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetPartScaleByTransform",
+          "actorIceSubHurtDelta": -1,
+          "NFHGCPEPCOK": "AuraCollider",
+          "BMIODAODPLA": {
+            "y": "SGV_AuraColliderRadiusScaleRatio",
+            "x": "SGV_AuraColliderRadiusScaleRatio",
+            "z": "SGV_AuraColliderRadiusScaleRatio"
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "compareType": "MoreThan",
+              "key": "SGV_AuraColliderRadiusScaleRatio"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AJBLFBJKGGC",
+          "actorIceSubHurtDelta": -1,
+          "sceneID": 9.5
+        },
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueKey": "SGV_AuraColliderRadiusScaleRatio",
+          "actions": [
+            {
+              "$type": "SetPartScaleByTransform",
+              "actorIceSubHurtDelta": -1,
+              "NFHGCPEPCOK": "AuraCollider",
+              "BMIODAODPLA": {
+                "y": "SGV_AuraColliderRadiusScaleRatio",
+                "x": "SGV_AuraColliderRadiusScaleRatio",
+                "z": "SGV_AuraColliderRadiusScaleRatio"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "MoreThan",
+                  "key": "SGV_AuraColliderRadiusScaleRatio"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Other",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "value": 1,
+              "key": "_CanBeAura_Crystalfly"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Crystalfly_Aura",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "TickThread_CrystalflyAura": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByLCTriggerAll"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_CanBeAura_Crystalfly"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "NoneOrEqual",
+                  "key": "SGV_DisableAura"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_ForceDisableState"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Crystalfly_Aura",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.25,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Crystalfly_Aura": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_HasCrystalfly"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasCrystalfly"
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_Crystalfly_Aura",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_FairyLampCarrying_PaimonVehicle_KillSelf",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_FairyLampCarrying_PaimonVehicle_KillSelf": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "StageReadyMixin",
+              "actorIceSubHurtDelta": -1,
+              "onStageReady": [
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Caster",
+                  "killSelfType": "Normal",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "PredicatedBySelectTarget",
+                  "actorIceSubHurtDelta": -1,
+                  "IPGCOPKAFFH": {
+                    "$type": "LIDABPKFBNF",
+                    "target": "Vehicle"
+                  },
+                  "canBeHandledOnRecover": true,
+                  "LAPMNDNLBLI": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Vehicle",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    }
+                  ],
+                  "doOffStage": true,
+                  "targetPredicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Target",
+                      "modifierName": "Paimon_Common_Vehicle_Occupied"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Vehicle",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_FairyLampCarrying_PaimonVehicle_KillSelf",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

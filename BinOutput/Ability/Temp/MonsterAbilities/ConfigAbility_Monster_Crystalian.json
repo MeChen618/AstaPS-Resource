@@ -1,0 +1,1911 @@
+[
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "defaultGlobalValueOnCreate": 1,
+          "enable": true,
+          "globalValueKey": "_ABILITY_Crystalian_MuteHurt_Tag_",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Crystalian_MuteHurt_None",
+            "Crystalian_MuteHurt_Active"
+          ]
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_IS_IN_STARMODE",
+          "valueSteps": [
+            0.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Crystalian_StarModeAction"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Crystalian_MuteHurt_Active": {
+          "elementDurability": 50,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "ActiveTag"
+            }
+          ],
+          "elementType": "Frozen",
+          "properties": {
+            "Actor_IceMuteHurtDelta": 1
+          },
+          "minus_one": -1
+        },
+        "Crystalian_MuteHurt_None": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "ActiveTag"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_StarModeAction": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Common_AffectedByStarReaction_Flash",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "Fx_ChestNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_ABILITY_Crystalian_MuteHurt_Tag_"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_ABILITY_Crystalian_MuteHurt_Tag_"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_Pose",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Crystalian_InitialConfig",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToAbilityStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Crystalian_IceSlowCounteraction",
+          "abilityStates": [
+            "ElementIce"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Crystalian_IceSlowCounteraction": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "properties": {
+            "Animator_OverallSpeedRatioMultiplied": 1.1764706373214722
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_InitialConfig": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachAbilityStateResistance",
+              "actorIceSubHurtDelta": -1,
+              "durationRatio": 1,
+              "resistanceListID": 14002,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_InitialConfig",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToAIAlertnessMixin",
+          "actorIceSubHurtDelta": -1,
+          "alertness": [
+            2,
+            3
+          ],
+          "modifierName": "Crystalian_Crystal_Alert"
+        }
+      ],
+      "modifiers": {
+        "Crystalian_Crystal_Alert": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetPoseBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "CrystalTag"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_Alert",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "Crystal"
+          ],
+          "modifierName": "Crystalian_Crystal_Handler"
+        }
+      ],
+      "modifiers": {
+        "Crystalian_Crystal_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Crystalian_Ice_Alert_Crystal",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_DenyLockOn",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_Invincible",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_MuteTaunt",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_IsGhostToEnemy",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "RigidBodyFreezeMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": true
+            },
+            {
+              "$type": "VelocityForceMixin",
+              "actorIceSubHurtDelta": -1,
+              "excludeForces": [
+                "WindZoneType"
+              ]
+            },
+            {
+              "$type": "RejectAttackMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "attackTags": [
+                "Qin_VortexSmash",
+                "Sucrose_WindBlackHole",
+                "Faruzan_WindBlackHole"
+              ],
+              "type": "RejectAll"
+            },
+            {
+              "$type": "AttachActionToModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "onAdded": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Crystal",
+                    "PushCollider_Extra_Crystal",
+                    "PushCollider_Occluder_Crystal"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox"
+                  ],
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Crystal"
+                  ],
+                  "doOffStage": false
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Crystal",
+                    "PushCollider_Extra_Crystal",
+                    "PushCollider_Occluder_Crystal"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox"
+                  ],
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Crystal"
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "BKOOBLIINDC",
+              "actorIceSubHurtDelta": -1,
+              "FJCHDLIMFHJ": "ForceHide"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_DenyLockOn": {
+          "state": "DenyLockOn",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_Invincible": {
+          "state": "Invincible",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_IsGhostToEnemy": {
+          "state": "IsGhostToEnemy",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_MuteTaunt": {
+          "state": "MuteTaunt",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_Crystal",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "Alert"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 360,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "NormalIdle_Crystal_AS"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 180,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.45399999618530273,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 0.17100000381469727,
+          "steerStateIDs": [
+            "NormalAtk"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 180,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 0.46700000762939453,
+          "steerStateIDs": [
+            "NormalAtk"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 480,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.4269999861717224,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "NormalAtk"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 90,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.6819999814033508,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 0.3310000002384186,
+          "steerStateIDs": [
+            "NormalAtkCircle",
+            "NormalAtkCircleCombo"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 120,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "NormalAtkCircle",
+            "NormalAtkCircleCombo"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 90,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.6779999732971191,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "MeleeAtk",
+            "MeleeAtkCombo"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 60,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.6700000166893005,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 0.3370000123977661,
+          "steerStateIDs": [
+            "NormalBullet_BS"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 45,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "NormalBullet_Loop"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 20,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "NormalBullet_AS"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 45,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.4959999918937683,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "RushAtk_BS1"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 720,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "ECBKKBNLKHP": true,
+          "steerStateIDs": [
+            "RushAtk_BS2"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 720,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 0.5299999713897705,
+          "steerStateIDs": [
+            "RushAtk_AS1"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 180,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.3970000147819519,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true
+        },
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "RushAtk_AS2"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 180,
+          "HDMBGDPAJBG": true,
+          "startNormalizedTime": 0.3970000147819519,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        }
+      ],
+      "abilityName": "Monster_Crystalian_Steer_Common",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "SteerAttackMixin",
+          "actorIceSubHurtDelta": -1,
+          "endNormalizedTime": 1,
+          "steerStateIDs": [
+            "NormalIdle"
+          ],
+          "EMBOAOPDDKP": 180,
+          "angularSpeed": 45,
+          "HDMBGDPAJBG": true,
+          "ILMBFCDNFFC": true,
+          "AAPNADMFCNO": true,
+          "OOHNGHGKBDF": true
+        }
+      ],
+      "abilityName": "Monster_Crystalian_Steer",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "NormalAtk",
+          "modifierName": "Crystalian_NormalAtk_Detect",
+          "normalizeStart": 0.5450000166893005
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.30000001192092896,
+          "value": -1,
+          "stateID": "NormalAtk",
+          "modifierName": "Crystalian_NormalAtk_Rush",
+          "normalizeStart": 0.25
+        }
+      ],
+      "modifiers": {
+        "Crystalian_NormalAtk_Detect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "SelfAttackTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "BySelfForwardAndTargetPosition",
+                  "target": "Target",
+                  "HDMNFMNEBDO": true,
+                  "PDIFFCBMGMO": 60,
+                  "PHIEPIGPOGA": true
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": true,
+                  "boolID": "NormalAtkCombo"
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "NormalAtkCombo"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_NormalAtk_Rush": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "SelfAttackTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetPositionToSelfPosition",
+                  "target": "Target",
+                  "value": 7
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TryFindBlinkPointByBorn",
+                  "actorIceSubHurtDelta": -1,
+                  "limitY": 2.5,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "z": 5
+                    },
+                    "alongGround": true,
+                    "value": 35,
+                    "onGroundRaycastUpDist": 2,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "FixedMonsterRushMove",
+                  "actorIceSubHurtDelta": -1,
+                  "GKOFKDIFIMA": -1,
+                  "canBeHandledOnRecover": true,
+                  "animatorStateIDs": [
+                    "NormalAtk"
+                  ],
+                  "toPos": {
+                    "$type": "CAGGGLCIFFN",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "timeRange": 0.16599999368190765,
+                  "PGLJIHAEIAD": 0.5,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "forces": [
+                "RushMoveType",
+                "FixedRushMoveType"
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_NormalAtk",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "NormalBullet_BS",
+            "NormalBullet_Loop",
+            "NormalBullet_AS"
+          ],
+          "modifierName": "Crystalian_NormalBullet_Reset"
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "modifierName": "Crystalian_NormalBullet_Handler",
+          "normalizedStateIDList": [
+            {
+              "normalizeEnd": 1,
+              "stateID": "NormalBullet_BS",
+              "normalizeStart": 0.7350000143051147
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "NormalBullet_Loop"
+            }
+          ]
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "compareType": "NoneOrEqual",
+              "key": "_ABILITY_Crystalian_CalamityCrystal_CrystalPalace_TAG_"
+            }
+          ],
+          "stateIDs": [
+            "NormalBullet_Loop"
+          ],
+          "modifierName": "Crystalian_NormalBullet_Detect"
+        },
+        {
+          "$type": "AttachToAbilityStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Crystalian_NormalBullet_SpecialState_Handler",
+          "abilityStates": [
+            "ElementFreeze",
+            "ElementPetrifaction"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Crystalian_NormalBullet_Bullet": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Crystalian_Ice_NormalBullet_Fire",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 42009001,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "compareType": "NoneOrEqual",
+                      "key": "_ABILITY_Crystalian_CalamityCrystal_SZT_TAG_"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "compareType": "NoneOrEqual",
+                      "key": "_ABILITY_Crystalian_CalamityCrystal_CrystalPalace_TAG_"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": false,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "Eff_NormalBullet",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 42009010,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "value": 1,
+                      "key": "_ABILITY_Crystalian_CalamityCrystal_SZT_TAG_"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "value": 1,
+                      "key": "_ABILITY_Crystalian_CalamityCrystal_CrystalPalace_TAG_"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": false,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "Eff_NormalBullet",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KillMultiBullet",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 42009001
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "AJPJJDEGDKB": 2
+            },
+            {
+              "$type": "KillMultiBullet",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 42009010
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "AJPJJDEGDKB": 5
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_NormalBullet_Detect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "SelfAttackTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetPositionToSelfPosition",
+                  "target": "Target",
+                  "logic": "Lesser",
+                  "value": 6
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": true,
+                  "boolID": "NormalBulletEnd"
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_NormalBullet_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_NormalBullet_Bullet",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_NormalBullet_Bullet",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "NormalBulletEnd"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_NormalBullet_Reset": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "NormalBulletEnd"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_NormalBullet_SpecialState_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_NormalBullet_Bullet",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "Crystalian_NormalBullet_Handler"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_NormalBullet_Bullet",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_NormalBullet",
+      "onKill": [
+        {
+          "$type": "KillMultiBullet",
+          "actorIceSubHurtDelta": -1,
+          "gadgetInfo": {
+            "configID": 42009001
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "AJPJJDEGDKB": 2
+        },
+        {
+          "$type": "KillMultiBullet",
+          "actorIceSubHurtDelta": -1,
+          "gadgetInfo": {
+            "configID": 42009010
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "AJPJJDEGDKB": 5
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "actorIceSubHurtDelta": -1,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackSphere",
+              "radius": 0.20000000298023224,
+              "massiveAttackRatio": 1,
+              "MPNIJNGFBIH": {
+                "INOCAOHPEBB": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                }
+              },
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            "attackInfo": {
+              "HBOOKFMCODC": {
+                "BPIJOAMNKIH": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                },
+                "onHitEffectName": "default"
+              },
+              "attackProperty": {
+                "elementDurability": 25,
+                "elementType": "Ice",
+                "enBreak": 1,
+                "elementRank": 1,
+                "damagePercentage": 0.44999998807907104,
+                "attackType": "Range"
+              },
+              "attenuationTag": "Crystalian_NormalBullet",
+              "INKGMIHAPMA": {
+                "NDIBGPPKGJP": "Shake"
+              },
+              "attenuationGroup": "Crystalian_NormalBullet",
+              "canBeModifiedBy": "OriginOwner",
+              "cameraShake": {
+                "extension": {
+                  "cycleDamping": 0.11999999731779099,
+                  "baseOnCamera": true,
+                  "rangeAttenuation": 0.5,
+                  "baseCycle": 0.11999999731779099
+                },
+                "shakeDistance": 20
+              },
+              "hitPattern": {
+                "hitHaltTimeScale": 0.009999999776482582,
+                "BPIJOAMNKIH": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                },
+                "hitImpulseType": "LV2"
+              }
+            }
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "effectPattern": "Eff_Monster_Crystalian_Ice_NormalBullet_Hit",
+          "scale": 1,
+          "canBeHandledOnRecover": true,
+          "effectTempleteID": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByCollisionPoint",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "abilityName": "Crystalian_NormalBullet",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "RushAtk_Loop1",
+            "RushAtk_Loop2"
+          ],
+          "modifierName": "Crystalian_RushAtk_ActionHandler"
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "modifierName": "Crystalian_RushAtk_EffectHandler",
+          "normalizedStateIDList": [
+            {
+              "normalizeEnd": 1,
+              "stateID": "RushAtk_BS1",
+              "normalizeStart": 0.9800000190734863
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "RushAtk_BS2",
+              "normalizeStart": 0.9800000190734863
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "RushAtk_Loop1"
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "RushAtk_Loop2"
+            },
+            {
+              "normalizeEnd": 0.08900000154972076,
+              "stateID": "RushAtk_AS1"
+            },
+            {
+              "normalizeEnd": 0.08900000154972076,
+              "stateID": "RushAtk_AS2"
+            }
+          ]
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "RushAtk_AS1",
+          "modifierName": "Crystalian_RushAtk_Detect1",
+          "normalizeStart": 0.5299999713897705
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "RushAtk_AS2",
+          "modifierName": "Crystalian_RushAtk_Detect2",
+          "normalizeStart": 0.6499999761581421
+        },
+        {
+          "$type": "AttachToAbilityStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "Crystalian_RushAtk_SpecialState_Handler",
+          "abilityStates": [
+            "ElementFreeze",
+            "ElementPetrifaction"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Crystalian_RushAtk_Action": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnablePushColliderName",
+              "actorIceSubHurtDelta": -1,
+              "pushColliderNames": [
+                "PushCollider",
+                "PushCollider_Shield"
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "bulletID": 42009002,
+              "FKNPJMHEBPG": true,
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": false,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "compareType": "NoneOrEqual",
+                      "key": "_ABILITY_Crystalian_CalamityCrystal_Shield_"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "compareType": "NoneOrEqual",
+                      "key": "_ABILITY_Crystalian_CalamityCrystal_Shield_Trigger_"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Shield"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 42009002
+              },
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                42009002
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_RushAtk_ActionHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "SelfAttackTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetPositionToSelfPosition",
+                  "target": "Target",
+                  "value": 10
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TryFindBlinkPointByBorn",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "limitY": 2.5,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByTargetLinearPoint",
+                    "FGENBFBPMPJ": 50,
+                    "BADHEOCLPAH": true,
+                    "linearOffset": 7,
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "alongGround": true,
+                    "value": 35,
+                    "onGroundRaycastUpDist": 2,
+                    "OJCNJLECDHI": true,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "TryFindBlinkPointByBorn",
+                  "actorIceSubHurtDelta": -1,
+                  "limitY": 2.5,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "z": 17
+                    },
+                    "alongGround": true,
+                    "value": 35,
+                    "onGroundRaycastUpDist": 2,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "FixedMonsterRushMove",
+              "actorIceSubHurtDelta": -1,
+              "GKOFKDIFIMA": -1,
+              "canBeHandledOnRecover": true,
+              "animatorStateIDs": [
+                "RushAtk_Loop1",
+                "RushAtk_Loop2"
+              ],
+              "toPos": {
+                "$type": "CAGGGLCIFFN",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "timeRange": 0.16599999368190765,
+              "PGLJIHAEIAD": 0.5,
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Action",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "forces": [
+                "RushMoveType",
+                "FixedRushMoveType"
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Action",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_RushAtk_Detect1": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "SelfAttackTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetPositionToSelfPosition",
+                  "target": "Target",
+                  "logic": "LesserOrEqual",
+                  "value": 5
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": true,
+                  "boolID": "RushAtkNear"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "boolID": "RushAtkNear"
+                }
+              ]
+            },
+            {
+              "$type": "Randomed",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetAnimatorInt",
+                  "intID": "RushAtkComboType",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1
+                }
+              ],
+              "chance": 0.5,
+              "failActions": [
+                {
+                  "$type": "SetAnimatorInt",
+                  "intID": "RushAtkComboType",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 2
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_RushAtk_Detect2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "SelfAttackTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetPositionToSelfPosition",
+                  "target": "Target",
+                  "logic": "LesserOrEqual",
+                  "value": 5
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": true,
+                  "boolID": "RushAtkNear"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "boolID": "RushAtkNear"
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_RushAtk_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Crystalian_Ice_RushAtk_Loop",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_RushAtk_EffectHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Effect",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Effect",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Crystalian_RushAtk_SpecialState_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Action",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Effect",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "Crystalian_RushAtk_ActionHandler"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Action",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "Crystalian_RushAtk_EffectHandler"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Crystalian_RushAtk_Effect",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Crystalian_RushAtk",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "DamageByAttackValue",
+          "actorIceSubHurtDelta": -1,
+          "target": "Target",
+          "canBeHandledOnRecover": true,
+          "attackInfo": {
+            "HBOOKFMCODC": {
+              "BPIJOAMNKIH": {
+                "value": 1,
+                "GGOHGMFHHEC": true
+              },
+              "onHitEffectName": "default"
+            },
+            "attackProperty": {
+              "elementDurability": 25,
+              "elementType": "Ice",
+              "enBreak": 1,
+              "elementRank": 1,
+              "damagePercentage": 0.8999999761581421,
+              "attackType": "Range"
+            },
+            "INKGMIHAPMA": {
+              "NDIBGPPKGJP": "Shake"
+            },
+            "attenuationGroup": "default",
+            "canBeModifiedBy": "OriginOwner",
+            "cameraShake": {
+              "extension": {
+                "cycleDamping": 0.11999999731779099,
+                "baseOnCamera": true,
+                "rangeAttenuation": 0.5,
+                "baseCycle": 0.11999999731779099
+              },
+              "shakeDistance": 20
+            },
+            "hitPattern": {
+              "hitHaltTimeScale": 0.009999999776482582,
+              "BPIJOAMNKIH": {
+                "value": 1,
+                "GGOHGMFHHEC": true
+              },
+              "onHitEffectName": "default",
+              "hitImpulseType": "LV1"
+            }
+          },
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByTarget",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "x": 1
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "abilityName": "Crystalian_RushAtk",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

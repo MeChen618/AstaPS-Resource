@@ -1,0 +1,4683 @@
+{
+  "AKBJEFEJFBH": {
+    "attachPoints": {
+      "equip01": "WeaponR",
+      "equip02": "WeaponL"
+    },
+    "LFEGPJFDHJN": -1,
+    "PJNFCFNCGKH": -1
+  },
+  "NMGHGFLFPOC": {
+    "NDNACDMLJFK": {
+      "OHPFEKIEFCD": "SquadManager"
+    }
+  },
+  "model": {
+    "bulletAim": "RootNode",
+    "elementDrop": "RootNode",
+    "elementPendant": "RootNode"
+  },
+  "BCJBHDPIFHG": true,
+  "audio": {
+    "animAudio": {
+      "onTransitionIn": [
+        {
+          "currentStateName": "HitThrow",
+          "audioEvent": {
+            "text": "Stop_SFX_Vukodlak"
+          }
+        },
+        {
+          "currentStateName": "Die",
+          "audioEvent": {
+            "text": "Stop_Vukodlak_Strong_NoWeapon_VO"
+          }
+        }
+      ]
+    }
+  },
+  "move": {
+    "$type": "ConfigAnimatorMove",
+    "facingMove": "FourDirection",
+    "BNELOEGOACA": 180,
+    "BCDCMDJFBMC": true,
+    "deepWaterLevel": -1,
+    "CHONNHALFOL": true,
+    "yawSpeedRatio": 5,
+    "DNOIJDJAICK": 1,
+    "EKEEMGABPCF": true,
+    "NMADAMHPKFI": {
+      "LDEJIPLJNJO": 240,
+      "CPADCGOPBHG": 45,
+      "LBLKAKBBACH": 60,
+      "KDMNFPPJHBE": 240
+    },
+    "GBBMGCCDMHN": -1,
+    "JNDPIKMBGBN": -1,
+    "CIBEKEJDAFE": "RootNode",
+    "AKPDGMPHEDO": -1,
+    "NMFFMGIBIBJ": {
+      "MDLNAJBDGBG": -1
+    },
+    "MKFDAIJGANO": true,
+    "OFHCBBPBIMH": 1,
+    "monsterSizeType": "StrongHumanoidType",
+    "FAKCEKJHEDI": 5
+  },
+  "GBCOBKGCNDH": 1,
+  "combat": {
+    "die": {
+      "dieForceDisappearTime": 1,
+      "BEOKLIIJOBN": true,
+      "dieEndTime": 1,
+      "CNAMDLOIBDC": true,
+      "DJKFJDBFJJH": true,
+      "EBAKMOONCFJ": true,
+      "EDKPGLFDDLG": true,
+      "GCPBNALGGHJ": true,
+      "HFIHLPGPDEH": true,
+      "IGOFADFEMKB": true,
+      "JIOGACAKBBA": true,
+      "dieShaderData": "MonsterDie",
+      "MJONBIBAKHK": true,
+      "PCAIDBJKFGA": true
+    },
+    "animEvents": {
+      "HeavyAttack_Fire": {
+        "attackPattern": {
+          "$type": "ConfigAttackBox",
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "size": {
+            "y": 2,
+            "x": 2,
+            "z": 2.5
+          },
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "x": 0.699999988079071,
+              "z": 0.10000000149011612
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Fire",
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 1,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      },
+      "HeavyAttack_Grass": {
+        "attackPattern": {
+          "$type": "ConfigAttackBox",
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "size": {
+            "y": 2,
+            "x": 2,
+            "z": 2.5
+          },
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "x": 0.699999988079071,
+              "z": 0.10000000149011612
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Grass",
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 1,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      },
+      "HeavyAttack_None": {
+        "attackPattern": {
+          "$type": "ConfigAttackBox",
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "size": {
+            "y": 2,
+            "x": 2,
+            "z": 2.5
+          },
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "x": 0.699999988079071,
+              "z": 0.10000000149011612
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 100,
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 1,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      },
+      "HeavyAttack_Rock": {
+        "attackPattern": {
+          "$type": "ConfigAttackBox",
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "size": {
+            "y": 2,
+            "x": 2,
+            "z": 2.5
+          },
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "x": 0.699999988079071,
+              "z": 0.10000000149011612
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Rock",
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 1,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      },
+      "NormalAttack_Fire": {
+        "attackPattern": {
+          "$type": "ConfigAttackCircle",
+          "radius": 2,
+          "fanAngle": 360,
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "z": 0.25
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          },
+          "height": 1.5
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Fire",
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 0.6000000238418579,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      },
+      "NormalAttack_Grass": {
+        "attackPattern": {
+          "$type": "ConfigAttackCircle",
+          "radius": 2,
+          "fanAngle": 360,
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "z": 0.25
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          },
+          "height": 1.5
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Grass",
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 0.6000000238418579,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      },
+      "NormalAttack_None": {
+        "attackPattern": {
+          "$type": "ConfigAttackCircle",
+          "radius": 2,
+          "fanAngle": 360,
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "z": 0.25
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          },
+          "height": 1.5
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 100,
+            "enBreak": 50,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 0.6000000238418579,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV2"
+          }
+        }
+      },
+      "NormalAttack_Rock": {
+        "attackPattern": {
+          "$type": "ConfigAttackCircle",
+          "radius": 2,
+          "fanAngle": 360,
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "z": 0.25
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          },
+          "height": 1.5
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Rock",
+            "enBreak": 100,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 0.6000000238418579,
+            "attackType": "Melee"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 0.09000000357627869,
+            "shakeDir": {
+              "_x": 1,
+              "_z": 1
+            },
+            "shakeDistance": 20,
+            "shakeRange": 0.03999999910593033
+          },
+          "forceCameraShake": true,
+          "hitPattern": {
+            "hitHaltTimeScale": 0.009999999776482582,
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      }
+    },
+    "combatLock": {
+      "BHFIOHALGAG": -1,
+      "lockShape": "CircleLockEnemy",
+      "MPNEFIAAKHC": -1,
+      "lockType": "Avatar&Monster_Lv4",
+      "GMKBLBIDNGB": -1,
+      "KMCJPLNFCOD": 1,
+      "LNGMNOFCBII": 3
+    },
+    "property": {
+      "BDDMGKJJKKO": true,
+      "bonusRange": 70,
+      "endureType": "Monster_Minion",
+      "LNKOFKCFPGC": true,
+      "OJLNFCKHDHF": true
+    },
+    "box": {
+      "NJOENJEENGG": -45,
+      "enable": true,
+      "IOEOJHPCMIB": 15,
+      "PALMCGDLKCD": 45
+    }
+  },
+  "headControl": {
+    "checkInSurface": true,
+    "DPMMJNDONLO": "Stay",
+    "useHeadControl": true,
+    "affectedByWorld": true
+  },
+  "BDCBPBCONAE": {
+    "GGBEPMDFMKO": -1,
+    "MIANMCBBBFA": "Eff_Monster_Common_Born",
+    "enable": true
+  },
+  "field": {
+    "AECILKOHJIP": true,
+    "LOMBMPIICIJ": {
+      "centerType": "Center"
+    },
+    "IFFPJFGJCGO": true
+  },
+  "GKKFFLBLNPH": [
+    {
+      "LBFAACBFIIL": 1,
+      "EKNOPIHACML": 257,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 101,
+      "EKNOPIHACML": 258,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 201,
+      "EKNOPIHACML": 259,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 301,
+      "EKNOPIHACML": 260,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 401,
+      "EKNOPIHACML": 261,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 501,
+      "EKNOPIHACML": 262,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 11001,
+      "EKNOPIHACML": 266,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 12001,
+      "EKNOPIHACML": 266,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 13001,
+      "EKNOPIHACML": 267,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 14001,
+      "EKNOPIHACML": 268,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 30001,
+      "EKNOPIHACML": 269,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 30002,
+      "EKNOPIHACML": 270,
+      "FCKFNGAFLJC": 0.20000000298023224
+    }
+  ],
+  "billboard": {
+    "$type": "CKJFCMMLABF",
+    "forceShowDistance": 15,
+    "offsetType": "Character",
+    "radiusOffset": 0.25,
+    "PMNMLIPNKIG": 35,
+    "offset": {
+      "_x": -0.05000000074505806
+    },
+    "value": 1,
+    "BBGLDDOKONB": "UI_TopBarV2_EliteIcon",
+    "MKKOGIEANLD": 15,
+    "attachPoint": "BillboardAttach",
+    "showHPBar": true,
+    "showDistance": 24
+  },
+  "equipController": {
+    "defaultLayer": {
+      "$type": "DKOLPAMCGLP",
+      "stateIDs": {
+        "Afraid_AS": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Afraid_AS": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Akimbo_AS": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Akimbo_AS": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Alert": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Alert": [
+              "Monster_Undead01_Warning",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Alert",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Alert_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Aware": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Aware": [
+              "Monster_Human_AwareIcon",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Aware_BS_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "BeHit": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit"
+          ],
+          "animatorStates": {
+            "Hit_H": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Hit_H",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HitH_VO"
+            ],
+            "Hit_L": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HitL_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "BeHitThrow": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "setAnimatorBoolean": [
+            {
+              "name": "AirDie",
+              "normalizeEnd": 1
+            }
+          ],
+          "animatorStates": {
+            "HitThrow": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HitThrow_VO"
+            ],
+            "HitThrowDrop": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill",
+            "BeHit"
+          ]
+        },
+        "BeHitThrowToStandby": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "setAnimatorBoolean": [
+            {
+              "name": "AirDie",
+              "normalizeEnd": 0.4000000059604645
+            }
+          ],
+          "animatorStates": {
+            "HitThrowToGround": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HitThrowToGround"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill",
+            "BeHit"
+          ]
+        },
+        "Die": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "DoSkill",
+            "SheathWeaponTrigger"
+          ],
+          "animatorStates": {
+            "Die": [
+              "Monster_VolkodlakStrong_Die",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Die",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Die_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Die_RagDoll": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "AirDie": [
+              "Monster_VolkodlakStrong_AirDie"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "KMIHBKCNFKO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Drink": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Drink": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Drink"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "HeavyAttack01": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "HeavyAttack01": [
+              "Monster_VolkodlakStrong_NoWeapon_HeavyAttack01_None",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HeavyAttack01",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HeavyAttack01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "LeanOnWall_AS": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "LeanOnWall_AS": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "NormalAttack01": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "NormalAttack01": [
+              "Monster_VolkodlakStrong_NoWeapon_NormalAttack01_None",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_NormalAttack01",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_NormalAttack01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "NormalIdle": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "AwareAS": [],
+            "AwareIdle": [],
+            "Standby": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMove": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Run": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_WalkForward"
+            ],
+            "WalkBack": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_WalkForward"
+            ],
+            "WalkForward": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_WalkForward"
+            ],
+            "WalkLeft": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Turn"
+            ],
+            "WalkRight": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Turn"
+            ]
+          },
+          "massRatio": 1,
+          "CHFLBLIBJFG": true,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Personality01": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Personality01": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Personality01",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Personality01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "PreCombat": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Afraid": [],
+            "Akimbo": [],
+            "LeanOnWall_Idle": [],
+            "Squat01_Idle": [],
+            "Talk": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Revenge": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Revenge": [
+              "Monster_VolkodlakStrong_NoWeapon_Revenge_Element_Dummy",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Revenge",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Revenge_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true
+        },
+        "Revenge_Combo1": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Revenge_Combo1": [
+              "Monster_VolkodlakStrong_NoWeapon_NormalAttack01_Element_Dummy",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_NormalAttack01"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true
+        },
+        "Revenge_Combo2": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Revenge_Combo2": [
+              "Monster_VolkodlakStrong_NoWeapon_HeavyAttack01_Element_Dummy",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HeavyAttack01",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HeavyAttack01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true
+        },
+        "Revenge_Combo3": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Revenge_Combo3": [
+              "Monster_VolkodlakStrong_NoWeapon_ThrowAttack_Element_Dummy",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_ThrowAttack",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_ThrowAttack01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true
+        },
+        "Revenge_Comfused": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Confused00": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HitL_VO"
+            ],
+            "Confused01": [],
+            "Confused02": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Hit_H",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_HitH_VO"
+            ],
+            "Confused03": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_WalkForward"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true
+        },
+        "SheathWeapon": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "SheathWeapon": [
+              "Monster_Human_Sword_SheathWeapon"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true
+        },
+        "Squart_AS": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Squart_AS": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Squart_AS"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Struggle": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "animatorStates": {
+            "Struggle": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "SwimDie": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "DoSkill"
+          ],
+          "animatorStates": {
+            "SwimDie": [
+              "Monster_VolkodlakStrong_Die"
+            ],
+            "SwimDie_AS": [],
+            "SwimDie_BS": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Talk_AS": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Talk_AS": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "TauntAware01": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "TauntAware01": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_TauntAware01",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_AwareTaunt01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "TauntAware02": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "TauntAware02": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_TauntAware02",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_AwareTaunt02_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Threaten": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Threaten": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Threaten"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "ThrowAttack": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "ThrowAttack": [
+              "Monster_VolkodlakStrong_NoWeapon_ThrowAttack_None",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_ThrowAttack",
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_ThrowAttack01_VO"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Turn": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "TurnLeft": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Turn"
+            ],
+            "TurnRight": [
+              "Audio_Monster_Vukodlak_Strong_NoWeapon_01_Turn"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        }
+      }
+    }
+  },
+  "aibeta": {
+    "target": {
+      "CMFDAIABDLD": {
+        "LLABBNCBFLG": 2
+      },
+      "GIADGELNCNL": [
+        "THREAT",
+        "AWAKE_TARGET"
+      ]
+    },
+    "PHGOAMIEIGJ": {
+      "AKNPGFKBNAP": true,
+      "NBMBLEHKGFO": 1,
+      "GKIACFBAFCG": 100,
+      "GOFNLAJNIPJ": 3,
+      "ODGOKDIEHLL": 0.5,
+      "OGJNOKICJBM": 10,
+      "IEHMGFMJENA": 500,
+      "GKJHPJKDANC": true,
+      "HHKNFPHCIBM": 4.75,
+      "GGAEOAEKGIF": "DefaultTemplate",
+      "MPFCBDBJAHB": 50,
+      "LADHCNJLFLF": 12,
+      "OKALEALDCHM": 40,
+      "FDHIBKDANDA": 30,
+      "JMGNBBGHENM": 5,
+      "JOHKGMJLJFJ": 4.75,
+      "DHKBMMOGBDB": 5,
+      "GIODDDBKKFI": "Monster_TauntLevel_1",
+      "OOOHEJCBEGF": 500
+    },
+    "ui": {
+      "LJNGLFEEEID": true,
+      "PFLIGLJNOHC": "SelfCamp"
+    },
+    "moveSetting": {
+      "snakelikeMoveSetting": {
+        "segmentCount": 8,
+        "segmentDistance": 5,
+        "maxCurvatrue": 1,
+        "minCurvature": 0.6000000238418579,
+        "minSegmentDistance": 4
+      },
+      "almostReachedDistanceRun": 1.5,
+      "COELDJHANJK": true,
+      "EKKCLEEDHPB": true,
+      "navMeshAgentName": "Undead01",
+      "enable": true,
+      "almostReachedDistanceWalk": 1
+    },
+    "BCDNFEINLKI": {
+      "GAEAJPGPEGF": 0.5,
+      "HAHJEOHBMMF": 5,
+      "CMKCOEHEIMF": 23
+    },
+    "skills": {
+      "1": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 1,
+        "CCIEMOGBGJJ": "10",
+        "CHJDHEHKNJK": true,
+        "name": "OnAlert",
+        "skillType": "OnAlert",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          -700683835,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Alert"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1001,
+            1101
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "10001": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 10001,
+        "CCIEMOGBGJJ": "10",
+        "name": "OnAware",
+        "skillType": "OnAware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          1016934773,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Aware"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            1001,
+            1002,
+            1003,
+            1004
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "101": {
+        "cdUpperRange": 2,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 101,
+        "CCIEMOGBGJJ": "11",
+        "cd": 2,
+        "name": "NormalAttack",
+        "skillType": "Combat",
+        "sceneID": 4,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "JLNNGPGDAAG": [
+          -1893637901,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "NormalAttack01"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 5,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 3,
+          "ENCCPIMJPCC": 70,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "11001": {
+        "cdUpperRange": 5.5,
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 11001,
+        "CCIEMOGBGJJ": "10",
+        "cd": 1.5,
+        "name": "Drink",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 2,
+        "JLNNGPGDAAG": [
+          -864063531,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Drink"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 2.5,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableFreeAction",
+            "value": 1
+          },
+          "pose": [
+            1001,
+            1003
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "12001": {
+        "cdUpperRange": 5.5,
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 12001,
+        "CCIEMOGBGJJ": "10",
+        "cd": 1.5,
+        "name": "Threaten",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 2,
+        "JLNNGPGDAAG": [
+          2043541367,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Threaten"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 2.5,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1002
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "201": {
+        "cdUpperRange": 2,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 201,
+        "CCIEMOGBGJJ": "11",
+        "cd": 6,
+        "name": "HeavyAttack",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "JLNNGPGDAAG": [
+          1149156209,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "HeavyAttack01"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "CLHBOMHKOMB": -1,
+        "OBAGEFLDGEH": true,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 6,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 4,
+          "ENCCPIMJPCC": 70,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "30001": {
+        "cdUpperRange": 6,
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 30001,
+        "CCIEMOGBGJJ": "10",
+        "cd": 2,
+        "name": "TauntAware01",
+        "skillType": "Aware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 10,
+        "JLNNGPGDAAG": [
+          680668984,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "11",
+        "stateIDs": [
+          "TauntAware01"
+        ],
+        "skillGroupCDID": 2,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "JKABLKIEHAA": "Natsaurus_Aware",
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            1101
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        }
+      },
+      "30002": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 30002,
+        "CCIEMOGBGJJ": "10",
+        "name": "TauntAware01_Side",
+        "skillType": "Aware",
+        "sceneID": 6,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "JLNNGPGDAAG": [
+          680668984,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "11",
+        "stateIDs": [
+          "TauntAware01"
+        ],
+        "skillGroupCDID": 2,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "JKABLKIEHAA": "Natsaurus_Aware",
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": 60,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            1101
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        }
+      },
+      "30011": {
+        "cdUpperRange": 6,
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 30011,
+        "CCIEMOGBGJJ": "10",
+        "cd": 2,
+        "name": "TauntAware02",
+        "skillType": "Aware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 10,
+        "JLNNGPGDAAG": [
+          -1315209598,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "11",
+        "stateIDs": [
+          "TauntAware02"
+        ],
+        "skillGroupCDID": 2,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "JKABLKIEHAA": "Natsaurus_Aware",
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            1101
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        }
+      },
+      "301": {
+        "cdUpperRange": 8,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 301,
+        "CCIEMOGBGJJ": "11",
+        "cd": 8,
+        "name": "Taunt",
+        "skillType": "Combat",
+        "sceneID": 3,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 5,
+        "JLNNGPGDAAG": [
+          -1129018321,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Personality01"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 2,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 25,
+          "ENCCPIMJPCC": 70,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 18,
+          "pose": [
+            1
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "401": {
+        "cdUpperRange": 2,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "RangedAttack",
+        "BPKJMPMECBJ": 401,
+        "CCIEMOGBGJJ": "11",
+        "cd": 4,
+        "name": "ThrowAttack",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "JLNNGPGDAAG": [
+          1848599937,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ThrowAttack"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 20,
+          "ENCCPIMJPCC": 70,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 10,
+          "pose": [
+            1
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "501": {
+        "cdUpperRange": 2,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 501,
+        "CCIEMOGBGJJ": "11",
+        "cd": 20,
+        "name": "Revenge",
+        "skillType": "Combat",
+        "sceneID": 1,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 5,
+        "JLNNGPGDAAG": [
+          1582835146,
+          -146394777,
+          1850695901,
+          424169547,
+          -774608171,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Revenge",
+          "Revenge_Combo1",
+          "Revenge_Combo2",
+          "Revenge_Combo3",
+          "Revenge_Comfused"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 5,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 20,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "90011": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 90011,
+        "CCIEMOGBGJJ": "10",
+        "name": "OnAware",
+        "skillType": "OnAware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          -1417983869,
+          1016934773,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Squart_AS",
+          "Aware"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            9001
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "90021": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 90021,
+        "CCIEMOGBGJJ": "10",
+        "name": "OnAware",
+        "skillType": "OnAware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          1988409368,
+          1016934773,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "LeanOnWall_AS",
+          "Aware"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            9002
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "90031": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 90031,
+        "CCIEMOGBGJJ": "10",
+        "name": "OnAware",
+        "skillType": "OnAware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          -574761532,
+          1016934773,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Afraid_AS",
+          "Aware"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            9003
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "90041": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 90041,
+        "CCIEMOGBGJJ": "10",
+        "name": "OnAware",
+        "skillType": "OnAware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          1163604972,
+          1016934773,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Talk_AS",
+          "Aware"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            9004
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "90051": {
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 90051,
+        "CCIEMOGBGJJ": "10",
+        "name": "OnAware",
+        "skillType": "OnAware",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          -193823158,
+          1016934773,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "GKNGKMDDFLJ": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": -1,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "Akimbo_AS",
+          "Aware"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "MJGGHMEMBHA": true,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "LJHPBKEALAG": {
+            "$type": "ABHJCFNPINP",
+            "key": "GV_DisableAwareAction",
+            "value": 1
+          },
+          "pose": [
+            9005
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      }
+    },
+    "EBOHOFPCNAN": {
+      "CIBDOBDFGJB": {
+        "LLCBEMFMBND": 5,
+        "PNOLOEJENFA": 10
+      }
+    },
+    "sensing": {
+      "JJPHFHLBBFH": {
+        "DAKALCNBNFJ": "CombatExcludeGWGO",
+        "JPFNBOIHOKG": 0.5,
+        "EALGEADNHOF": "SelfCamp",
+        "CALAMCGAJAM": "Enemy",
+        "GBGFIEBBIMP": "CombatExcludeGWGO",
+        "PIJKDKMIPIB": 20
+      },
+      "PLIOAGPJACP": {
+        "DAKALCNBNFJ": "CombatExcludeGWGO",
+        "JPFNBOIHOKG": 0.5,
+        "EALGEADNHOF": "SelfCamp",
+        "CALAMCGAJAM": "Enemy",
+        "GBGFIEBBIMP": "CombatExcludeGWGO",
+        "PIJKDKMIPIB": 20
+      }
+    },
+    "ICACLAIGNBF": {
+      "enable": true,
+      "ELJDNOIHOCJ": {
+        "7_2Sneak": {
+          "DefaultPoses": "7_2Sneak"
+        },
+        "BattleSensitive": {
+          "DefaultPoses": "BattleSensitive"
+        },
+        "DefaultTemplate": {
+          "DefaultPoses": "DefaultSetting"
+        },
+        "HighAlert": {
+          "DefaultPoses": "HighAlert"
+        },
+        "LowAlert": {
+          "DefaultPoses": "LowAlert"
+        },
+        "NeverCombatTemplate": {
+          "DefaultPoses": "NeverCombat"
+        },
+        "UltraLowSensing": {
+          "DefaultPoses": "UltraLowSensing"
+        }
+      },
+      "LANLMPGACEG": {
+        "7_2Sneak": {
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 20,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 5
+          }
+        },
+        "BattleSensitive": {
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "JFGMCICLGMM": 5,
+            "FNBEIKNEDKL": 20,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 10
+          }
+        },
+        "DefaultTemplate": {
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 20,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 5
+          }
+        },
+        "HighAlert": {
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 30,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 8
+          }
+        },
+        "LowAlert": {
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 13,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 5
+          }
+        },
+        "NeverCombatTemplate": {
+          "DefaultPoses": {
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 30,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60
+          }
+        },
+        "UltraLowSensing": {
+          "DefaultPoses": {
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 9,
+            "PDALAMIJIGM": 20,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 2
+          }
+        }
+      },
+      "LLFNEHJGOLN": {
+        "7_2Sneak": {
+          "MHJCBEPGOJM": 20,
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 20,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 5
+        },
+        "BattleSensitive": {
+          "MHJCBEPGOJM": 20,
+          "JFGMCICLGMM": 5,
+          "FNBEIKNEDKL": 20,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 10
+        },
+        "DefaultSetting": {
+          "MHJCBEPGOJM": 20,
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 20,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 5
+        },
+        "HighAlert": {
+          "MHJCBEPGOJM": 20,
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 30,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 8
+        },
+        "LowAlert": {
+          "MHJCBEPGOJM": 20,
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 13,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 5
+        },
+        "NeverCombat": {
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 30,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60
+        },
+        "UltraLowSensing": {
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 9,
+          "PDALAMIJIGM": 20,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 2
+        }
+      }
+    },
+    "network": {
+      "syncSkill": true,
+      "HLLLLEKLGEJ": true
+    },
+    "enable": true,
+    "MAEEEKALMJA": {
+      "OKGOGMNNLCI": "Monster"
+    },
+    "skillGroupCDConfigs": [
+      {
+        "skillGroupCDTime": 11,
+        "skillGroupCDID": 1
+      },
+      {
+        "skillGroupCDTime": 10,
+        "skillGroupCDID": 2
+      }
+    ],
+    "PGMCNABMJNN": "EscenarioControl",
+    "birdCirclingTactic": [
+      {
+        "$type": "CHFAPEIMKGH",
+        "platformMap": {
+          "HLFHOCCJPOM": -1,
+          "LPALMNLGBDG": -1
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            1001,
+            1004,
+            0,
+            0
+          ],
+          "pose": [
+            1001,
+            1004
+          ]
+        }
+      },
+      {
+        "$type": "DAKJOCNCAHM",
+        "platformMap": {
+          "JEGLLAJHCPI": true,
+          "HLFHOCCJPOM": -1,
+          "JIMGHMCBLMN": 2,
+          "autoChangeStep": 2,
+          "FCBAFOMECKK": 5,
+          "GLEBOGDGDGF": true,
+          "LPALMNLGBDG": -1,
+          "LPBMECIHACK": -1
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            1001,
+            1004,
+            0,
+            0
+          ],
+          "pose": [
+            1001,
+            1004
+          ]
+        }
+      },
+      {
+        "$type": "DMFENMFKJNC",
+        "platformMap": {
+          "AHJOILMJJBK": 0.800000011920929,
+          "BBFMMHKGGNK": 2,
+          "GJONJGMLGCE": 1,
+          "DDAFBOMKCNF": "1111",
+          "CPHKLDHPGPG": {
+            "HCHFDCNOOOF": 3,
+            "GKDGONHCCGH": 1,
+            "OAPPEGJJPJN": [
+              1,
+              1,
+              1,
+              3,
+              3
+            ],
+            "BDDMLINFGDB": 1,
+            "LKBGFILKLJI": 3,
+            "OCDMAABBBLA": 1,
+            "JHJMIBOIDMN": [
+              1,
+              2,
+              3,
+              6,
+              9
+            ]
+          },
+          "DLLEPIEMBPI": true,
+          "EJGJNAGOMIN": 2,
+          "JJKJCPOKFBA": true,
+          "autoChangeStep": 1,
+          "BLFHACAMKAN": 0.375,
+          "KCKJLFFDGIK": "1111",
+          "PLDDOGJBHNI": 2,
+          "rangeMax": 4,
+          "FCBAFOMECKK": -1
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "pose": [
+            1
+          ]
+        }
+      },
+      {
+        "$type": "CPMHOOIFNGO",
+        "platformMap": {
+          "DFACPOBGFEL": 1,
+          "ONEDBEDNLKB": 4,
+          "BLNEDKOEMHD": true,
+          "autoChangeStep": 2,
+          "OKJMBNGBNBF": 2.5,
+          "maxFileNum": -1,
+          "MLAOFFJPDBJ": 4,
+          "duHPRation": -1,
+          "DHCMOMNPAPF": 50
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "pose": [
+            1
+          ]
+        }
+      },
+      {
+        "$type": "FMDMMFBEMKJ",
+        "platformMap": {
+          "FOMOJHPBBLO": 3.299999952316284,
+          "HBMMMMHJMGB": -1,
+          "AMDCGJLOHPF": true,
+          "autoChangeStep": 2,
+          "AOCBDIMLIGH": -1,
+          "JGIBALKIGEE": -1,
+          "maxFileNum": -1,
+          "MJFHKJCMJMN": -1,
+          "MNBMJFBBIBN": -1
+        },
+        "enable": true
+      },
+      {
+        "$type": "OBAAIJJCIAM",
+        "platformMap": {
+          "HGPFPLHPDFL": 3,
+          "PHDDEAKPMLM": 1.5,
+          "MPDNMJOICOD": 30,
+          "autoChangeStep": 1,
+          "IJNGCOOMIFH": 15,
+          "maxFileNum": -1,
+          "GOGEHCNNLPM": 3.75,
+          "IDCKJCONKNA": 7.5
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            1001,
+            0,
+            0,
+            0
+          ],
+          "pose": [
+            1001
+          ]
+        },
+        "BNLFLJMAJAD": 3
+      }
+    ],
+    "NNIFBEFNCLN": {
+      "AACPDDOEMJM": true
+    },
+    "skillGCD": 2.5,
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ],
+      "NeverCombat": []
+    },
+    "NJHDEBENJIH": {
+      "{\"$type\":\"System.RuntimeType\"}": {
+        "$type": "OBAAIJJCIAM",
+        "platformMap": {
+          "HGPFPLHPDFL": 3,
+          "PHDDEAKPMLM": 1.5,
+          "MPDNMJOICOD": 30,
+          "autoChangeStep": 1,
+          "IJNGCOOMIFH": 15,
+          "maxFileNum": -1,
+          "GOGEHCNNLPM": 3.75,
+          "IDCKJCONKNA": 7.5
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            1001,
+            0,
+            0,
+            0
+          ],
+          "pose": [
+            1001
+          ]
+        },
+        "BNLFLJMAJAD": 3
+      }
+    },
+    "PPPMANGLJLC": {
+      "enable": true,
+      "JEMFLCGABGK": 40
+    },
+    "LJOFEJAMEBO": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "KMMHAOBGHBF": {
+      "LANLMPGACEG": {
+        "7_2Sneak": {
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 16,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 12,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 50,
+            "LADHCNJLFLF": 12,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 6,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 12,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "GIODDDBKKFI": "Monster_TauntLevel_1",
+            "OOOHEJCBEGF": 500
+          }
+        },
+        "BattleSensitive": {
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 500,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 16,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "MPFCBDBJAHB": 50,
+            "LADHCNJLFLF": 12,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "GIODDDBKKFI": "Monster_TauntLevel_1",
+            "OOOHEJCBEGF": 500
+          }
+        },
+        "DefaultTemplate": {
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 16,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 12,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 50,
+            "LADHCNJLFLF": 12,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 6,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 12,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "GIODDDBKKFI": "Monster_TauntLevel_1",
+            "OOOHEJCBEGF": 500
+          }
+        },
+        "HighAlert": {
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 16,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 18,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 50,
+            "LADHCNJLFLF": 12,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 8,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 18,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "GIODDDBKKFI": "Monster_TauntLevel_1",
+            "OOOHEJCBEGF": 500
+          }
+        },
+        "LowAlert": {
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 16,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 8,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 50,
+            "LADHCNJLFLF": 12,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 4,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 8,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "GIODDDBKKFI": "Monster_TauntLevel_1",
+            "OOOHEJCBEGF": 500
+          }
+        },
+        "UltraLowSensing": {
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 16,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 6,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 50,
+            "LADHCNJLFLF": 12,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 2,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 6,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "GIODDDBKKFI": "Monster_TauntLevel_1",
+            "OOOHEJCBEGF": 500
+          }
+        }
+      },
+      "LLFNEHJGOLN": {
+        "7_2Sneak": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 16,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 12,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 50,
+          "LADHCNJLFLF": 12,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 6,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 12,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "GIODDDBKKFI": "Monster_TauntLevel_1",
+          "OOOHEJCBEGF": 500
+        },
+        "BattleSensitive": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 500,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 16,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "MPFCBDBJAHB": 50,
+          "LADHCNJLFLF": 12,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "GIODDDBKKFI": "Monster_TauntLevel_1",
+          "OOOHEJCBEGF": 500
+        },
+        "Default": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 16,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 12,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 50,
+          "LADHCNJLFLF": 12,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 6,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 12,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "GIODDDBKKFI": "Monster_TauntLevel_1",
+          "OOOHEJCBEGF": 500
+        },
+        "HighAlert": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 16,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 18,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 50,
+          "LADHCNJLFLF": 12,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 8,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 18,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "GIODDDBKKFI": "Monster_TauntLevel_1",
+          "OOOHEJCBEGF": 500
+        },
+        "LowAlert": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 16,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 8,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 50,
+          "LADHCNJLFLF": 12,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 4,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 8,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "GIODDDBKKFI": "Monster_TauntLevel_1",
+          "OOOHEJCBEGF": 500
+        },
+        "UltraLowSensing": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 16,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 6,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 50,
+          "LADHCNJLFLF": 12,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 2,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 6,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "GIODDDBKKFI": "Monster_TauntLevel_1",
+          "OOOHEJCBEGF": 500
+        }
+      },
+      "AFHNDHCBOIF": {
+        "7_2Sneak": {
+          "DefaultPoses": "7_2Sneak"
+        },
+        "BattleSensitive": {
+          "DefaultPoses": "BattleSensitive"
+        },
+        "DefaultTemplate": {
+          "DefaultPoses": "Default"
+        },
+        "HighAlert": {
+          "DefaultPoses": "HighAlert"
+        },
+        "LowAlert": {
+          "DefaultPoses": "LowAlert"
+        },
+        "UltraLowSensing": {
+          "DefaultPoses": "UltraLowSensing"
+        }
+      }
+    },
+    "FLGOPECJKEJ": {
+      "enable": true
+    }
+  },
+  "dither": {
+    "AOKIINGPPPO": -1
+  },
+  "AHPNGGHNMLH": {
+    "maxYawDegree": 45,
+    "NIFJPDLMDNN": 2,
+    "FEIHMAEHIML": 6,
+    "maxPitchDegree": 30,
+    "affectedByWorld": true,
+    "LPLPBBCHJFO": "Body",
+    "destroyRockWhenInit": true,
+    "MABIBPCMNHF": "Neck",
+    "CLHMFPBKKLI": "Head",
+    "animStates": [
+      "NormalIdle",
+      "NormalMove",
+      "Alert",
+      "Turn",
+      "Aware",
+      "Personality01",
+      "TauntAware01",
+      "TauntAware02"
+    ]
+  },
+  "abilities": [
+    {
+      "abilityName": "Monster_VolkodlakStrong_TurnSteer"
+    },
+    {
+      "abilityName": "Monster_VolkodlakStrong_NoWeapon_Steer"
+    },
+    {
+      "abilityName": "Monster_VolkodlakStrong_NoWeapon_EventPatternManager"
+    },
+    {
+      "abilityName": "Monster_VolkodlakStrong_NoWeapon_ThrowAttack_None"
+    },
+    {
+      "abilityName": "Monster_VolkodlakStrong_NoWeapon_ThrowAttack_Element"
+    },
+    {
+      "abilityName": "Monster_VolkodlakStrong_NoWeapon_RevengeBranch"
+    },
+    {
+      "abilityName": "Monster_VolkodlakStrong_IdleEffectManager"
+    },
+    {
+      "abilityName": "Monster_Volkodlak_Strong_StarModeManager"
+    },
+    {
+      "abilityName": "Monster_Volkodlak_Strong_StarModeManager_ThrowAttack"
+    },
+    {
+      "abilityName": "Monster_Human_Equip_Display_Manager"
+    },
+    {
+      "abilityName": "Monster_Human_Equip_SheathWeapon"
+    },
+    {
+      "abilityName": "Monster_Human_Equip_HideWeapon"
+    },
+    {
+      "abilityName": "Monster_Human_ReturnToBorn"
+    },
+    {
+      "abilityName": "Eremite_TurnState_AnimatorSteer"
+    },
+    {
+      "abilityName": "Monster_Human_FreePoseManager"
+    },
+    {
+      "abilityName": "Monster_Human_DieSteer"
+    }
+  ],
+  "initialPoses": {
+    "Afraid": {
+      "EBEFGNOBMLN": 9003,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "9003"
+        }
+      },
+      "enable": true
+    },
+    "Akimbo": {
+      "EBEFGNOBMLN": 9005,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "9005"
+        }
+      },
+      "enable": true
+    },
+    "Default": {
+      "EBEFGNOBMLN": 1001,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "1001"
+        }
+      },
+      "enable": true
+    },
+    "Drink": {
+      "EBEFGNOBMLN": 1003,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "1003"
+        }
+      },
+      "enable": true
+    },
+    "LeanOnWall": {
+      "EBEFGNOBMLN": 9002,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "9002"
+        }
+      },
+      "enable": true
+    },
+    "Route": {
+      "EBEFGNOBMLN": 1004,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "1004"
+        }
+      },
+      "enable": true
+    },
+    "Squart": {
+      "EBEFGNOBMLN": 9001,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "9001"
+        }
+      },
+      "enable": true
+    },
+    "Talk": {
+      "EBEFGNOBMLN": 9004,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "9004"
+        }
+      },
+      "enable": true
+    },
+    "Theraten": {
+      "EBEFGNOBMLN": 1002,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "1002"
+        }
+      },
+      "enable": true
+    }
+  },
+  "animal": {
+    "radarHint": true
+  },
+  "common": {
+    "BJNIDKDIBMO": true,
+    "CEAFAEAPJBE": -1,
+    "mass": 200,
+    "DHMNIAMNFCI": true,
+    "effectAttachShape": {
+      "$type": "ALAMOCLGEAO",
+      "mesh": "EffectMesh"
+    },
+    "modelHeight": 1.649999976158142,
+    "HOJCMODKBAE": true,
+    "ICGECOIJGDL": true,
+    "ILEPOGINJOE": true,
+    "value": 1,
+    "shadowViewSizeRatio": 1,
+    "LICLOFMHGMB": -1,
+    "viewSize": 1,
+    "MPALFICHICI": true,
+    "height": 1.5,
+    "OMEMFFPBCMK": 1,
+    "PIBJMGKFELP": true
+  },
+  "PCGNFOMNOPB": {
+    "KCFIAIEHKDL": 1
+  },
+  "uiSetting": {
+    "isInteractive": true,
+    "KABPLKMAJNJ": true,
+    "IBNCKOBACMF": true
+  },
+  "captureGroup": {
+    "FMEEEHPMHDB": {
+      "IBKFOAEFCHJ": {
+        "value": 1
+      },
+      "JEJAGCKKJAA": {
+        "GPJBCHKCIJO": true,
+        "CPLHKIEMGAD": 20
+      },
+      "IPFABCFDBGG": {
+        "CHBMKLMPFNC": {
+          "GPJBCHKCIJO": true,
+          "OGBIDMEDGGD": 4,
+          "showDistance": 20
+        }
+      },
+      "INJHBCKFHJP": {
+        "attachPointName": "BillboardAttach",
+        "showDistance": 20,
+        "FCNBOCKFDBG": true
+      },
+      "DGBLGBHELLG": {
+        "GPJBCHKCIJO": true,
+        "KOKGCKKGGDN": {
+          "OGBIDMEDGGD": 4
+        },
+        "LJEDMJFCHMK": 1
+      },
+      "KNNCEDMKCOK": {
+        "prefabName": "FirmamentCarBoard",
+        "value": 1
+      },
+      "LGBAPCGFFAK": {
+        "GPJBCHKCIJO": true,
+        "ECBEEKENBCN": 20
+      }
+    }
+  },
+  "EAPABGHPPFJ": {
+    "sceneID": 0.5,
+    "GBBCEMKAOHK": 90
+  },
+  "NGAKKPGOAAC": {
+    "squad": {
+      "EAGNPIKDHND": "G_LevelDefault"
+    }
+  },
+  "stateLayers": {
+    "showDitherDuration": 1,
+    "normalBetweenCamera": {
+      "detectDitherRange": 3
+    }
+  },
+  "NEGIFCMEBDM": {
+    "BPPGEPKKJEG": {
+      "FOECJMLJBBK": 1
+    },
+    "beHit": {
+      "CCLMGILPGCC": 1,
+      "GJAINPECJBG": 1,
+      "NKONIBPCOAJ": 1
+    },
+    "PHOLKEJNEPA": {
+      "EFMLFCPOJJP": 1
+    }
+  },
+  "OMKJJCMEIOG": true
+}

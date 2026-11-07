@@ -1,0 +1,119 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_OverrideSpeedTargetVelocity"
+      ],
+      "abilityMixins": [
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueKey": "SGV_OverrideSpeedTargetVelocity",
+          "actions": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "key": "SGV_OverrideSpeedTargetVelocity"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_OverrideSpeedTargetVelocity",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "LessAndEqual",
+                  "value": -1,
+                  "key": "SGV_OverrideSpeedTargetVelocity"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_OverrideSpeedToZero",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "SGV_OverrideSpeedTargetVelocity"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_OverrideSpeedTargetVelocity",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "SGV_OverrideSpeedTargetVelocity"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_OverrideSpeedToZero",
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_OverrideSpeedTargetVelocity": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OverrideCurveSpeedMixin",
+              "actorIceSubHurtDelta": -1,
+              "AMHOFDLHIFE": 0.10000000149011612,
+              "JKKIFHJPKGJ": 0.10000000149011612,
+              "AMGFHPIKHDB": "SGV_OverrideSpeedTargetVelocity"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_OverrideSpeedToZero": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OverrideCurveSpeedMixin",
+              "actorIceSubHurtDelta": -1,
+              "AMHOFDLHIFE": 0.10000000149011612,
+              "JKKIFHJPKGJ": 0.10000000149011612
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_Minecart_SpeedControlBySGV",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

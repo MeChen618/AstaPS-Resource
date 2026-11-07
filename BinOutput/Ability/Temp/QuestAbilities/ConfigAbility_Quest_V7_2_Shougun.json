@@ -1,0 +1,2135 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_ABILITY_Shougun_Katana_Mark"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Quest_V7_2_Boss_Shougun_ElementalBurst_Extend_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_Shougun_ElementalBurst_Energy_Recover": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ReviveElemEnergy",
+              "actorIceSubHurtDelta": -1,
+              "ratio": 0.20000000298023224,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "thinkInterval": 0.800000011920929,
+          "duration": 8,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_Shougun_ElementalBurst_Extend_And_RemoveWeather": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AddElementDurability",
+              "actorIceSubHurtDelta": -1,
+              "useLimitRange": true,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Shougun_Tachi_Handler",
+              "doOffStage": true,
+              "maxValue": 99999,
+              "value": 99900
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_Shougun_ElementalBurst_RemoveWeather",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_Shougun_ElementalBurst_Energy_Recover",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_Shougun_ElementalBurst_RemoveWeather": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Shougun_ElementalBurst_Weather_AfterCine",
+              "doOffStage": true
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Shougun_ElementalBurst_Weather_AfterCine",
+              "doOffStage": true
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_ElementalBurst_Extend_Handler": {
+          "reApplyModifierOnStateChange": true,
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "properties": {
+            "Actor_AddHurtDelta": "AddHurtDelta"
+          },
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_ABILITY_Shougun_Katana_Mark",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "Quest_Shougun_ElementalBurst_Extend_And_RemoveWeather"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Quest_V7_2_Boss_Shougun_ElementalBurst_Extend",
+      "abilitySpecials": {
+        "AddHurtDelta": 4
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 20691,
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "cdRatio": 1,
+          "doOffStage": false,
+          "costStaminaRatio": 1,
+          "NKOFINBNOOK": 1
+        },
+        {
+          "$type": "AddGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "useLimitRange": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 100,
+          "value": -100,
+          "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "value": 1,
+          "key": "GV_IS_TSkill_Hidden"
+        },
+        {
+          "$type": "ShowExtraAbility",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "ServerLuaCall",
+          "actorIceSubHurtDelta": -1,
+          "CallParamList": [
+            220374020
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "luaCallType": "SpecificGroup",
+          "funcName": "SLC_ClearPoolAndStopSpawn"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "GV_IS_FinalSkill_Ready",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_Handler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_AddSkill": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveAvatarSkillInfo",
+              "skillID": 20691,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_SwitchSkill",
+              "doOffStage": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20691,
+              "actorIceSubHurtDelta": -1,
+              "IOEKFKNMBMH": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_Energy_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onHittingOther": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06",
+                    "ExtraAttack",
+                    "Elemental_Art",
+                    "Elemental_Art_Hold",
+                    "Elemental_Art_Extra",
+                    "Elemental_Burst"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Shougun_Super_ElementalBurst_Energy_Recovery",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "maxValue": 100,
+              "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_Energy_Handler",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy_MaxChargeCount"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy_ShowProgress"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_AddSkill",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_SwitchSkill": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "maxValue": 100,
+              "value": 100,
+              "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20691,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "skillIndex": 4
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy",
+              "valueSteps": [
+                99.5,
+                100.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_UI_Fx"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Super_ElementalBurst_UI_Fx": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachUIEffect",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "effectPattern": "Eff_UI_MaxEnergy_Electric_BirdBoss",
+              "enable": true,
+              "effectSlot": "ElementBurst",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_Super_ElementalBurst_Energy_Recovery": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 100,
+              "value": 20,
+              "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Quest_V7_2_Boss_Shougun_Super_ElementalBurst",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_SHOUGUN_T_Summon_Skill_Hit_Count",
+        "GV_IS_IN_Summon_Skill"
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_SHOUGUN_T_Summon_Skill_Hit_Count"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler_B",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_SHOUGUN_T_Summon_Skill_Hit_Count"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler_B",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler_B",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_SHOUGUN_T_Summon_Skill_Hit_Count"
+            }
+          ]
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_SHOUGUN_T_Summon_Skill_Hit_Count"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_IS_IN_Summon_Skill"
+        }
+      ],
+      "modifiers": {
+        "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Select_Target",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_HideAvatar",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Invincible",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_BanInput",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Gadget",
+              "doOffStage": false
+            }
+          ],
+          "duration": "StateDuration",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit_Handler_B": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Select_Target",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_HideAvatar",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Invincible",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_BanInput",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Gadget_B",
+              "doOffStage": false
+            }
+          ],
+          "duration": "StateDuration_B",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_BanInput": {
+          "reApplyModifierOnStateChange": true,
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveVelocityForce",
+              "actorIceSubHurtDelta": -1,
+              "forces": [
+                "RetreatType",
+                "RushMoveType",
+                "AirflowType",
+                "RiseType"
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "properties": {
+            "Animator_MoveSpeedRatio": -1,
+            "Animator_OverallSpeedRatioMultiplied": 0
+          },
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DisableChangeAvatarMixin",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot1"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot2"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot3"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot4"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot5"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Camera": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": [
+            "StateDuration",
+            0.10000000149011612,
+            "SUB"
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "MJMJJHBAPOK",
+                "EIFDPLGLJIO": 20,
+                "PGJBNAOBKHH": "EaseOutCubic",
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "PCBFMHNEGKM": "EaseOutCubic",
+                "JCBINFMOIHM": 0.5,
+                "priority": "SkillSpecial",
+                "HOAHEELCEAB": 14.5,
+                "JJPPJLNBBBB": true,
+                "EBKDPDBDHKC": 6
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "KOPOJKGHLDH",
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "JCBINFMOIHM": 0.5,
+                "priority": "SkillSpecial",
+                "fov": 55
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "IFDOKECLKGI",
+                "OIMLNOHJLDM": true,
+                "offset": {
+                  "_y": 3.200000047683716
+                },
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "JCBINFMOIHM": 0.5,
+                "priority": "SkillSpecial",
+                "DDNKAJMHKJL": true
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "MCCFEMIIPBK",
+                "PGJBNAOBKHH": "EaseOutCubic",
+                "LAEOEBACLCG": 20,
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "IOAEKALCIKA": -10,
+                "PCBFMHNEGKM": "EaseOutCubic",
+                "JCBINFMOIHM": 0.5,
+                "CEIAHLAIAIL": "Absolute",
+                "priority": "SkillSpecial",
+                "IJOGKMFMGPP": "Keep",
+                "JJPPJLNBBBB": true,
+                "MKMAFKJCGOE": "Keep",
+                "FLMPEEFNBLF": "AvatarBack"
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Camera_B": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": [
+            "StateDuration_B",
+            0.10000000149011612,
+            "SUB"
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "MJMJJHBAPOK",
+                "EIFDPLGLJIO": 14,
+                "PGJBNAOBKHH": "EaseOutCubic",
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "PCBFMHNEGKM": "EaseOutCubic",
+                "JCBINFMOIHM": 0.5,
+                "priority": "SkillSpecial",
+                "HOAHEELCEAB": 11.5,
+                "JJPPJLNBBBB": true,
+                "EBKDPDBDHKC": 6
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "KOPOJKGHLDH",
+                "OIOHDNHEHPE": 0.30000001192092896,
+                "JCBINFMOIHM": 0.5,
+                "priority": "SkillSpecial",
+                "fov": 50
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "IFDOKECLKGI",
+                "OIMLNOHJLDM": true,
+                "offset": {
+                  "_x": -1.5,
+                  "_y": 2.5,
+                  "_z": 2
+                },
+                "OIOHDNHEHPE": 2.200000047683716,
+                "JCBINFMOIHM": 0.5,
+                "priority": "SkillSpecial",
+                "DDNKAJMHKJL": true
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "MCCFEMIIPBK",
+                "PGJBNAOBKHH": "EaseOutCubic",
+                "LAEOEBACLCG": 25,
+                "OIOHDNHEHPE": 2.5,
+                "IOAEKALCIKA": -25,
+                "PCBFMHNEGKM": "EaseOutCubic",
+                "JCBINFMOIHM": 0.5,
+                "CEIAHLAIAIL": "Absolute",
+                "priority": "SkillSpecial",
+                "IJOGKMFMGPP": "Keep",
+                "JJPPJLNBBBB": true,
+                "MKMAFKJCGOE": "Keep",
+                "FLMPEEFNBLF": "AvatarBack"
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Camera_B_Delay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Camera_B",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "duration": 0.15000000596046448,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Camera_Delay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Camera",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "duration": 0.15000000596046448,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Gadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TurnDirectionToPos",
+              "actorIceSubHurtDelta": -1,
+              "GLPJJCIDOFA": -1,
+              "canBeHandledOnRecover": true,
+              "toPos": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "_ABILITY_Gadget_CreatePos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "KBOBCHGAMFB": "Caster",
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "doOffStage": false,
+              "maxAngle": -1
+            },
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "campTargetType": "Enemy",
+              "gadgetID": 42906130,
+              "KLGHKKGGHEA": {
+                "DBOLJFPPFGI": 0.5,
+                "CGDBBHHIINM": true,
+                "JOCOGLBCMEJ": 0.5,
+                "JAILLBHLHNO": true
+              },
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true,
+              "doOffStage": false,
+              "campID": 1001,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "_ABILITY_Gadget_CreatePos",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "_ABILITY_Gadget_CreateDir",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Camera_Delay",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Shougun_Mitakenarukami_Blink_AS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillGadgetV2",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 42906130
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": true
+            }
+          ],
+          "duration": "StateDuration",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Gadget_B": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TurnDirectionToPos",
+              "actorIceSubHurtDelta": -1,
+              "GLPJJCIDOFA": -1,
+              "canBeHandledOnRecover": true,
+              "toPos": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "_ABILITY_Gadget_CreatePos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "KBOBCHGAMFB": "Caster",
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "doOffStage": false,
+              "maxAngle": -1
+            },
+            {
+              "$type": "CreateGadget",
+              "actorIceSubHurtDelta": -1,
+              "campTargetType": "Enemy",
+              "gadgetID": 42906131,
+              "KLGHKKGGHEA": {
+                "DBOLJFPPFGI": 0.5,
+                "CGDBBHHIINM": true,
+                "JOCOGLBCMEJ": 0.5,
+                "JAILLBHLHNO": true
+              },
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true,
+              "doOffStage": false,
+              "campID": 1001,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "_ABILITY_Gadget_CreatePos",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "_ABILITY_Gadget_CreateDir",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shougun_T_Summon_Skill_Camera_B_Delay",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Shougun_Mitakenarukami_Blink_AS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillGadgetV2",
+              "actorIceSubHurtDelta": -1,
+              "gadgetInfo": {
+                "configID": 42906131
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": true
+            }
+          ],
+          "duration": "StateDuration_B",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_HideAvatar": {
+          "JBIJJOJPICN": true,
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_IS_IN_Summon_Skill"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Pole_Shougun_Katana_ExtraAttack_ShowSpark",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "z": 0.20000000298023224
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_IS_IN_Summon_Skill"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "EntityInVisibleMixin",
+              "reason": "Mixin",
+              "actorIceSubHurtDelta": -1,
+              "ECIEGOECCIA": true,
+              "ENMNDHGFGDM": {
+                "EAEPMBENPPN": true
+              },
+              "LMCPBHECDEI": true,
+              "disableAudio": true,
+              "AAHPKGHIPPG": {
+                "EAEPMBENPPN": true
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Invincible": {
+          "state": "Invincible",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachAbilityStateResistance",
+              "actorIceSubHurtDelta": -1,
+              "durationRatio": 1,
+              "resistanceListID": 11002,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shougun_T_Summon_Skill_Select_Target": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "!!!!!!!!!!!!!!选目标!!!!!!!!!!!!!!!!!!",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "shapeName": "CircleR15",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "LAPMNDNLBLI": [
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "CPOBHCODBBO",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "z": 0.10000000149011612
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "_ABILITY_Gadget_CreatePos"
+                },
+                {
+                  "$type": "SetGlobalDir",
+                  "actorIceSubHurtDelta": -1,
+                  "CKEFLFOBBBL": "Target",
+                  "canBeHandledOnRecover": true,
+                  "setTarget": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "CPOBHCODBBO",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "CHHJODLLMHA",
+                      "GKKFICOLGAL": true,
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "_ABILITY_Gadget_CreateDir"
+                },
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "noTargetActions!!!!!!!!!!!无怪：Gadget朝向 = 镜头方向!!!!!!!!!!noTargetActions",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                }
+              ],
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "successActions!!!!!!!!!!!有怪瞄准怪!!!!!!!!!!successActions",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Target",
+                  "targetKey": "_ABILITY_Gadget_Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByTargetLinearPoint",
+                    "FGENBFBPMPJ": 50,
+                    "BADHEOCLPAH": true,
+                    "linearOffset": 0.10000000149011612,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "_ABILITY_Gadget_CreatePos"
+                },
+                {
+                  "$type": "SetGlobalDir",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Target",
+                  "CKEFLFOBBBL": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "_ABILITY_Gadget_CreatePos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "KBOBCHGAMFB": "Caster",
+                    "direction": {
+                      "$type": "ConfigDirectionByLookAtEntity",
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "_ABILITY_Gadget_CreateDir"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "CPOBHCODBBO",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "z": 0.10000000149011612
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "_ABILITY_Gadget_CreatePos"
+                },
+                {
+                  "$type": "SetGlobalDir",
+                  "actorIceSubHurtDelta": -1,
+                  "CKEFLFOBBBL": "Target",
+                  "canBeHandledOnRecover": true,
+                  "setTarget": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "CPOBHCODBBO",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "CHHJODLLMHA",
+                      "GKKFICOLGAL": true,
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "_ABILITY_Gadget_CreateDir"
+                },
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "!!!!!!!!!!!无怪：Gadget朝向 = 镜头方向!!!!!!!!!!failActions",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit",
+      "abilitySpecials": {
+        "StateDuration": 4,
+        "StateDuration_B": 6.5
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Quest_V7_2_Boss_Shougun_T_Skill_ElectricDamage_Invalid_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_Shougun_T_Skill_ElectricDamage_Invalid_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ClearEndura",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Quest_SupportSkill_Shougun_Shield",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_T_Skill_ElectricDamage_Invalid_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "GV_ElectricDamage_Invalid",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "Quest_Shougun_T_Skill_ElectricDamage_Invalid_Effect"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Quest_V7_2_Boss_Shougun_T_Skill_ElectricDamage_Invalid",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Handler",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": true,
+          "key": "DamageSystemValue"
+        }
+      ],
+      "modifiers": {
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Avatar_Select": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_HELP_SKILL_TYPE"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Ayaka",
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "value": 1,
+                  "key": "_HELP_SKILL_TYPE"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yoimiya",
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "value": 2,
+                  "key": "_HELP_SKILL_TYPE"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yae",
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "AddGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 3,
+              "value": 1,
+              "key": "_HELP_SKILL_TYPE"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 3,
+                  "key": "_HELP_SKILL_TYPE"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HELP_SKILL_TYPE"
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Ayaka": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ShowReminder",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "id": 511140125,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Ayaka_Attack",
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_HELP_SKILL_TARGET"
+              }
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Ayaka_Attack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Girl_Sword_Ayaka_ExtraAttack_Constellation_6",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Girl_Sword_Ayaka_Icespine_Field",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default"
+                },
+                "attackProperty": {
+                  "HJHPJLGAHHP": true,
+                  "damageExtra": [
+                    "DamageSystemValue",
+                    "CJB_DamageRatio",
+                    "MUL"
+                  ],
+                  "elementType": "Ice",
+                  "strikeType": "Pierce",
+                  "elementRank": 1,
+                  "attackType": "Melee"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "attenuationGroup": "default",
+                "canBeModifiedBy": "OriginOwner",
+                "cameraShake": {
+                  "extension": {
+                    "cycleDamping": 0.11999999731779099,
+                    "baseOnCamera": true,
+                    "rangeAttenuation": 0.5,
+                    "baseCycle": 0.11999999731779099
+                  },
+                  "shakeDistance": 20
+                },
+                "hitPattern": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default",
+                  "hitImpulseType": "LV0"
+                }
+              },
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 1.2000000476837158
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HELP_SKILL_TYPE"
+            }
+          ],
+          "minus_one": -1,
+          "onAttackLanded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Other",
+                  "targetKey": "_HELP_SKILL_TARGET",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "modifierMixins": [
+            {
+              "$type": "OnAvatarUseSkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "onTriggerSkill": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Avatar_Select",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yae": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ShowReminder",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "id": 481160102,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yae_Attack",
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_HELP_SKILL_TARGET"
+              }
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yae_Attack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom_Fox",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default"
+                },
+                "attackProperty": {
+                  "HJHPJLGAHHP": true,
+                  "damageExtra": [
+                    "DamageSystemValue",
+                    "CJB_DamageRatio",
+                    "MUL"
+                  ],
+                  "elementType": "Electric",
+                  "strikeType": "Pierce",
+                  "elementRank": 1,
+                  "attackType": "Melee"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "attenuationGroup": "default",
+                "canBeModifiedBy": "OriginOwner",
+                "cameraShake": {
+                  "extension": {
+                    "cycleDamping": 0.11999999731779099,
+                    "baseOnCamera": true,
+                    "rangeAttenuation": 0.5,
+                    "baseCycle": 0.11999999731779099
+                  },
+                  "shakeDistance": 20
+                },
+                "hitPattern": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default",
+                  "hitImpulseType": "LV0"
+                }
+              },
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 1.2000000476837158
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yoimiya": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ShowReminder",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "id": 511140142,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yoimiya_Attack",
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_HELP_SKILL_TARGET"
+              }
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Quest_V7_2_Boss_Shougun_Inazuma_Summon_Yoimiya_Attack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Explode",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default"
+                },
+                "attackProperty": {
+                  "HJHPJLGAHHP": true,
+                  "damageExtra": [
+                    "DamageSystemValue",
+                    "CJB_DamageRatio",
+                    "MUL"
+                  ],
+                  "elementType": "Fire",
+                  "strikeType": "Pierce",
+                  "elementRank": 1,
+                  "attackType": "Melee"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "attenuationGroup": "default",
+                "canBeModifiedBy": "OriginOwner",
+                "cameraShake": {
+                  "extension": {
+                    "cycleDamping": 0.11999999731779099,
+                    "baseOnCamera": true,
+                    "rangeAttenuation": 0.5,
+                    "baseCycle": 0.11999999731779099
+                  },
+                  "shakeDistance": 20
+                },
+                "hitPattern": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default",
+                  "hitImpulseType": "LV0"
+                }
+              },
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByTarget",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 1.2000000476837158
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Quest_V7_2_Boss_Shougun_Inazuma_Summon",
+      "abilitySpecials": {
+        "CJB_DamageRatio": 65,
+        "DamageSystemValue": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

@@ -1,0 +1,391 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_ABILITY_Avatar_Mitya_Attack_Mode"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_ABILITY_Avatar_Mitya_Attack_Mode",
+          "valueSteps": [
+            -1.5,
+            -0.5,
+            0.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Invalid_Attack_Mode_-01",
+            "Default_Attack_Mode_00"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Default_Attack_Mode_00": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 0.11363635957241058,
+              "value": -1,
+              "stateID": "Attack01",
+              "modifierName": "Default_Attack_Mode_00_Attack01_AttackEvent_01",
+              "normalizeStart": 0.07792207598686218
+            },
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 0.126841738820076,
+              "value": -1,
+              "stateID": "Attack02",
+              "modifierName": "Default_Attack_Mode_00_Attack02_AttackEvent_01",
+              "normalizeStart": 0.09112746268510818
+            },
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 0.11229372769594193,
+              "value": -1,
+              "stateID": "Attack03",
+              "modifierName": "Default_Attack_Mode_00_Attack03_AttackEvent_01",
+              "normalizeStart": 0.08956646174192429
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Default_Attack_Mode_00_Attack01_AttackEvent_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackBox",
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "size": {
+                    "y": 2,
+                    "x": 3,
+                    "z": 9
+                  },
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 1.5
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "PAMPGCJOLEN",
+                      "offset": {
+                        "_z": 2
+                      },
+                      "IOEPPNIGNDG": true,
+                      "range": 2,
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "elementType": "Electric",
+                    "enBreak": 11,
+                    "elementRank": 1,
+                    "damagePercentage": "AS_Attack01_Damage",
+                    "attackType": "Range"
+                  },
+                  "attenuationTag": "NormalAttack",
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "canBeModifiedBy": "OriginOwner",
+                  "attackTag": "NormalAttack_01",
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "extension": {
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5
+                    },
+                    "shakeTime": 0.10000000149011612,
+                    "shakeDir": {
+                      "_y": -1
+                    },
+                    "shakeDistance": 10,
+                    "shakeRange": 0.30000001192092896
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 1,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV2"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Default_Attack_Mode_00_Attack02_AttackEvent_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackBox",
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "size": {
+                    "y": 2,
+                    "x": 3,
+                    "z": 9
+                  },
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 1.5
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "PAMPGCJOLEN",
+                      "offset": {
+                        "_z": 2
+                      },
+                      "IOEPPNIGNDG": true,
+                      "range": 2,
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "elementType": "Electric",
+                    "enBreak": 9.100000381469727,
+                    "elementRank": 1,
+                    "damagePercentage": "AS_Attack02_Damage",
+                    "attackType": "Range"
+                  },
+                  "attenuationTag": "NormalAttack",
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "canBeModifiedBy": "OriginOwner",
+                  "attackTag": "NormalAttack_02",
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "extension": {
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5
+                    },
+                    "shakeTime": 0.10000000149011612,
+                    "shakeDir": {
+                      "_y": -1
+                    },
+                    "shakeDistance": 10,
+                    "shakeRange": 0.30000001192092896
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 1,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV2"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Default_Attack_Mode_00_Attack03_AttackEvent_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackBox",
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "size": {
+                    "y": 2,
+                    "x": 3,
+                    "z": 9
+                  },
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 1.5
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "PAMPGCJOLEN",
+                      "offset": {
+                        "_z": 2
+                      },
+                      "IOEPPNIGNDG": true,
+                      "range": 2,
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "elementType": "Electric",
+                    "enBreak": 12.899999618530273,
+                    "elementRank": 1,
+                    "damagePercentage": "AS_Attack03_Damage",
+                    "attackType": "Range"
+                  },
+                  "attenuationTag": "NormalAttack",
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "canBeModifiedBy": "OriginOwner",
+                  "attackTag": "NormalAttack_03",
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "extension": {
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5
+                    },
+                    "shakeTime": 0.15000000596046448,
+                    "shakeDir": {
+                      "_y": -1,
+                      "_z": 1
+                    },
+                    "shakeDistance": 20,
+                    "shakeRange": 0.15000000596046448
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 1,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV2"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Invalid_Attack_Mode_-01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_Boy_Catalyst_Mitya_AniEvent_Attack",
+      "abilitySpecials": {
+        "AS_Attack01_Damage": 0,
+        "AS_Attack02_Damage": 0,
+        "AS_Attack03_Damage": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

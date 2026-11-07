@@ -1,0 +1,2813 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Gjmy_TriggerBullet_AddSkillInfo",
+          "doOffStage": true
+        }
+      ],
+      "modifiers": {
+        "SwitchSkill": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20692,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "skillIndex": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_TriggerBullet_AddSkillInfo": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveAvatarSkillInfo",
+              "skillID": 20692,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 20692,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": 0.05000000074505806,
+              "doOffStage": false,
+              "costStaminaRatio": 1,
+              "NKOFINBNOOK": 1
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "SwitchSkill",
+              "doOffStage": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "SwitchSkill",
+              "doOffStage": true
+            },
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20692,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AvatarAbility_Gjmy_TriggerBullet_SwitchSkill",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "Channel_BS",
+            "Channel_Loop"
+          ],
+          "modifierName": "CheckChannelLoop"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "stateIDs": [
+            "Channel_BS",
+            "Channel_Loop",
+            "Channel_AS"
+          ],
+          "modifierName": "Trigger_OnExit"
+        },
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 20692,
+          "actorIceSubHurtDelta": -1,
+          "OnBeginSecondCharged": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Focus",
+              "doOffStage": false
+            }
+          ],
+          "JLIGNEBOAHM": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_ABILITY_Common_Channel_IsTrigger"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shoot",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_ABILITY_Common_Channel_IsTrigger"
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "EndChannelTrigger",
+              "doOffStage": true
+            }
+          ],
+          "OnReleaseCharged": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ActivityAbility_Endora_IsFocus"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shoot_Short",
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_ActivityAbility_Endora_IsFocus"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shoot",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ActionPanelController",
+              "doOffStage": false
+            }
+          ],
+          "onCancelCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "EndChannelTrigger",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ActionPanelController",
+              "doOffStage": false
+            }
+          ],
+          "OnBeginCharged": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ActionPanelController",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_ABILITY_Common_Channel_IsTrigger"
+            }
+          ],
+          "secondChargeTime": 0.11999999731779099,
+          "chargeStateIDs": [
+            "Channel_Loop"
+          ]
+        }
+      ],
+      "modifiers": {
+        "ActionPanelController": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotQuickUse"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "CheckChannelLoop": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ActivityAbility_Endora_IsFocus"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "triggerID": "EndChannelTrigger",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "RemovedFocusState",
+              "doOffStage": true
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Focus": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "StartChannelTrigger",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_ActivityAbility_Endora_IsFocus"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "AvatarEnterFocus",
+              "cameraFollowMinDegree": -60,
+              "actorIceSubHurtDelta": -1,
+              "vcamFov": 45,
+              "HOEGDDBJEJO": -1,
+              "ELIECGGIHFH": {
+                "actorIceSubHurtDelta": -1,
+                "canBeHandledOnRecover": true,
+                "PHKMLJFMNIH": -1,
+                "doOffStage": false
+              },
+              "dragButtonName": "Skill2",
+              "NOPLPLOOMMB": true,
+              "cameraFollowLower": {
+                "_x": 0.5550000071525574,
+                "_y": 0.17000000178813934,
+                "_z": -2.5
+              },
+              "OPMJOMPBHPM": true,
+              "FMLFJEPAHGC": true,
+              "FKFAKILENIA": -1,
+              "FDDPEAMAADJ": -60,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "GEIIPGCGHPJ": {
+                "KEGFEEAJFFN": -1,
+                "BPFLPMNCDJC": -1,
+                "IHKBILOKGBD": -1
+              },
+              "cameraFollowUpper": {
+                "_x": 0.7549999952316284,
+                "_y": 0.3700000047683716,
+                "_z": -1.600000023841858
+              },
+              "KMBEGJMJEDP": {
+                "BECOECFCMLB": -1,
+                "GDBEBFCAKNL": 1,
+                "MCALDEBPNAF": -1,
+                "GGDNOMPMKKE": 1
+              },
+              "GFNHGHHFIPG": -1,
+              "cameraFollowMaxDegree": 60
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Charge",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "DummyAction",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "EndChannelTrigger",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "RemovedFocusStateDelay",
+              "doOffStage": true
+            },
+            {
+              "$type": "ClearGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_ActivityAbility_Endora_IsFocus"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "RemovedFocusState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Focus",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "RemovedFocusStateDelay",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Multiple",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "RemovedFocusStateDelay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ActionPanelController",
+              "doOffStage": false
+            },
+            {
+              "$type": "AvatarExitFocus",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "PHKMLJFMNIH": -1,
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shoot": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 20692,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": 1,
+              "doOffStage": false,
+              "costStaminaRatio": 1,
+              "NKOFINBNOOK": 1
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Focus",
+              "doOffStage": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_OnShooting",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "z": 0.800000011920929
+                },
+                "attachPointName": "FocusAnchor",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 77402122,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByAvatarWeaponType",
+                      "weaponTypes": [
+                        "WEAPON_BOW"
+                      ],
+                      "target": "Target"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": false,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.20000000298023224,
+                  "x": 0.15000000596046448,
+                  "z": 0.800000011920929
+                },
+                "attachPointName": "FocusAnchor",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "$type": "ConfigDirectionByAttachPoint",
+                  "angleOffset": {
+                    "x": -2.0999999046325684
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self",
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 77402122,
+              "predicates": [
+                {
+                  "$type": "ByAvatarWeaponType",
+                  "weaponTypes": [
+                    "WEAPON_BOW"
+                  ],
+                  "target": "Target"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": false,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.4000000059604645,
+                  "z": 0.800000011920929
+                },
+                "attachPointName": "FocusAnchor",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "$type": "ConfigDirectionByAttachPoint",
+                  "angleOffset": {
+                    "x": -0.6000000238418579
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self",
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Shoot_Short": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 20692,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": 1,
+              "doOffStage": false,
+              "costStaminaRatio": 1,
+              "NKOFINBNOOK": 1
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_OnShooting",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "z": 0.800000011920929
+                },
+                "attachPointName": "FocusAnchor",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 77402122,
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": false,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "z": 0.800000011920929
+                },
+                "attachPointName": "FocusAnchor",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "$type": "ConfigDirectionByAttachPoint",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self",
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Trigger_OnExit": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_ABILITY_Common_Channel_IsTrigger"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shoot_Short",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_ABILITY_Common_Channel_IsTrigger"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    47101,
+                    47102,
+                    47103,
+                    47401,
+                    47402,
+                    47403,
+                    47404,
+                    47405,
+                    47406
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "ActionPanelController",
+          "doOffStage": false
+        }
+      ],
+      "onAvatarOut": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "RemovedFocusState",
+          "doOffStage": true
+        }
+      ],
+      "abilityName": "AvatarAbility_Gjmy_TriggerBullet_Serve",
+      "EPGDGGEIHCC": true,
+      "onKill": [
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    47101,
+                    47102,
+                    47103,
+                    47401,
+                    47402,
+                    47403,
+                    47404,
+                    47405,
+                    47406
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "ActionPanelController",
+          "doOffStage": false
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Target",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetType",
+              "target": "Target",
+              "targetType": "Owner"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_Hit",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Target",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_Hallworld_Avatar_InShow"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Gjmy_BulletHit_AddCount",
+                  "doOffStage": true
+                }
+              ]
+            },
+            {
+              "$type": "DamageByAttackValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Target",
+              "attacker": "CasterOriginOwner",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_Hallworld_Avatar_InShow"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "attackInfo": {
+                "HBOOKFMCODC": {
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default"
+                },
+                "attackProperty": {
+                  "enBreak": 1,
+                  "elementRank": 1,
+                  "attackType": "Default"
+                },
+                "INKGMIHAPMA": {
+                  "NDIBGPPKGJP": "Shake"
+                },
+                "attenuationGroup": "default",
+                "cameraShake": {
+                  "extension": {
+                    "cycleDamping": 0.11999999731779099,
+                    "baseOnCamera": true,
+                    "rangeAttenuation": 0.5,
+                    "baseCycle": 0.11999999731779099
+                  },
+                  "shakeDistance": 20
+                },
+                "hitPattern": {
+                  "hitHaltTimeScale": 0.05000000074505806,
+                  "BPIJOAMNKIH": {
+                    "value": 1,
+                    "GGOHGMFHHEC": true
+                  },
+                  "onHitEffectName": "default",
+                  "hitImpulseType": "LV1"
+                }
+              },
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByHitPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ExtraHitSound",
+              "doOffStage": false
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                77402122
+              ],
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Gjmy_Bullet_Effect",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "ExtraHitSound": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_BulletHit_AddCount": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Timer"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "KCHHGJGIIIF": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "key": "GV_Gjmy_BulletHitCount"
+                }
+              ]
+            },
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "KCHHGJGIIIF": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "maxValue": 99,
+              "value": 1,
+              "key": "GV_Gjmy_BulletHitCount"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_Timer",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_BulletHit_ClearAll": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+              "canBeHandledOnRecover": true,
+              "parameter": "DS",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_Timer",
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_DelayClearFx_Bullet",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Bullet_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_DelayClearFx_Bullet": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Timer"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "KCHHGJGIIIF": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "key": "GV_Gjmy_BulletHitCount"
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Fx",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_Timer": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Gjmy_BulletHit_ClearAll",
+              "doOffStage": true
+            }
+          ],
+          "duration": 30,
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Gjmy_BulletHit_ClearAll",
+              "doOffStage": true
+            },
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "CCOEKFAPHGD": true,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "Gjmy_BulletHit_Follow",
+              "doOffStage": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObject_Hallworld_Gjmy_Shooting_Bullet_01",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Gjmy_BulletHit_AvatarSync",
+          "doOffStage": true
+        }
+      ],
+      "modifiers": {
+        "Gjmy_BulletHit_ClearAll": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+              "canBeHandledOnRecover": true,
+              "parameter": "DS",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_Timer",
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_DelayClearFx_Avatar",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_BulletHit_RefreshCount": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Fx"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 5,
+                      "key": "GV_Gjmy_BulletHitCount"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SendEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+                      "canBeHandledOnRecover": true,
+                      "parameter": "Count05",
+                      "doOffStage": true
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 4,
+                      "key": "GV_Gjmy_BulletHitCount"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SendEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+                      "canBeHandledOnRecover": true,
+                      "parameter": "Count04",
+                      "doOffStage": true
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 3,
+                      "key": "GV_Gjmy_BulletHitCount"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SendEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+                      "canBeHandledOnRecover": true,
+                      "parameter": "Count03",
+                      "doOffStage": true
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 2,
+                      "key": "GV_Gjmy_BulletHitCount"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SendEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+                      "canBeHandledOnRecover": true,
+                      "parameter": "Count02",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stacking": "Multiple",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_AvatarSync": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "GV_Gjmy_BulletHitCount",
+              "valueSteps": [
+                0.5,
+                99.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_Gjmy_BulletHit_Fx"
+              ]
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_Gjmy_BulletHitCount",
+              "actions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Gjmy_BulletHit_RefreshCount",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Gjmy_BulletHit_ClearAll",
+              "doOffStage": true
+            },
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "CCOEKFAPHGD": true,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "Gjmy_BulletHit_Follow",
+              "doOffStage": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_DelayClearFx_Avatar": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Timer"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "KCHHGJGIIIF": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "key": "GV_Gjmy_BulletHitCount"
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Fx",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_Fx": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "CCOEKFAPHGD": true,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "Gjmy_BulletHit_Follow",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "Gjmy_BulletHit_Follow",
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Gjmy_BulletHit_RefreshCount",
+              "doOffStage": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+              "canBeHandledOnRecover": true,
+              "parameter": "DS",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AvatarAbility_Hallworld_Gjmy_BulletHit_Sync",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Gjmy_BulletHit_TeamSync",
+          "doOffStage": true
+        }
+      ],
+      "modifiers": {
+        "Gjmy_BulletHit_AvatarHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Gjmy_BulletHit_ClearAll",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_BulletHit_ClearAll": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_Bullet_01_Follow",
+              "canBeHandledOnRecover": true,
+              "parameter": "DS",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_Timer",
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Gjmy_BulletHit_DelayClearFx_Team",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_DelayClearFx_Team": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Timer"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "KCHHGJGIIIF": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "key": "GV_Gjmy_BulletHitCount"
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Gjmy_BulletHit_Fx",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_BulletHit_TeamSync": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Gjmy_BulletHit_AvatarHandler"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "TeamAbility_Hallworld_Gjmy_BulletHit_Sync",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2620
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "Gjmy_Gaoshipai_Billboard",
+          "doOffStage": true
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "PGFCIHEOOAB",
+              "target": "Target",
+              "sceneIds": [
+                2620
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Gjmy_Gaoshipai_OpenUI",
+              "doOffStage": true
+            }
+          ],
+          "predicates": [
+            {
+              "$type": "ByTargetGadgetState"
+            },
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2620
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Gjmy_Gaoshipai_Billboard": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "BillboardV2Mixin",
+              "actorIceSubHurtDelta": -1,
+              "LPGEPABJEHG": true,
+              "FMEEEHPMHDB": {
+                "IBKFOAEFCHJ": {
+                  "value": 1
+                },
+                "JEJAGCKKJAA": {
+                  "GPJBCHKCIJO": true,
+                  "CPLHKIEMGAD": 40,
+                  "iconPath": "ART/UI/Atlas/InteeIcon/UI_NPCTopIcon_Activity_AlchemySim_Order"
+                },
+                "IPFABCFDBGG": {
+                  "CHBMKLMPFNC": {
+                    "GPJBCHKCIJO": true,
+                    "OGBIDMEDGGD": 4,
+                    "showDistance": 20
+                  }
+                },
+                "INJHBCKFHJP": {
+                  "worldOffset": {
+                    "_y": 1
+                  },
+                  "attachPointName": "RootNode",
+                  "showDistance": 20,
+                  "JPPCKDAIFOH": true,
+                  "FCNBOCKFDBG": true
+                },
+                "DGBLGBHELLG": {
+                  "GPJBCHKCIJO": true,
+                  "KOKGCKKGGDN": {
+                    "OGBIDMEDGGD": 4
+                  },
+                  "LJEDMJFCHMK": 1
+                },
+                "KNNCEDMKCOK": {
+                  "prefabName": "FirmamentCarBoard",
+                  "value": 1
+                },
+                "LGBAPCGFFAK": {
+                  "GPJBCHKCIJO": true,
+                  "ECBEEKENBCN": 20
+                }
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Gjmy_Gaoshipai_OpenUI": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PushInterActionByConfigPath",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "muteRemoteAction": true,
+              "cfgPath": "UI/open_Hallworld_Gjmy",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObject_Hallworld_Ani_Gjmy_Prop_Jiazi_01",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onFieldExit": [
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Target",
+          "canBeHandledOnRecover": true,
+          "modifierName": "ChaseLight_State",
+          "doOffStage": true
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": true,
+          "OJBBMKEPEJJ": true,
+          "tag": "Gjmy_Spotlight"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Spotlight_ColorListener",
+          "doOffStage": true
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2620
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "Spotlight_LifeCycle",
+          "doOffStage": true
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Target",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Team",
+              "value": 1,
+              "key": "_Gjmy_Spotlight_Active"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "ChaseLight_State",
+          "doOffStage": true
+        }
+      ],
+      "modifiers": {
+        "ChaseLight_State": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Applier",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_Occupants_Inc",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ChaseLight_Trail",
+              "doOffStage": false
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                424200005
+              ],
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2420
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_ChaseLightEnter"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                428200007
+              ],
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2820
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_ChaseLightEnter"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "NoneOrEqual",
+                  "key": "_Gjmy_Spotlight_Active"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ChaseLight_State",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "ChaseLight_Trail",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Applier",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_Occupants_Dec",
+              "doOffStage": true
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                424200005
+              ],
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2420
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_ChaseLightLeave"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                428200007
+              ],
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2820
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_ChaseLightLeave"
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ChaseLight_Trail": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_MusicalTrail01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_Cold": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_SpotLight",
+              "type": "Int",
+              "canBeHandledOnRecover": true,
+              "parameter": "State",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_ColorListener": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_Gjmy_Spotlight_Occupants",
+              "valueSteps": [
+                0,
+                0.5,
+                999
+              ],
+              "modifierNameSteps": [
+                "Spotlight_Cold",
+                "Spotlight_Warm"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Spotlight_LifeCycle": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_On",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_Occupants_Dec": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": -1,
+              "key": "_Gjmy_Spotlight_Occupants"
+            }
+          ],
+          "stacking": "Multiple",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_Occupants_Inc": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_Gjmy_Spotlight_Occupants"
+            }
+          ],
+          "stacking": "Multiple",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_Off": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Gjmy_Spotlight_Active"
+            },
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "Im_Gjmy_Spotlight",
+              "doOffStage": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_On",
+              "doOffStage": false
+            }
+          ],
+          "duration": 30,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_On": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_Gjmy_Spotlight_Active"
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_SpotLight",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "Im_Gjmy_Spotlight",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_Cold",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_Warm",
+              "doOffStage": false
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "compareType": "MoreThan",
+                  "value": 0.5,
+                  "key": "_Gjmy_Spotlight_Occupants"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Spotlight_Warm",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Spotlight_Cold",
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "RestartLCTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Spotlight_Off",
+              "doOffStage": false
+            }
+          ],
+          "duration": 45,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Spotlight_Warm": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_SpotLight",
+              "type": "Int",
+              "canBeHandledOnRecover": true,
+              "parameter": "State",
+              "doOffStage": false,
+              "value": 1
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObject_Hallworld_Gjmy_Prop_Spotlight_01",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_Gjmy_Piano_Phase",
+        "SGV_Gjmy_Piano_Busy"
+      ],
+      "onAdded": [
+        {
+          "$type": "EnableGadgetInteeMp",
+          "actorIceSubHurtDelta": -1,
+          "EHACCNBHAPM": true,
+          "predicates": [
+            {
+              "$type": "PGFCIHEOOAB",
+              "target": "Target",
+              "sceneIds": [
+                2620
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true
+        },
+        {
+          "$type": "EnableGadgetInteeMp",
+          "actorIceSubHurtDelta": -1,
+          "EHACCNBHAPM": true,
+          "GKJHPJKDANC": true,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2620
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true
+        },
+        {
+          "$type": "ChangeGadgetUIInteractHint",
+          "actorIceSubHurtDelta": -1,
+          "AOPKFGGMNFI": "UI_BEYOND_HALL_WORLD_GEJUYUANGANGQIN_BUTTON1",
+          "enable": true,
+          "iconName": "UI_Icon_Intee_Mechanism",
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2620
+                  ]
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_Gjmy_Piano_Busy",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Gjmy_Piano_Idle",
+            "Gjmy_Piano_Locked"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_Gjmy_Piano_Phase",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Gjmy_Piano_Phase0",
+            "Gjmy_Piano_Phase1",
+            "Gjmy_Piano_Phase2"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Beyd_Eff_Hallworld_Gjmy_01_PianoMusical",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                424200002
+              ],
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2420
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_Gjmy_Piano_Interact"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                428200005
+              ],
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2820
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_Gjmy_Piano_Interact"
+            }
+          ],
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "PGFCIHEOOAB",
+                  "target": "Target",
+                  "sceneIds": [
+                    2620
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "compareType": "NoneOrEqual",
+              "key": "SGV_Gjmy_Piano_Busy"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Gjmy_Piano_Idle": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "GKJHPJKDANC": true,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "PGFCIHEOOAB",
+                      "target": "Target",
+                      "sceneIds": [
+                        2620
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Piano_Locked": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Piano_Phase0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetUIInteractHint",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_BEYOND_HALL_WORLD_GEJUYUANGANGQIN_BUTTON1",
+              "enable": true,
+              "iconName": "UI_Icon_Intee_Mechanism",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Piano_Phase1": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetUIInteractHint",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_BEYOND_HALL_WORLD_GEJUYUANGANGQIN_BUTTON2",
+              "enable": true,
+              "iconName": "UI_Icon_Intee_Mechanism",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Piano_Phase2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetUIInteractHint",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_BEYOND_HALL_WORLD_GEJUYUANGANGQIN_BUTTON3",
+              "enable": true,
+              "iconName": "UI_Icon_Intee_Mechanism",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObject_Hallworld_Ani_Gjmy_Prop_Gangqin_01",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_Gjmy_Chandelier_AudioCue"
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_Gjmy_Chandelier_AudioCue",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Gjmy_Diaodeng_Audio_Idle",
+            "Gjmy_Diaodeng_Audio_FallStart",
+            "Gjmy_Diaodeng_Audio_FallEnd",
+            "Gjmy_Diaodeng_Audio_RiseStart",
+            "Gjmy_Diaodeng_Audio_RiseEnd"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Gjmy_Diaodeng_Audio_FallEnd": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_Gjmy_Diaodeng_FallEnd",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Diaodeng_Audio_FallStart": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_Gjmy_Diaodeng_FallStart",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Diaodeng_Audio_Idle": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Diaodeng_Audio_RiseEnd": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_Gjmy_Diaodeng_RiseEnd",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Gjmy_Diaodeng_Audio_RiseStart": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_Gjmy_Diaodeng_RiseStart",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObject_Hallworld_Ani_Gjmy_Light_Diaodeng_EverLit_01",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Gjmy_Showcase_Field",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Gjmy_StandbyShowcase_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "KIGGOLCIBOJ",
+              "actorIceSubHurtDelta": -1,
+              "APPDIKCKEDN": "UI_BEYOND_HALL_WORLD_AFKAREA_ENTER",
+              "DBKOHKLPPIB": 10,
+              "EPKIJKLMEAF": 15,
+              "FFJABPLOHHO": "UI_BEYOND_HALL_WORLD_AFKAREA_BEGIN",
+              "GMLEFMCCKIO": 15,
+              "LIGPDOBBJOI": "UI_BEYOND_HALL_WORLD_AFKAREA_LEAVE",
+              "LLOKLNHBNAO": 5,
+              "MEGPIGLGCPC": 10,
+              "NLLJFBBPABP": "UI_BEYOND_HALL_WORLD_AFKAREA_FINISH",
+              "OBGIGOCJGNK": 20,
+              "PGJLOPJPKNN": 3
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_Showcase_Field": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "PFHLHOOFIPC",
+              "actorIceSubHurtDelta": -1,
+              "BLKNABAMPAH": 0.20000000298023224,
+              "onFieldExit": [
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "TargetTeam",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Gjmy_StandbyShowcase_Team",
+                  "doOffStage": true
+                }
+              ],
+              "DALNCMEKIBH": true,
+              "MONFNNMFGNM": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "TargetTeam",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Gjmy_StandbyShowcase_Team",
+                  "doOffStage": true
+                }
+              ],
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "PBDOGFFLBDK": "RootNode"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Gjmy_StandbyShowcase_Team": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Gjmy_StandbyShowcase_Avatar"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObject_Hallworld_Common_Prop_StandbyShowcase_01",
+      "EPGDGGEIHCC": true,
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

@@ -1,0 +1,3553 @@
+{
+  "AKBJEFEJFBH": {
+    "LFEGPJFDHJN": -1,
+    "PJNFCFNCGKH": -1
+  },
+  "NMGHGFLFPOC": {
+    "NDNACDMLJFK": {
+      "OHPFEKIEFCD": "SquadManager"
+    }
+  },
+  "model": {
+    "bulletAim": "RootNode",
+    "elementDrop": "RootNode",
+    "elementPendant": "RootNode"
+  },
+  "BCJBHDPIFHG": true,
+  "audio": {
+    "FGOIJKNAFMD": [
+      {}
+    ],
+    "animAudio": {
+      "onTransitionOut": [
+        {
+          "otherStateNames": [
+            "AttackB_GatlingSpecialAtk_Loop"
+          ],
+          "currentStateName": "AttackB_GatlingSpecialAtk_Loop",
+          "usage": "Except",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_Fatuimecha_Elite_Water_AttackB_GatlingSpecailAtk_LP"
+          }
+        }
+      ],
+      "onTransitionIn": [
+        {
+          "otherStateNames": [
+            "AttackB_None"
+          ],
+          "currentStateName": "AttackB_None",
+          "usage": "Except",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_Fatuimecha_Elite_Water_AttackB_GatlingSpecailAtk_LP"
+          }
+        },
+        {
+          "otherStateNames": [
+            "AttackB_GatlingSpecialAtk_Loop"
+          ],
+          "currentStateName": "AttackB_GatlingSpecialAtk_Loop",
+          "usage": "Except",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_Fatuimecha_Elite_Water_AttackB_GatlingSpecailAtk_LP"
+          }
+        }
+      ]
+    }
+  },
+  "move": {
+    "$type": "ConfigAnimatorMove",
+    "GGANCAAKLFD": "Walk",
+    "facingMove": "ForwardBackward",
+    "BNELOEGOACA": 180,
+    "BCDCMDJFBMC": true,
+    "deepWaterLevel": -1,
+    "velocityForce": {
+      "excludeForces": [
+        "RetreatAirType"
+      ]
+    },
+    "yawSpeedRatio": 0.699999988079071,
+    "DMCIADGHOOB": true,
+    "DNOIJDJAICK": 1,
+    "EKEEMGABPCF": true,
+    "NMADAMHPKFI": {
+      "LDEJIPLJNJO": 240,
+      "CPADCGOPBHG": 45,
+      "LBLKAKBBACH": 60,
+      "KDMNFPPJHBE": 240
+    },
+    "GBBMGCCDMHN": -1,
+    "JNDPIKMBGBN": -1,
+    "CIBEKEJDAFE": "RootNode",
+    "AKPDGMPHEDO": -1,
+    "NMFFMGIBIBJ": {
+      "MDLNAJBDGBG": -1
+    },
+    "MKFDAIJGANO": true,
+    "OFHCBBPBIMH": 1,
+    "monsterSizeType": "OtherType",
+    "FAKCEKJHEDI": 5
+  },
+  "GBCOBKGCNDH": 1,
+  "combat": {
+    "die": {
+      "dieForceDisappearTime": 4,
+      "BEOKLIIJOBN": true,
+      "dieEndTime": 2,
+      "dieShaderEnableDurationTime": -1,
+      "CNAMDLOIBDC": true,
+      "DJKFJDBFJJH": true,
+      "EBAKMOONCFJ": true,
+      "EDKPGLFDDLG": true,
+      "GCPBNALGGHJ": true,
+      "dieShaderDisableDurationTime": -1,
+      "HFIHLPGPDEH": true,
+      "IGOFADFEMKB": true,
+      "JIOGACAKBBA": true,
+      "dieShaderData": "MonsterDie",
+      "MJONBIBAKHK": true,
+      "dieDisappearEffect": "Eff_Death_Common",
+      "PCAIDBJKFGA": true
+    },
+    "animEvents": {
+      "SawRNormalAtk": {
+        "attackPattern": {
+          "$type": "ConfigAttackBox",
+          "massiveAttackRatio": 1,
+          "MPNIJNGFBIH": {
+            "INOCAOHPEBB": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            }
+          },
+          "triggerType": "TriggerNoRepeat",
+          "size": {
+            "y": 8,
+            "x": 2,
+            "z": 7.400000095367432
+          },
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "y": -1.149999976158142,
+              "x": 2.5199999809265137,
+              "z": -1.850000023841858
+            },
+            "attachPointName": "CoreControl",
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "$type": "ConfigDirectionByDefault",
+              "useCorrectDir": true,
+              "angleOffsetCorrect": {
+                "y": 25.077999114990234,
+                "x": 18.4950008392334,
+                "z": -23.027999877929688
+              },
+              "maxAngle": 180
+            }
+          }
+        },
+        "attackInfo": {
+          "HBOOKFMCODC": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default"
+          },
+          "attackProperty": {
+            "elementDurability": 25,
+            "elementType": "Water",
+            "enBreak": 50,
+            "strikeType": "Slash",
+            "elementRank": 1,
+            "damagePercentage": 0.75,
+            "attackType": "Default"
+          },
+          "INKGMIHAPMA": {
+            "NDIBGPPKGJP": "Shake"
+          },
+          "attenuationGroup": "default",
+          "cameraShake": {
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeDistance": 20
+          },
+          "hitPattern": {
+            "BPIJOAMNKIH": {
+              "value": 1,
+              "GGOHGMFHHEC": true
+            },
+            "onHitEffectName": "default",
+            "hitImpulseType": "LV3"
+          }
+        }
+      }
+    },
+    "combatLock": {
+      "BHFIOHALGAG": -1,
+      "lockShape": "CircleLockEnemy",
+      "MPNEFIAAKHC": -1,
+      "lockType": "Avatar&Monster_Lv4",
+      "GMKBLBIDNGB": -1,
+      "KMCJPLNFCOD": 1,
+      "LNGMNOFCBII": 3
+    },
+    "property": {
+      "BDDMGKJJKKO": true,
+      "bonusRange": 300,
+      "endureType": "Monster_Boss_Other",
+      "LNKOFKCFPGC": true,
+      "OJLNFCKHDHF": true
+    },
+    "box": {
+      "NJOENJEENGG": -45,
+      "enable": true,
+      "IOEOJHPCMIB": 15,
+      "PALMCGDLKCD": 45
+    }
+  },
+  "headControl": {
+    "checkInSurface": true,
+    "DPMMJNDONLO": "Stay",
+    "useHeadControl": true,
+    "affectedByWorld": true
+  },
+  "BDCBPBCONAE": {
+    "FAKHGGJIKCD": {
+      "Android_High": "Monster_Fatuimecha_01",
+      "Android_Low": "Monster_Fatuimecha_01",
+      "Android_Middle": "Monster_Fatuimecha_01",
+      "Android_VeryHigh": "Monster_Fatuimecha_01",
+      "Android_VeryLow": "Monster_Fatuimecha_01",
+      "IOS_High": "Monster_Fatuimecha_01",
+      "IOS_Low": "Monster_Fatuimecha_01",
+      "IOS_Middle": "Monster_Fatuimecha_01",
+      "IOS_VeryHigh": "Monster_Fatuimecha_01",
+      "IOS_VeryLow": "Monster_Fatuimecha_01"
+    },
+    "KBHKDCDFKAM": true,
+    "GGBEPMDFMKO": -1,
+    "MAJKCMAIJCN": true,
+    "MIANMCBBBFA": "Eff_Monster_Common_Born"
+  },
+  "field": {
+    "AECILKOHJIP": true,
+    "LOMBMPIICIJ": {
+      "centerType": "Center"
+    },
+    "IFFPJFGJCGO": true
+  },
+  "GKKFFLBLNPH": [
+    {
+      "LBFAACBFIIL": 101,
+      "EKNOPIHACML": 257,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 201,
+      "EKNOPIHACML": 258,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 301,
+      "EKNOPIHACML": 259,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 401,
+      "EKNOPIHACML": 260,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 501,
+      "EKNOPIHACML": 261,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 601,
+      "EKNOPIHACML": 262,
+      "FCKFNGAFLJC": 0.20000000298023224
+    },
+    {
+      "LBFAACBFIIL": 701,
+      "EKNOPIHACML": 263,
+      "FCKFNGAFLJC": 0.20000000298023224
+    }
+  ],
+  "billboard": {
+    "$type": "CKJFCMMLABF",
+    "forceShowDistance": 15,
+    "offsetType": "Character",
+    "radiusOffset": 0.4000000059604645,
+    "PMNMLIPNKIG": 35,
+    "value": 1,
+    "BBGLDDOKONB": "UI_TopBarV2_EliteIcon",
+    "attachPoint": "BillboardAttach",
+    "size": "Big",
+    "showHPBar": true,
+    "showDistance": 24
+  },
+  "equipController": {
+    "AttackB AMS Layer": {
+      "$type": "DKOLPAMCGLP",
+      "layerIndex": 8,
+      "stateIDs": {
+        "AttackB_GatlingNormalAtk": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackB_GatlingNormalAtk": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_AttackB_GatlingNormalAtk"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "AttackB_GatlingSpecialAtk": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackB_GatlingSpecialAtk_AS": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk_AS",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_GatlingSpecialAtk_AS"
+            ],
+            "AttackB_GatlingSpecialAtk_BS": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk_BS",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_GatlingSpecialAtk_BS"
+            ],
+            "AttackB_GatlingSpecialAtk_Loop": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk_Loop",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_GatlingSpecialAtk_LP"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "AttackB_PatrolMove": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackB_PatrolMove": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "AttackB_SawRNormalAtk": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackB_SawRNormalAtk": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      },
+      "layerIndexName": "AttackB AMS Layer"
+    },
+    "AttackC AMS Layer": {
+      "$type": "DKOLPAMCGLP",
+      "layerIndex": 7,
+      "stateIDs": {
+        "AttackC_PatrolMove": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackC_PatrolMove": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "AttackC_SawRNormalAtk": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackC_SawRNormalAtk": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      },
+      "layerIndexName": "AttackC AMS Layer"
+    },
+    "AttackD AMS Layer": {
+      "$type": "DKOLPAMCGLP",
+      "layerIndex": 6,
+      "stateIDs": {
+        "AttackD_PatrolMove": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackD_PatrolMove": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "AttackD_SawRNormalAtk": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "AttackD_SawRNormalAtk": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      },
+      "layerIndexName": "AttackD AMS Layer"
+    },
+    "CoreC AMS Layer": {
+      "$type": "DKOLPAMCGLP",
+      "layerIndex": 5,
+      "stateIDs": {
+        "CoreC_PatrolMove": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "CoreC_PatrolMove": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_PatrolMove"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "CoreC_SawRNormalAtk": {
+          "$type": "LCCEGDGFLKL",
+          "AHKECBENNIH": true,
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "DAOCPKMPGDI": 1,
+          "ECKFFLFDOAI": true,
+          "animatorStates": {
+            "CoreC_SawRNormalAtk": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_SawRNormalAtk",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_CoreC_SawRNormalAtk"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      },
+      "layerIndexName": "CoreC AMS Layer"
+    },
+    "defaultLayer": {
+      "$type": "DKOLPAMCGLP",
+      "stateIDs": {
+        "BeHit": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitPullTrigger",
+            "HitPushTrigger",
+            "HitThrowTrigger",
+            "HitShockTrigger"
+          ],
+          "animatorStates": {
+            "Hit_H": [],
+            "Hit_L": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_Hit_H"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Die": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "DoSkill"
+          ],
+          "animatorStates": {
+            "Die": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_Die"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1
+        },
+        "Die_RagDoll": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "DoSkill"
+          ],
+          "animatorStates": {
+            "Die_RagDoll": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "KMIHBKCNFKO": true,
+          "MNICNMMNLDF": 1
+        },
+        "HitPull": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitPullTrigger",
+            "HitPushTrigger",
+            "HitThrowTrigger",
+            "HitShockTrigger"
+          ],
+          "animatorStates": {
+            "HitPull": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_HitPull"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "HitPush": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitPullTrigger",
+            "HitPushTrigger",
+            "HitThrowTrigger",
+            "HitShockTrigger"
+          ],
+          "animatorStates": {
+            "HitPush": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_HitPull"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "HitShock": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitPullTrigger",
+            "HitPushTrigger",
+            "HitThrowTrigger",
+            "HitShockTrigger"
+          ],
+          "animatorStates": {
+            "HitShock": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "HitThrow": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "NIBKNFGIDFA": [
+            "BeHit",
+            "HitPullTrigger",
+            "HitPushTrigger",
+            "HitThrowTrigger",
+            "HitShockTrigger"
+          ],
+          "animatorStates": {
+            "HitThrow": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdle": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Born": [],
+            "Standby": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdleFree": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "StandbyFree": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdleHibernation": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "Hibernation": [],
+            "Hibernation_AS": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_Hibernation_AS"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdleShield": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Standby_Shield": []
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMove": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "WalkBack": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_WalkBack"
+            ],
+            "WalkForward": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_WalkForward"
+            ]
+          },
+          "massRatio": 1,
+          "CHFLBLIBJFG": true,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMoveFree": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "WalkForwardFree": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_WalkForward"
+            ]
+          },
+          "massRatio": 1,
+          "CHFLBLIBJFG": true,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMoveShield": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "WalkBack_Shield": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_WalkBack_Shield"
+            ],
+            "WalkForward_Shield": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_WalkForward_Shield"
+            ]
+          },
+          "massRatio": 1,
+          "CHFLBLIBJFG": true,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "PatrolStand": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "PatrolStand": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveD_AttackA_AttackC_AttackB_Water_01_PatrolStand"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "Run": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Run": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_Run"
+            ]
+          },
+          "massRatio": 1,
+          "CHFLBLIBJFG": true,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "RunShield": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "Run_Shield": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_Run_Shield"
+            ]
+          },
+          "massRatio": 1,
+          "CHFLBLIBJFG": true,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "ShieldAtk": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "ShieldAtk": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldAtk",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldAtk"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "ShieldOff": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "ShieldOff": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldOff",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldOff"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "ShieldOn": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "animatorStates": {
+            "ShieldOn": [
+              "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldOn",
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldOn"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "JAMKBDBKNLO": true,
+          "OMEFPBLPHBJ": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "Turn": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "TurnLeft": [
+              "Audio_Monster_FatuimechaCoreC_MoveC_AttackD_AttackC_AttackB_Water_01_Turn"
+            ],
+            "TurnRight": [
+              "Audio_Monster_FatuimechaCoreC_MoveC_AttackD_AttackC_AttackB_Water_01_Turn"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "TurnShield": {
+          "$type": "LCCEGDGFLKL",
+          "OMNGAGEFJNJ": 7,
+          "AFIDIPNOINN": -1,
+          "BFFCHJAEAGD": true,
+          "animatorStates": {
+            "TurnLeft_Shield": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_Turn_Shield"
+            ],
+            "TurnRight_Shield": [
+              "Audio_Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_01_Turn_Shield"
+            ]
+          },
+          "massRatio": 1,
+          "APEOJEJJLAI": {
+            "LEKENNEFLHG": 10,
+            "FDDJNDONEMF": 3,
+            "KDNBDNPGBJB": 0.75,
+            "HDADPBPOEFG": 0.5,
+            "NMADPICJEIO": 0.5
+          },
+          "BBPPHBCFICI": true,
+          "JAMKBDBKNLO": true,
+          "MNICNMMNLDF": 1,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        }
+      },
+      "layerIndexName": "Base Layer"
+    }
+  },
+  "aibeta": {
+    "target": {
+      "CMFDAIABDLD": {
+        "LLABBNCBFLG": 2
+      }
+    },
+    "PHGOAMIEIGJ": {
+      "AKNPGFKBNAP": true,
+      "NBMBLEHKGFO": 1,
+      "GKIACFBAFCG": 100,
+      "GOFNLAJNIPJ": 3,
+      "ODGOKDIEHLL": 0.5,
+      "OGJNOKICJBM": 10,
+      "IEHMGFMJENA": 500,
+      "GKJHPJKDANC": true,
+      "HHKNFPHCIBM": 4.75,
+      "GGAEOAEKGIF": "DefaultTemplate",
+      "MPFCBDBJAHB": 50,
+      "LADHCNJLFLF": 12,
+      "OKALEALDCHM": 40,
+      "FDHIBKDANDA": 30,
+      "JMGNBBGHENM": 5,
+      "JOHKGMJLJFJ": 4.75,
+      "DHKBMMOGBDB": 5,
+      "GIODDDBKKFI": "Monster_TauntLevel_1",
+      "OOOHEJCBEGF": 500
+    },
+    "ui": {
+      "LJNGLFEEEID": true,
+      "PFLIGLJNOHC": "SelfCamp"
+    },
+    "moveSetting": {
+      "snakelikeMoveSetting": {
+        "segmentCount": 8,
+        "segmentDistance": 5,
+        "maxCurvatrue": 1,
+        "minCurvature": 0.6000000238418579,
+        "minSegmentDistance": 4
+      },
+      "almostReachedDistanceRun": 1,
+      "COELDJHANJK": true,
+      "EKKCLEEDHPB": true,
+      "navMeshAgentName": "Undead01",
+      "enable": true,
+      "JCCEHBAKFGC": {
+        "enable": true
+      },
+      "almostReachedDistanceWalk": 1
+    },
+    "BCDNFEINLKI": {
+      "GAEAJPGPEGF": 0.5,
+      "HAHJEOHBMMF": 5,
+      "CMKCOEHEIMF": 23
+    },
+    "skills": {
+      "10011": {
+        "cdUpperRange": 7,
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 10011,
+        "CCIEMOGBGJJ": "10",
+        "cd": 7,
+        "name": "PatrolStand",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 5,
+        "JLNNGPGDAAG": [
+          263468080,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "PatrolStand"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 3,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1001
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "10021": {
+        "cdUpperRange": 7,
+        "BKJNLNOJLPN": 2,
+        "BPKJMPMECBJ": 10021,
+        "CCIEMOGBGJJ": "10",
+        "cd": 7,
+        "name": "PatrolMove",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 1,
+        "FABFCLMODCO": 5,
+        "JLNNGPGDAAG": [
+          588574778,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 5,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "CoreC_PatrolMove"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 3,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            1002
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "201": {
+        "cdUpperRange": 2.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 201,
+        "CCIEMOGBGJJ": "11",
+        "cd": 8,
+        "name": "SawRNormalAtk",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          -934114705,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 6,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "AttackD_SawRNormalAtk"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "10",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 5,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 3.5,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            201,
+            211
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "301": {
+        "cdUpperRange": 5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 301,
+        "CCIEMOGBGJJ": "11",
+        "cd": 8,
+        "name": "ShieldAtk",
+        "skillType": "Combat",
+        "sceneID": 3,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          -534619135,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ShieldAtk"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 2,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 5,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 2.5,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            201,
+            211
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "302": {
+        "cdUpperRange": 5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 302,
+        "CCIEMOGBGJJ": "11",
+        "cd": 5,
+        "name": "ShieldAtk",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          -534619135,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ShieldAtk"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 2,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 8,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 2.5,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 5,
+          "pose": [
+            201,
+            211
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "401": {
+        "cdUpperRange": 2.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 401,
+        "CCIEMOGBGJJ": "11",
+        "cd": 15,
+        "name": "ShieldOn",
+        "skillType": "Combat",
+        "sceneID": 1,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          -1690387533,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ShieldOn"
+        ],
+        "skillGroupCDID": 1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 15,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            201
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "402": {
+        "cdUpperRange": 1,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 402,
+        "CCIEMOGBGJJ": "11",
+        "cd": 1,
+        "name": "ShieldOn",
+        "skillType": "Combat",
+        "sceneID": 1,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 1,
+        "JLNNGPGDAAG": [
+          -1690387533,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ShieldOn"
+        ],
+        "skillGroupCDID": 1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "JKABLKIEHAA": "Monster_SingleMagnetSkill",
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "ENKFJGAELEA": [
+            "_ABILITY_MagnetAbsorbThrowSkill_MonsterSingleMag"
+          ],
+          "CCFPIBJLAOM": "TARGET_TEAM",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            201
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "403": {
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 403,
+        "CCIEMOGBGJJ": "11",
+        "cd": 9999,
+        "name": "ShieldOn",
+        "skillType": "Combat",
+        "sceneID": 1,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "JLNNGPGDAAG": [
+          -1690387533,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ShieldOn"
+        ],
+        "skillGroupCDID": 1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 9999,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            201
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "501": {
+        "cdUpperRange": 2.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 501,
+        "CCIEMOGBGJJ": "11",
+        "cd": 15,
+        "name": "ShieldOff",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          -319193755,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "ShieldOff"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 15,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 999,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            301
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "601": {
+        "cdUpperRange": 2.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 601,
+        "CCIEMOGBGJJ": "11",
+        "cd": 5,
+        "name": "GatlingNormalAtk",
+        "skillType": "Combat",
+        "sceneID": 3,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          355661065,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 8,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "AttackB_GatlingNormalAtk"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 8,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 5,
+          "pose": [
+            201,
+            211
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "602": {
+        "cdUpperRange": 3.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 602,
+        "CCIEMOGBGJJ": "11",
+        "cd": 3,
+        "name": "GatlingNormalAtk",
+        "skillType": "Combat",
+        "sceneID": 3,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 2,
+        "JLNNGPGDAAG": [
+          355661065,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 8,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "AttackB_GatlingNormalAtk"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 15,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 8,
+          "pose": [
+            201,
+            211
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "603": {
+        "cdUpperRange": 2.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 603,
+        "CCIEMOGBGJJ": "11",
+        "cd": 5,
+        "name": "GatlingNormalAtk",
+        "skillType": "Combat",
+        "sceneID": 5,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 2,
+        "JLNNGPGDAAG": [
+          355661065,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 8,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "AttackB_GatlingNormalAtk"
+        ],
+        "skillGroupCDID": -1,
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 5,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 8,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "pose": [
+            301
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "701": {
+        "cdUpperRange": 2.5,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 701,
+        "CCIEMOGBGJJ": "11",
+        "cd": 10,
+        "name": "GatlingSpecialAtk",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 4,
+        "JLNNGPGDAAG": [
+          1604452673,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 8,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "AttackB_GatlingSpecialAtk"
+        ],
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "JKABLKIEHAA": "Monster_SingleMagnetSkill",
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 8,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "CCFPIBJLAOM": "TARGET",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 15,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 6,
+          "pose": [
+            301
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      },
+      "702": {
+        "cdUpperRange": 1,
+        "BKJNLNOJLPN": 2,
+        "GFHOONJLGHC": "MeleeAttack",
+        "BPKJMPMECBJ": 702,
+        "CCIEMOGBGJJ": "11",
+        "cd": 1,
+        "name": "GatlingSpecialAtk",
+        "skillType": "Combat",
+        "sceneID": 2,
+        "ENNBALGGHHB": true,
+        "skillQueryingTime": 3,
+        "FABFCLMODCO": 1,
+        "JLNNGPGDAAG": [
+          1604452673,
+          0,
+          0,
+          0
+        ],
+        "FJHNOONIKOC": true,
+        "NFGFICJHKPM": 30,
+        "GBMHIFCFCOJ": "11",
+        "GCDHMEDGJME": true,
+        "BLNNNFDKFMO": {
+          "HNGFJFFFLDP": 20,
+          "AJNPDAODJBD": {
+            "JOCDHPDENAD": 1,
+            "OLGFFEEDBHN": 1
+          }
+        },
+        "KONKHGOLNPI": 8,
+        "HLCLDNJCOGI": "01",
+        "stateIDs": [
+          "AttackB_GatlingSpecialAtk"
+        ],
+        "KIIDJBCIEKB": "11",
+        "JGAGCNFMENO": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "JKABLKIEHAA": "Monster_SingleMagnetSkill",
+        "NHLKLINNCAJ": true,
+        "NJENBMJPFJF": 1,
+        "CLHBOMHKOMB": -1,
+        "NLEJIEEJJOH": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "FGNMFMKALLK": {
+          "MJJBJHIHIDH": -1,
+          "GOEANGGMFEH": -1,
+          "ENKFJGAELEA": [
+            "_ABILITY_MagnetAbsorbThrowSkill_MonsterSingleMag"
+          ],
+          "CCFPIBJLAOM": "TARGET_TEAM",
+          "DMCDOHBCGKM": -1,
+          "NLKIAPIBFBL": 999,
+          "MNEBIBJNEFJ": 999,
+          "EICABLEOCOJ": {
+            "yMax": -1,
+            "EJPCHICIFJF": -1,
+            "yMin": -1,
+            "BMCFPGCIEIM": -1
+          },
+          "JIEHDHAAINP": {
+            "BBCDOBKLICK": 999,
+            "KLEKHOPNHIN": 999
+          },
+          "KGLDJLKDMHC": -180,
+          "HJGBPAMFICN": true,
+          "JDHNPCHOPBK": {
+            "KELADNANFEK": {
+              "DDBKBPNILHK": -1,
+              "DJNJFAKIEHI": -1,
+              "IPCEJPLJIED": -1,
+              "OGDHONBJHOG": -1
+            }
+          },
+          "LDPCIFMIOIC": 999,
+          "FBGOAPMIOGM": [
+            0,
+            1
+          ],
+          "JANKLPCKBHB": true,
+          "MNCKLIHKECC": 15,
+          "ENCCPIMJPCC": -1,
+          "JNHFDDLFLOA": true,
+          "KANANDJDCEN": true,
+          "OABGEPIHNAN": 999,
+          "LBOGFIHCMIC": -1,
+          "OFPIEFMHHCA": -1,
+          "GAJPKLMLIDO": 180,
+          "PIGJNFDHDHD": 360,
+          "HCGGNJBJLHN": 6,
+          "pose": [
+            301
+          ]
+        },
+        "initialCD": 5,
+        "IEECBFHJJJC": {
+          "CJELJIJGGNP": true,
+          "JDHDODJANEL": true
+        },
+        "MKGFFEGKBPA": {
+          "CJELJIJGGNP": true
+        }
+      }
+    },
+    "EBOHOFPCNAN": {
+      "CIBDOBDFGJB": {
+        "LLCBEMFMBND": 5,
+        "PNOLOEJENFA": 10
+      },
+      "GOIOEDPENGH": {
+        "0": [
+          401,
+          402,
+          403
+        ],
+        "1": []
+      }
+    },
+    "sensing": {
+      "JJPHFHLBBFH": {
+        "DAKALCNBNFJ": "CombatExcludeGWGO",
+        "JPFNBOIHOKG": 0.5,
+        "EALGEADNHOF": "SelfCamp",
+        "CALAMCGAJAM": "Enemy",
+        "GBGFIEBBIMP": "CombatExcludeGWGO",
+        "PIJKDKMIPIB": 20
+      },
+      "PLIOAGPJACP": {
+        "DAKALCNBNFJ": "CombatExcludeGWGO",
+        "JPFNBOIHOKG": 0.5,
+        "EALGEADNHOF": "SelfCamp",
+        "CALAMCGAJAM": "Enemy",
+        "GBGFIEBBIMP": "CombatExcludeGWGO",
+        "PIJKDKMIPIB": 20
+      }
+    },
+    "ICACLAIGNBF": {
+      "enable": true,
+      "ELJDNOIHOCJ": {
+        "DefaultTemplate": {
+          "9001": "Hibernation",
+          "DefaultPoses": "DefaultSetting"
+        },
+        "FatuimechaBGCTemplate": {
+          "9001": "NeverCombat",
+          "DefaultPoses": "DefaultSetting"
+        },
+        "NeverCombatTemplate": {
+          "DefaultPoses": "NeverCombat"
+        }
+      },
+      "LANLMPGACEG": {
+        "DefaultTemplate": {
+          "9001": {
+            "MHJCBEPGOJM": 20,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 5,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 5
+          },
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "DCDPNCHMKGJ": true,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 20,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 8
+          }
+        },
+        "FatuimechaBGCTemplate": {
+          "9001": {
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 30,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60
+          },
+          "DefaultPoses": {
+            "MHJCBEPGOJM": 20,
+            "DCDPNCHMKGJ": true,
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 20,
+            "DDCAPLJDBEE": true,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60,
+            "PIJKDKMIPIB": 8
+          }
+        },
+        "NeverCombatTemplate": {
+          "DefaultPoses": {
+            "JFGMCICLGMM": 1,
+            "FNBEIKNEDKL": 30,
+            "DLMKPNKICOH": 120,
+            "DMFNFNMMJJL": 60
+          }
+        }
+      },
+      "LLFNEHJGOLN": {
+        "DefaultSetting": {
+          "MHJCBEPGOJM": 20,
+          "DCDPNCHMKGJ": true,
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 20,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 8
+        },
+        "Hibernation": {
+          "MHJCBEPGOJM": 20,
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 5,
+          "DDCAPLJDBEE": true,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60,
+          "PIJKDKMIPIB": 5
+        },
+        "NeverCombat": {
+          "JFGMCICLGMM": 1,
+          "FNBEIKNEDKL": 30,
+          "DLMKPNKICOH": 120,
+          "DMFNFNMMJJL": 60
+        }
+      }
+    },
+    "JCFBMLOPLPK": {
+      "enable": true
+    },
+    "network": {
+      "syncSkill": true,
+      "HFJICCIOPLG": "OnSquadAlert",
+      "enable": true
+    },
+    "enable": true,
+    "MAEEEKALMJA": {
+      "OKGOGMNNLCI": "Monster",
+      "CNGDFBPCGDH": [
+        9001
+      ]
+    },
+    "skillGroupCDConfigs": [
+      {
+        "skillGroupCDTime": 3
+      },
+      {
+        "skillGroupCDTime": 15,
+        "skillGroupCDID": 1
+      }
+    ],
+    "PGMCNABMJNN": "EscenarioControl",
+    "birdCirclingTactic": [
+      {
+        "$type": "DMFENMFKJNC",
+        "platformMap": {
+          "AHJOILMJJBK": 6,
+          "BBFMMHKGGNK": 9,
+          "GJONJGMLGCE": 5,
+          "DDAFBOMKCNF": "1111",
+          "EIPFIDCBJNA": true,
+          "CPHKLDHPGPG": {
+            "GKDGONHCCGH": 0.10000000149011612,
+            "OAPPEGJJPJN": [
+              0.800000011920929,
+              0.5,
+              0.10000000149011612,
+              0,
+              0
+            ],
+            "BDDMLINFGDB": 0.800000011920929,
+            "OCDMAABBBLA": 0.5,
+            "JHJMIBOIDMN": [
+              0.800000011920929,
+              1.2999999523162842,
+              1.399999976158142,
+              1.399999976158142,
+              1.399999976158142
+            ]
+          },
+          "DKBMGDLPBPD": "ForwardBackward",
+          "DLLEPIEMBPI": true,
+          "EJGJNAGOMIN": 2,
+          "JJKJCPOKFBA": true,
+          "autoChangeStep": 1,
+          "BLFHACAMKAN": 0.375,
+          "KCKJLFFDGIK": "1111",
+          "PLDDOGJBHNI": 3,
+          "rangeMax": 7,
+          "FCBAFOMECKK": -1
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            201,
+            211,
+            301,
+            0
+          ],
+          "pose": [
+            201,
+            211,
+            301
+          ]
+        }
+      },
+      {
+        "$type": "CPMHOOIFNGO",
+        "platformMap": {
+          "DFACPOBGFEL": 1,
+          "ONEDBEDNLKB": 5,
+          "BLNEDKOEMHD": true,
+          "autoChangeStep": 2,
+          "OKJMBNGBNBF": 15,
+          "maxFileNum": 1,
+          "MLAOFFJPDBJ": 10,
+          "duHPRation": -1,
+          "DHCMOMNPAPF": 50
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            201,
+            211,
+            301,
+            0
+          ],
+          "pose": [
+            201,
+            211,
+            301
+          ]
+        }
+      },
+      {
+        "$type": "FMDMMFBEMKJ",
+        "platformMap": {
+          "FOMOJHPBBLO": -1,
+          "HBMMMMHJMGB": -1,
+          "AMDCGJLOHPF": true,
+          "autoChangeStep": 2,
+          "AOCBDIMLIGH": -1,
+          "JGIBALKIGEE": -1,
+          "maxFileNum": 1.2000000476837158,
+          "MJFHKJCMJMN": -1,
+          "MNBMJFBBIBN": -1
+        },
+        "enable": true
+      },
+      {
+        "$type": "OBAAIJJCIAM",
+        "platformMap": {
+          "HGPFPLHPDFL": 7,
+          "PHDDEAKPMLM": 5,
+          "MPDNMJOICOD": 30,
+          "autoChangeStep": 1,
+          "IJNGCOOMIFH": 7.5,
+          "maxFileNum": 0.5,
+          "GOGEHCNNLPM": 3,
+          "IDCKJCONKNA": 5
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            101,
+            1002,
+            0,
+            0
+          ],
+          "pose": [
+            101,
+            1002
+          ]
+        },
+        "BNLFLJMAJAD": 3
+      }
+    ],
+    "NNIFBEFNCLN": {
+      "AACPDDOEMJM": true
+    },
+    "skillGCD": 3,
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ],
+      "NeverCombat": []
+    },
+    "decisionArchetype": "ActMoveSeparate",
+    "NJHDEBENJIH": {
+      "{\"$type\":\"System.RuntimeType\"}": {
+        "$type": "OBAAIJJCIAM",
+        "platformMap": {
+          "HGPFPLHPDFL": 7,
+          "PHDDEAKPMLM": 5,
+          "MPDNMJOICOD": 30,
+          "autoChangeStep": 1,
+          "IJNGCOOMIFH": 7.5,
+          "maxFileNum": 0.5,
+          "GOGEHCNNLPM": 3,
+          "IDCKJCONKNA": 5
+        },
+        "enable": true,
+        "condition": {
+          "LBHHLNPHMAE": [
+            101,
+            1002,
+            0,
+            0
+          ],
+          "pose": [
+            101,
+            1002
+          ]
+        },
+        "BNLFLJMAJAD": 3
+      }
+    },
+    "PPPMANGLJLC": {
+      "enable": true,
+      "JEMFLCGABGK": 40
+    },
+    "LJOFEJAMEBO": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "KMMHAOBGHBF": {
+      "LANLMPGACEG": {
+        "DefaultTemplate": {
+          "9001": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 12,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 5,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 40,
+            "LADHCNJLFLF": 5,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 5,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 10,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "NIMKJBODHML": true,
+            "GIODDDBKKFI": "Monster_TauntLevel_2",
+            "OOOHEJCBEGF": 500
+          },
+          "DefaultPoses": {
+            "AKNPGFKBNAP": true,
+            "NBMBLEHKGFO": 5,
+            "BGNOALAOPFP": true,
+            "GKIACFBAFCG": 100,
+            "GOFNLAJNIPJ": 3,
+            "ODGOKDIEHLL": 0.5,
+            "OGJNOKICJBM": 12,
+            "IEHMGFMJENA": 500,
+            "FPDCJHBECJK": true,
+            "GKJHPJKDANC": true,
+            "HHKNFPHCIBM": 3,
+            "HODBLFACDDG": [
+              {
+                "distance": 13,
+                "MGKGFCHNPBJ": [
+                  11
+                ]
+              },
+              {
+                "distance": 50,
+                "MGKGFCHNPBJ": [
+                  7
+                ]
+              }
+            ],
+            "MPFCBDBJAHB": 40,
+            "LADHCNJLFLF": 5,
+            "OKALEALDCHM": 40,
+            "FDHIBKDANDA": 30,
+            "JMGNBBGHENM": 5,
+            "JOHKGMJLJFJ": 4.75,
+            "DHKBMMOGBDB": 5,
+            "PILIFNLNHCF": [
+              {
+                "GDBEBFCAKNL": 12,
+                "GGDNOMPMKKE": 10
+              },
+              {
+                "GDBEBFCAKNL": 18,
+                "GGDNOMPMKKE": 0.032999999821186066
+              },
+              {
+                "GDBEBFCAKNL": 50,
+                "GGDNOMPMKKE": 0.009999999776482582
+              }
+            ],
+            "NIMKJBODHML": true,
+            "GIODDDBKKFI": "Monster_TauntLevel_2",
+            "OOOHEJCBEGF": 500
+          }
+        }
+      },
+      "LLFNEHJGOLN": {
+        "Default": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 12,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 13,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 40,
+          "LADHCNJLFLF": 5,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 12,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 18,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "NIMKJBODHML": true,
+          "GIODDDBKKFI": "Monster_TauntLevel_2",
+          "OOOHEJCBEGF": 500
+        },
+        "Hibernation": {
+          "AKNPGFKBNAP": true,
+          "NBMBLEHKGFO": 5,
+          "BGNOALAOPFP": true,
+          "GKIACFBAFCG": 100,
+          "GOFNLAJNIPJ": 3,
+          "ODGOKDIEHLL": 0.5,
+          "OGJNOKICJBM": 12,
+          "IEHMGFMJENA": 500,
+          "FPDCJHBECJK": true,
+          "GKJHPJKDANC": true,
+          "HHKNFPHCIBM": 3,
+          "HODBLFACDDG": [
+            {
+              "distance": 5,
+              "MGKGFCHNPBJ": [
+                11
+              ]
+            },
+            {
+              "distance": 50,
+              "MGKGFCHNPBJ": [
+                7
+              ]
+            }
+          ],
+          "MPFCBDBJAHB": 40,
+          "LADHCNJLFLF": 5,
+          "OKALEALDCHM": 40,
+          "FDHIBKDANDA": 30,
+          "JMGNBBGHENM": 5,
+          "JOHKGMJLJFJ": 4.75,
+          "DHKBMMOGBDB": 5,
+          "PILIFNLNHCF": [
+            {
+              "GDBEBFCAKNL": 5,
+              "GGDNOMPMKKE": 10
+            },
+            {
+              "GDBEBFCAKNL": 10,
+              "GGDNOMPMKKE": 0.032999999821186066
+            },
+            {
+              "GDBEBFCAKNL": 50,
+              "GGDNOMPMKKE": 0.009999999776482582
+            }
+          ],
+          "NIMKJBODHML": true,
+          "GIODDDBKKFI": "Monster_TauntLevel_2",
+          "OOOHEJCBEGF": 500
+        }
+      },
+      "AFHNDHCBOIF": {
+        "DefaultTemplate": {
+          "9001": "Hibernation",
+          "DefaultPoses": "Default"
+        }
+      }
+    },
+    "FLGOPECJKEJ": {
+      "enable": true
+    }
+  },
+  "FBOCAJEGLAM": true,
+  "FNHHMOCFBGL": true,
+  "dither": {
+    "AOKIINGPPPO": -1
+  },
+  "AHPNGGHNMLH": {
+    "maxYawDegree": 50,
+    "NIFJPDLMDNN": 2,
+    "FEIHMAEHIML": 6,
+    "maxPitchDegree": 15,
+    "affectedByWorld": true,
+    "LPLPBBCHJFO": "Body",
+    "MABIBPCMNHF": "Neck",
+    "CLHMFPBKKLI": "Head"
+  },
+  "abilities": [
+    {
+      "abilityName": "Monster_Fatuimecha_Component"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_Hit"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_Die"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_Hibernation"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_PartControl_Common"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_PartControl_Core"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_PartControl_Gatling"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Steer"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_Move"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldOn"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldOff"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_ShieldAtk"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingNormalAtk"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk_End"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_CannonSpecialAtk"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_Shield_SingleMagnet_On"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_Shield_SingleMagnet_Off"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk_SingleMagnet_On"
+    },
+    {
+      "abilityName": "Monster_Fatuimecha_CoreC_MoveC_AttackD_AttackC_AttackB_Water_GatlingSpecialAtk_SingleMagnet_Off"
+    }
+  ],
+  "partControl": {
+    "parts": [
+      {
+        "DPMMJNDONLO": "Stay",
+        "doOnUnEabled": "NamedTransform",
+        "useHeadControl": true,
+        "forwardByTransName": "EntityForward",
+        "angularSpeed": 50,
+        "partRootName": "CoreControl",
+        "MHGFHOEJAIJ": true,
+        "rotateBy": "ForwardTransLocal",
+        "limitHorizontal": 60
+      },
+      {
+        "DPMMJNDONLO": "Stay",
+        "doOnUnEabled": "NamedTransform",
+        "useHeadControl": true,
+        "forwardByTransName": "EntityForward",
+        "angularSpeed": 30,
+        "partRootName": "CoreControl_Skill",
+        "MHGFHOEJAIJ": true,
+        "rotateBy": "ForwardTransLocal",
+        "limitHorizontal": 60
+      },
+      {
+        "DPMMJNDONLO": "Stay",
+        "doOnUnEabled": "NamedTransform",
+        "useHeadControl": true,
+        "forwardByTransName": "GatlingForward",
+        "angularSpeed": 50,
+        "partRootName": "GatlingControl",
+        "OMENIOACCKJ": "MoveHead",
+        "MHGFHOEJAIJ": true,
+        "rotateBy": "ForwardTransLocal",
+        "FHILBKDBCME": true,
+        "limitVertical": 25,
+        "JKAIEABCGND": {
+          "_y": -0.800000011920929
+        }
+      }
+    ]
+  },
+  "initialPoses": {
+    "Default": {
+      "EBEFGNOBMLN": 101,
+      "initialPoseParams": {
+        "ICFAIJDGKGI": {
+          "Hibernation": "false",
+          "Patrol": "false"
+        }
+      },
+      "enable": true
+    },
+    "Hibernation": {
+      "EBEFGNOBMLN": 9001,
+      "initialPoseParams": {
+        "ICFAIJDGKGI": {
+          "Hibernation": "true"
+        }
+      },
+      "enable": true
+    },
+    "PatrolMove": {
+      "EBEFGNOBMLN": 1002,
+      "initialPoseParams": {
+        "intParams": {
+          "PatrolType": "2"
+        },
+        "ICFAIJDGKGI": {
+          "Patrol": "true"
+        }
+      },
+      "enable": true
+    },
+    "PatrolStand": {
+      "EBEFGNOBMLN": 1001,
+      "initialPoseParams": {
+        "intParams": {
+          "PatrolType": "1"
+        },
+        "ICFAIJDGKGI": {
+          "Patrol": "true"
+        }
+      },
+      "enable": true
+    }
+  },
+  "animal": {
+    "radarHint": true
+  },
+  "common": {
+    "BGFPDLDLDDH": true,
+    "BJNIDKDIBMO": true,
+    "CEAFAEAPJBE": -1,
+    "mass": 1000000,
+    "LLEOPACNOEI": [
+      {
+        "FDKOLGEPHHI": "RootNode",
+        "IHOALFBIMFB": "EffectMesh_CoreC"
+      },
+      {
+        "FDKOLGEPHHI": "RootNode",
+        "IHOALFBIMFB": "EffectMesh_MoveC"
+      },
+      {
+        "FDKOLGEPHHI": "RootNode",
+        "IHOALFBIMFB": "EffectMesh_AttackD"
+      },
+      {
+        "FDKOLGEPHHI": "RootNode",
+        "IHOALFBIMFB": "EffectMesh_AttackC"
+      },
+      {
+        "FDKOLGEPHHI": "RootNode",
+        "IHOALFBIMFB": "EffectMesh_AttackB"
+      }
+    ],
+    "DHMNIAMNFCI": true,
+    "effectAttachShape": {
+      "$type": "ALAMOCLGEAO",
+      "mesh": "EffectMesh"
+    },
+    "modelHeight": 3.5999999046325684,
+    "HOJCMODKBAE": true,
+    "ICGECOIJGDL": true,
+    "ILEPOGINJOE": true,
+    "value": 0.8999999761581421,
+    "shadowViewSizeRatio": 1,
+    "LICLOFMHGMB": -1,
+    "viewSize": 1.5,
+    "MPALFICHICI": true,
+    "height": 3.5999999046325684,
+    "OMEMFFPBCMK": 1,
+    "PIBJMGKFELP": true
+  },
+  "PCGNFOMNOPB": {
+    "KCFIAIEHKDL": 1
+  },
+  "uiSetting": {
+    "isInteractive": true,
+    "KABPLKMAJNJ": true,
+    "IBNCKOBACMF": true
+  },
+  "captureGroup": {
+    "FMEEEHPMHDB": {
+      "IBKFOAEFCHJ": {
+        "value": 1
+      },
+      "JEJAGCKKJAA": {
+        "GPJBCHKCIJO": true,
+        "CPLHKIEMGAD": 20
+      },
+      "IPFABCFDBGG": {
+        "CHBMKLMPFNC": {
+          "GPJBCHKCIJO": true,
+          "OGBIDMEDGGD": 4,
+          "showDistance": 20
+        }
+      },
+      "INJHBCKFHJP": {
+        "attachPointName": "BillboardAttach",
+        "showDistance": 20,
+        "FCNBOCKFDBG": true
+      },
+      "DGBLGBHELLG": {
+        "GPJBCHKCIJO": true,
+        "KOKGCKKGGDN": {
+          "OGBIDMEDGGD": 4
+        },
+        "LJEDMJFCHMK": 1
+      },
+      "KNNCEDMKCOK": {
+        "prefabName": "FirmamentCarBoard",
+        "value": 1
+      },
+      "LGBAPCGFFAK": {
+        "GPJBCHKCIJO": true,
+        "ECBEEKENBCN": 20
+      }
+    }
+  },
+  "EAPABGHPPFJ": {
+    "sceneID": 0.5,
+    "GBBCEMKAOHK": 90
+  },
+  "NGAKKPGOAAC": {
+    "squad": {
+      "EAGNPIKDHND": "G_LevelDefault"
+    }
+  },
+  "stateLayers": {
+    "showDitherDuration": 2,
+    "hideEffectWhenDither": true,
+    "normalBetweenCamera": {
+      "detectDitherRange": 3
+    }
+  },
+  "globalValue": {
+    "initServerGlobalValues": {
+      "SGV_NK_SingleMagnet_MaxAngle": 180
+    },
+    "serverGlobalValues": [
+      "SGV_NK_SingleMagnet_MaxAngle"
+    ]
+  },
+  "NEGIFCMEBDM": {
+    "BPPGEPKKJEG": {
+      "FOECJMLJBBK": 1
+    },
+    "beHit": {
+      "CCLMGILPGCC": 1,
+      "GJAINPECJBG": 1,
+      "NKONIBPCOAJ": 1
+    },
+    "PHOLKEJNEPA": {
+      "EFMLFCPOJJP": 1
+    }
+  },
+  "OMKJJCMEIOG": true
+}

@@ -1,0 +1,3452 @@
+[
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_CarryingIceCraftedPickaxe"
+        },
+        {
+          "$type": "CreateGadget",
+          "actorIceSubHurtDelta": -1,
+          "gadgetID": 73151003,
+          "KLGHKKGGHEA": {
+            "DBOLJFPPFGI": 0.5,
+            "CGDBBHHIINM": true,
+            "JOCOGLBCMEJ": 0.5,
+            "JAILLBHLHNO": true
+          },
+          "canBeHandledOnRecover": true,
+          "lifeByOwnerV2": true,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "bornRandom": {
+              "$type": "BornRandomFromCenter",
+              "maxRandomRange": 1,
+              "minRandomRange": 1
+            },
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "onGround": true,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "IceCraftedPickaxe_TeamAbility_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "BanSkill_Fly": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "IceCraftedPickaxe_TeamAbility_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_IceCraftedPickaxe_EnhancedState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_CarryingIceCraftedPickaxe"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ThrowIceCraftedPickaxe"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_IceCraftedPickaxe_EnhancedState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_CarryingIceCraftedPickaxe"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "gvInTalk": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_CarryingIceCraftedPickaxe",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "TeamNoIceCraftedPickaxe",
+                "TeamHasIceCraftedPickaxe"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "useLimitRange": true,
+              "maxValue": 1,
+              "key": "GV_CarryingIceCraftedPickaxe"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "useLimitRange": true,
+              "maxValue": 1,
+              "key": "GV_ThrowIceCraftedPickaxe"
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_ThrowIceCraftedPickaxe",
+              "actions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "GV_ThrowIceCraftedPickaxe"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ThrowIceCraftedPickaxe",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SwitchSkill_HasEnhancedState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20667,
+              "LMKJCHKJKOH": true,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "useInAir": true
+            },
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20669,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "skillIndex": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SwitchSkill_NoEnhancedState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20667,
+              "LMKJCHKJKOH": true,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "useInAir": true
+            },
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20668,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "skillIndex": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TeamHasEnhancedState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DoWatcherSystemAction",
+              "actorIceSubHurtDelta": -1,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "watcherId": 10603
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "Target",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ChangePlayModeV2",
+                  "actorIceSubHurtDelta": -1,
+                  "FFIJGFGGNDA": "IceCraftedPickaxe",
+                  "EHACCNBHAPM": true,
+                  "authorityOnly": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "OCGHLADNJJB": true
+                },
+                {
+                  "$type": "RemoveAvatarSkillInfo",
+                  "skillID": 20667,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "RemoveAvatarSkillInfo",
+                  "skillID": 20669,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "SwitchSkill_HasEnhancedState",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "SwitchSkill_HasEnhancedState",
+              "doOffStage": true
+            },
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20669,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "ChangePlayModeV2",
+              "actorIceSubHurtDelta": -1,
+              "FFIJGFGGNDA": "IceCraftedPickaxe",
+              "EHACCNBHAPM": true,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TeamHasIceCraftedPickaxe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "StageReadyMixin",
+              "actorIceSubHurtDelta": -1,
+              "onStageReady": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                }
+              ]
+            },
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Activity",
+              "PEONHILPDLC": 20212
+            },
+            {
+              "$type": "OEGEKDLKONE",
+              "actorIceSubHurtDelta": -1,
+              "GOEOCLKDLOC": {
+                "PHGMKDCPOJO": 20212
+              }
+            },
+            {
+              "$type": "WidgetDisableMixin",
+              "actorIceSubHurtDelta": -1,
+              "abilityDisableIDs": [
+                220043,
+                220027,
+                220091,
+                220025,
+                220044,
+                220051,
+                220066,
+                220078,
+                220097,
+                220111,
+                220112,
+                220116,
+                220117,
+                220129,
+                220140
+              ],
+              "uiDisableIDs": [
+                220043,
+                220027,
+                220091,
+                220025,
+                220044,
+                220051,
+                220066,
+                220078,
+                220097,
+                220111,
+                220112,
+                220116,
+                220117,
+                220129,
+                220140
+              ]
+            },
+            {
+              "$type": "HideTeamEnergyBtnMixin",
+              "reason": "SpecialMove",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "UNIQUE_IceCraftedPickaxe_AddSkillInfo"
+            },
+            {
+              "$type": "DoActionBySkillEventMixin",
+              "actorIceSubHurtDelta": -1,
+              "onEvent": [
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "abilityName": "DynamicAbility_IceCraftedPickaxe_Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "LPFPKHHKGIB": "Other"
+                }
+              ],
+              "LABOIMCPHOD": "IceCreatureEquipment_TriggerDrop"
+            },
+            {
+              "$type": "HEGBDPBNKEA",
+              "actorIceSubHurtDelta": -1,
+              "gadgetID": 73151042,
+              "OMKNKDALOIM": "IceCraftedPickaxe_RuntimeId",
+              "OAOGGIHDIPO": "IceCraftedPickaxe__ReadyMark",
+              "campID": 5001,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "IceCreature_Preparing",
+              "actions": [
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "abilityName": "DynamicAbility_IceCraftedPickaxe_Team",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "IceCreature_Preparing"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "LPFPKHHKGIB": "Other"
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TeamNoEnhancedState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "Target",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ChangePlayModeV2",
+                  "actorIceSubHurtDelta": -1,
+                  "FFIJGFGGNDA": "IceCraftedPickaxe",
+                  "EHACCNBHAPM": true,
+                  "authorityOnly": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "OCGHLADNJJB": true
+                },
+                {
+                  "$type": "RemoveAvatarSkillInfo",
+                  "skillID": 20667,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "RemoveAvatarSkillInfo",
+                  "skillID": 20668,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "SwitchSkill_NoEnhancedState",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "SwitchSkill_NoEnhancedState",
+              "doOffStage": true
+            },
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20668,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "ChangePlayModeV2",
+              "actorIceSubHurtDelta": -1,
+              "FFIJGFGGNDA": "IceCraftedPickaxe",
+              "EHACCNBHAPM": true,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TeamNoIceCraftedPickaxe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ThrowIceCraftedPickaxe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 1,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "abilityName": "DynamicAbility_IceCraftedPickaxe_Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "LPFPKHHKGIB": "Other"
+                }
+              ]
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ThrowIceCraftedPickaxe"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ThrowIceCraftedPickaxe"
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_IceCraftedPickaxe_AddSkillInfo": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "Target",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.30000001192092896,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_VoxelRockCam_Active",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "VoxelRockCam_Active"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "gvInTalk": true,
+              "enable": true,
+              "globalValueKey": "_IS_IN_STARSUPERCONDUCTOR_FIELD",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "TeamNoEnhancedState",
+                "TeamHasEnhancedState"
+              ]
+            },
+            {
+              "$type": "AttachToStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "isCheckOnAttach": true,
+              "value": -1,
+              "stateIDs": [
+                "Fly"
+              ],
+              "modifierName": "BanSkill_Fly"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "VoxelRockCam_Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "KOPOJKGHLDH",
+                "OIOHDNHEHPE": 1,
+                "JCBINFMOIHM": 1,
+                "fov": 60
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "NKKHDMFPHAF",
+                "OIOHDNHEHPE": 1,
+                "JCBINFMOIHM": 1,
+                "FDBPFHCIBCF": "Absolute",
+                "HOAHEELCEAB": 5,
+                "EBKDPDBDHKC": 6
+              }
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "IFDOKECLKGI",
+                "offset": {
+                  "_y": 0.75
+                },
+                "OIOHDNHEHPE": 1,
+                "JCBINFMOIHM": 1
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_IceCraftedPickaxe_Team",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "BySkillReady",
+              "skillID": 20667,
+              "target": "Target"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "IceCraftedPickaxe_Attack_Normal",
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "IceCraftedPickaxe_Attack_Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetSystemValueToOverrideMap",
+              "actorIceSubHurtDelta": -1,
+              "type": "ElementLevelCo",
+              "canBeHandledOnRecover": true,
+              "value": -1,
+              "doOffStage": false,
+              "key": "DamageSystemValue"
+            },
+            {
+              "$type": "AvatarShareCDSkillStart",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "mpTriggerOnRemote": true,
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "triggerID": "AttackL",
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_AttackL",
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "PickaxeNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackBox",
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "size": {
+                    "y": 2.5,
+                    "x": 5,
+                    "z": 3
+                  },
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 1,
+                      "z": 0.25
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Rate",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "enBreak": 75,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "attackType": "Default"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "IceCraftedPickaxe_Dig",
+                  "cameraShake": {
+                    "shakeType": "HitVector",
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "KDDPAEKEAPE": true,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeTime": 0.20000000298023224,
+                    "shakeDir": {
+                      "_y": 1,
+                      "_z": 1
+                    },
+                    "shakeDistance": 20,
+                    "shakeRange": 0.20000000298023224
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV1"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "DEMLLFDJEOF",
+              "actorIceSubHurtDelta": -1,
+              "DBNLBCPGDII": {
+                "$type": "NFLAOLGCFCE",
+                "size": {
+                  "y": 2.5,
+                  "x": 5,
+                  "z": 3
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "IMKFLMLDJLB": {
+                "_z": -1.5
+              },
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 1,
+                  "z": 1.75
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "PLMBLIAINBL": true
+            }
+          ],
+          "duration": 0.30000001192092896,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_IceCraftedPickaxe_Dig",
+      "abilitySpecials": {
+        "DamageSystemValue": 0,
+        "Damage_Rate": 2.1500000953674316
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "IceCraftedPickaxe_ChargeHit_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DoHit_TriggerAttack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetSystemValueToOverrideMap",
+              "actorIceSubHurtDelta": -1,
+              "type": "ElementLevelCo",
+              "canBeHandledOnRecover": true,
+              "value": -1,
+              "doOffStage": false,
+              "key": "DamageSystemValue"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "AttackH"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_AttackH",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_AttackGroundHit",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.6000000238418579
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 10,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": -1.5
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 5
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Rate",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "enBreak": 300,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "attackType": "Default"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "IceCraftedPickaxe_Dig",
+                  "cameraShake": {
+                    "shakeType": "HitVector",
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "KDDPAEKEAPE": true,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeTime": 0.4000000059604645,
+                    "shakeDir": {
+                      "_y": 1,
+                      "_z": 1
+                    },
+                    "shakeDistance": 20,
+                    "shakeRange": 0.800000011920929
+                  },
+                  "KECBKEBBCNH": [
+                    "IceCraftedPickaxe_ChargeHit"
+                  ],
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV1"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "DEMLLFDJEOF",
+              "actorIceSubHurtDelta": -1,
+              "DBNLBCPGDII": {
+                "$type": "KBELLELIMPF",
+                "sceneID": 10,
+                "height": 5
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 1.2000000476837158
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 0.25,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "IceCraftedPickaxe_ChargeHit_Cancle": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AvatarShareCDSkillStart",
+              "skillID": 20668,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DoHit_TriggerAttack",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Speed_Down",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "IceCraftedPickaxe_ChargeHit_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ButtonHoldChargeMixin",
+              "skillID": 20668,
+              "actorIceSubHurtDelta": -1,
+              "OnBeginSecondCharged": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Speed_Down",
+                  "doOffStage": true
+                },
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "otherTargets": {
+                    "$type": "GENFIIMMOOJ",
+                    "targetKey": "IceCraftedPickaxe_RuntimeId",
+                    "NHIIICIJKPD": "Team"
+                  },
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "value": true,
+                  "boolID": "AttackH"
+                }
+              ],
+              "JLIGNEBOAHM": [
+                {
+                  "$type": "AvatarShareCDSkillStart",
+                  "skillID": 20668,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Speed_Down",
+                  "doOffStage": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "DoHit_TriggerAttack",
+                  "doOffStage": true
+                }
+              ],
+              "OnReleaseCharged": [
+                {
+                  "$type": "ShowReminder",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "canBeHandledOnRecover": true,
+                  "id": 1004550035,
+                  "doOffStage": true
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "AvatarShareCDSkillStart",
+                  "skillID": 20668,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "DoHit_TriggerAttack",
+                  "doOffStage": true
+                },
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Speed_Down",
+                  "doOffStage": true
+                }
+              ],
+              "secondChargeTime": 0.5,
+              "chargeStateIDs": [
+                "Channel_Loop"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Speed_Down": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Circle",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Charge",
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "EffNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "properties": {
+            "Animator_MoveSpeedRatio": -1
+          },
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DisableChangeAvatarMixin",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "HideAvatarSkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "skillIDs": [
+                10413,
+                10013,
+                30506,
+                11076,
+                114310,
+                114311
+              ]
+            },
+            {
+              "$type": "StageReadyMixin",
+              "actorIceSubHurtDelta": -1,
+              "onStageReady": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Speed_Down",
+                  "doOffStage": true
+                }
+              ]
+            },
+            {
+              "$type": "AttachToAbilityStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "IceCraftedPickaxe_ChargeHit_Cancle",
+              "abilityStates": [
+                "ElementPetrifaction",
+                "ElementFreeze"
+              ]
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "IceCraftedPickaxe_ChargeHit_Cancle",
+              "doOffStage": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_IceCraftedPickaxe_ChargeHit",
+      "abilitySpecials": {
+        "DamageSystemValue": 0,
+        "Damage_Rate": 8.609999656677246
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 20669,
+          "actorIceSubHurtDelta": -1,
+          "OnBeginSecondCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "triggerID": "StartChannelTrigger",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 201
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Focus",
+              "doOffStage": true
+            }
+          ],
+          "JLIGNEBOAHM": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "EndChannelTrigger",
+              "doOffStage": true
+            },
+            {
+              "$type": "AvatarShareCDSkillStart",
+              "skillID": 20669,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_IceCraftedPickaxe_HideState",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetCollisionPointToGlobalPos",
+              "actorIceSubHurtDelta": -1,
+              "LANEADNAMOA": {
+                "$type": "KPJLJHODAOA",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "NKABAJOFAHD": {
+                  "$type": "CEJIEPKNPBN",
+                  "useRotation": true,
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "offset": {
+                  "z": 3
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "GIIKFCBIECE": 50,
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": true,
+              "IFAGEOOENNG": "CameraScene",
+              "key": "_ABILITY_IceCraftedPickaxe_RightPos"
+            },
+            {
+              "$type": "SetGlobalDir",
+              "actorIceSubHurtDelta": -1,
+              "CKEFLFOBBBL": "Target",
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.6000000238418579,
+                  "x": 0.6000000238418579
+                },
+                "attachPointName": "MoveCollider",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "$type": "AHMJKPBKKHA",
+                  "useCorrectDir": true,
+                  "positionKey": "_ABILITY_IceCraftedPickaxe_RightPos",
+                  "maxAngle": 180
+                }
+              },
+              "key": "_ABILITY_IceCraftedPickaxe_RightDir"
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 73151009,
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": true,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.6000000238418579,
+                  "x": 0.6000000238418579
+                },
+                "attachPointName": "MoveCollider",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "$type": "ConfigDirectionByGlobalValue",
+                  "useCorrectDir": true,
+                  "directionKey": "_ABILITY_IceCraftedPickaxe_RightDir",
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "IceCraftedPickaxe_Throw",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "CurChallengeGroup"
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Focus",
+              "doOffStage": true
+            },
+            {
+              "$type": "DoWatcherSystemAction",
+              "actorIceSubHurtDelta": -1,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "watcherId": 81738
+            }
+          ],
+          "OnReleaseCharged": [
+            {
+              "$type": "ShowReminder",
+              "actorIceSubHurtDelta": -1,
+              "muteRemoteAction": true,
+              "canBeHandledOnRecover": true,
+              "id": 1004550036,
+              "doOffStage": true
+            }
+          ],
+          "onCancelCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "EndChannelTrigger",
+              "doOffStage": true
+            },
+            {
+              "$type": "AvatarShareCDSkillStart",
+              "skillID": 20669,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_IceCraftedPickaxe_HideState",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetCollisionPointToGlobalPos",
+              "actorIceSubHurtDelta": -1,
+              "LANEADNAMOA": {
+                "$type": "KPJLJHODAOA",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "NKABAJOFAHD": {
+                  "$type": "CEJIEPKNPBN",
+                  "useRotation": true,
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "offset": {
+                  "z": 3
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "GIIKFCBIECE": 50,
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": true,
+              "IFAGEOOENNG": "CameraScene",
+              "key": "_ABILITY_IceCraftedPickaxe_RightPos"
+            },
+            {
+              "$type": "SetGlobalDir",
+              "actorIceSubHurtDelta": -1,
+              "CKEFLFOBBBL": "Target",
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.6000000238418579,
+                  "x": 0.6000000238418579
+                },
+                "attachPointName": "MoveCollider",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "$type": "AHMJKPBKKHA",
+                  "useCorrectDir": true,
+                  "positionKey": "_ABILITY_IceCraftedPickaxe_RightPos",
+                  "maxAngle": 180
+                }
+              },
+              "key": "_ABILITY_IceCraftedPickaxe_RightDir"
+            },
+            {
+              "$type": "TriggerBullet",
+              "actorIceSubHurtDelta": -1,
+              "trackTarget": "SelfAttackTarget",
+              "bulletID": 73151009,
+              "canBeHandledOnRecover": true,
+              "KGHIIEPKAAM": true,
+              "doOffStage": true,
+              "MLDOBLJCKCK": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 0.6000000238418579,
+                  "x": 0.6000000238418579
+                },
+                "attachPointName": "MoveCollider",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "$type": "ConfigDirectionByGlobalValue",
+                  "useCorrectDir": true,
+                  "directionKey": "_ABILITY_IceCraftedPickaxe_RightDir",
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "IceCraftedPickaxe_Throw",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "CurChallengeGroup"
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Focus",
+              "doOffStage": true
+            },
+            {
+              "$type": "DoWatcherSystemAction",
+              "actorIceSubHurtDelta": -1,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "watcherId": 81738
+            }
+          ],
+          "secondChargeTime": 0.5,
+          "chargeStateIDs": [
+            "Channel_Loop"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Delay_EndChannelTrigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "AvatarExitFocus",
+              "actorIceSubHurtDelta": -1,
+              "keepRotation": true,
+              "canBeHandledOnRecover": true,
+              "PHKMLJFMNIH": 4.800000190734863,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_ABILITY_Common_IsChannelState"
+            }
+          ],
+          "duration": 1.5,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "BONBLHALJBI",
+              "actorIceSubHurtDelta": -1,
+              "EIPHAHAIEPL": "IceCraftedPickaxe_DisableMove"
+            },
+            {
+              "$type": "ADNIPOHDMCI",
+              "actorIceSubHurtDelta": -1,
+              "DMNKEAAHDDD": true
+            },
+            {
+              "$type": "IDEPKMBOEDI",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "ForbidAvatarFlyMixin",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "DKIBMECFCEG",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "HideAvatarSkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "skillIDs": [
+                10413,
+                10013,
+                30506,
+                11076,
+                114310,
+                114311
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Focus": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AvatarEnterFocus",
+              "cameraFollowMinDegree": -60,
+              "actorIceSubHurtDelta": -1,
+              "vcamFov": 40,
+              "HOEGDDBJEJO": 1.25,
+              "ELIECGGIHFH": {
+                "actorIceSubHurtDelta": -1,
+                "canBeHandledOnRecover": true,
+                "PHKMLJFMNIH": -1,
+                "doOffStage": false
+              },
+              "dragButtonName": "Skill2",
+              "enable": true,
+              "NOPLPLOOMMB": true,
+              "cameraFollowLower": {
+                "_x": 1.2000000476837158,
+                "_y": 0.800000011920929,
+                "_z": -1.899999976158142
+              },
+              "OPMJOMPBHPM": true,
+              "GMJMBMFOJLD": true,
+              "cameraFastFocusMode": true,
+              "FKFAKILENIA": -1,
+              "FDDPEAMAADJ": -60,
+              "canBeHandledOnRecover": true,
+              "KJAMADPJNKD": true,
+              "doOffStage": false,
+              "GEIIPGCGHPJ": {
+                "KEGFEEAJFFN": -1,
+                "BPFLPMNCDJC": -1,
+                "IHKBILOKGBD": -1
+              },
+              "cameraFollowUpper": {
+                "_x": 1.2000000476837158,
+                "_y": 1,
+                "_z": -1.600000023841858
+              },
+              "assistance": {
+                "BOOGGICJOGE": {
+                  "useGyro": true
+                },
+                "GPFEHKCCEEK": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                },
+                "OAGBHEMIPPJ": {
+                  "useGyro": true
+                }
+              },
+              "KMBEGJMJEDP": {
+                "BECOECFCMLB": -1,
+                "GDBEBFCAKNL": 1,
+                "MCALDEBPNAF": -1,
+                "GGDNOMPMKKE": 1
+              },
+              "GFNHGHHFIPG": -1,
+              "cameraFollowMaxDegree": 60
+            },
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "muteRemoteAction": true,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "effectName": "Eff_SceneObj_IceCraftedPickaxe_01_Aim"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_ABILITY_Common_IsChannelState"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "muteRemoteAction": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "effectName": "Eff_SceneObj_IceCraftedPickaxe_01_Aim"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Delay_EndChannelTrigger",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DisableMotionBlurMixin",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 20667,
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "AvatarExitFocus",
+              "actorIceSubHurtDelta": -1,
+              "keepRotation": true,
+              "canBeHandledOnRecover": true,
+              "PHKMLJFMNIH": 4.800000190734863,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_ABILITY_Common_IsChannelState"
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "IceCraftedPickaxe_RuntimeId",
+                "NHIIICIJKPD": "Team"
+              },
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_IceCraftedPickaxe_HideState",
+              "doOffStage": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_IceCraftedPickaxe_HideState": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerSetVisible",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "TriggerSetVisible",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "visible": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_BlinkOut",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "EffNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 1.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_IceCraftedPickaxe_Throw",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "DynamicAbility_IceCraftedPickaxe_Drop",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "IceCraftedPickaxe_LocalGadgetHandler",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "modifierName": "TriggerWidgetMp",
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "InvisibleInTalkAndCSMixin",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "Collider"
+          ],
+          "EMNIAOMNIEF": true
+        },
+        {
+          "$type": "StageReadyMixin",
+          "actorIceSubHurtDelta": -1,
+          "onStageReady": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73151003
+              ],
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "LGIPNLHMLNM",
+          "actorIceSubHurtDelta": -1,
+          "LCLFNBNKDAN": "_IS_IN_STARSUPERCONDUCTOR_FIELD"
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_IS_IN_STARSUPERCONDUCTOR_FIELD",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "IceCraftedPickaxeHasEnhancedState"
+          ]
+        },
+        {
+          "$type": "AvatarCombatMixin",
+          "actorIceSubHurtDelta": -1,
+          "onExitCombat": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBtn_EnterCombat",
+              "doOffStage": true
+            }
+          ],
+          "onEnterCombat": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBtn_EnterCombat",
+              "doOffStage": true
+            }
+          ],
+          "NEMFMKPFDLO": true
+        }
+      ],
+      "modifiers": {
+        "IceCraftedPickaxeHasEnhancedState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Enhance",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Enhance",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "EffNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "IceCraftedPickaxe_LocalGadgetHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByIsCombat",
+                  "target": "Target"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBtn_EnterCombat",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetPositionToSelfPosition",
+                  "target": "Target",
+                  "value": 80
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "killSelfType": "Normal",
+                  "canBeHandledOnRecover": true,
+                  "configIdArray": [
+                    73151003
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TriggerWidgetMp": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "FODKMMKKJFM",
+                  "target": "CurLocalAvatar",
+                  "KKGICJMCBGN": true,
+                  "IFKACJEBAKF": [
+                    "Standby",
+                    "RunToIdle",
+                    "WalkToIdle",
+                    "SprintToIdle",
+                    "StandbyShow_01",
+                    "StandbyShow_02",
+                    "Run",
+                    "Walk",
+                    "FallOnGround",
+                    "FallOnGroundLit",
+                    "FallToGroundRun",
+                    "FallToGroundRunHard",
+                    "Sprint",
+                    "SprintBS"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "NoneOrEqual",
+                  "key": "IceCreature_Preparing"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "TryGetIceCraftedPickaxeGadget",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ShowReminder",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "canBeHandledOnRecover": true,
+                  "id": 1004550040,
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 0.009999999776482582,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TryGetIceCraftedPickaxeGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "CurLocalAvatar",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerSkillEvent",
+                  "actorIceSubHurtDelta": -1,
+                  "radius": 20,
+                  "canBeHandledOnRecover": true,
+                  "LABOIMCPHOD": "IceCreatureEquipment_TriggerDrop",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ShowReminder",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "canBeHandledOnRecover": true,
+                  "id": 1004550040,
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasFeatureTag",
+                      "target": "CurLocalAvatar",
+                      "featureTagIDs": [
+                        2106
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "GV_CarryingIceCraftedPickaxe"
+                },
+                {
+                  "$type": "KillSelf",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Caster",
+                  "killSelfType": "Normal",
+                  "canBeHandledOnRecover": true,
+                  "configIdArray": [
+                    73151003
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Disable_IceCraftedPickaxeBtn_EnterCombat": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByIsCombat",
+                  "target": "Target"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Disable_IceCraftedPickaxeBtn_EnterCombat",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCraftedPickaxe_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "DamageSystemValue"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "actorIceSubHurtDelta": -1,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackSphere",
+              "radius": 1,
+              "massiveAttackRatio": 1,
+              "MPNIJNGFBIH": {
+                "INOCAOHPEBB": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                }
+              },
+              "triggerType": "TriggerNoRepeat",
+              "checkHitLayerType": "Both",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            "attackInfo": {
+              "HBOOKFMCODC": {
+                "BPIJOAMNKIH": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                },
+                "onHitEffectName": "default"
+              },
+              "attackProperty": {
+                "HJHPJLGAHHP": true,
+                "damageExtra": [
+                  "Damage_Rate",
+                  "DamageSystemValue",
+                  "MUL"
+                ],
+                "enBreak": 300,
+                "strikeType": "Blunt",
+                "JHLDBJEFNBP": true,
+                "elementRank": 1,
+                "EKBLGIOPKKA": true,
+                "attackType": "Default"
+              },
+              "INKGMIHAPMA": {
+                "NDIBGPPKGJP": "Shake"
+              },
+              "attenuationGroup": "default",
+              "attackTag": "IceCraftedPickaxe_Dig",
+              "cameraShake": {
+                "extension": {
+                  "cycleDamping": 0.11999999731779099,
+                  "baseOnCamera": true,
+                  "rangeAttenuation": 0.5,
+                  "baseCycle": 0.11999999731779099
+                },
+                "shakeDistance": 20
+              },
+              "KECBKEBBCNH": [
+                "IceCraftedPickaxe_Throw"
+              ],
+              "hitPattern": {
+                "hitHaltTimeScale": 0.05000000074505806,
+                "BPIJOAMNKIH": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                },
+                "onHitEffectName": "default",
+                "hitImpulseType": "LV1"
+              }
+            }
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "DEMLLFDJEOF",
+          "actorIceSubHurtDelta": -1,
+          "DBNLBCPGDII": {
+            "$type": "LIEOMCOHHIC",
+            "sceneID": 1
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Target",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Target",
+              "value": -1,
+              "entityTypes": [
+                "Level"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73151009
+              ],
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Bullet_Eff",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "HittingOtherMixin",
+          "actorIceSubHurtDelta": -1
+        }
+      ],
+      "modifiers": {
+        "Bullet_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Trail",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 202
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCraftedPickaxe_02",
+      "abilitySpecials": {
+        "DamageSystemValue": 0,
+        "Damage_Rate": 8.609999656677246
+      },
+      "onKill": [
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_BlinkOut",
+          "scale": 1,
+          "canBeHandledOnRecover": true,
+          "effectTempleteID": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "attachPointName": "EffNode",
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "IceCraftedPickaxe_CarryingHandler",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "InvisibleInTalkAndCSMixin",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "Collider"
+          ],
+          "EMNIAOMNIEF": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_IS_IN_STARMODE",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "IceCraftedPickaxeHasEnhancedState"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "IceCraftedPickaxeHasEnhancedState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Enhance",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Enhance",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "EffNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "IceCraftedPickaxe_CarryingHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_BlinkOut",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "EffNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCraftedPickaxe_03",
+      "onKill": [
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_BlinkOut",
+          "scale": 1,
+          "canBeHandledOnRecover": true,
+          "effectTempleteID": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "attachPointName": "EffNode",
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        }
+      ],
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_VoxelRock_CheckPercentageValue",
+        "GV_IceCraftedPickaxe_ExcavationPos_0",
+        "GV_IceCraftedPickaxe_ExcavationPos_1",
+        "GV_IceCraftedPickaxe_ExcavationPos_2"
+      ],
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "VoxelRockHandler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DefaultState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OFLKMIPDCKF",
+              "actorIceSubHurtDelta": -1,
+              "FHAFCIIGBLJ": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "SGV_VoxelRock_DropType"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "DropSubfield",
+                      "actorIceSubHurtDelta": -1,
+                      "DLFGAICLABA": {
+                        "y": "GV_IceCraftedPickaxe_ExcavationPos_0",
+                        "x": "GV_IceCraftedPickaxe_ExcavationPos_1",
+                        "z": "GV_IceCraftedPickaxe_ExcavationPos_2"
+                      },
+                      "subfieldName": "VoxelRock_Once",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    },
+                    {
+                      "$type": "DropSubfield",
+                      "actorIceSubHurtDelta": -1,
+                      "DLFGAICLABA": {
+                        "y": "GV_IceCraftedPickaxe_ExcavationPos_0",
+                        "x": "GV_IceCraftedPickaxe_ExcavationPos_1",
+                        "z": "GV_IceCraftedPickaxe_ExcavationPos_2"
+                      },
+                      "subfieldName": "VoxelRock_Mitya_Once",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "value": 1,
+                          "key": "_ABILITY_Mitya_Partner_VoxelMode"
+                        }
+                      ],
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "SGV_VoxelRock_DropType"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "DropSubfield",
+                      "actorIceSubHurtDelta": -1,
+                      "DLFGAICLABA": {
+                        "y": "GV_IceCraftedPickaxe_ExcavationPos_0",
+                        "x": "GV_IceCraftedPickaxe_ExcavationPos_1",
+                        "z": "GV_IceCraftedPickaxe_ExcavationPos_2"
+                      },
+                      "subfieldName": "VoxelRock_Loop",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    },
+                    {
+                      "$type": "DropSubfield",
+                      "actorIceSubHurtDelta": -1,
+                      "DLFGAICLABA": {
+                        "y": "GV_IceCraftedPickaxe_ExcavationPos_0",
+                        "x": "GV_IceCraftedPickaxe_ExcavationPos_1",
+                        "z": "GV_IceCraftedPickaxe_ExcavationPos_2"
+                      },
+                      "subfieldName": "VoxelRock_Mitya_Loop",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "value": 1,
+                          "key": "_ABILITY_Mitya_Partner_VoxelMode"
+                        }
+                      ],
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "SGV_VoxelRock_CheckPercentageValue",
+                      "key": "GV_IceCraftedPickaxe_ExcavationPercentage"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ChangeGadgetState",
+                      "actorIceSubHurtDelta": -1,
+                      "value": 202,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "DoWatcherSystemAction",
+                  "actorIceSubHurtDelta": -1,
+                  "authorityOnly": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "watcherId": 81735
+                }
+              ],
+              "MECIOICOLKB": "GV_IceCraftedPickaxe_ExcavationPos",
+              "OPCJHKNDIDM": "GV_IceCraftedPickaxe_ExcavationPercentage"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DestroyState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "KOLDMLAJHIE",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73151018
+              ],
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "VoxelRockHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "IceCraftedPickaxe_Dig"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_SceneObj_IceCraftedPickaxe_01_Hit",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByHitPoint",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "BDODHIJDMCE",
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_SceneObj_CrystalVoxelRock_01_Hit",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByHitPoint",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "BDODHIJDMCE",
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "modifierMixins": [
+            {
+              "$type": "FGECFLMJIFE",
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "AttachToGadgetStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DefaultState"
+            },
+            {
+              "$type": "AttachToGadgetStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DestroyState",
+              "gadgetState": 202
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCraftedPickaxe_VoxelRock_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "VoxelRockHandler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DefaultState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "IceCraftedPickaxe_Dig"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_SceneObj_ExplosiveVoxelRock_01_Hit",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "ChangeGadgetState",
+                  "actorIceSubHurtDelta": -1,
+                  "value": 202,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DestroyState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ExplosiveVoxelRock_01_Bomb",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 3,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "elementRank": 1,
+                    "attackType": "Default"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "IceCraftedPickaxe_Dig",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.05000000074505806,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV1"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "AllExceptSelf"
+            },
+            {
+              "$type": "DEMLLFDJEOF",
+              "actorIceSubHurtDelta": -1,
+              "DBNLBCPGDII": {
+                "$type": "LIEOMCOHHIC",
+                "sceneID": 3
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73151012
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "VoxelRockHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToGadgetStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DefaultState"
+            },
+            {
+              "$type": "AttachToGadgetStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DestroyState",
+              "gadgetState": 202
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_IceCraftedPickaxe_VoxelRock_02",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

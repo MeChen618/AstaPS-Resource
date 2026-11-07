@@ -1,0 +1,5368 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_TPS_Shotgun_01_MinRaycastDistence"
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Effect",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "IGPEHONBHCM",
+          "actorIceSubHurtDelta": -1,
+          "abilityName": "TPS_Weapon_AutoWeapon_Shotgun_01_Innate_Ability",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "LPFPKHHKGIB": "Other"
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_TPS_Shotgun_01_CombatBase_Manager",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Effect": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Owner",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_All",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Shotgun_01_Show_Full_Accessory_Effect"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Shotgun_01_Full_Accessory_Effect_Magazine": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02_Magazine",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02_Magazine",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Shotgun_01_Show_Full_Accessory_Effect": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02_Star",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_PartD",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "CCOEKFAPHGD": true,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Owner",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_TPS_Shotgun_01_Accessory_Magazine_Reloading_IsAllowed",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_Shotgun_01_Full_Accessory_Effect_Magazine",
+                "Blank"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02_Star",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_PartD",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "recommendedLevelMechanicTextMapHash": "TPS_Shotgun_01_Full_Accessory_Effect",
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_CombatBase_Manager": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Owner",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Scope",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_TPS_Shotgun_01_NormalFire_Combatbase_8bullets",
+                "UNIQUE_TPS_Shotgun_01_NormalFire_Combatbase_12bullets"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Owner",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_TPS_Is_Aiming",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_TPS_Shotgun_01_MinRaycastDistence_Hip",
+                "UNIQUE_TPS_Shotgun_01_MinRaycastDistence_Aiming"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_MinRaycastDistence_Aiming": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2,
+              "key": "_TPS_Shotgun_01_MinRaycastDistence"
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_MinRaycastDistence_Hip": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2.4000000953674316,
+              "key": "_TPS_Shotgun_01_MinRaycastDistence"
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_NormalFire_Combatbase_12bullets": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AGKHIHKEJCM",
+              "AHBALLNDNDL": 1,
+              "AHIILECKDMD": 1,
+              "AIMDCNBOEKB": true,
+              "AJKJLGPPIDI": 99,
+              "AKBGGHLNGGL": 2,
+              "actorIceSubHurtDelta": -1,
+              "BCMNMBCDJHI": 100,
+              "BMBHKKJCFOI": 1,
+              "BPHLINKNONG": 1,
+              "DBGGEJIMEGN": 5,
+              "FIMPLKNNCPO": 3.75,
+              "CCOODOLMJLF": "Avatar_TPS_Shotgun_01_Normal_WeaponAdd_OnFire",
+              "DOHPOKJLJIJ": "_TPS_Shotgun_01_MinRaycastDistence",
+              "ECDCOIGNCBA": 0.30000001192092896,
+              "EKHIMGJEHEC": 2,
+              "FCOMOBCKMEA": 99,
+              "FINIDIDJNNP": 0.10000000149011612,
+              "FMEIFOCOAKL": "Shotgun",
+              "FDEMCPFAFOC": 501,
+              "EMJHAEMDMLN": 3.5,
+              "OGBGNCBLEEI": 1004,
+              "ICPLOODMHGF": 1,
+              "EEHAPPPKODC": 0.800000011920929,
+              "JMOLFHEODAM": "TPS_Weapon_AutoWeapon_Shotgun_01_Reload",
+              "PJLFDOMHHEG": {
+                "NCPMNEKNAAO": 501
+              },
+              "AICOEAGHEFP": "TPS_Weapon_AutoWeapon_Shotgun_01_Fire",
+              "KLHJGEBJEHH": true,
+              "LNIAFIEGGEE": 0.8999999761581421,
+              "MABKJGLBJME": 20,
+              "MJILJLHIODM": 12,
+              "MOKHPILKKDD": 30,
+              "MOMJKALKOOA": 99,
+              "DLNPDMNOHKD": "Avatar_TPS_Shotgun_01_Ammo_Reload",
+              "NCIKEDGNDBE": 8,
+              "NPLLCGCINNP": 0.30000001192092896,
+              "BMPEDGJECGI": "_TPS_Shotgun_01_Ammo",
+              "CDMBIIJIPOF": "_TPS_Shotgun_01_PreparedAmmo",
+              "PHGGDJAGACO": 0.6000000238418579,
+              "GCAMCFBGLEH": 0.20000000298023224
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_NormalFire_Combatbase_8bullets": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AGKHIHKEJCM",
+              "AHBALLNDNDL": 1,
+              "AHIILECKDMD": 1,
+              "AIMDCNBOEKB": true,
+              "AJKJLGPPIDI": 99,
+              "AKBGGHLNGGL": 2,
+              "actorIceSubHurtDelta": -1,
+              "BCMNMBCDJHI": 100,
+              "BMBHKKJCFOI": 1,
+              "BPHLINKNONG": 1,
+              "DBGGEJIMEGN": 5,
+              "FIMPLKNNCPO": 3.75,
+              "CCOODOLMJLF": "Avatar_TPS_Shotgun_01_Normal_WeaponAdd_OnFire",
+              "DOHPOKJLJIJ": "_TPS_Shotgun_01_MinRaycastDistence",
+              "ECDCOIGNCBA": 0.30000001192092896,
+              "EKHIMGJEHEC": 1,
+              "FCOMOBCKMEA": 99,
+              "FINIDIDJNNP": 0.10000000149011612,
+              "FMEIFOCOAKL": "Shotgun",
+              "FDEMCPFAFOC": 501,
+              "EMJHAEMDMLN": 3.5,
+              "OGBGNCBLEEI": 1004,
+              "ICPLOODMHGF": 1,
+              "EEHAPPPKODC": 0.800000011920929,
+              "JMOLFHEODAM": "TPS_Weapon_AutoWeapon_Shotgun_01_Reload",
+              "PJLFDOMHHEG": {
+                "NCPMNEKNAAO": 501
+              },
+              "AICOEAGHEFP": "TPS_Weapon_AutoWeapon_Shotgun_01_Fire",
+              "KLHJGEBJEHH": true,
+              "LNIAFIEGGEE": 0.8999999761581421,
+              "MABKJGLBJME": 10,
+              "MJILJLHIODM": 8,
+              "MOKHPILKKDD": 30,
+              "MOMJKALKOOA": 99,
+              "DLNPDMNOHKD": "Avatar_TPS_Shotgun_01_Ammo_Reload",
+              "NCIKEDGNDBE": 8,
+              "NPLLCGCINNP": 0.30000001192092896,
+              "BMPEDGJECGI": "_TPS_Shotgun_01_Ammo",
+              "CDMBIIJIPOF": "_TPS_Shotgun_01_PreparedAmmo",
+              "PHGGDJAGACO": 0.6000000238418579,
+              "GCAMCFBGLEH": 0.20000000298023224
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "TPS_Weapon_AutoWeapon_Shotgun_01_Innate_Ability",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "RemoveUniqueModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "LDBAFGLHMOJ",
+          "actorIceSubHurtDelta": -1,
+          "CACAIKIGGDA": 50016011,
+          "modifierName": "UNIQUE_TPS_Current_Equip_Shotgun_01_PressShoot_Controller"
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": 2,
+          "modifierName": "Avatar_TPS_CleanFireClick",
+          "normalizedStateIDList": [
+            {
+              "normalizeEnd": 1,
+              "stateID": "Overlay3_AimingBS"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Avatar_TPS_CleanFireClick": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "FireClick"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ResetFire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ResetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "MontageEnterTrigger",
+              "doOffStage": false
+            },
+            {
+              "$type": "JCNNLEIBEPN",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_TPS_Aim_Button_Pressed"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "FireClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "SkillClick"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAnimatorInt",
+                  "target": "Target",
+                  "logic": "Equal",
+                  "parameter": "MontageID",
+                  "value": 105
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "triggerID": "MontageExitTrigger",
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "MontageID",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "BanOverlayAiming"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "BanOverlayAiming"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ResetStrafe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe_temp",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe_temp",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "duration": 0.009999999776482582,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ResetStrafe_SprintBS_Fire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "FireClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "SkillClick"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Target",
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire"
+                    },
+                    {
+                      "$type": "ByAnimatorBool",
+                      "target": "Target",
+                      "logic": "Equal",
+                      "parameter": "FireClick",
+                      "value": true
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SprintKeep_FireRelease_Check": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "SprintKeep_InSprint_Marker"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Target",
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorInt",
+                  "intID": "MotionFlag",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 5
+                }
+              ]
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SprintKeep_InSprint_Marker": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TPS_Shotgun_01_Fire_Trigger_Inner": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OCPOPDJOCEA",
+              "skillID": 11354,
+              "actorIceSubHurtDelta": -1,
+              "FDEMCPFAFOC": 501
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TPS_Shotgun_01_Fire_Trigger_Inner_Is_Freezed": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Is_Ban_Fire_Is_Freezed",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "TPS_Shotgun_01_Fire_Trigger_Inner",
+                "Blank"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TPS_Shotgun_01_Overlay_Setup": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "MontageEnterTrigger",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "MontageID",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 104
+            },
+            {
+              "$type": "RemoveAvatarSkillInfo",
+              "skillID": 11354,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveAvatarSkillInfo",
+              "skillID": 11357,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Multiple",
+          "duration": 0.009999999776482582,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.8999999761581421,
+          "duration": 1.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe_Late": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 2.299999952316284,
+          "duration": 2.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "IsFiring"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "CPMDFDDNEFM",
+                  "target": "Target",
+                  "FMJPAFFEMOP": "Skill1"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "NotifyUI",
+                  "uiContextName": "InLevelMainPage",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "message": "TpsStartFire",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "HMIIONACOCG",
+                      "target": "Target",
+                      "BDEGMLABDBG": 501
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_TPS_Is_Reloading_NoCancel"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire_ThinkInterval",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "IsFiring"
+            },
+            {
+              "$type": "NotifyUI",
+              "uiContextName": "InLevelMainPage",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_TPS_InCoverAnimStates"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "message": "TpsStopFire",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire_ThinkInterval": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "NotifyUI",
+              "uiContextName": "InLevelMainPage",
+              "actorIceSubHurtDelta": -1,
+              "BPLBFBPDDAH": 224101,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_TPS_Shotgun_01_Ammo"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "message": "LackAmmo",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1.7999999523162842,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire": {
+          "onThinkIntervalIsFixedUpdate": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.699999988079071,
+          "duration": 0.949999988079071,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_StopCharge_OnControlDebuff": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_TPS_Is_Ban_Fire_Is_Freezed"
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire_ThinkInterval",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe_temp",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe_Late",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "FireClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "SkillClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "IsFiring"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "BanOverlayAiming"
+            },
+            {
+              "$type": "NotifyUI",
+              "uiContextName": "InLevelMainPage",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "message": "TpsStopFire",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_TPS_Is_Ban_Fire_Is_Freezed"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "BanOverlayAiming"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Strafe": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "JCFJMKFKBHF",
+              "actorIceSubHurtDelta": -1,
+              "KKNIILEHCBJ": true,
+              "canBeHandledOnRecover": true,
+              "PJOHHONPCBP": 2,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "JCFJMKFKBHF",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "PJOHHONPCBP": 2,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Strafe_temp": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "JCFJMKFKBHF",
+              "actorIceSubHurtDelta": -1,
+              "KKNIILEHCBJ": true,
+              "canBeHandledOnRecover": true,
+              "PJOHHONPCBP": 9,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "JCFJMKFKBHF",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "PJOHHONPCBP": 9,
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Current_Equip_Shotgun_01_PressShoot_Controller": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_IsInForeground"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_Accessory_Magazine_Reloading_IsAllowed"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByAvatar"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "FireClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "SkillClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "IsFiring"
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire_ThinkInterval",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "OverlayID",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "doOffStage": true,
+              "value": 224101
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "TPS_Shotgun_01_Overlay_Setup",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_NormalFire_UI_Button",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_Enhance_UI_Button",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Multiple",
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+              "doOffStage": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_IsInForeground"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "FireClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "SkillClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "IsFiring"
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire_ThinkInterval",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock_SpeedUp",
+              "doOffStage": true
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Switch_Weapon_Common_01",
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "EffectMesh",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "GHELHGMGNHP",
+              "actorIceSubHurtDelta": -1,
+              "BGBIAHOPLKG": true,
+              "BPGPEGLFMPJ": "RegisterAlways",
+              "HPFCGICMFMF": [
+                "_Zipline_MoveStep",
+                "_ABILITY_TPS_Avatar_IsScanEntity",
+                "_TPS_HookMove_Step"
+              ],
+              "modifierNameSteps": [
+                {
+                  "OKBHOLPKEEJ": [
+                    [
+                      0.5,
+                      99999
+                    ],
+                    [
+                      0.5,
+                      1.5
+                    ],
+                    [
+                      0.5,
+                      99999
+                    ]
+                  ],
+                  "MPHKAKNKCGC": "UNIQUE_TPS_Shotgun_01_ControllerTrigger_BlockByAvatarCondition",
+                  "conditionType": "OR"
+                }
+              ]
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "targetRegisterType": "RegisterAlways",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "IceCreature_Preparing",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "MDKGPCMDPCF": true,
+              "modifierNameSteps": [
+                "UNIQUE_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "GHELHGMGNHP",
+              "actorIceSubHurtDelta": -1,
+              "BGBIAHOPLKG": true,
+              "BPGPEGLFMPJ": "RegisterAlways",
+              "HPFCGICMFMF": [
+                "_TPS_Shotgun_01_ControllerTrigger_BlockByAvatar",
+                "_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+              ],
+              "modifierNameSteps": [
+                {
+                  "OKBHOLPKEEJ": [
+                    [
+                      -0.5,
+                      0.5
+                    ],
+                    [
+                      -0.5,
+                      0.5
+                    ]
+                  ],
+                  "MPHKAKNKCGC": "UNIQUE_TPS_Shotgun_01_ControllerTrigger_Effect"
+                }
+              ]
+            },
+            {
+              "$type": "AttachToAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "isCheckOnAttach": true,
+              "value": 2,
+              "stateIDs": [
+                "SwitchWeapon"
+              ],
+              "modifierName": "UNIQUE_TPS_Shotgun_01_OnSwitchWeapon_Refresh_Overlay"
+            },
+            {
+              "$type": "AttachToMultiNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": 2,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_Fire_Input",
+              "normalizedStateIDList": [
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_AimShoot_0"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_AimShoot_1"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_AimShoot_2"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_Bolt"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "Overlay3_Aiming",
+                  "normalizeStart": 0.10000000149011612
+                }
+              ]
+            },
+            {
+              "$type": "AttachToMultiNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": 2,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_Fire_Trigger",
+              "normalizedStateIDList": [
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_AimShoot_0"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_AimShoot_1"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_AimShoot_2"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "M3_Bolt"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "Overlay3_Aiming",
+                  "normalizeStart": 0.10000000149011612
+                }
+              ]
+            },
+            {
+              "$type": "ButtonHoldChargeMixin",
+              "skillID": 11354,
+              "actorIceSubHurtDelta": -1,
+              "OnReleaseCharged": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_TPS_InCoverAnimStates"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "JCFJMKFKBHF",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "PJOHHONPCBP": 2,
+                      "doOffStage": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Target",
+                      "modifierName": "SprintKeep_InSprint_Marker"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe_Late",
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe",
+                      "doOffStage": false
+                    }
+                  ]
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_TPS_InCoverAnimStates"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "JCFJMKFKBHF",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "PJOHHONPCBP": 2,
+                      "doOffStage": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Target",
+                      "modifierName": "SprintKeep_InSprint_Marker"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe_Late",
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe",
+                      "doOffStage": false
+                    }
+                  ]
+                }
+              ],
+              "OnBeginCharged": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": true,
+                  "boolID": "FireClick"
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_End_Strafe_Late",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Target",
+                          "modifierName": "ResetStrafe_SprintBS_Fire"
+                        }
+                      ]
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Strafe",
+                  "doOffStage": false
+                }
+              ],
+              "secondChargeTime": 999999,
+              "JHHBAHAPMMD": true,
+              "chargeStateIDs": [
+                "ShootBS",
+                "Shoot",
+                "FastAim",
+                "FastAimShoot"
+              ]
+            },
+            {
+              "$type": "AttachToAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "Sprint"
+              ],
+              "modifierName": "ResetStrafe"
+            },
+            {
+              "$type": "AttachToMultiNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "modifierName": "ResetStrafe_SprintBS_Fire",
+              "normalizedStateIDList": [
+                {
+                  "normalizeEnd": 0.30000001192092896,
+                  "stateID": "SprintBS"
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "SprintRightBS",
+                  "normalizeStart": 0.25
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "SprintLeftBS",
+                  "normalizeStart": 0.25
+                },
+                {
+                  "normalizeEnd": 1,
+                  "stateID": "SprintBackBS",
+                  "normalizeStart": 0.30000001192092896
+                }
+              ]
+            },
+            {
+              "$type": "AttachToAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "SprintBS",
+                "SprintRightBS",
+                "SprintLeftBS",
+                "SprintBackBS"
+              ],
+              "modifierName": "ResetFire"
+            },
+            {
+              "$type": "AttachToAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "SprintBS",
+                "SprintRightBS",
+                "SprintLeftBS",
+                "SprintBackBS"
+              ],
+              "modifierName": "SprintKeep_InSprint_Marker"
+            },
+            {
+              "$type": "DoActionByAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "SprintBS",
+                "SprintRightBS",
+                "SprintLeftBS",
+                "SprintBackBS"
+              ],
+              "enterActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Target",
+                      "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "SprintKeep_FireRelease_Check",
+                  "doOffStage": false
+                }
+              ],
+              "AJAPIFCKFHP": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "SprintKeep_FireRelease_Check",
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "AttachToAbilityStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_StopCharge_OnControlDebuff",
+              "abilityStates": [
+                "ElementFreeze",
+                "ElementPetrifaction"
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "OverlayID",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "doOffStage": true,
+              "value": 224101
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_IsInForeground"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_Accessory_Magazine_Reloading_IsAllowed"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByAvatar"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "FireClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "SkillClick"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "IsFiring"
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Hold_Fire_ThinkInterval",
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Release_Fire",
+              "doOffStage": true
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "TPS_Shotgun_01_Overlay_Setup",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_NormalFire_UI_Button",
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_Enhance_UI_Button",
+              "doOffStage": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_ControllerTrigger_BlockByAvatarCondition": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByAvatar"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByAvatar"
+            }
+          ],
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByAvatar"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+            }
+          ],
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_ControllerTrigger_BlockByIceCreature"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_ControllerTrigger_Effect": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "KGNFNGINKJB",
+              "actorIceSubHurtDelta": -1,
+              "CGGHGHPCAOL": {
+                "$type": "BCIKAHIJILD",
+                "ABKDDEIPFBI": 1,
+                "CFGHOMBHNBF": "TpsSkill1Fire",
+                "priority": "TpsNormal",
+                "strength": 2
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_Enhance_UI_Button": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 11357,
+              "LMKJCHKJKOH": true,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "useInAir": true,
+              "skillIndex": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_Fire_Input": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ADOKKOLOPOB",
+              "skillID": 11354,
+              "actorIceSubHurtDelta": -1,
+              "DGIPEMIFMDL": 0.30000001192092896,
+              "FDEMCPFAFOC": 501
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_Fire_Trigger": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Is_Ban_Fire",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "TPS_Shotgun_01_Fire_Trigger_Inner_Is_Freezed",
+                "Blank"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_NormalFire_UI_Button": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 11354,
+              "LMKJCHKJKOH": true,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode",
+              "useInAir": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_OnSwitchWeapon_Refresh_Overlay": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "TPS_Shotgun_01_Overlay_Setup",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_TPS_Shotgun_01_PressShoot",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "Is_Vepr_Enhanced"
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "Is_Vepr_Enhanced"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "value": 1,
+          "key": "_TPS_Has_SkillButton"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "LDBAFGLHMOJ",
+          "actorIceSubHurtDelta": -1,
+          "CACAIKIGGDA": 50016011,
+          "modifierName": "TPS_Current_Equip_Shotgun_01_PressAim_Controller"
+        },
+        {
+          "$type": "AttachToMultiNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "value": -1,
+          "modifierName": "ResetStrafe_SprintBS_Aim",
+          "normalizedStateIDList": [
+            {
+              "normalizeEnd": 0.30000001192092896,
+              "stateID": "SprintBS"
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "SprintRightBS",
+              "normalizeStart": 0.25
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "SprintLeftBS",
+              "normalizeStart": 0.25
+            },
+            {
+              "normalizeEnd": 1,
+              "stateID": "SprintBackBS",
+              "normalizeStart": 0.30000001192092896
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ResetStrafe_SprintBS_Aim": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "JCFJMKFKBHF",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "PJOHHONPCBP": 4,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JCFJMKFKBHF",
+              "actorIceSubHurtDelta": -1,
+              "KKNIILEHCBJ": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "value": 1,
+                  "key": "_TPS_Is_Aiming"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "PJOHHONPCBP": 4,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TPS_Current_Equip_Shotgun_01_PressAim_Controller": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "JCNNLEIBEPN",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Aim_Button_Pressed"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_TPS_Shotgun_01_Normal_CrossHair_Handler",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Multiple",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Barrel&Muzzle",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Muzzle_Accessory_SpreadRatio"
+              ]
+            },
+            {
+              "$type": "HKIELAHGPMO",
+              "actorIceSubHurtDelta": -1,
+              "actions": [
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "_TPS_Aim_Button_Pressed"
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Aim_SpreadRatio": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_TPSSpreadRatio": 1.9199999570846558
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Muzzle_Accessory_SpreadRatio": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_TPSSpreadRatio": 0.5199999809265137
+          },
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Is_Aiming",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Aim_SpreadRatio"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_Normal_CrossHair_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LDPMNAIJEDC",
+              "JCFNCIDCOKC": true,
+              "actorIceSubHurtDelta": -1,
+              "prefabPath": "ART/UI/Menus/Widget/InLevel/Crosshair/InLevel_Crosshair_Circle_Fire",
+              "GKNNKOIPALA": [
+                {
+                  "FGBAFONAIGB": "Is_Vepr_Enhanced",
+                  "paramName": "ShowEnergy",
+                  "MJDJKHCIECH": "Bool"
+                }
+              ],
+              "MGAANIJBODK": 10
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_TPS_Shotgun_01_PressAim",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "compareType": "NoneOrEqual",
+              "value": 1,
+              "key": "_TPS_Shotgun_01_Has_Accessory_Magazine"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1.659999966621399,
+              "key": "UI_Animation_ReloadTime"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 2.1600000858306885,
+              "key": "UI_Animation_ReloadTime"
+            }
+          ]
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "compareType": "NoneOrEqual",
+              "key": "_TPS_Is_Reloading_NoCancel"
+            },
+            {
+              "$type": "HMIIONACOCG",
+              "target": "Target",
+              "BDEGMLABDBG": 501
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Reloading",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_TPS_Is_Reloading_NoCancel"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "LDBAFGLHMOJ",
+          "actorIceSubHurtDelta": -1,
+          "CACAIKIGGDA": 50016011,
+          "modifierName": "UNIQUE_TPS_Current_Equip_Shotgun_01_Reload_Controller"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Avatar_TPS_Shotgun_01_Fill_Ammo": {
+          "onThinkIntervalIsFixedUpdate": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "canBeHandledOnRecover": true,
+              "triggerID": "ReloadFinish",
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_TPS_Is_Reloading_NoCancel"
+            },
+            {
+              "$type": "EBDEAFMADGN",
+              "AMLDEIOPPDI": true,
+              "actorIceSubHurtDelta": -1,
+              "BMJPECMKPKL": true,
+              "FDEMCPFAFOC": 501,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Reloading",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Reloading": {
+          "onThinkIntervalIsFixedUpdate": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DIPPBLFIPHH",
+              "actorIceSubHurtDelta": -1,
+              "FDEMCPFAFOC": 501,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "DCANOIBJCDI": {
+                "DALMEMALBEK": "UI_Animation_ReloadTime"
+              }
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "MontageEnterTrigger",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "MontageID",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 103
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "canBeHandledOnRecover": true,
+              "triggerID": "Reload",
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_TPS_Is_Reloading_NoCancel"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "IsReload"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_TPS_Is_Reloading_NoCancel"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "IsReload"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "EBDEAFMADGN",
+              "actorIceSubHurtDelta": -1,
+              "LCODFBMMMKE": true,
+              "BMJPECMKPKL": true,
+              "FDEMCPFAFOC": 501,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Is_Reloading_NoCancel"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "boolID": "IsReload"
+            }
+          ],
+          "thinkInterval": 0.032999999821186066,
+          "duration": "ReloadTime",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "Hit_H",
+                "Hit_L",
+                "Hit_Throw",
+                "Hit_ThrowAir",
+                "Hit_Throw_Ground"
+              ],
+              "modifierName": "UNIQUE_Shotgun_01_Reloading_Check_Cancel"
+            },
+            {
+              "$type": "AttachToAnimatorStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "isCheckOnAttach": true,
+              "value": 2,
+              "stateIDs": [
+                "M2_SwitchWeapon",
+                "SwitchWeapon",
+                "M1_SwitchWeapon",
+                "M4_SwitchWeapon",
+                "M5_SwitchWeapon",
+                "M3_AimShoot_2"
+              ],
+              "modifierName": "UNIQUE_Shotgun_01_Reloading_Check_Cancel_OnRemoved"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_Eff_Drop_Magazine": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAnimatorFloat",
+                  "target": "Target",
+                  "logic": "Equal",
+                  "parameter": "StandReload",
+                  "value": 1
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Drop_Magazine",
+                  "otherTargets": {
+                    "$type": "SelectTargetsByChildren",
+                    "configID": 50016011
+                  },
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByAnimatorFloat",
+                      "target": "Target",
+                      "logic": "Equal",
+                      "parameter": "CoverReloadR",
+                      "value": 1
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Drop_Magazine",
+                      "otherTargets": {
+                        "$type": "SelectTargetsByChildren",
+                        "configID": 50016011
+                      },
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Drop_Magazine_L",
+                      "otherTargets": {
+                        "$type": "SelectTargetsByChildren",
+                        "configID": 50016011
+                      },
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stacking": "Multiple",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_Eff_Drop_Magazine_End": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAnimatorFloat",
+                  "target": "Target",
+                  "logic": "Equal",
+                  "parameter": "StandReload",
+                  "value": 1
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Drop_Magazine_End",
+                  "otherTargets": {
+                    "$type": "SelectTargetsByChildren",
+                    "configID": 50016011
+                  },
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByAnimatorFloat",
+                      "target": "Target",
+                      "logic": "Equal",
+                      "parameter": "CoverReloadR",
+                      "value": 1
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Drop_Magazine_End",
+                      "otherTargets": {
+                        "$type": "SelectTargetsByChildren",
+                        "configID": 50016011
+                      },
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Drop_Magazine_L_End",
+                      "otherTargets": {
+                        "$type": "SelectTargetsByChildren",
+                        "configID": 50016011
+                      },
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stacking": "Multiple",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_Eff_Reload": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByAnimatorFloat",
+                  "target": "Target",
+                  "logic": "Equal",
+                  "parameter": "StandReload",
+                  "value": 1
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Reload_Magazine",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByAnimatorFloat",
+                      "target": "Target",
+                      "logic": "Equal",
+                      "parameter": "CoverReloadR",
+                      "value": 1
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Reload_Magazine",
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Reload_Magazine_L",
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": false,
+                      "born": {
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Shotgun_01_Reloading_Check_Cancel": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_TPS_Is_Reloading_NoCancel"
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Reloading",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Shotgun_01_Reloading_Check_Cancel_OnRemoved": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Reloading",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Current_Equip_Shotgun_01_Reload_Controller": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Reloading",
+              "doOffStage": true
+            },
+            {
+              "$type": "EBDEAFMADGN",
+              "actorIceSubHurtDelta": -1,
+              "LCODFBMMMKE": true,
+              "BMJPECMKPKL": true,
+              "FDEMCPFAFOC": 501,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 1,
+              "value": 2,
+              "stateID": "M3_Reload",
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Fill_Ammo",
+              "normalizeStart": 0.800000011920929
+            },
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 1,
+              "value": 2,
+              "stateID": "M3_Reload",
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_Eff_Reload",
+              "normalizeStart": 0.33399999141693115
+            },
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 1,
+              "value": 2,
+              "stateID": "M3_Reload",
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_Eff_Drop_Magazine",
+              "normalizeStart": 0.1459999978542328
+            },
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 1,
+              "value": 2,
+              "stateID": "M3_Reload",
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_Eff_Drop_Magazine_End",
+              "normalizeStart": 0.5199999809265137
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_TPS_Shotgun_01_Ammo_Reload",
+      "abilitySpecials": {
+        "ReloadTime": 2,
+        "Reload_SpeedMultiplier": 1,
+        "_TPS_Max_Ammo": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetAnimatorTrigger",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "triggerID": "MontageEnterTrigger",
+          "doOffStage": false
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "value": 1,
+              "key": "_TPS_Shotgun_01_Has_Accessory_Stock"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "value": 1,
+              "key": "_TPS_Shotgun_01_IsInForeground"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock_SpeedUp",
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "value": 1,
+              "key": "_TPS_Shotgun_01_Has_Accessory_All"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "MontageID",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 105
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "Enhance"
+            },
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_TPS_Gun_Shotgun_Veper_Enhance",
+              "doOffStage": true
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHasModifier",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorInt",
+                  "intID": "MontageID",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 105
+                },
+                {
+                  "$type": "TriggerAudioV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "pattern": "v7_2_TPS_Gun_Shotgun_Veper_Enhance",
+                  "doOffStage": true
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetAnimatorInt",
+                  "intID": "MontageID",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 101
+                },
+                {
+                  "$type": "TriggerAudioV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "pattern": "v7_2_TPS_Gun_Shotgun_Veper_Normal",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock_SpeedUp": {
+          "reApplyModifierOnStateChange": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "properties": {
+            "Animator_MoveSpeedRatio": 0.20000000298023224
+          },
+          "duration": 2,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_TPS_Shotgun_01_Normal_WeaponAdd_OnFire",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_Shotgun_HitDamage",
+        "_Shotgun_LostHP",
+        "_Shotgun_HealAmount",
+        "_SkillTime"
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAudioV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "pattern": "v7_2_TPS_Gun_Veper_Enhance",
+          "doOffStage": true
+        },
+        {
+          "$type": "TriggerAudioV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "pattern": "V7_0_VO_battle_buff_taunt",
+          "doOffStage": true
+        },
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 11357,
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "cdRatio": 1,
+          "doOffStage": false,
+          "costStaminaRatio": 1,
+          "NKOFINBNOOK": 1
+        },
+        {
+          "$type": "TriggerAbility",
+          "actorIceSubHurtDelta": -1,
+          "abilityName": "Avatar_TPS_HardLevel_UseSkill_Trigger",
+          "canBeHandledOnRecover": true,
+          "CFPNOMHBGIA": true,
+          "doOffStage": false,
+          "LPFPKHHKGIB": "Other"
+        },
+        {
+          "$type": "SetAnimatorTrigger",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "triggerID": "MontageEnterTrigger",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetAnimatorInt",
+          "intID": "MontageID",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 102
+        },
+        {
+          "$type": "SetAnimatorTrigger",
+          "actorIceSubHurtDelta": -1,
+          "otherTargets": {
+            "$type": "SelectTargetsByChildren",
+            "configID": 50016011
+          },
+          "canBeHandledOnRecover": true,
+          "triggerID": "Skill",
+          "doOffStage": false
+        },
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance",
+          "doOffStage": false
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetAnimatorBool",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "boolID": "Enhance"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "InEnhance"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Time",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "isCheckOnAttach": true,
+          "value": 2,
+          "stateIDs": [
+            "SwitchWeapon",
+            "M1_SwitchWeapon",
+            "M2_SwitchWeapon",
+            "M3_SwitchWeapon",
+            "M4_SwitchWeapon"
+          ],
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Remove"
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "Is_Vepr_Enhanced"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_TPS_Shotgun_01_Has_Accessory_Magazine"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 0.07000000029802322,
+                  "key": "GV_EnergyBar_Speed"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 0.125,
+                  "key": "GV_EnergyBar_Speed"
+                }
+              ]
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "InEnhance"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "Enhance"
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_Skill",
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_TPS_Shotgun_01_Has_Accessory_All"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_properties",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Particles_Skill_Loop",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "Enhance"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "Is_Vepr_Enhanced"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_EnergyBar_Speed"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "InEnhance"
+            }
+          ],
+          "duration": "_SkillTime",
+          "minus_one": -1,
+          "onAttackLanded": [
+            {
+              "$type": "AddGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "bulletCountheal"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Target",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster",
+                    "Gadget"
+                  ]
+                },
+                {
+                  "$type": "ByTargetHPRatio",
+                  "logic": "Lesser",
+                  "HPRatio": 1
+                },
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "Shotgun_Fire"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FFMOLBKJIGM",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "globalValue": "_Shotgun_HitDamage"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "useLimitRange": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "maxValue": "FIGHT_PROP_MAX_HP",
+                  "value": [
+                    "FIGHT_PROP_MAX_HP",
+                    "FIGHT_PROP_CUR_HP",
+                    "SUB"
+                  ],
+                  "key": "_Shotgun_LostHP"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "useLimitRange": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "maxValue": [
+                    "FIGHT_PROP_MAX_HP",
+                    0.15000000596046448,
+                    "MUL"
+                  ],
+                  "value": [
+                    "_Shotgun_HitDamage",
+                    0.03999999910593033,
+                    "MUL",
+                    "_Shotgun_LostHP",
+                    0.07999999821186066,
+                    "MUL",
+                    "ADD"
+                  ],
+                  "key": "_Shotgun_HealAmount"
+                },
+                {
+                  "$type": "SetGlobalValueToOverrideMap",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "globalValueKey": "_Shotgun_HealAmount",
+                  "doOffStage": false,
+                  "overrideMapKey": "Shotgun_HealAmount"
+                },
+                {
+                  "$type": "HealHP",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "value": 1,
+                  "doOffStage": false,
+                  "amount": "Shotgun_HealAmount",
+                  "PKHBHHPBHIA": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Heal_VFX",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Magazine",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_CostPreparedAmmo"
+              ]
+            },
+            {
+              "$type": "MALJDGLICNI",
+              "actorIceSubHurtDelta": -1,
+              "HBFNAPEOLFB": {
+                "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance"
+              }
+            },
+            {
+              "$type": "HEHPFHFJNNI",
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_CostPreparedAmmo": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DAMOBHHPCMC",
+              "actorIceSubHurtDelta": -1,
+              "FDEMCPFAFOC": 501
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Heal_VFX": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Heal",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.05000000074505806,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Particles_Skill_Loop": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_Skill_Loop",
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": "_SkillTime",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Remove": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Time": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Magazine",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Time_Normal",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Time_HasMagazine"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Time_HasMagazine": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 14,
+              "key": "_SkillTime"
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Time_Normal": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 8,
+              "key": "_SkillTime"
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_properties": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_Shotgun_01_NoFull_Accessory_Effect_Magazine_Manager",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02_Star",
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02",
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_TPS_Shotgun_01_Has_Accessory_Barrel&Muzzle"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_PartD",
+                  "otherTargets": {
+                    "$type": "SelectTargetsByChildren",
+                    "configID": 50016011
+                  },
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "duration": "_SkillTime",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Shotgun_01_NoFull_Accessory_Effect_Magazine": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Environmental_Particles_02_Magazine",
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 50016011
+              },
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Shotgun_01_NoFull_Accessory_Effect_Magazine_Manager": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Accessory_Magazine_Reloading_IsAllowed",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_Shotgun_01_NoFull_Accessory_Effect_Magazine",
+                "Blank"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_TPS_Shotgun_01_Enhance",
+      "abilitySpecials": {
+        "Shotgun_HealAmount": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "HBDGFNELICE",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "MOBNBDAJCPL": "Achievement_TPS_Shotgun_Fire_InTime"
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByHasModifier",
+              "target": "Target",
+              "modifierName": "UNIQUE_TPS_Shotgun_01_FireInterval_Boost"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "key": "_TPS_Is_Aiming"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Owner",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shotgun_01_Burst_CameraShake_Enhance",
+              "doOffStage": true
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Owner",
+              "canBeHandledOnRecover": true,
+              "modifierName": "Shotgun_01_Burst_CameraShake_Aiming",
+              "doOffStage": true
+            }
+          ]
+        },
+        {
+          "$type": "SetAnimatorTrigger",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "triggerID": "Shoot",
+          "doOffStage": false
+        },
+        {
+          "$type": "BGBLKCEMBNN",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "OIGDLKHKNDC": 10,
+          "FDEMCPFAFOC": 501,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "attachPointName": "Muzzle",
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "attachPointTargetType": "Self",
+            "direction": {
+              "$type": "EFPHBDKCPEJ",
+              "FDEMCPFAFOC": 501,
+              "maxAngle": 180
+            }
+          }
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "HOCMGDILALI",
+              "AOOCKFAFFAG": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "MuzzleCheckPoint",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "target": "Target",
+              "EIKKEKMDCLO": 7,
+              "NIGCPBDPDKO": 1
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "SetGlobalPos",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "MuzzleCheckPoint",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "key": "Shotgun_Vepr_Attack_OriginPos"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "SetGlobalPos",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "CEJIEPKNPBN",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "key": "Shotgun_Vepr_Attack_OriginPos"
+            }
+          ]
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "compareType": "MoreThan",
+              "key": "_TPS_Shotgun_01_Has_Accessory_Scope"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Muzzle",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Owner",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 12,
+              "key": "bulletCount"
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Owner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "FMMFKMANAON",
+                  "APKDOHBIELE": 4,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "defaultEffect": "none",
+                    "JHGJLDPNJHG": {
+                      "Water": "none"
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "FDEMCPFAFOC": 501,
+                  "HJHHKNKLKCI": [
+                    {
+                      "LGBDNEOBPFK": 18,
+                      "sceneID": 0.009999999776482582
+                    }
+                  ],
+                  "HNJKDDGCAAN": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "attachPointName": "Muzzle",
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "attachPointTargetType": "Self",
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Shotgun_Vepr_Attack_OriginPos",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "KBOBCHGAMFB": "Self",
+                    "direction": {
+                      "$type": "EFPHBDKCPEJ",
+                      "FDEMCPFAFOC": 501,
+                      "maxAngle": 180
+                    }
+                  },
+                  "NDIPOLBFDFB": "Eff_Avatar_TPS_Shotgun_Vepr_Bullet_01"
+                },
+                "attackInfo": {
+                  "AKJEFNHCJHA": "Both",
+                  "AOHFPBNIEOL": [
+                    -0.9100000262260437,
+                    -0.8199999928474426,
+                    -0.7300000190734863,
+                    -0.6399999856948853,
+                    -0.550000011920929,
+                    -0.46000000834465027,
+                    -0.3700000047683716,
+                    -0.2800000011920929,
+                    -0.1899999976158142,
+                    -0.10000000149011612,
+                    -0.009999999776482582,
+                    0
+                  ],
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "JHJHIJHLMKF": {
+                    "OMEMLHGGDMK": [
+                      {
+                        "EELJEPKBBJK": 1,
+                        "EHDGLLPLNIM": 1,
+                        "OPDFLMMJLCO": 1
+                      },
+                      {
+                        "distance": 10,
+                        "EELJEPKBBJK": 0.3499999940395355,
+                        "EHDGLLPLNIM": 1,
+                        "OPDFLMMJLCO": 0.3499999940395355
+                      },
+                      {
+                        "distance": 18,
+                        "EHDGLLPLNIM": 1
+                      }
+                    ],
+                    "PGPLFFJAHEA": "Muzzle"
+                  },
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "elementType": "Fire",
+                    "enBreak": 60,
+                    "strikeType": "Blunt",
+                    "LFIHNBEGGFJ": {
+                      "FOCICNBMGCH": {
+                        "TPSWeak": 30
+                      }
+                    },
+                    "elementRank": 1,
+                    "damagePercentage": "Shotgun_Vepr_Bullet_Damage_Ratio",
+                    "attackType": "Range"
+                  },
+                  "attenuationTag": "TPS_Shotgun_Vepr_Fire",
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "TPS_Shotgun_Vepr_Fire",
+                  "canBeModifiedBy": "OriginOwner",
+                  "attackTag": "TPS_NormalAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "DDJFCALDAJE": {
+                    "TPSWeak": {
+                      "hitHaltTimeScale": 0.009999999776482582,
+                      "DNEGHCKEPOO": 0.20000000298023224,
+                      "EMACEIMIHLL": true,
+                      "BPIJOAMNKIH": {
+                        "value": 1,
+                        "GGOHGMFHHEC": true
+                      },
+                      "onHitEffectName": "none",
+                      "LCEFDGADADG": 0.5,
+                      "hitImpulseType": "LV2",
+                      "PJOOJCAIEBP": true
+                    }
+                  },
+                  "KECBKEBBCNH": [
+                    "Shotgun",
+                    "Shotgun_Fire"
+                  ],
+                  "JAJLGPJNENP": {
+                    "TPSCombatBaseID": 501
+                  },
+                  "AAIBLELPKGM": {
+                    "text": "Switch_Ammo"
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.009999999776482582,
+                    "DNEGHCKEPOO": 0.20000000298023224,
+                    "EMACEIMIHLL": true,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "none",
+                    "LCEFDGADADG": 0.5,
+                    "hitImpulseType": "LV2",
+                    "PJOOJCAIEBP": true
+                  },
+                  "PABCKIFMFDL": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                  ]
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_TPS_Shotgun_Vepr_Muzzle",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Owner",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 8,
+              "key": "bulletCount"
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Owner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "FMMFKMANAON",
+                  "APKDOHBIELE": 4,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "defaultEffect": "none",
+                    "JHGJLDPNJHG": {
+                      "Water": "none"
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "FDEMCPFAFOC": 501,
+                  "HJHHKNKLKCI": [
+                    {
+                      "LGBDNEOBPFK": 18,
+                      "sceneID": 0.009999999776482582
+                    }
+                  ],
+                  "HNJKDDGCAAN": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "attachPointName": "Muzzle",
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "attachPointTargetType": "Self",
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Shotgun_Vepr_Attack_OriginPos",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "KBOBCHGAMFB": "Self",
+                    "direction": {
+                      "$type": "EFPHBDKCPEJ",
+                      "FDEMCPFAFOC": 501,
+                      "maxAngle": 180
+                    }
+                  },
+                  "NDIPOLBFDFB": "Eff_Avatar_TPS_Shotgun_Vepr_Bullet"
+                },
+                "attackInfo": {
+                  "AKJEFNHCJHA": "Both",
+                  "AOHFPBNIEOL": [
+                    -0.875,
+                    -0.75,
+                    -0.625,
+                    -0.5,
+                    -0.375,
+                    -0.25,
+                    -0.125,
+                    0
+                  ],
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "JHJHIJHLMKF": {
+                    "OMEMLHGGDMK": [
+                      {
+                        "EELJEPKBBJK": 1,
+                        "EHDGLLPLNIM": 1,
+                        "OPDFLMMJLCO": 1
+                      },
+                      {
+                        "distance": 10,
+                        "EELJEPKBBJK": 0.3499999940395355,
+                        "EHDGLLPLNIM": 1,
+                        "OPDFLMMJLCO": 0.3499999940395355
+                      },
+                      {
+                        "distance": 18,
+                        "EHDGLLPLNIM": 1
+                      }
+                    ],
+                    "PGPLFFJAHEA": "Muzzle"
+                  },
+                  "attackProperty": {
+                    "elementDurability": 25,
+                    "elementType": "Fire",
+                    "enBreak": 40,
+                    "strikeType": "Blunt",
+                    "LFIHNBEGGFJ": {
+                      "FOCICNBMGCH": {
+                        "TPSWeak": 20
+                      }
+                    },
+                    "elementRank": 1,
+                    "damagePercentage": "Shotgun_Vepr_Bullet_Damage_Ratio",
+                    "attackType": "Range"
+                  },
+                  "attenuationTag": "TPS_Shotgun_Vepr_Fire",
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "TPS_Shotgun_Vepr_Fire",
+                  "canBeModifiedBy": "OriginOwner",
+                  "attackTag": "TPS_NormalAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "DDJFCALDAJE": {
+                    "TPSWeak": {
+                      "hitHaltTimeScale": 0.009999999776482582,
+                      "DNEGHCKEPOO": 0.20000000298023224,
+                      "EMACEIMIHLL": true,
+                      "BPIJOAMNKIH": {
+                        "value": 1,
+                        "GGOHGMFHHEC": true
+                      },
+                      "onHitEffectName": "none",
+                      "LCEFDGADADG": 0.5,
+                      "hitImpulseType": "LV2",
+                      "PJOOJCAIEBP": true
+                    }
+                  },
+                  "KECBKEBBCNH": [
+                    "Shotgun",
+                    "Shotgun_Fire"
+                  ],
+                  "JAJLGPJNENP": {
+                    "TPSCombatBaseID": 501
+                  },
+                  "AAIBLELPKGM": {
+                    "text": "Switch_Ammo"
+                  },
+                  "hitPattern": {
+                    "hitHaltTimeScale": 0.009999999776482582,
+                    "DNEGHCKEPOO": 0.20000000298023224,
+                    "EMACEIMIHLL": true,
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "none",
+                    "LCEFDGADADG": 0.5,
+                    "hitImpulseType": "LV2",
+                    "PJOOJCAIEBP": true
+                  },
+                  "PABCKIFMFDL": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Shotgun_01_Burst_CameraShake_Aiming": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Multiple",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraShakeMixin",
+              "actorIceSubHurtDelta": -1,
+              "ACAPGGAFIGF": [
+                {
+                  "AKALJBDOFGB": 0.05000000074505806,
+                  "JAJNLIIENME": {
+                    "_y": 10,
+                    "_z": 10
+                  },
+                  "JEGCIPNMLNP": {
+                    "_x": 0.4000000059604645,
+                    "_y": 0.4000000059604645,
+                    "_z": 0.4000000059604645
+                  },
+                  "duHPRation": 0.10000000149011612
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Shotgun_01_Burst_CameraShake_Enhance": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Multiple",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraShakeMixin",
+              "actorIceSubHurtDelta": -1,
+              "ACAPGGAFIGF": [
+                {
+                  "AKALJBDOFGB": 0.05000000074505806,
+                  "JAJNLIIENME": {
+                    "_y": 10,
+                    "_z": 10
+                  },
+                  "JEGCIPNMLNP": {
+                    "_y": 0.20000000298023224,
+                    "_z": 0.4000000059604645
+                  },
+                  "duHPRation": 0.10000000149011612
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "TPS_Weapon_AutoWeapon_Shotgun_01_Fire",
+      "abilitySpecials": {
+        "Shotgun_Vepr_Bullet_Damage_Ratio": 0.10999999940395355
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "LDBAFGLHMOJ",
+          "actorIceSubHurtDelta": -1,
+          "CACAIKIGGDA": 50016011,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_DamageHandler"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Avatar_TPS_Shotgun_01_DamageHandler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ModifyDamageMixin",
+              "BJIDKHLJDHB": "Shotgun_Vepr_Weak_Ratio",
+              "actorIceSubHurtDelta": -1,
+              "attackTags": [
+                "TPS_NormalAttack",
+                "Shotgun_Fire"
+              ],
+              "predicates": [
+                {
+                  "$type": "ByHitBoxType",
+                  "target": "Target",
+                  "hitBoxType": "TPSWeak"
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Avatar_TPS_Shotgun_01_DamageHandler",
+      "abilitySpecials": {
+        "Shotgun_Vepr_Weak_Ratio": 0.5
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "MGMHNPJEMLD",
+              "target": "Target",
+              "bodyType": "BODY_BOY"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "floatID": "WeaponBodyType",
+              "doOffStage": false,
+              "PDIFFCBMGMO": 1
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "floatID": "WeaponBodyType",
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Owner",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "MGMHNPJEMLD",
+              "target": "Target",
+              "bodyType": "BODY_GIRL"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "floatID": "WeaponBodyType",
+              "doOffStage": false
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "floatID": "WeaponBodyType",
+              "doOffStage": false,
+              "PDIFFCBMGMO": 1
+            }
+          ]
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "NPPKOJEHOGC",
+          "actorIceSubHurtDelta": -1,
+          "LMIKGDJEOGF": [
+            "TPSReloadSpeedRatio",
+            "StandReload"
+          ],
+          "srcTarget": "Owner"
+        }
+      ],
+      "abilityName": "TPS_Weapon_AutoWeapon_Shotgun_01_Reload",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_TPS_Shotgun_01_Allow_Critical_First_Bullet"
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Barrel&Muzzle"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "value": 1,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Barrel&Muzzle"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Target",
+                  "talentParam": "Unlock_Accessory_Barrel&Muzzle"
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Barrel&Muzzle"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Stock"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "value": 1,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Stock"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Target",
+                  "talentParam": "Unlock_Accessory_Stock"
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Stock"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Magazine"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "value": 1,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Magazine"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Target",
+                  "talentParam": "Unlock_Accessory_Magazine"
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Magazine"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Scope"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "value": 1,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Scope"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByNot",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Target",
+                  "talentParam": "Unlock_Accessory_Scope"
+                }
+              ]
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "_TPS_Shotgun_01_Has_Accessory_Scope"
+        },
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Barrel&Muzzle"
+            },
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Stock"
+            },
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Magazine"
+            },
+            {
+              "$type": "ByUnlockTalentParam",
+              "target": "Target",
+              "talentParam": "Unlock_Accessory_Scope"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_Has_Accessory_All"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_TPS_Shotgun_01_Has_Accessory_All"
+            }
+          ]
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "LDBAFGLHMOJ",
+          "actorIceSubHurtDelta": -1,
+          "CACAIKIGGDA": 50016011,
+          "modifierName": "UNIQUE_TPS_Current_Equip_Shotgun_01_Accessory_Manager"
+        },
+        {
+          "$type": "LDBAFGLHMOJ",
+          "actorIceSubHurtDelta": -1,
+          "CACAIKIGGDA": 50016011,
+          "modifierName": "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Magazine_Effect_Manager"
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Barrel&Muzzle": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Magazine": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_TPSReloadSpeedRatio": 0.30000001192092896
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Scope": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_FireAddHurtDelta": 0.3499999940395355
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock_buff": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_TPSVerticalRecoilRatio": -0.30000001192092896
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_01_Enhance_Magazine_Effect_Manager": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToNormalizedTimeMixin",
+              "actorIceSubHurtDelta": -1,
+              "normalizeEnd": 0.5400000214576721,
+              "value": 2,
+              "stateID": "M3_Reload",
+              "modifierName": "UNIQUE_Avatar_TPS_Shotgun_Eff_Reload_Cancel",
+              "normalizeStart": 0.15000000596046448
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_TPS_Shotgun_Eff_Reload_Cancel": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_TPS_Shotgun_01_Accessory_Magazine_Reloading_IsAllowed"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_TPS_Shotgun_01_Accessory_Magazine_Reloading_IsAllowed"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Current_Equip_Shotgun_01_Accessory_Manager": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Barrel&Muzzle",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Barrel&Muzzle"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Stock",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Stock",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Stock_buff"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Magazine",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Magazine"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_Scope",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Avatar_TPS_Shotgun_01_Accessory_Scope"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_TPS_Shotgun_01_Has_Accessory_All",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_TPS_Shotgun_01_FireInterval_ByEnhance_Manager",
+                "UNIQUE_TPS_Shotgun_01_FireInterval_Boost"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_FireInterval_Boost": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_TPSFireIntervalRatio": "Shotgun_FireIntervalBoostRatio"
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_TPS_Shotgun_01_FireInterval_ByEnhance_Manager": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "InEnhance",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_TPS_Shotgun_01_FireInterval_Boost"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "TPS_Shotgun_01_Accessory_Manager",
+      "abilitySpecials": {
+        "Shotgun_FireIntervalBoostRatio": 0.33333298563957214
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

@@ -1,0 +1,2608 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_ActivityDigV2_CurrentPlayerLevel",
+        "GV_ActivityDigV2_Player_Damage",
+        "GV_ActivityDigV2_Attack01_Count",
+        "GV_ActivityDigV2_KnockBackReady_Count",
+        "GV_ActivityDigV2_Player_Fuel",
+        "GV_ActivityDigV2_Player_SkillFuelCost",
+        "GV_ActivityDigV2_SkillCDMode",
+        "GV_ActivityDigV2_Player_FeverState"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Vehicle_PlayerMiningRobo_HideUpSlot_Pre",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_ActivityDigV2_KnockBackReady_Count"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_ActivityDigV2_Attack01_Count"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Vehicle_PlayerMiningRobo_InitGV",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_MiningRobo_GVSync_Team",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "gvInTalk": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_Team_SkillDurationMode",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_BoostedHeavyAttack"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.20000000298023224,
+          "value": -1,
+          "stateID": "Attack01_1",
+          "modifierName": "Vehicle_PlayerMiningRobo_Attack01_Eff"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.44999998807907104,
+          "value": -1,
+          "stateID": "Attack01_1",
+          "modifierName": "Vehicle_PlayerMiningRobo_Attack01",
+          "normalizeStart": 0.10000000149011612
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack01_1",
+          "modifierName": "Vehicle_PlayerMiningRobo_MuteAutoAttack"
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "actorIceSubHurtDelta": -1,
+          "isCheckOnAttach": true,
+          "value": -1,
+          "stateIDs": [
+            "Attack01_2_BS",
+            "Attack01_2_Loop_0",
+            "Attack01_2_Loop_1"
+          ],
+          "modifierName": "Vehicle_PlayerMiningRobo_BoostedAttack01_Eff"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack01_2_Loop_0",
+          "modifierName": "Vehicle_PlayerMiningRobo_BoostedAttack01"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.44999998807907104,
+          "value": -1,
+          "stateID": "Attack01_2_Loop_0",
+          "modifierName": "Vehicle_PlayerMiningRobo_Attack01_Boosted",
+          "normalizeStart": 0.10000000149011612
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack01_2_Loop_0",
+          "modifierName": "Vehicle_PlayerMiningRobo_MuteAutoAttack"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack01_2_Loop_1",
+          "modifierName": "Vehicle_PlayerMiningRobo_BoostedAttack01"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.44999998807907104,
+          "value": -1,
+          "stateID": "Attack01_2_Loop_1",
+          "modifierName": "Vehicle_PlayerMiningRobo_Attack01_Boosted",
+          "normalizeStart": 0.10000000149011612
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack01_2_Loop_1",
+          "modifierName": "Vehicle_PlayerMiningRobo_MuteAutoAttack"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack02",
+          "modifierName": "Vehicle_PlayerMiningRobo_MuteAutoAttack"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Run",
+          "modifierName": "Vehicle_PlayerMiningRobo_AutoAttack_Controller"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Run",
+          "modifierName": "Vehicle_PlayerMiningRobo_ModifyYawSpeed"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Idle",
+          "modifierName": "Vehicle_PlayerMiningRobo_ModifyYawSpeed"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Idle",
+          "modifierName": "Vehicle_PlayerMiningRobo_AutoAttack_Controller"
+        },
+        {
+          "$type": "VehicleStrafeMixin",
+          "actorIceSubHurtDelta": -1,
+          "NGPBHLGLIML": [
+            {
+              "stateIds": [
+                "Attack01_1",
+                "Attack01_2_BS",
+                "Attack01_2_Loop_0",
+                "Attack01_2_Loop_1",
+                "Attack01_2_AS"
+              ],
+              "FEELPPDABMK": 30,
+              "LBACHFBCGLK": 1.399999976158142,
+              "EHGAHPKMHDM": true,
+              "angularSpeed": -1,
+              "HEGGPPJLBGB": true,
+              "HBJMGODFBFF": 10
+            }
+          ]
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "gvInTalk": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_ActivityDigV2_KnockBackReady_Count",
+          "valueSteps": [
+            0.5,
+            99
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_KnockBackReady_Decay"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "gvInTalk": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_ActivityDigV2_Player_FeverState",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_Fever_ReduceSkillCD"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "gvInTalk": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_Team_SkillCDMode",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_SkillCDMode_ApplyCDR"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "gvInTalk": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_ActivityDigV2_Player_HurtTrigger",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_Hit"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+          "valueSteps": [
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_Mat_Stage0",
+            "Vehicle_PlayerMiningRobo_Mat_Stage1",
+            "Vehicle_PlayerMiningRobo_Mat_Stage2"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_MiningRobo_GVSync_Team": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Fuel",
+              "dstKey": "GV_ActivityDigV2_Player_Fuel",
+              "dstTarget": "Vehicle",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_ActivityDigV2_Player_Fuel",
+              "actions": [
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "GV_ActivityDigV2_Player_Fuel",
+                  "dstKey": "GV_ActivityDigV2_Player_Fuel",
+                  "dstTarget": "Vehicle",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Attack01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_DrillLevel",
+              "dstKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Damage",
+              "dstKey": "GV_ActivityDigV2_Player_Damage",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "NMLPCEFNLCO",
+              "actorIceSubHurtDelta": -1,
+              "JPEDALGEMBM": "Or",
+              "sizeRatio": 1,
+              "FDBNGGOEIME": true,
+              "offset": {
+                "x": -0.30000001192092896
+              },
+              "canBeHandledOnRecover": true,
+              "NLNIBNNOOCK": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "doOffStage": false,
+              "shapeName": "CircleR5_5H5",
+              "DPENJPGJLEI": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                      "key": "GV_ActivityDigV2_DrillLevel"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "AddGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "useLimitRange": true,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 99999,
+                      "value": [
+                        0,
+                        "GV_ActivityDigV2_Player_Damage",
+                        "DamageMul_Normal",
+                        "MUL",
+                        "SUB"
+                      ],
+                      "key": "GV_ActivityDigV2_Durability"
+                    }
+                  ]
+                }
+              ],
+              "FLIKHKHIBCC": [
+                73209002,
+                73209005,
+                73209007,
+                73209008,
+                73209009,
+                73209013,
+                73209014,
+                73209015,
+                73209016,
+                73209017
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Attack01_Boosted": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_DrillLevel",
+              "dstKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Damage",
+              "dstKey": "GV_ActivityDigV2_Player_Damage",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "NMLPCEFNLCO",
+              "actorIceSubHurtDelta": -1,
+              "JPEDALGEMBM": "Or",
+              "sizeRatio": 1,
+              "FDBNGGOEIME": true,
+              "offset": {
+                "x": -0.30000001192092896
+              },
+              "canBeHandledOnRecover": true,
+              "NLNIBNNOOCK": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "doOffStage": false,
+              "shapeName": "CircleR4.5H3",
+              "DPENJPGJLEI": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                      "key": "GV_ActivityDigV2_DrillLevel"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "AddGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "useLimitRange": true,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 99999,
+                      "value": [
+                        0,
+                        "GV_ActivityDigV2_Player_Damage",
+                        "DamageMul_Normal",
+                        "MUL",
+                        "SUB"
+                      ],
+                      "key": "GV_ActivityDigV2_Durability"
+                    }
+                  ]
+                }
+              ],
+              "FLIKHKHIBCC": [
+                73209002,
+                73209005,
+                73209007,
+                73209008,
+                73209009,
+                73209013,
+                73209014,
+                73209015,
+                73209016,
+                73209017
+              ]
+            },
+            {
+              "$type": "AddGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ActivityDigV2_Attack01_Count"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "Attack01_MaxCount",
+                  "key": "GV_ActivityDigV2_Attack01_Count"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetAnimatorTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "triggerID": "HeavyAttackEnd",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_ActivityDigV2_Attack01_Count"
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Attack01_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Dig_MiningCar_Attack",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_Team_SkillCDMode",
+              "dstKey": "GV_ActivityDigV2_SkillCDMode",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_FeverState",
+              "dstKey": "GV_ActivityDigV2_Player_FeverState",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_SkillFuelCost",
+              "dstKey": "GV_ActivityDigV2_Player_SkillFuelCost",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "GV_ActivityDigV2_Player_FeverState"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 200,
+              "value": [
+                0,
+                "GV_ActivityDigV2_Player_SkillFuelCost",
+                "SUB"
+              ],
+              "key": "GV_ActivityDigV2_Player_Fuel"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": 0.5,
+                  "key": "GV_ActivityDigV2_SkillCDMode"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "VehicleSkillStart",
+                  "skillID": 11700,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "cdRatio": [
+                    1,
+                    "Attack_CDR",
+                    "SUB"
+                  ],
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "VehicleSkillStart",
+                  "skillID": 11700,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "cdRatio": 1,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_AutoAttack_Controller": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "gvInTalk": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_Team_AttackCDMode",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Vehicle_PlayerMiningRobo_AutoAttack_LV1",
+                "Vehicle_PlayerMiningRobo_AutoAttack_LV2",
+                "Vehicle_PlayerMiningRobo_AutoAttack_LV3"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_AutoAttack_LV1": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_DrillLevel",
+              "dstKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Damage",
+              "dstKey": "GV_ActivityDigV2_Player_Damage",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "DoActionByRayCastTarget",
+              "actorIceSubHurtDelta": -1,
+              "LANEADNAMOA": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 0.5,
+                  "z": 0.5
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "EBPKJFIJAHG": 2.5,
+              "canBeHandledOnRecover": true,
+              "JMMDCBJBMEG": -1,
+              "KGNBFGFCPOF": -1,
+              "doOffStage": false,
+              "IFAGEOOENNG": "HitBox",
+              "targetPredicates": [
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "target": "Target",
+                  "configIdArray": [
+                    73209001,
+                    73209002,
+                    73209004,
+                    73209005,
+                    73209007,
+                    73209008,
+                    73209009,
+                    73209013,
+                    73209014,
+                    73209015,
+                    73209016,
+                    73209017
+                  ]
+                }
+              ],
+              "PIPMOICDFNF": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                      "key": "GV_ActivityDigV2_DrillLevel"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "AddGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "useLimitRange": true,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 99999,
+                      "value": [
+                        0,
+                        "GV_ActivityDigV2_Player_Damage",
+                        "DamageMul_Auto",
+                        "MUL",
+                        "SUB"
+                      ],
+                      "key": "GV_ActivityDigV2_Durability"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByNot",
+                          "target": "Target"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "AddGlobalValue",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "value": 1,
+                          "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                        },
+                        {
+                          "$type": "AttachModifier",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "modifierName": "Vehicle_PlayerMiningRobo_KnockBack_JustFailed",
+                          "doOffStage": false
+                        },
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "value": "KnockBackFailMaxCount",
+                              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "FixedAvatarRushMove",
+                              "actorIceSubHurtDelta": -1,
+                              "DMAHANNMCAH": -1,
+                              "maxRange": 3,
+                              "DDCHIIGGJIM": true,
+                              "predicates": [
+                                {
+                                  "$type": "OIINBDODFLP",
+                                  "target": "Target"
+                                }
+                              ],
+                              "canBeHandledOnRecover": true,
+                              "animatorStateIDs": [
+                                "Run"
+                              ],
+                              "toPos": {
+                                "$type": "ConfigBornBySelf",
+                                "useRotation": true,
+                                "APKLAIJMEIL": {
+                                  "HHNLJKNBKPP": 180
+                                },
+                                "offset": {
+                                  "z": [
+                                    0,
+                                    "KnockBackMaxRange",
+                                    "SUB"
+                                  ]
+                                },
+                                "value": 10,
+                                "onGroundRaycastUpDist": 2,
+                                "direction": {
+                                  "maxAngle": 180
+                                }
+                              },
+                              "timeRange": "KnockBackTimeRange",
+                              "doOffStage": false
+                            },
+                            {
+                              "$type": "SetGlobalValue",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": false,
+                              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                            },
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "Vehicle_PlayerMiningRobo_KnockBack_ICD",
+                              "doOffStage": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByAnd",
+                          "target": "Target",
+                          "predicates": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "compareType": "MoreThanAndEqual",
+                              "value": 1,
+                              "key": "GV_ActivityDigV2_DrillLevel"
+                            },
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "compareType": "LessAndEqual",
+                              "value": 3,
+                              "key": "GV_ActivityDigV2_DrillLevel"
+                            }
+                          ]
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByNot",
+                              "target": "Target"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "Vehicle_PlayerMiningRobo_DigFailRMD_Shown",
+                              "doOffStage": false
+                            },
+                            {
+                              "$type": "ShowReminder",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "id": 404720,
+                              "doOffStage": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "BJGIABJGLAM": true
+            }
+          ],
+          "thinkInterval": "AutoAttackThinkInterval",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_AutoAttack_LV2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_DrillLevel",
+              "dstKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Damage",
+              "dstKey": "GV_ActivityDigV2_Player_Damage",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "DoActionByRayCastTarget",
+              "actorIceSubHurtDelta": -1,
+              "LANEADNAMOA": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 0.5,
+                  "z": 0.5
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "EBPKJFIJAHG": 2.5,
+              "canBeHandledOnRecover": true,
+              "JMMDCBJBMEG": -1,
+              "KGNBFGFCPOF": -1,
+              "doOffStage": false,
+              "IFAGEOOENNG": "HitBox",
+              "targetPredicates": [
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "target": "Target",
+                  "configIdArray": [
+                    73209001,
+                    73209002,
+                    73209004,
+                    73209005,
+                    73209007,
+                    73209008,
+                    73209009,
+                    73209013,
+                    73209014,
+                    73209015,
+                    73209016,
+                    73209017
+                  ]
+                }
+              ],
+              "PIPMOICDFNF": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                      "key": "GV_ActivityDigV2_DrillLevel"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "AddGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "useLimitRange": true,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 99999,
+                      "value": [
+                        0,
+                        "GV_ActivityDigV2_Player_Damage",
+                        "DamageMul_Auto",
+                        "MUL",
+                        "SUB"
+                      ],
+                      "key": "GV_ActivityDigV2_Durability"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByNot",
+                          "target": "Target"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "AddGlobalValue",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "value": 1,
+                          "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                        },
+                        {
+                          "$type": "AttachModifier",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "modifierName": "Vehicle_PlayerMiningRobo_KnockBack_JustFailed",
+                          "doOffStage": false
+                        },
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "value": "KnockBackFailMaxCount",
+                              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "FixedAvatarRushMove",
+                              "actorIceSubHurtDelta": -1,
+                              "DMAHANNMCAH": -1,
+                              "maxRange": 3,
+                              "DDCHIIGGJIM": true,
+                              "predicates": [
+                                {
+                                  "$type": "OIINBDODFLP",
+                                  "target": "Target"
+                                }
+                              ],
+                              "canBeHandledOnRecover": true,
+                              "animatorStateIDs": [
+                                "Run"
+                              ],
+                              "toPos": {
+                                "$type": "ConfigBornBySelf",
+                                "useRotation": true,
+                                "APKLAIJMEIL": {
+                                  "HHNLJKNBKPP": 180
+                                },
+                                "offset": {
+                                  "z": [
+                                    0,
+                                    "KnockBackMaxRange",
+                                    "SUB"
+                                  ]
+                                },
+                                "value": 10,
+                                "onGroundRaycastUpDist": 2,
+                                "direction": {
+                                  "maxAngle": 180
+                                }
+                              },
+                              "timeRange": "KnockBackTimeRange",
+                              "doOffStage": false
+                            },
+                            {
+                              "$type": "SetGlobalValue",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": false,
+                              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                            },
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "Vehicle_PlayerMiningRobo_KnockBack_ICD",
+                              "doOffStage": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByAnd",
+                          "target": "Target",
+                          "predicates": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "compareType": "MoreThanAndEqual",
+                              "value": 1,
+                              "key": "GV_ActivityDigV2_DrillLevel"
+                            },
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "compareType": "LessAndEqual",
+                              "value": 3,
+                              "key": "GV_ActivityDigV2_DrillLevel"
+                            }
+                          ]
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByNot",
+                              "target": "Target"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "Vehicle_PlayerMiningRobo_DigFailRMD_Shown",
+                              "doOffStage": false
+                            },
+                            {
+                              "$type": "ShowReminder",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "id": 404720,
+                              "doOffStage": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "BJGIABJGLAM": true
+            }
+          ],
+          "thinkInterval": "AutoAttackThinkInterval_CD2",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_AutoAttack_LV3": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_DrillLevel",
+              "dstKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Damage",
+              "dstKey": "GV_ActivityDigV2_Player_Damage",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "DoActionByRayCastTarget",
+              "actorIceSubHurtDelta": -1,
+              "LANEADNAMOA": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 0.5,
+                  "z": 0.5
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "EBPKJFIJAHG": 2.5,
+              "canBeHandledOnRecover": true,
+              "JMMDCBJBMEG": -1,
+              "KGNBFGFCPOF": -1,
+              "doOffStage": false,
+              "IFAGEOOENNG": "HitBox",
+              "targetPredicates": [
+                {
+                  "$type": "ILMHBGFOAJN",
+                  "target": "Target",
+                  "configIdArray": [
+                    73209001,
+                    73209002,
+                    73209004,
+                    73209005,
+                    73209007,
+                    73209008,
+                    73209009,
+                    73209013,
+                    73209014,
+                    73209015,
+                    73209016,
+                    73209017
+                  ]
+                }
+              ],
+              "PIPMOICDFNF": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                      "key": "GV_ActivityDigV2_DrillLevel"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "AddGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "useLimitRange": true,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 99999,
+                      "value": [
+                        0,
+                        "GV_ActivityDigV2_Player_Damage",
+                        "DamageMul_Auto",
+                        "MUL",
+                        "SUB"
+                      ],
+                      "key": "GV_ActivityDigV2_Durability"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByNot",
+                          "target": "Target"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "AddGlobalValue",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "value": 1,
+                          "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                        },
+                        {
+                          "$type": "AttachModifier",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "modifierName": "Vehicle_PlayerMiningRobo_KnockBack_JustFailed",
+                          "doOffStage": false
+                        },
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "value": "KnockBackFailMaxCount",
+                              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "FixedAvatarRushMove",
+                              "actorIceSubHurtDelta": -1,
+                              "DMAHANNMCAH": -1,
+                              "maxRange": 3,
+                              "DDCHIIGGJIM": true,
+                              "predicates": [
+                                {
+                                  "$type": "OIINBDODFLP",
+                                  "target": "Target"
+                                }
+                              ],
+                              "canBeHandledOnRecover": true,
+                              "animatorStateIDs": [
+                                "Run"
+                              ],
+                              "toPos": {
+                                "$type": "ConfigBornBySelf",
+                                "useRotation": true,
+                                "APKLAIJMEIL": {
+                                  "HHNLJKNBKPP": 180
+                                },
+                                "offset": {
+                                  "z": [
+                                    0,
+                                    "KnockBackMaxRange",
+                                    "SUB"
+                                  ]
+                                },
+                                "value": 10,
+                                "onGroundRaycastUpDist": 2,
+                                "direction": {
+                                  "maxAngle": 180
+                                }
+                              },
+                              "timeRange": "KnockBackTimeRange",
+                              "doOffStage": false
+                            },
+                            {
+                              "$type": "SetGlobalValue",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": false,
+                              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+                            },
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "Vehicle_PlayerMiningRobo_KnockBack_ICD",
+                              "doOffStage": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByAnd",
+                          "target": "Target",
+                          "predicates": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "compareType": "MoreThanAndEqual",
+                              "value": 1,
+                              "key": "GV_ActivityDigV2_DrillLevel"
+                            },
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Target",
+                              "compareType": "LessAndEqual",
+                              "value": 3,
+                              "key": "GV_ActivityDigV2_DrillLevel"
+                            }
+                          ]
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByNot",
+                              "target": "Target"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "Vehicle_PlayerMiningRobo_DigFailRMD_Shown",
+                              "doOffStage": false
+                            },
+                            {
+                              "$type": "ShowReminder",
+                              "actorIceSubHurtDelta": -1,
+                              "canBeHandledOnRecover": true,
+                              "id": 404720,
+                              "doOffStage": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "BJGIABJGLAM": true
+            }
+          ],
+          "thinkInterval": "AutoAttackThinkInterval_CD3",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_BoostedAttack01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Dig_MiningCar_SuperAttack",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "GV_ActivityDigV2_Attack01_Count"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "GV_Team_SkillCDMode",
+                  "dstKey": "GV_ActivityDigV2_SkillCDMode",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "srcTarget": "Team"
+                },
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "GV_ActivityDigV2_Player_FeverState",
+                  "dstKey": "GV_ActivityDigV2_Player_FeverState",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "srcTarget": "Team"
+                },
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "GV_ActivityDigV2_Player_SkillFuelCost",
+                  "dstKey": "GV_ActivityDigV2_Player_SkillFuelCost",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "srcTarget": "Team"
+                },
+                {
+                  "$type": "AddGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "useLimitRange": true,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "GV_ActivityDigV2_Player_FeverState"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "maxValue": 200,
+                  "value": [
+                    0,
+                    "GV_ActivityDigV2_Player_SkillFuelCost",
+                    "SUB"
+                  ],
+                  "key": "GV_ActivityDigV2_Player_Fuel"
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 0.5,
+                      "key": "GV_ActivityDigV2_SkillCDMode"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "VehicleSkillStart",
+                      "skillID": 11700,
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "cdRatio": [
+                        1,
+                        "Attack_CDR",
+                        "SUB"
+                      ],
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "VehicleSkillStart",
+                      "skillID": 11700,
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "cdRatio": 1,
+                      "doOffStage": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_BoostedAttack01_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Dig_MiningCar_SuperAttack",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CIBMHJDLFNI",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_BoostedHeavyAttack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "BoostedHeavyAttack"
+            },
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "floatID": "HeavyAttackSpeed",
+              "doOffStage": false,
+              "PDIFFCBMGMO": "BoostedHeavyAttack_AttackSpeed"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "BoostedHeavyAttack"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_DigFailRMD_Shown": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Fever_ReduceSkillCD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11700,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": -1,
+              "doOffStage": false
+            },
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11701,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": -1,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachUIEffect",
+              "actorIceSubHurtDelta": -1,
+              "CNOPJJKEJIE": true,
+              "effectPattern": "Eff_UI_MaxEnergy_DigV2",
+              "effectSlot": "NormalAttack",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PHMIMCHEPOC": true
+            },
+            {
+              "$type": "AttachUIEffect",
+              "actorIceSubHurtDelta": -1,
+              "CNOPJJKEJIE": true,
+              "effectPattern": "Eff_UI_MaxEnergy_BrickBreaker",
+              "effectSlot": "SkillSprint",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PHMIMCHEPOC": true
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11700,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": -1,
+              "doOffStage": false
+            },
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11701,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": -1,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_HideUpSlot": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot2"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot4"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "Slot5"
+            },
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_HideUpSlot_Pre": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "GFHCOKDKKJA",
+              "actorIceSubHurtDelta": -1,
+              "globalValueKey": "_ABILITY_Vehicle_Driving_Flag"
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_ABILITY_Vehicle_Driving_Flag",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Vehicle_PlayerMiningRobo_HideUpSlot"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Hit": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "triggerID": "Hit",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_InitGV": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "floatID": "HeavyAttackSpeed",
+              "doOffStage": false,
+              "PDIFFCBMGMO": "BoostedHeavyAttack_AttackSpeed"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "BoostedHeavyAttack"
+            },
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "floatID": "RunSpeedRatio",
+              "doOffStage": false,
+              "PDIFFCBMGMO": "MoveSpeedRatio"
+            },
+            {
+              "$type": "TriggerSetCastShadow",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_KnockBackReady_Decay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "useLimitRange": true,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 99,
+              "value": -1,
+              "key": "GV_ActivityDigV2_KnockBackReady_Count"
+            }
+          ],
+          "thinkInterval": "KnockBackReadyDecayInterval",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_KnockBack_ICD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": "KnockBackICD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_KnockBack_JustFailed": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": "AutoAttackThinkInterval",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Mat_Stage0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "DKHMELDDOOE": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Mat_Stage1": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "DKHMELDDOOE": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Mat_Stage2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 2,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "DKHMELDDOOE": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_ModifyYawSpeed": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ScaleVehicleMoveYawSpeedMixin",
+              "AFNAIHCFONA": 4,
+              "actorIceSubHurtDelta": -1,
+              "BINNNINLFON": 4,
+              "FMGPONGEPPL": 1,
+              "PBIEMFCAMLL": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_MuteAutoAttack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "RushAttack"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "RushAttack"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_SkillCDMode_ApplyCDR": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11700,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": -1,
+              "doOffStage": false
+            },
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11700,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": [
+                0,
+                "Attack_CDR",
+                "SUB"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Vehicle_PlayerMiningRobo_InitGV",
+          "doOffStage": false
+        },
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_MiningRobo_GVSync_Team",
+          "doOffStage": false
+        }
+      ],
+      "abilityName": "Vehicle_PlayerMiningRobo_NormalAttack",
+      "abilitySpecials": {
+        "Attack01_MaxCount": 8,
+        "Attack_CDR": 0.33000001311302185,
+        "AutoAttackThinkInterval": 0.4000000059604645,
+        "AutoAttackThinkInterval_CD2": 0.20000000298023224,
+        "AutoAttackThinkInterval_CD3": 0.10000000149011612,
+        "BoostedHeavyAttack_AttackSpeed": 1.409999966621399,
+        "DamageMul_Auto": 3,
+        "DamageMul_Normal": 20,
+        "KnockBackFailMaxCount": 5,
+        "KnockBackICD": 3,
+        "KnockBackMaxRange": 4,
+        "KnockBackReadyDecayInterval": 0.5,
+        "KnockBackTimeRange": 0.10000000149011612,
+        "MoveSpeedRatio": 1.399999976158142
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_ActivityDigV2_CurrentPlayerLevel",
+        "GV_ActivityDigV2_Player_Damage",
+        "GV_ActivityDigV2_Player_RushFuelCost",
+        "GV_ActivityDigV2_RushCDMode",
+        "GV_ActivityDigV2_Player_FeverState"
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.6000000238418579,
+          "value": -1,
+          "stateID": "Attack02",
+          "modifierName": "Vehicle_PlayerMiningRobo_Sprint_Eff",
+          "normalizeStart": 0.20000000298023224
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.20000000298023224,
+          "value": -1,
+          "stateID": "Attack02",
+          "modifierName": "Vehicle_PlayerMiningRobo_Sprint_CD"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 1,
+          "value": -1,
+          "stateID": "Attack02",
+          "modifierName": "Vehicle_PlayerMiningRobo_MuteAutoAttack"
+        },
+        {
+          "$type": "AttachToNormalizedTimeMixin",
+          "actorIceSubHurtDelta": -1,
+          "normalizeEnd": 0.800000011920929,
+          "value": -1,
+          "stateID": "Attack02",
+          "modifierName": "Vehicle_PlayerMiningRobo_RushMove_Controller"
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "gvInTalk": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_Team_RushCDMode",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Vehicle_PlayerMiningRobo_RushCDMode_ApplyCDR"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Vehicle_PlayerMiningRobo_MuteAutoAttack": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "RushAttack"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "RushAttack"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_RushCDMode_ApplyCDR": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11701,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": -1,
+              "doOffStage": false
+            },
+            {
+              "$type": "ModifyVehicleSkillCD",
+              "skillID": 11701,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "cdRatio": [
+                0,
+                "Rush_CDR",
+                "SUB"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_RushMove_Controller": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_DrillLevel",
+              "dstKey": "GV_ActivityDigV2_CurrentPlayerLevel",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_Damage",
+              "dstKey": "GV_ActivityDigV2_Player_Damage",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "GV_Team_RushRangeMode"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "DoActionByRayCastTarget",
+                  "actorIceSubHurtDelta": -1,
+                  "LANEADNAMOA": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 0.5,
+                      "z": 0.5
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "EBPKJFIJAHG": 3,
+                  "canBeHandledOnRecover": true,
+                  "JMMDCBJBMEG": -1,
+                  "KGNBFGFCPOF": -1,
+                  "doOffStage": false,
+                  "IFAGEOOENNG": "HitBox",
+                  "targetPredicates": [
+                    {
+                      "$type": "ILMHBGFOAJN",
+                      "target": "Target",
+                      "configIdArray": [
+                        73209001,
+                        73209002,
+                        73209004,
+                        73209005,
+                        73209007,
+                        73209008,
+                        73209009,
+                        73209013,
+                        73209014,
+                        73209015,
+                        73209016,
+                        73209017
+                      ]
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                      "key": "GV_ActivityDigV2_DrillLevel"
+                    }
+                  ],
+                  "PIPMOICDFNF": [
+                    {
+                      "$type": "AddGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "useLimitRange": true,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 99999,
+                      "value": [
+                        0,
+                        "GV_ActivityDigV2_Player_Damage",
+                        "DamageMul_Rush",
+                        "MUL",
+                        "SUB"
+                      ],
+                      "key": "GV_ActivityDigV2_Durability"
+                    }
+                  ],
+                  "BJGIABJGLAM": true
+                }
+              ]
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "GV_Team_RushRangeMode"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "NMLPCEFNLCO",
+                  "actorIceSubHurtDelta": -1,
+                  "JPEDALGEMBM": "Or",
+                  "sizeRatio": 1,
+                  "FDBNGGOEIME": true,
+                  "offset": {
+                    "z": 3.5
+                  },
+                  "canBeHandledOnRecover": true,
+                  "NLNIBNNOOCK": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "doOffStage": false,
+                  "shapeName": "RockTide_Barrier",
+                  "DPENJPGJLEI": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Target",
+                          "compareType": "LessAndEqual",
+                          "value": "GV_ActivityDigV2_CurrentPlayerLevel",
+                          "key": "GV_ActivityDigV2_DrillLevel"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "AddGlobalValueV2",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Target",
+                          "useLimitRange": true,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "maxValue": 99999,
+                          "value": [
+                            0,
+                            "GV_ActivityDigV2_Player_Damage",
+                            "DamageMul_Rush",
+                            "MUL",
+                            "SUB"
+                          ],
+                          "key": "GV_ActivityDigV2_Durability"
+                        }
+                      ]
+                    }
+                  ],
+                  "FLIKHKHIBCC": [
+                    73209001,
+                    73209002,
+                    73209004,
+                    73209005,
+                    73209007,
+                    73209008,
+                    73209009,
+                    73209013,
+                    73209014,
+                    73209015,
+                    73209016,
+                    73209017
+                  ]
+                }
+              ]
+            }
+          ],
+          "thinkInterval": "RushThinkInterval",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Sprint_CD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_Team_RushCDMode",
+              "dstKey": "GV_ActivityDigV2_RushCDMode",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_FeverState",
+              "dstKey": "GV_ActivityDigV2_Player_FeverState",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_ActivityDigV2_Player_RushFuelCost",
+              "dstKey": "GV_ActivityDigV2_Player_RushFuelCost",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            },
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "GV_ActivityDigV2_Player_FeverState"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 200,
+              "value": [
+                0,
+                "GV_ActivityDigV2_Player_RushFuelCost",
+                "SUB"
+              ],
+              "key": "GV_ActivityDigV2_Player_Fuel"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": 0.5,
+                  "key": "GV_ActivityDigV2_RushCDMode"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "VehicleSkillStart",
+                  "skillID": 11701,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "cdRatio": [
+                    1,
+                    "Rush_CDR",
+                    "SUB"
+                  ],
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "VehicleSkillStart",
+                  "skillID": 11701,
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "cdRatio": 1,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Vehicle_PlayerMiningRobo_Sprint_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PlayerSaosaoRobo_Dash_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Vehicle_PlayerMiningRobo_RushMove",
+      "abilitySpecials": {
+        "DamageMul_Rush": 20,
+        "RushThinkInterval": 0.01600000075995922,
+        "Rush_CDR": 0.33000001311302185
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

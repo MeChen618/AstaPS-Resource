@@ -1,0 +1,1125 @@
+[
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "actorIceSubHurtDelta": -1,
+          "BDHBNCEEPPK": "Other",
+          "trackTarget": "Other",
+          "bulletID": 73210007,
+          "otherTargets": {
+            "$type": "GENFIIMMOOJ",
+            "targetKey": "GV_Bullet_AimTarget",
+            "NHIIICIJKPD": "Team"
+          },
+          "predicates": [
+            {
+              "$type": "ByEntityIsAlive",
+              "target": "Target"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "KGHIIEPKAAM": true,
+          "doOffStage": false,
+          "MLDOBLJCKCK": true,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "offset": {
+              "z": 1
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "$type": "ConfigDirectionByEntity",
+              "useCorrectDir": true,
+              "maxAngle": 180
+            }
+          },
+          "LODEHGPPCBI": {
+            "$type": "GENFIIMMOOJ",
+            "targetKey": "GV_Bullet_AimTarget",
+            "NHIIICIJKPD": "Team"
+          }
+        }
+      ],
+      "modifiers": {
+        "DreamFallingCombat_AutoFireModifier": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "abilityName": "V7_2_DynamicAbility_DreamFallingCombat",
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThan",
+                      "key": "GV_Bullet_AimTarget_0"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThan",
+                      "key": "GV_Bullet_AimTarget_1"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "SGV_DreamFallingCombat_EnterLevelCurveMove"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "LessAndEqual",
+                      "value": 1,
+                      "key": "SGV_DreamFallingCombat_Phase"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "LPFPKHHKGIB": "Other"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.4000000059604645,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_AutoFireModifier_Intensify": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "abilityName": "V7_2_DynamicAbility_DreamFallingCombat",
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThan",
+                      "key": "GV_Bullet_AimTarget_0"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThan",
+                      "key": "GV_Bullet_AimTarget_1"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "SGV_DreamFallingCombat_EnterLevelCurveMove"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "LessAndEqual",
+                      "value": 1,
+                      "key": "SGV_DreamFallingCombat_Phase"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "LPFPKHHKGIB": "Other"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.25,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase0_Intensify": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_AutoFireModifier_Intensify",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase0_Start": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_AutoFireModifier",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase1_Counter": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_AutoFireModifier_Intensify",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_PhaseStateHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_Phase",
+              "valueSteps": [
+                -0.5,
+                0.25,
+                0.75,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "MDKGPCMDPCF": true,
+              "modifierNameSteps": [
+                "DreamFallingCombat_Phase0_Start",
+                "DreamFallingCombat_Phase0_Intensify",
+                "DreamFallingCombat_Phase1_Counter"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "V7_2_DynamicAbility_DreamFallingCombat",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_DreamFallingCombat_QTE_TotalProgress",
+        "GV_DreamFallingCombat_QTE_IncreaseProgress",
+        "GV_DreamFallingCombat_QTE_Progress",
+        "GV_DreamFallingCombat_QTE_FallbackSpeed",
+        "GV_DreamFallingCombat_QTE_FallbackTime",
+        "GV_DreamFallingCombat_QTE_Entered",
+        "SGV_DreamFallingCombat_Phase",
+        "SGV_DreamFallingCombat_EnterLevelCurveMove",
+        "SGV_DreamFallingCombat_ArriveSpeedPoint"
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 100,
+          "key": "GV_DreamFallingCombat_QTE_TotalProgress"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 10,
+          "key": "GV_DreamFallingCombat_QTE_IncreaseProgress"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_DreamFallingCombat_QTE_Progress"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "OceanCurrentStateHandler",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DreamFallingCombat_Phase2_QTE_Handler",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DreamFallingCombat_QTEEndTransfer_Handler",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DreamFallingCombat_ReconnectNotifier",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "CameraCollisionMixin",
+          "actorIceSubHurtDelta": -1
+        }
+      ],
+      "modifiers": {
+        "DreamFallingCombat_Phase2_QTE": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_DreamFallingCombat_QTE_Entered"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_DreamFallingCombat_QTE_Progress"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "value": 10,
+                  "key": "GV_DreamFallingCombat_QTE_FallbackSpeed"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "value": 0.5,
+                  "key": "GV_DreamFallingCombat_QTE_FallbackTime"
+                },
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "DreamFallingCombat_Phase2_QTE_AutoFillDelay",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "value": 1,
+                  "key": "GV_DreamFallingCombat_QTE_Entered"
+                }
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "PFEIJPEAMBE",
+              "actorIceSubHurtDelta": -1,
+              "CIAHPMACNGB": 0.15000000596046448,
+              "IGIFIGENALG": "Play_UI_QTEButton_Doctor_Click",
+              "NAPMMOOCEPN": "Btn_QTE_Touch",
+              "EPPCKHHBKKE": "UI_INLEVEL_DREAMTRIAL_QTETEXT",
+              "HGPGJOPCFND": "GV_DreamFallingCombat_QTE_FallbackTime",
+              "BGIHABNFFEI": "GV_DreamFallingCombat_QTE_IncreaseProgress",
+              "IECJPDJOHOC": 1,
+              "JLHDLIHCJJB": 0.20000000298023224,
+              "OIJEAGJLAOI": "GV_DreamFallingCombat_QTE_TotalProgress",
+              "MPLHHNPOCGN": "GV_DreamFallingCombat_QTE_FallbackSpeed",
+              "HLACMMDEKDC": "GV_DreamFallingCombat_QTE_Progress",
+              "KNGDABGDJPO": 14,
+              "PCGOOBMIDHN": true
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "GV_DreamFallingCombat_QTE_Progress",
+              "valueSteps": [
+                99.5,
+                150.5
+              ],
+              "modifierNameSteps": [
+                "DreamFallingCombat_Phase2_QTE_Finish"
+              ]
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "GV_DreamFallingCombat_QTE_Progress",
+              "valueSteps": [
+                99.5,
+                150.5
+              ],
+              "modifierNameSteps": [
+                "DreamFallingCombat_Phase2_QTE_NoDecay"
+              ]
+            },
+            {
+              "$type": "OEMHPPCEMKH",
+              "actorIceSubHurtDelta": -1,
+              "DMDCAGGNGCI": true,
+              "JKOJOIPJANH": 999999,
+              "KKPIMBHLMHI": 200,
+              "MCMMGCKFCGJ": true,
+              "OHFKKDDNOOG": 5
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase2_QTE_AutoFillDelay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": -5,
+              "key": "GV_DreamFallingCombat_QTE_FallbackSpeed"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DreamFallingCombat_QTE_FallbackTime"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_Phase2_QTE_AutoFillTick",
+              "doOffStage": false
+            }
+          ],
+          "duration": 30,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase2_QTE_AutoFillTick": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "MultiplyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1.25,
+              "key": "GV_DreamFallingCombat_QTE_FallbackSpeed"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase2_QTE_Finish": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220385001
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_DreamFallingCombat_QTE_End"
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase2_QTE_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_Phase",
+              "valueSteps": [
+                1.5,
+                2.5
+              ],
+              "MAEJHFJIKDH": true,
+              "MDKGPCMDPCF": true,
+              "modifierNameSteps": [
+                "DreamFallingCombat_Phase2_QTE"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_Phase",
+              "valueSteps": [
+                1.5,
+                3.5
+              ],
+              "MAEJHFJIKDH": true,
+              "MDKGPCMDPCF": true,
+              "modifierNameSteps": [
+                "DreamFallingCombat_QTE_HideMainPage"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_Phase",
+              "valueSteps": [
+                -0.5,
+                1.25
+              ],
+              "MAEJHFJIKDH": true,
+              "MDKGPCMDPCF": true,
+              "modifierNameSteps": [
+                "DreamFallingCombat_QTE_ResetProgress"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase2_QTE_HideMainPage": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "BONBLHALJBI",
+              "actorIceSubHurtDelta": -1,
+              "EIPHAHAIEPL": "DreamFallingCombat_QTE"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_Phase2_QTE_NoDecay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DreamFallingCombat_QTE_FallbackSpeed"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 10,
+              "key": "GV_DreamFallingCombat_QTE_FallbackSpeed"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_QTEEndTransfer_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "muteRemoteAction": true,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "effectName": "Eff_SceneObj_Stages_DreamTrial_WhiteTrans_01"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "muteRemoteAction": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "effectName": "Eff_SceneObj_Stages_DreamTrial_WhiteTrans_01"
+            }
+          ],
+          "duration": 6,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_QTEEndTransfer_EffectDelay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_QTEEndTransfer_Effect",
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_QTEEndTransfer_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_Phase",
+              "valueSteps": [
+                2.5,
+                3.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "DreamFallingCombat_QTEEndTransfer_Handler_1"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_QTEEndTransfer_Handler_1": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_QTEEndTransfer_EffectDelay",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_QTE_HideMainPage": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "DreamFallingCombat_Phase2_QTE_HideMainPage",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_QTE_ResetProgress": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DreamFallingCombat_QTE_Progress"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DreamFallingCombat_QTE_Entered"
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DreamFallingCombat_ReconnectNotifier": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220385001
+              ],
+              "predicates": [
+                {
+                  "$type": "ByIsInReconnect",
+                  "target": "Target"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_DreamFallingCombat_OnReconnect"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "OceanCurrentStateHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_EnterLevelCurveMove",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "OceanCurrent_LeaveState",
+                "OceanCurrent_EnterState"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_Phase",
+              "valueSteps": [
+                -0.5,
+                3
+              ],
+              "MAEJHFJIKDH": true,
+              "MDKGPCMDPCF": true,
+              "modifierNameSteps": [
+                "OceanCurrent_ProtectEnterCurve"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "OceanCurrent_AvatarHandler"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "OceanCurrent_AvatarHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "Intercept_Dive_WaterState"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "Intercept_Dive_WaterState"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToAvatarLogicMoveStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "stateIDs": [
+                "OceanCurrent"
+              ],
+              "modifierName": "OceanCurrent_InCurve"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_DreamFallingCombat_ArriveSpeedPoint",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "OceanCurrent_DefaultSpeed",
+                "UNIQUE_OceanCurrent_OverrideSpeed"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "OceanCurrent_DefaultSpeed": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "OceanCurrent_DefaultSpeed",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "OceanCurrent_EnterState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "OceanCurrent_EnterState",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "OceanCurrent_InCurve": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangePlayMode",
+              "actorIceSubHurtDelta": -1,
+              "muteRemoteAction": true,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "toPlayMode": "AirOceanCurrent"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_OceanCurrent_DisableSpeedLine",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_OceanCurrent_LockHp",
+              "doOffStage": false
+            },
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "DreamFallingCombat_OceanCurrent_InCurve",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ChangePlayMode",
+              "actorIceSubHurtDelta": -1,
+              "FPFLACICBBN": "AirOceanCurrent",
+              "muteRemoteAction": true,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220385001
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_ResetEnterOceanCurrentFlag"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "OceanCurrent_LeaveState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AvatarExitCurveMove",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "HBCOKOPFLJD": true,
+              "predicates": [
+                {
+                  "$type": "ADGJCFLPIPK",
+                  "target": "CurLocalAvatar",
+                  "HKNHCBAPADC": "OCEAN_CURRENT"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "OceanCurrent_ProtectEnterCurve": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ADGJCFLPIPK",
+                      "target": "Target",
+                      "HKNHCBAPADC": "OCEAN_CURRENT"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ServerLuaCall",
+                  "actorIceSubHurtDelta": -1,
+                  "CallParamList": [
+                    220385001
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "luaCallType": "SpecificGroup",
+                  "funcName": "SLC_DreamFallingCombat_RequestEnterCurve"
+                }
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_OceanCurrent_DisableSpeedLine": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HCDPBKEEPMF",
+              "actorIceSubHurtDelta": -1,
+              "GGLGMLJGOAM": 1,
+              "NABHCGHKECH": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_OceanCurrent_LockHp": {
+          "state": "Limbo",
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_OceanCurrent_OverrideSpeed": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DebugLog",
+              "actorIceSubHurtDelta": -1,
+              "content": "UNIQUE_OceanCurrent_OverrideSpeed",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OverrideCurveSpeedMixin",
+              "actorIceSubHurtDelta": -1,
+              "AMHOFDLHIFE": 0.10000000149011612,
+              "JKKIFHJPKGJ": 0.10000000149011612,
+              "AMGFHPIKHDB": "CurveMoveSpeed"
+            },
+            {
+              "$type": "OverrideCameraModuleParamMixin",
+              "actorIceSubHurtDelta": -1,
+              "LKEEIOFIMMG": [
+                {
+                  "$type": "OKCBAILKGKM",
+                  "priority": "PlayModeExtra",
+                  "FPBINHDGKBM": 0.10000000149011612,
+                  "EPPPFIHNLHO": 3,
+                  "EBMAJHJDBOI": 2,
+                  "fov": 70,
+                  "EAABOPNFALF": 7,
+                  "PJGPJFKBGKO": true,
+                  "BKMFALNHCEK": 0.10000000149011612
+                }
+              ],
+              "stateName": "OceanCurrent"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "V7_2_DynamicAbility_DreamFallingCombat_CurveMoveAbility",
+      "abilitySpecials": {
+        "CurveMoveSpeed": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

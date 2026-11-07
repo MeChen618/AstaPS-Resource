@@ -1,0 +1,85 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "WarmSource_CameraDetect",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "WarmSource_CameraDetect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "OMLCENCHFCO",
+                  "target": "Target",
+                  "IFKACJEBAKF": [
+                    "Photograph"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ChangeGadgetState",
+                  "actorIceSubHurtDelta": -1,
+                  "BOEADPKMKGC": "WhiteList",
+                  "otherTargets": {
+                    "$type": "DBPHPMIHBCO",
+                    "tag": "IceCreature_PortableHeat_Carried"
+                  },
+                  "value": 202,
+                  "canBeHandledOnRecover": true,
+                  "configIdArray": [
+                    73094042
+                  ],
+                  "doOffStage": false,
+                  "PLNNNJAHCBP": [
+                    0
+                  ]
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_PortableHeat_Picked_OnTeam",
+                  "doOffStage": true
+                },
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "WarmSource_CameraDetect",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_PhotoGraphV72_WarmSource",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

@@ -1,0 +1,1853 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_MaxFollowAuraSourceDistance",
+        "_ReEnterFollowDistance",
+        "_CurrentOccupiedCrystalfly_0",
+        "_CurrentOccupiedCrystalfly_1"
+      ],
+      "onAdded": [
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "Crystalfly"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_InCrystalflyLockZone",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Evaluator_Active",
+            "Evaluator_Inactive"
+          ]
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_FollowState",
+          "valueSteps": [
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "FollowState_Listener_NotifyLua_FollowIng"
+          ]
+        }
+      ],
+      "modifiers": {
+        "DistanceUpdateTick": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ADDIFLBEJCA",
+              "actorIceSubHurtDelta": -1,
+              "DMMFDOAHGHM": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "_CrystalflyBornPos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "CDFMGLMOEGE": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "globalValueKey": "_BornPosDistance",
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Evaluator_Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Thread",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DistanceUpdateTick",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Evaluator_Inactive": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Thread",
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DistanceUpdateTick",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FollowState"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowState_Listener_NotifyLua_FollowIng": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "CrystalFly_Following",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "FromGroup"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Thread": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": "SGV_MaxFollowAuraSourceDistance",
+              "key": "_ReEnterFollowDistance"
+            },
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": -2,
+              "key": "_ReEnterFollowDistance"
+            },
+            {
+              "$type": "SetGlobalPos",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "key": "_CrystalflyBornPos"
+            },
+            {
+              "$type": "ADDIFLBEJCA",
+              "actorIceSubHurtDelta": -1,
+              "DMMFDOAHGHM": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "_CrystalflyBornPos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "CDFMGLMOEGE": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "globalValueKey": "_BornPosDistance",
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_StableLampAvailable"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_CarryingLampAvailable"
+            },
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "value": "_CurrentOccupiedCrystalfly_0",
+                      "key": "_CurrentOccupiedCrystalfly_0"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_CurrentOccupiedCrystalfly_0"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "value": "_CurrentOccupiedCrystalfly_1",
+                      "key": "_CurrentOccupiedCrystalfly_1"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_CurrentOccupiedCrystalfly_1"
+                    }
+                  ]
+                },
+                {
+                  "$type": "HPANBNKJCMI",
+                  "target": "Target",
+                  "logic": "LesserOrEqual",
+                  "positionKey": "_CrystalflyBornPos",
+                  "compareType": "XYZ",
+                  "value": "SGV_MaxFollowAuraSourceDistance"
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_HasStableFaerieFire_SourceEntity"
+              },
+              "canBeHandledOnRecover": true,
+              "LAPMNDNLBLI": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "_StableLampAvailable"
+                }
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "value": "_CurrentOccupiedCrystalfly_0",
+                      "key": "_CurrentOccupiedCrystalfly_0"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_CurrentOccupiedCrystalfly_0"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "value": "_CurrentOccupiedCrystalfly_1",
+                      "key": "_CurrentOccupiedCrystalfly_1"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_CurrentOccupiedCrystalfly_1"
+                    }
+                  ]
+                },
+                {
+                  "$type": "HPANBNKJCMI",
+                  "target": "Target",
+                  "logic": "LesserOrEqual",
+                  "positionKey": "_CrystalflyBornPos",
+                  "compareType": "XYZ",
+                  "value": "SGV_MaxFollowAuraSourceDistance"
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_HasCarryingFaerieFire_SourceEntity"
+              },
+              "canBeHandledOnRecover": true,
+              "LAPMNDNLBLI": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "_CarryingLampAvailable"
+                }
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SightObstructDetect",
+              "actorIceSubHurtDelta": -1,
+              "index": 2,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SightObstructDetect",
+              "actorIceSubHurtDelta": -1,
+              "index": 1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FS0_NoAura"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FS0_OverDistance"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FS0_AllOccupied"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FS0_InDeadZone"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FS0_NotVisible"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasStableFaerieFire"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FS0_NoAura"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": "SGV_MaxFollowAuraSourceDistance",
+                  "key": "_BornPosDistance"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FS0_OverDistance"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_StableLampAvailable"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_CarryingLampAvailable"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FS0_AllOccupied"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThan",
+                      "value": "_ReEnterFollowDistance",
+                      "key": "_BornPosDistance"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "key": "_FS0_OverDistance"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FS0_InDeadZone"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "key": "_FS0_NoAura"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_AuraStableSourceVisible"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_AuraCarryingSourceVisible"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FS0_NotVisible"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_FS0_NoAura"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_FS0_OverDistance"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_FS0_AllOccupied"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FollowState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasStableFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "_ReEnterFollowDistance",
+                      "key": "_BornPosDistance"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_AuraStableSourceVisible"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_StableLampAvailable"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "SGV_DisableAttract"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FollowState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": "_ReEnterFollowDistance",
+                      "key": "_BornPosDistance"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_AuraCarryingSourceVisible"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_CarryingLampAvailable"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "SGV_DisableAttract"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2,
+              "key": "_FollowState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_InCrystalflyBlockZone"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FollowState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "value": 1,
+                  "key": "SGV_DisableAttract"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FollowState"
+            }
+          ],
+          "thinkInterval": 0.30000001192092896,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "HPFCGICMFMF": [
+                "_HasCarryingFaerieFire",
+                "_HasStableFaerieFire",
+                "_HasCarryingFaerieFire_SourceEntity_0",
+                "_HasCarryingFaerieFire_SourceEntity_1",
+                "_HasStableFaerieFire_SourceEntity_0",
+                "_HasStableFaerieFire_SourceEntity_1"
+              ]
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "_InCrystalflyBlockZone",
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueKey": "SGV_DisableAttract",
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "SightObstructDetectMixin",
+              "actorIceSubHurtDelta": -1,
+              "actionQueue": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasCarryingFaerieFire"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "value": 1,
+                      "key": "_AuraCarryingSourceVisible"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "_AuraCarryingSourceVisible"
+                    }
+                  ]
+                }
+              ],
+              "index": 2,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_HasCarryingFaerieFire_SourceEntity"
+              },
+              "FGLEFHBNKHG": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "_AuraCarryingSourceVisible"
+                }
+              ],
+              "HPKPAGODBEJ": "RootNode",
+              "BGIFGLNHCAL": "MoveHead",
+              "LJJIMILNCKG": true
+            },
+            {
+              "$type": "SightObstructDetectMixin",
+              "actorIceSubHurtDelta": -1,
+              "actionQueue": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasStableFaerieFire"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "value": 1,
+                      "key": "_AuraStableSourceVisible"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "_AuraStableSourceVisible"
+                    }
+                  ]
+                }
+              ],
+              "index": 1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_HasStableFaerieFire_SourceEntity"
+              },
+              "FGLEFHBNKHG": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "_AuraStableSourceVisible"
+                }
+              ],
+              "HPKPAGODBEJ": "RootNode",
+              "BGIFGLNHCAL": "LightNode"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FollowState"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasCarryingFaerieFire_SourceEntity_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasCarryingFaerieFire_SourceEntity_1"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasStableFaerieFire_SourceEntity_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasStableFaerieFire_SourceEntity_1"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Ability_CrystalflyFollowTarget_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Ability_CrystalflyFollowTarget_1"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_1"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasCarryingFaerieFire"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_HasStableFaerieFire"
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_CrystalflyDecisionTree",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_CurrentOccupiedCrystalfly_0",
+        "_CurrentOccupiedCrystalfly_1"
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_InCrystalflyLockZone",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "CrystalflyAwake",
+            "CrystaflySleep"
+          ]
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_InCrystalflyBlockZone",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "CrystalflyBlocking"
+          ]
+        }
+      ],
+      "modifiers": {
+        "CrystaflySleep": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "NoFollow",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Quest_AbyssWarFireBuff",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "NoFollow",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "CrystalflyAwake": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_SpecialControlState",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "NormalSelectFollowTarget",
+                "SpecialControl"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "CrystalflyBlocking": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_JumpUp_01_Buff",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowCarryingFaerieFire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "Crystalfly_FollowCarryingFaerieFire",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "FromGroup"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_Ability_CrystalflyFollowTarget",
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_HasCarryingFaerieFire_SourceEntity"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_CurrentOccupiedCrystalfly",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "DBCMNLALJEA": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              }
+            },
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_CurrentOccupiedCrystalfly",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_IsFollowedByCrystalfly"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_0",
+                  "key": "_CurrentOccupiedCrystalfly_0"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_1",
+                  "key": "_CurrentOccupiedCrystalfly_1"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_IsFollowedByCrystalfly"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_0",
+                  "key": "_CurrentOccupiedCrystalfly_0"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_1",
+                  "key": "_CurrentOccupiedCrystalfly_1"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_0",
+                  "key": "_CurrentOccupiedCrystalfly_0"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_1",
+                  "key": "_CurrentOccupiedCrystalfly_1"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_1"
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowLevelGadgetTarget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_IsFollowedByCrystalfly"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CrystalflyEffectState"
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_Ability_CrystalflyFollowTarget",
+              "otherTargets": {
+                "$type": "FODOKCBNJJH"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowStableFaerieFire": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_Ability_CrystalflyFollowTarget",
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_HasStableFaerieFire_SourceEntity"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_CurrentOccupiedCrystalfly",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "DBCMNLALJEA": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              }
+            },
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_CurrentOccupiedCrystalfly",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_IsFollowedByCrystalfly"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_0",
+                  "key": "_CurrentOccupiedCrystalfly_0"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_1",
+                  "key": "_CurrentOccupiedCrystalfly_1"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_IsFollowedByCrystalfly"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_0",
+                  "key": "_CurrentOccupiedCrystalfly_0"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_1",
+                  "key": "_CurrentOccupiedCrystalfly_1"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_0",
+                  "key": "_CurrentOccupiedCrystalfly_0"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": "_CurrentOccupiedCrystalfly_1",
+                  "key": "_CurrentOccupiedCrystalfly_1"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_1"
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "NoFollow": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_IsFollowedByCrystalfly"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_Ability_CrystalflyFollowTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CurrentOccupiedCrystalfly_1"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_CrystalflyEffectState"
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Ability_CrystalflyFollowTarget_0"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Ability_CrystalflyFollowTarget_1"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "NormalSelectFollowTarget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_FollowState",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "FollowLevelGadgetTarget",
+                "FollowStableFaerieFire",
+                "FollowCarryingFaerieFire"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SpecialControl": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_Crystalfly_FollowMoveSystem",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Attach",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Anim",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Eff_Anim": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "_CrystalflyEffectState",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "LoopMove",
+                "LoopIdle"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Eff_Attach": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_ColorfulWhite_Loop",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "LoopIdle": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_ColorfulWhite_Loop",
+              "type": "Int",
+              "canBeHandledOnRecover": true,
+              "parameter": "State",
+              "doOffStage": false,
+              "value": 201
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "LoopMove": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_ColorfulWhite_Loop",
+              "type": "Int",
+              "canBeHandledOnRecover": true,
+              "parameter": "State",
+              "doOffStage": false,
+              "value": 200
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_CrystalflyComponent_EffectManager",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "FollowCurveGadget",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Attach",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Anim",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DefaultState_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_Purple_Loop",
+              "canBeHandledOnRecover": true,
+              "parameter": "Move",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Eff_Anim": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToGadgetStateMutexMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierNames": [
+                [
+                  "DefaultState_0"
+                ],
+                [
+                  "State_201"
+                ]
+              ],
+              "gadgetStates": [
+                0,
+                201
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Eff_Attach": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_Purple_Loop",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowCurveGadget": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_Ability_CrystalflyFollowTarget",
+              "otherTargets": {
+                "$type": "FODOKCBNJJH"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_Purple_Loop",
+              "type": "Bool",
+              "canBeHandledOnRecover": true,
+              "parameter": "Move",
+              "doOffStage": false,
+              "value": 1
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_CrystalflyStable",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]
