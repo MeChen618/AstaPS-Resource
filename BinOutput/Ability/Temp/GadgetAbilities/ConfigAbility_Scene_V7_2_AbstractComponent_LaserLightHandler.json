@@ -1,0 +1,102 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_FairyLight_HitByMirror"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_FairyLight_HitByMirror",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            999
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "State_0",
+            "State_201"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "State_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73154012,
+                73154007,
+                73154048,
+                73154059
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 201,
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73154012,
+                73154007,
+                73154048,
+                73154059
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 4,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_LightStateChange_Handler",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

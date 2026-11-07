@@ -1,0 +1,4020 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_PyroArchonRacing_ForceTransfer_Active",
+        "SGV_PyroArchonRacing_ForceTransfer_SavePointIndex"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "AttachModifierToAvatar",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_PyroArchonRacing_ForceTransfer_Active"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_SaveNyxPoints"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_Event_Transfer"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ServerGVHandler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "AttachModifierToAvatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Skill_Input"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DoGetOn_Retry": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 1,
+                  "key": "GV_AvatarIn_ArcLight_Common"
+                },
+                {
+                  "$type": "FGFGOFGAEHK",
+                  "target": "CurLocalAvatar",
+                  "stateIDs": [
+                    "CurveMovePlugin",
+                    "CurveMove"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Skill_Input",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "EntityDoSkill",
+                  "skillID": 11062,
+                  "actorIceSubHurtDelta": -1,
+                  "ODJAADENFNI": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceTransferOnArcLight_CountDown_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "CurLocalAvatar",
+              "abilityName": "DynamicAbility_Activity_PyroArchonRacing_ForceTransfer_V7_2",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "abilitySpecials": {
+                "Transfer_Type": 0
+              },
+              "LPFPKHHKGIB": "Other"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceTransferOnArcLight_DifficultyChange_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "CurLocalAvatar",
+              "abilityName": "DynamicAbility_Activity_PyroArchonRacing_ForceTransfer_V7_2",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "abilitySpecials": {
+                "Transfer_Type": 1
+              },
+              "LPFPKHHKGIB": "Other"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ServerGVHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220381001
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_PyroArchonRacing_Reconnect"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_PyroArchonRacing_ForceTransfer_Active"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_PyroArchonRacing_ForceTransfer_Active",
+              "valueSteps": [
+                0.5,
+                1.5,
+                2.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "ForceTransferOnArcLight_CountDown_Team",
+                "ForceTransferOnArcLight_DifficultyChange_Team"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueKey": "SGV_PyroArchonRacing_ForceTransfer_SavePointIndex",
+              "actions": [
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "GV_NyxPoints",
+                  "dstKey": "GV_SaveNyxPoints",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Skill_Input": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DoGetOn_Retry",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_ArcLight_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": "Transfer_Type",
+          "key": "GV_Transfer_Type"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 1,
+          "key": "GV_ReadyToTrans_Avatar"
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ForceTransfer_Avatar_Init",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ForceTransfer_Except",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_PyroArchonRacing_ForceTransfer_SavePointIndex"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_ReadyToTrans_Avatar"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_IsSpeedUp"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_ForceExitSpeedUp"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "CheckIfPlayerExitSpecialMove",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CheckIfPlayerExitSpecialMove": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "_ABILITY_Mavuika_IsSpecialMove",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "PlayerExitSpecialMove",
+                "Normal"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ForceTransferCurv_Avatar_Pre_Not": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceTransferCurve_Avatar_Pre": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "GV_Transfer_Type"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "ForceTransferCurve_CountDown_Avatar",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "value": 1,
+                  "key": "GV_Transfer_Type"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "ForceTransferCurve_ChangeDifficulty_Avatar",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceTransferCurve_ChangeDifficulty_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_Event_Transfer"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "param1": 2,
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 1,
+              "CallParamList": [
+                220381001
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_PyroArchonRacing_BlackScreen"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Event_Transfer"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 1,
+                  "key": "GV_AvatarIn_ArcLight_Common"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "value": 1,
+                      "key": "GV_IsSpeedUp"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "GV_ForceExitSpeedUp"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "GV_QteStart"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_QteStart"
+                },
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "##[PyroArchonRacing] transfer success",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EDIAAKJLNIJ",
+                  "actorIceSubHurtDelta": -1,
+                  "DABKOPMKFFM": true,
+                  "HFALIBOPJPJ": "ArcLight",
+                  "canBeHandledOnRecover": true,
+                  "LCKMIOBMAJB": true,
+                  "BONNLFFLLDM": 10001,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_NyxPoints"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_PyroArchonRacing_ForceTransfer_Active"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_ReadyToTrans_Avatar"
+                }
+              ]
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceTransferCurve_CountDown_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_Event_Transfer"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "param1": 1,
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 1,
+              "CallParamList": [
+                220381001
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_PyroArchonRacing_BlackScreen"
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Event_Transfer"
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 1,
+                  "key": "GV_AvatarIn_ArcLight_Common"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "value": 1,
+                      "key": "GV_IsSpeedUp"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "GV_ForceExitSpeedUp"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "GV_QteStart"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_QteStart"
+                },
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "##[PyroArchonRacing] transfer success",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "SGV_PyroArchonRacing_ForceTransfer_SavePointIndex",
+                  "dstKey": "GV_PyroArchonRacing_ForceTransfer_SavePointIndex",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "srcTarget": "Team"
+                },
+                {
+                  "$type": "NOMANJFJBPN",
+                  "actorIceSubHurtDelta": -1,
+                  "FKPKBNOINEG": {
+                    "$type": "AFKDGJBEGHN",
+                    "name": "GV_PyroArchonRacing_ForceTransfer_SavePointIndex"
+                  },
+                  "NGHBADANOHL": [
+                    [
+                      {
+                        "$type": "EDIAAKJLNIJ",
+                        "BKJPMLGAICK": 3,
+                        "actorIceSubHurtDelta": -1,
+                        "DABKOPMKFFM": true,
+                        "HFALIBOPJPJ": "ArcLight",
+                        "canBeHandledOnRecover": true,
+                        "LCKMIOBMAJB": true,
+                        "BONNLFFLLDM": 10001,
+                        "doOffStage": false
+                      }
+                    ],
+                    [
+                      {
+                        "$type": "EDIAAKJLNIJ",
+                        "BKJPMLGAICK": 12,
+                        "actorIceSubHurtDelta": -1,
+                        "DABKOPMKFFM": true,
+                        "HFALIBOPJPJ": "ArcLight",
+                        "canBeHandledOnRecover": true,
+                        "LCKMIOBMAJB": true,
+                        "BONNLFFLLDM": 10005,
+                        "doOffStage": false
+                      }
+                    ],
+                    [
+                      {
+                        "$type": "EDIAAKJLNIJ",
+                        "BKJPMLGAICK": 29,
+                        "actorIceSubHurtDelta": -1,
+                        "DABKOPMKFFM": true,
+                        "HFALIBOPJPJ": "ArcLight",
+                        "canBeHandledOnRecover": true,
+                        "LCKMIOBMAJB": true,
+                        "BONNLFFLLDM": 10006,
+                        "doOffStage": false
+                      }
+                    ],
+                    [
+                      {
+                        "$type": "EDIAAKJLNIJ",
+                        "BKJPMLGAICK": 9,
+                        "actorIceSubHurtDelta": -1,
+                        "DABKOPMKFFM": true,
+                        "HFALIBOPJPJ": "ArcLight",
+                        "canBeHandledOnRecover": true,
+                        "LCKMIOBMAJB": true,
+                        "BONNLFFLLDM": 10008,
+                        "doOffStage": false
+                      }
+                    ],
+                    [
+                      {
+                        "$type": "EDIAAKJLNIJ",
+                        "BKJPMLGAICK": 10,
+                        "actorIceSubHurtDelta": -1,
+                        "DABKOPMKFFM": true,
+                        "HFALIBOPJPJ": "ArcLight",
+                        "canBeHandledOnRecover": true,
+                        "LCKMIOBMAJB": true,
+                        "BONNLFFLLDM": 10015,
+                        "doOffStage": false
+                      }
+                    ]
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "valueSteps": [
+                    -0.5,
+                    0.5,
+                    1.5,
+                    2.5,
+                    3.5,
+                    4.5
+                  ],
+                  "doOffStage": false,
+                  "MMBGJEJPFHK": [
+                    {
+                      "$type": "EDIAAKJLNIJ",
+                      "BKJPMLGAICK": 3,
+                      "actorIceSubHurtDelta": -1,
+                      "DABKOPMKFFM": true,
+                      "HFALIBOPJPJ": "ArcLight",
+                      "canBeHandledOnRecover": true,
+                      "LCKMIOBMAJB": true,
+                      "BONNLFFLLDM": 10001,
+                      "doOffStage": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_PyroArchonRacing_ForceTransfer_Active"
+                },
+                {
+                  "$type": "CopyGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "srcKey": "GV_SaveNyxPoints",
+                  "dstKey": "GV_NyxPoints",
+                  "dstTarget": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "srcTarget": "Team"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_ReadyToTrans_Avatar"
+                },
+                {
+                  "$type": "ServerLuaTriggerEvent",
+                  "sourceName": "TransportCompleted",
+                  "actorIceSubHurtDelta": -1,
+                  "CallParamList": [
+                    220381001
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "luaCallType": "SpecificGroup"
+                },
+                {
+                  "$type": "PostStoryboardEvent",
+                  "actorIceSubHurtDelta": -1,
+                  "LAJDDBLOPIO": 110702700,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MOBNBDAJCPL": "TransportCompleted"
+                }
+              ]
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceTransfer_Avatar_Init": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToAvatarLogicMoveStateMixin",
+              "actorIceSubHurtDelta": -1,
+              "stateIDs": [
+                "CurveMovePlugin",
+                "CurveMove"
+              ],
+              "modifierName": "ForceTransfer_Ready"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ForceTransfer_Except": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "ArcLightDash",
+                "ArcLightChangeRail"
+              ],
+              "enterActions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ForceTransfer_Avatar_Init",
+                  "doOffStage": false
+                }
+              ],
+              "AJAPIFCKFHP": [
+                {
+                  "$type": "AttachModifierToAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ForceTransfer_Avatar_Init",
+                  "doOffStage": false,
+                  "BFEHEAKKJJP": true
+                }
+              ]
+            },
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_QteStart",
+              "actions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "GV_QteStart"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ForceTransfer_Avatar_Init",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "AttachModifierToAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "key": "GV_QteStart"
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "ForceTransfer_Avatar_Init",
+                  "doOffStage": false,
+                  "BFEHEAKKJJP": true
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ForceTransfer_Ready": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_ReadyToTrans_Avatar",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "ForceTransferCurv_Avatar_Pre_Not",
+                "ForceTransferCurve_Avatar_Pre"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "AttachModifierToAbility",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "PlayerExitSpecialMove_Tick",
+              "doOffStage": false,
+              "BFEHEAKKJJP": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "PlayerExitSpecialMove": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "PlayerExitSpecialMove_Tick": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "key": "_ABILITY_Mavuika_IsSpecialMove"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ServerLuaTriggerEvent",
+                  "sourceName": "PlayerExitSpecialMove",
+                  "actorIceSubHurtDelta": -1,
+                  "CallParamList": [
+                    220381001
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "luaCallType": "SpecificGroup"
+                },
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "PlayerExitSpecialMove_Tick",
+                  "doOffStage": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "RemoveModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "PlayerExitSpecialMove_Tick",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 3,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_ForceTransfer_V7_2",
+      "abilitySpecials": {
+        "Transfer_Type": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_CurveSprintSpeed",
+        "GV_NightSoulDrainPerTick",
+        "GV_NightSoulDecreaseTime"
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAbility",
+          "actorIceSubHurtDelta": -1,
+          "BDHBNCEEPPK": "Team",
+          "abilityName": "DynamicAbility_Activity_PyroArchonRacing_Team_V7_2",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "LPFPKHHKGIB": "Other"
+        },
+        {
+          "$type": "AttachModifierToAbility",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Team",
+              "compareType": "MoreThan",
+              "key": "GV_NyxPoints"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "PyroArchonRacing_Move_SpeedUp",
+          "doOffStage": false,
+          "BFEHEAKKJJP": true
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 28,
+          "key": "GV_CurveSprintSpeed"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "minValue": 1,
+          "doOffStage": false,
+          "value": 5,
+          "key": "GV_NightSoulDecreaseTime"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": -0.07000000029802322,
+          "key": "GV_NightSoulDrainPerTick"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "DashMonitor_Avatar",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "JumpMonitor_Avatar",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ForceExitSpeedUp_Monitor_Avatar",
+          "doOffStage": false
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_SpeedUpBall_Audio"
+        }
+      ],
+      "modifiers": {
+        "AfterDash_CameraShake": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraShakeMixin",
+              "actorIceSubHurtDelta": -1,
+              "ACAPGGAFIGF": [
+                {
+                  "AKALJBDOFGB": 0.10000000149011612,
+                  "JAJNLIIENME": {
+                    "_x": 10,
+                    "_y": 10
+                  },
+                  "JEGCIPNMLNP": {
+                    "_x": 2.5
+                  },
+                  "MOEGIBGMOBJ": 0.10000000149011612
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "AfterJump_CameraShake": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraShakeMixin",
+              "actorIceSubHurtDelta": -1,
+              "ACAPGGAFIGF": [
+                {
+                  "AKALJBDOFGB": 0.10000000149011612,
+                  "JAJNLIIENME": {
+                    "_x": 10,
+                    "_y": 10
+                  },
+                  "JEGCIPNMLNP": {
+                    "_x": 1
+                  },
+                  "MOEGIBGMOBJ": 0.10000000149011612
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Avatar_Reload_ArcLight_Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "TriggerPostProcessEffectMixin",
+              "actorIceSubHurtDelta": -1,
+              "postEffectAssetName": "PostEffect_Scene_ArcLight_01"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "CheckSpeedUpFinish": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 20712,
+              "actorIceSubHurtDelta": -1
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_NyxPoints",
+              "valueSteps": [
+                -999,
+                0.004999999888241291
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "SpeedUp_Stop"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DashMonitor_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "ArcLightDash"
+              ],
+              "AJAPIFCKFHP": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "AfterDash_CameraShake",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ForceExitSpeedUp_Monitor_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_ForceExitSpeedUp",
+              "valueSteps": [
+                0.5,
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "SpeedUp_Stop_Force"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "JumpMonitor_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByStateIDMixin",
+              "actorIceSubHurtDelta": -1,
+              "value": -1,
+              "stateIDs": [
+                "ArcLightJump"
+              ],
+              "AJAPIFCKFHP": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "AfterJump_CameraShake",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_Move_SpeedUp": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_MavikaRacing_Boost",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_IsSpeedUp"
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "CheckSpeedUpFinish",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintBS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintBS_Trail",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintTire",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "SpeedUp_Avatar_EffModifier",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "SpeedUp_Avatar_CameraModifier",
+              "doOffStage": false
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "PyroArchonRacing_SpeedUp",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220381001
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 1,
+              "value": "GV_NightSoulDrainPerTick",
+              "key": "GV_NyxPoints"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OverrideCurveSpeedMixin",
+              "actorIceSubHurtDelta": -1,
+              "CFOJMJJEOFC": true,
+              "JIIFCLFLNBO": "GV_CurveSprintSpeed",
+              "AMHOFDLHIFE": 0.30000001192092896,
+              "JKKIFHJPKGJ": 0.699999988079071,
+              "AMGFHPIKHDB": "GV_CurveSprintSpeed"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SpeedUp_Avatar_CameraModifier": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking",
+                "CurveMove"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "KOPOJKGHLDH",
+                "OIOHDNHEHPE": 0.20000000298023224,
+                "JCBINFMOIHM": 1.5,
+                "priority": "SkillSpecial",
+                "fov": 95
+              }
+            },
+            {
+              "$type": "CameraShakeMixin",
+              "actorIceSubHurtDelta": -1,
+              "ACAPGGAFIGF": [
+                {
+                  "AKALJBDOFGB": 1,
+                  "JAJNLIIENME": {
+                    "_x": 25,
+                    "_y": 25,
+                    "_z": 25
+                  },
+                  "JEGCIPNMLNP": {
+                    "_x": 1.5,
+                    "_y": 1.5,
+                    "_z": 1.5
+                  },
+                  "MOEGIBGMOBJ": 0.10000000149011612
+                },
+                {
+                  "AKALJBDOFGB": 1,
+                  "JAJNLIIENME": {
+                    "_x": 2,
+                    "_y": 2,
+                    "_z": 2
+                  },
+                  "JEGCIPNMLNP": {
+                    "_x": 2.5,
+                    "_y": 2.5,
+                    "_z": 2.5
+                  },
+                  "MOEGIBGMOBJ": 0.10000000149011612
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SpeedUp_Avatar_EffModifier": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachActionToModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "onAdded": [
+                {
+                  "$type": "AttachEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_Sprint_Tail",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "AttachEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_Sprint_Tireprint",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "AttachEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintJet_L",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "AttachEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintJet_R",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": false,
+                  "born": {
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "SendEffectTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_Dragon",
+                  "type": "Bool",
+                  "canBeHandledOnRecover": true,
+                  "parameter": "Dragon_Strength",
+                  "doOffStage": false,
+                  "value": 1
+                },
+                {
+                  "$type": "DungeonFogEffects",
+                  "cameraFogEffectName": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintCamera_Fit",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "authorityOnly": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "SendEffectTrigger",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_Dragon",
+                  "type": "Bool",
+                  "canBeHandledOnRecover": true,
+                  "parameter": "Dragon_Strength",
+                  "doOffStage": false
+                },
+                {
+                  "$type": "DungeonFogEffects",
+                  "cameraFogEffectName": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintCamera_Fit",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "authorityOnly": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SpeedUp_Stop": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_IsSpeedUp"
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "PyroArchonRacing_Move_SpeedUp",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SpeedUp_Stop_Force": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_IsSpeedUp"
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "PyroArchonRacing_Move_SpeedUp",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ForceExitSpeedUp"
+            }
+          ],
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_SpeedUp_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_CurveSprint",
+        "GV_NyxPoints",
+        "GV_SprintCost"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "PyroArchonRacing_Init_Team",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "WidgetDisableMixin",
+          "actorIceSubHurtDelta": -1,
+          "HJGHNBCIBIP": true,
+          "MFCHONIKBEH": true
+        },
+        {
+          "$type": "HideActionSlotMixin",
+          "actorIceSubHurtDelta": -1,
+          "slotType": "SlotQuickUse"
+        }
+      ],
+      "modifiers": {
+        "Avatar_SkillChange": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SwitchSkillIDMixin",
+              "skillID": 20712,
+              "actorIceSubHurtDelta": -1,
+              "priority": "Playmode"
+            },
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 11066,
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "CheckNightSoulPoints": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_NyxPoints",
+              "valueSteps": [
+                -0.004999999888241291,
+                [
+                  "GV_SprintCost",
+                  0.004999999888241291,
+                  "SUB"
+                ],
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Sprint_Skill_Forbid",
+                "Sprint_Skill_Allow"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_ChangePlayMode": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangePlayModeV2",
+              "actorIceSubHurtDelta": -1,
+              "FFIJGFGGNDA": "PyroArchonRacing",
+              "EHACCNBHAPM": true,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "OCGHLADNJJB": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ChangePlayModeV2",
+              "actorIceSubHurtDelta": -1,
+              "FFIJGFGGNDA": "PyroArchonRacing",
+              "EHACCNBHAPM": true,
+              "authorityOnly": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_Init_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_PyroArchonRacing_SkillAdded",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_Init_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 1,
+              "value": 0.009999999776482582,
+              "key": "GV_NyxPoints"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 1,
+              "value": 1,
+              "key": "GV_SprintCost"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "PyroArchonRacing_ChangePlayMode",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "PyroArchonRacing_Init_Avatar"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Sprint_Skill_Allow": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachUIEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_UI_TradeShowTdInLevelDialog_Skill",
+              "effectSlot": "NormalAttack",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Sprint_Skill_Forbid": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ForbidSkillByIDMixin",
+              "skillID": 20712,
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_PyroArchonRacing_SkillAdded": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveAvatarSkillInfo",
+              "skillID": 20712,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Avatar_SkillChange",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "CheckNightSoulPoints",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AddAvatarSkillInfo",
+              "skillID": 20712,
+              "actorIceSubHurtDelta": -1,
+              "IOEKFKNMBMH": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_Team_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "PyroArchonRacing_DisableMainPage",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "PyroArchonRacing_DisableMainPage",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "PyroArchonRacing_DisableMainPage",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "PyroArchonRacing_DisableMainPage": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "BONBLHALJBI",
+              "actorIceSubHurtDelta": -1,
+              "EIPHAHAIEPL": "DisablePyroArchonRacing"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_DisableMainPage_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_IncreaseOnce"
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 1,
+          "value": 0.20000000298023224,
+          "key": "GV_IncreaseOnce"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "CheckSpeedUpBall",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CheckSpeedUpBall": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LocalTeamTriggerMixin",
+              "actorIceSubHurtDelta": -1,
+              "triggerName": "PyroArchonRacing_SpeedUpBall_LCTri",
+              "IHIMIAKHJFH": {
+                "campTargetType": "All",
+                "GGIHLEMLIGN": "InterTarget",
+                "triggerType": "TriggerAlways",
+                "shapeName": "SphereR1",
+                "triggerCD": 0.10000000149011612
+              },
+              "CNOKKMALIAP": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByHasTag",
+                      "target": "Target",
+                      "tag": "SpeedUpBall"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "key": "GV_CanCollide"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "value": 1,
+                      "key": "GV_SpeedUpBall_Audio"
+                    },
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 1,
+                      "value": 1,
+                      "key": "GV_CanCollide"
+                    },
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "maxValue": 1,
+                      "value": 1,
+                      "key": "GV_PlayerEntered"
+                    },
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Target",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Target",
+                          "key": "SGV_Ball_Size"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "AddGlobalValueV2",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Team",
+                          "useLimitRange": true,
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "maxValue": 1,
+                          "value": "GV_IncreaseOnce",
+                          "key": "GV_NyxPoints"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "SetGlobalValueV2",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Team",
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "maxValue": 1,
+                          "value": 1,
+                          "key": "GV_NyxPoints"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "OFDNNHAMJIP": "RootNode"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_CheckSpeedUpBall_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_SlowMotionTimeScale",
+        "GV_SlowMotionTimeDuration",
+        "GV_AudioPattern"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SlowMotion_Init_Team",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Event_Receiver",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CheckCurveEvent_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LevelCurveMixin",
+              "actorIceSubHurtDelta": -1,
+              "EDFJOMKHLFM": [
+                [
+                  {
+                    "$type": "SetCurveProgressInfoToGlobalValue",
+                    "actorIceSubHurtDelta": -1,
+                    "canBeHandledOnRecover": true,
+                    "PFCIBLHFIAL": "GV_CurveEventParam_",
+                    "doOffStage": false
+                  },
+                  {
+                    "$type": "CopyGlobalValue",
+                    "actorIceSubHurtDelta": -1,
+                    "srcKey": "GV_CurveEventParam_0",
+                    "dstKey": "GV_SlowMotionTimeScale",
+                    "dstTarget": "Team",
+                    "predicates": [
+                      {
+                        "$type": "ByTargetGlobalValue",
+                        "target": "Target",
+                        "compareType": "MoreThan",
+                        "key": "GV_CurveEventParam_0"
+                      }
+                    ],
+                    "canBeHandledOnRecover": true,
+                    "doOffStage": false
+                  },
+                  {
+                    "$type": "CopyGlobalValue",
+                    "actorIceSubHurtDelta": -1,
+                    "srcKey": "GV_CurveEventParam_1",
+                    "dstKey": "GV_SlowMotionTimeDuration",
+                    "dstTarget": "Team",
+                    "predicates": [
+                      {
+                        "$type": "ByTargetGlobalValue",
+                        "target": "Target",
+                        "compareType": "MoreThan",
+                        "key": "GV_CurveEventParam_1"
+                      }
+                    ],
+                    "canBeHandledOnRecover": true,
+                    "doOffStage": false
+                  },
+                  {
+                    "$type": "CopyGlobalValue",
+                    "actorIceSubHurtDelta": -1,
+                    "srcKey": "GV_CurveEventParam_2",
+                    "dstKey": "GV_AudioPattern",
+                    "dstTarget": "Team",
+                    "predicates": [
+                      {
+                        "$type": "ByTargetGlobalValue",
+                        "target": "Target",
+                        "compareType": "MoreThan",
+                        "key": "GV_CurveEventParam_2"
+                      }
+                    ],
+                    "canBeHandledOnRecover": true,
+                    "doOffStage": false
+                  },
+                  {
+                    "$type": "SetGlobalValueV2",
+                    "actorIceSubHurtDelta": -1,
+                    "target": "Team",
+                    "canBeHandledOnRecover": true,
+                    "doOffStage": false,
+                    "value": 1,
+                    "key": "GV_Is_SlowMotion"
+                  }
+                ]
+              ],
+              "HPFCGICMFMF": [
+                "GV_CurveEventParam_0",
+                "GV_CurveEventParam_1",
+                "GV_CurveEventParam_2"
+              ],
+              "BEDOJLFENKK": [
+                "7.2_PyroArchonRacing_SlowMotion_Active"
+              ],
+              "tag": "ArcLight"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "CheckSlowMotion": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_Is_SlowMotion",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "PyroArchonRacing_SlowMotion"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Event_Receiver": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_Event_Transfer",
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "GV_Event_Transfer"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "RemoveModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "PyroArchonRacing_SlowMotion",
+                      "doOffStage": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_SlowMotion": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Is_SlowMotion"
+            },
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "abilityName": "DynamicAbility_Activity_PyroArchonRacing_DisableMainPage_V7_2",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "LPFPKHHKGIB": "Other"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_AudioPattern"
+            }
+          ],
+          "duration": "GV_SlowMotionTimeDuration",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "PBOKJOJNNLA",
+              "actorIceSubHurtDelta": -1,
+              "LOIJOKJAHJO": "GV_SlowMotionTimeDuration",
+              "AKCNDHOCGKJ": "GV_SlowMotionTimeScale",
+              "JKPEBFEJGDF": 5,
+              "JDEGPKNJGEF": 0.10000000149011612
+            },
+            {
+              "$type": "BONBLHALJBI",
+              "actorIceSubHurtDelta": -1,
+              "EIPHAHAIEPL": "DisablePyroArchonRacingSlowMotion"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "SlowMotion_Init_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 0.20000000298023224,
+              "key": "GV_SlowMotionTimeScale"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2,
+              "key": "GV_SlowMotionTimeDuration"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Is_SlowMotion"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "CheckSlowMotion",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "CheckCurveEvent_Avatar"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_SlowMotion_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_TotalProgress_QTE"
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "CurLocalAvatar",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_QteStart"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "useLimitRange": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 1,
+          "value": 1,
+          "key": "GV_NyxPoints"
+        },
+        {
+          "$type": "TriggerAbility",
+          "actorIceSubHurtDelta": -1,
+          "BDHBNCEEPPK": "CurLocalAvatar",
+          "abilityName": "DynamicAbility_Activity_PyroArchonRacing_SpeedUp_V7_2",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "LPFPKHHKGIB": "Other"
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "PyroArchonRacing_QTE_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "PyroArchonRacing_QTE_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LevelCurveMixin",
+              "actorIceSubHurtDelta": -1,
+              "EDFJOMKHLFM": [
+                [
+                  {
+                    "$type": "SetGlobalValueV2",
+                    "actorIceSubHurtDelta": -1,
+                    "predicates": [
+                      {
+                        "$type": "ByNot",
+                        "target": "Target",
+                        "predicates": [
+                          {
+                            "$type": "ByTargetGlobalValue",
+                            "target": "Team",
+                            "value": 1,
+                            "key": "GV_Event_Transfer"
+                          }
+                        ]
+                      }
+                    ],
+                    "canBeHandledOnRecover": true,
+                    "doOffStage": false,
+                    "maxValue": 1,
+                    "value": 1,
+                    "key": "GV_QteStart"
+                  }
+                ]
+              ],
+              "BEDOJLFENKK": [
+                "7.2_PyroArchonRacing_QTE_ShowUp"
+              ],
+              "tag": "ArcLight"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_QteStart",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "PyroArchonRacing_QTE_Start"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_QTE_Avatar_Pre": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_QteStart"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "PyroArchonRacing_QTE_Avatar",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_QTE_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "CEMHBBDAIOO": true,
+              "modifierName": "PyroArchonRacing_QTE_Avatar_Pre"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "PyroArchonRacing_QTE_Start": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "value": 1,
+                      "key": "GV_Event_Transfer"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AMEGAEEBPCC",
+                  "actorIceSubHurtDelta": -1,
+                  "FKJEGCGDMBB": 1,
+                  "EMLPJALDIBO": "TriggerSkill3Event",
+                  "FKKPPDDIIJO": "DynamicAbility_Activity_PyroArchonRacing_QTE_Fail_V7_2",
+                  "IJBFFHNHLCH": "ART/UI/Atlas/SkillIcons/Skill_S_Mavuika_04",
+                  "canBeHandledOnRecover": true,
+                  "pageName": "InLevelQuestMavuikaRacingDialog",
+                  "KKDKGJLMPEA": "DynamicAbility_Activity_PyroArchonRacing_QTE_V7_2",
+                  "doOffStage": false,
+                  "duHPRation": 3.5,
+                  "OMJLMBNKIPA": "RightShoulderEvent",
+                  "PHLNFCDEFPA": "DisablePyroArchonRacingQTE",
+                  "NAELHGHHMLI": "InLevelQTEBtn"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "TriggerAbility",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Team",
+                  "abilityName": "DynamicAbility_Activity_PyroArchonRacing_QTE_Fail_V7_2",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "LPFPKHHKGIB": "Other"
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "abilityName": "DynamicAbility_Activity_PyroArchonRacing_DisableMainPage_V7_2",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "LPFPKHHKGIB": "Other"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "TriggerWitchTimeMixin",
+              "AKHKDPFPCJN": true,
+              "actorIceSubHurtDelta": -1,
+              "IIGJJOFJGJC": 0.5,
+              "NECCFLFIBPF": 0.05000000074505806,
+              "DLCLPJEMPJB": 0.10000000149011612,
+              "duHPRation": 3.5
+            },
+            {
+              "$type": "CameraModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "ODEKOPPBIDO": [
+                "Normal",
+                "Locking",
+                "CurveMove"
+              ],
+              "HKNMIFLOKGI": {
+                "$type": "KOPOJKGHLDH",
+                "OIOHDNHEHPE": 1.2000000476837158,
+                "JCBINFMOIHM": 0.4000000059604645,
+                "priority": "SkillSpecial",
+                "fov": 45
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_QTE_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "CurLocalAvatar",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_QteStart"
+        }
+      ],
+      "abilityName": "DynamicAbility_Activity_PyroArchonRacing_QTE_Fail_V7_2",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "AudioGV_Monitor",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "AudioGV_Monitor": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_Is_SlowMotion",
+              "valueSteps": [
+                0.5,
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Audio_SlowMotion"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_QteStart",
+              "valueSteps": [
+                0.5,
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Audio_QTE"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "gvInTalk": true,
+              "JINJMNFMHBC": true,
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "GV_SpeedUpBall_Audio"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "TriggerAudioV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "pattern": "v7_2_MavikaRacing_EXP",
+                      "doOffStage": false
+                    },
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "GV_SpeedUpBall_Audio"
+                    }
+                  ]
+                }
+              ],
+              "HPFCGICMFMF": [
+                "GV_SpeedUpBall_Audio"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Audio_QTE": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "GV_QteStart"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_MavikaRacing_QTE",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Audio_SlowMotion": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 1,
+                  "key": "GV_AudioPattern"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_MavikaRacing_SlowMotionWhoosh_01",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "DynamicAbility_PyroArchRacing_Audio_Avatar",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "DefaultModifier",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Audio_SlowMotion": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerAudioV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "value": 2,
+                  "key": "GV_AudioPattern"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "pattern": "v7_2_MavikaRacing_SlowMotionWhoosh_02",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "DefaultModifier": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_Is_SlowMotion",
+              "valueSteps": [
+                0.5,
+                999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Audio_SlowMotion"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "OEMHPPCEMKH",
+              "actorIceSubHurtDelta": -1,
+              "DMDCAGGNGCI": true,
+              "JKOJOIPJANH": 999999,
+              "KKPIMBHLMHI": 20,
+              "OHFKKDDNOOG": 5
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_PyroArchonRacing_Audio",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Manager",
+          "doOffStage": false
+        },
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "SpeedUpBall"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 1,
+          "key": "GV_CanCollide"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 1,
+          "key": "GV_PlayerEntered"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "CheckPlayerEntered",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CheckPlayerEntered": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_PlayerEntered",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Pickup_SpeedUpBall"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Eff_Manager": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PhlogistonSeed_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "RootNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PhlogistonSeed_01",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "RootNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Pickup_SpeedUpBall": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Eff_Manager",
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PhlogistonParticle_Active",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73213008
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_SpeedUpBall_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Manager",
+          "doOffStage": false
+        },
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "SpeedUpBall"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 1,
+          "key": "GV_CanCollide"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "maxValue": 1,
+          "key": "GV_PlayerEntered"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "CheckPlayerEntered",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CheckPlayerEntered": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_PlayerEntered",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Pickup_SpeedUpBall"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Eff_Manager": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PhlogistonParticle02_Default",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "RootNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PhlogistonParticle02_Default",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "RootNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Pickup_SpeedUpBall": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Eff_Manager",
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_PhlogistonParticle02_Die",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73213009
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_SpeedUpBall_02",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "GV_BlockTrigger",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Eff",
+            "Delay"
+          ]
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "otherTargets": {
+            "$type": "MEINAOLKNBJ",
+            "KMOMNIEAJOK": {
+              "$type": "LIDABPKFBNF",
+              "target": "Target"
+            },
+            "MFMHOMKOLEF": {
+              "$type": "LIDABPKFBNF",
+              "target": "TargetVehicle"
+            }
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "GV_BlockTrigger"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "modifierName": "FollowEff",
+          "doOffStage": false
+        },
+        {
+          "$type": "ActCameraShake",
+          "actorIceSubHurtDelta": -1,
+          "cameraShake": {
+            "extension": {
+              "cycleDamping": 0.11999999731779099,
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.5,
+              "KDDPAEKEAPE": true,
+              "baseCycle": 0.11999999731779099
+            },
+            "shakeTime": 1,
+            "shakeDistance": 5,
+            "shakeRange": 0.699999988079071
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "born": {
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 1,
+          "key": "GV_BlockTrigger"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ForceExitSpeedUp",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Delay": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "Arklight_Item_Touch",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "FromGroup"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_BlockTrigger"
+            }
+          ],
+          "thinkInterval": 5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Eff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ArcShield_Spawn",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ArcShield_Destroy",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowEff": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "FollowEff_Avatar",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "FollowEff_Vehicle",
+              "doOffStage": false
+            }
+          ],
+          "duration": 2,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowEff_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ArcShield_Hit_Avatar",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 2,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FollowEff_Vehicle": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ArcShield_Hit",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "duration": 2,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ForceExitSpeedUp": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "GV_IsSpeedUp"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "CurLocalAvatar",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "GV_ForceExitSpeedUp"
+                }
+              ]
+            },
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "useLimitRange": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "maxValue": 1,
+              "value": -0.20000000298023224,
+              "key": "GV_NyxPoints"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Common_Property_Ani_PyroArchonRacing_HuGuang_Block",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Eff_Manager",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Dragon_Show": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_Dragon_Latertick",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Eff_Manager": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Motor_JetFxHandler",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Dragon_Show",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Trail_Show",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Motor_JetFxHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "Motor_IsSprint",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Motor_RunJetFx",
+                "Motor_SprintJetFx"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Motor_RunJetFx": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_RunJet_L_LateTick",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_RunJet_R_LateTick",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Motor_SprintJetFx": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintJet_L_LateTick",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor_SprintJet_R_LateTick",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Trail_Show": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Avatar_Lady_Claymore_Mavuika_Motor3C_ArcLoop_Trail",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_ShadowMavuika_Performance",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_SprintSpeed"
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Init",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "State_Manager",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "CurveMove_Manager",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "CurveMove_Manager": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LevelCurveMixin",
+              "actorIceSubHurtDelta": -1,
+              "EDFJOMKHLFM": [
+                [
+                  {
+                    "$type": "ChangeGadgetState",
+                    "actorIceSubHurtDelta": -1,
+                    "value": 201,
+                    "canBeHandledOnRecover": true,
+                    "configIdArray": [
+                      73213001
+                    ],
+                    "doOffStage": false
+                  }
+                ],
+                [
+                  {
+                    "$type": "ChangeGadgetState",
+                    "actorIceSubHurtDelta": -1,
+                    "canBeHandledOnRecover": true,
+                    "configIdArray": [
+                      73213001
+                    ],
+                    "doOffStage": false
+                  }
+                ]
+              ],
+              "BEDOJLFENKK": [
+                "7.2_PyroArchonRacing_ShadowMavuika_Sprint",
+                "7.2_PyroArchonRacing_ShadowMavuika_NormalRun"
+              ],
+              "tag": "OceanShip"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Init": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "Motor_IsSprint"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 27,
+              "key": "GV_SprintSpeed"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ShadowMavuika_NormalRun": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "Motor_IsSprint"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ShadowMavuika_Sprint": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "Motor_IsSprint"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OverrideCurveSpeedMixin",
+              "actorIceSubHurtDelta": -1,
+              "CFOJMJJEOFC": true,
+              "JIIFCLFLNBO": "GV_SprintSpeed",
+              "AMHOFDLHIFE": 0.30000001192092896,
+              "JKKIFHJPKGJ": 0.30000001192092896,
+              "AMGFHPIKHDB": "GV_SprintSpeed"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_Manager": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToGadgetStateMutexMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierNames": [
+                [
+                  "ShadowMavuika_NormalRun"
+                ],
+                [
+                  "ShadowMavuika_Sprint"
+                ]
+              ],
+              "gadgetStates": [
+                0,
+                201
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_ShadowMavuika_ActionLogic",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "DefaultModifier",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DefaultModifier": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_ShadowMavuika_Animation",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "State_Manager",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Door_Default": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Door_Enter": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_MavikaRacing_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_MavikaRacing_01",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "RootNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_Manager": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachToGadgetStateMutexMixin",
+              "actorIceSubHurtDelta": -1,
+              "modifierNames": [
+                [
+                  "Door_Default"
+                ],
+                [
+                  "Door_Enter"
+                ]
+              ],
+              "gadgetStates": [
+                0,
+                201
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_RacingEndDoor_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "DynamicShowUp_ShadowArcLight",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DynamicShowUp_ShadowArcLight": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SendPostionToShaderCutMixin",
+              "AJCHHGMNMFE": true,
+              "actorIceSubHurtDelta": -1,
+              "CJGLEKBOMCA": {
+                "$type": "FODOKCBNJJH"
+              },
+              "namedTransform": "RootNode",
+              "HGDIIGDKFCH": true,
+              "CLFKDBGHBGN": 1000,
+              "KIBJBLDPIBH": "_SpecialChaPos",
+              "FOPAPPHAJFC": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_ShadowArcLight_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

@@ -1,0 +1,886 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_Using"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMutexMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierNames": [
+            [
+              "DefaultState_0"
+            ],
+            [
+              "HasLightState_201"
+            ],
+            [
+              "HasLampDisabledState_301"
+            ],
+            [
+              "LockState_901"
+            ],
+            [
+              "LockState_902"
+            ]
+          ],
+          "gadgetStates": [
+            0,
+            201,
+            301,
+            901,
+            902
+          ]
+        },
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGadgetState"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "NoneOrEqual",
+                      "key": "GV_CarryingFaerieFire"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ShowReminder",
+                      "actorIceSubHurtDelta": -1,
+                      "muteRemoteAction": true,
+                      "canBeHandledOnRecover": true,
+                      "id": 1004390048,
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "GV_CarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ChangeGadgetState",
+                      "actorIceSubHurtDelta": -1,
+                      "BOEADPKMKGC": "WhiteList",
+                      "value": 201,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "PLNNNJAHCBP": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "predicates": [
+                    {
+                      "$type": "FGFGOFGAEHK",
+                      "target": "CurLocalAvatar",
+                      "stateIDs": [
+                        "Move"
+                      ]
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "GV_Using"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "key": "GV_Using"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "SetGlobalValueV2",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "value": 1,
+                      "key": "GV_Using"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "ShowReminder",
+              "actorIceSubHurtDelta": -1,
+              "muteRemoteAction": true,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "FGFGOFGAEHK",
+                      "target": "CurLocalAvatar",
+                      "stateIDs": [
+                        "Move"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "id": 1004550040,
+              "doOffStage": true
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "DefaultState_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetUIInteractHint",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_LEVEL_PutIceLight_01",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "LightNode"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ForceDisableState"
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_SpotlightPlatform_01_Glow03",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_SpotlightPlatform_01_Glow03",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "GlowEffectNode2"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "HasLampDisabledState_301": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ForceDisableState"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "HIJJCMPHDLA": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "HasLightState_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_SpotlightPlatform_01_Charge01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "LightNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "ChangeGadgetUIInteractHint",
+              "actorIceSubHurtDelta": -1,
+              "AOPKFGGMNFI": "UI_LEVEL_SpotlightPlatform_01",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Loop",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_IceCraftedFairyLamp_02_Loop",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "LightNode"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_ForceDisableState"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "HIJJCMPHDLA": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "LockState_901": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ForceDisableState"
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ZdyyLock_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ZdyyLock_01_Unlock",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "LockState_902": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_ForceDisableState"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_SpotlightPlatform",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_FairyLight_HitByMirror"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "GV_Using"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMutexMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierNames": [
+            [
+              "NotOriginObject"
+            ],
+            [
+              "NotOriginObject"
+            ],
+            [
+              "NotOriginObject"
+            ]
+          ],
+          "gadgetStates": [
+            0,
+            201,
+            202,
+            203
+          ]
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_FairyLight_HitByMirror",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            999
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Disable_0",
+            "Enable_201"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "FGFGOFGAEHK",
+                  "target": "CurLocalAvatar",
+                  "stateIDs": [
+                    "Move"
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "GV_Using"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "key": "GV_Using"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": 1,
+                  "key": "GV_Using"
+                }
+              ]
+            },
+            {
+              "$type": "ShowReminder",
+              "actorIceSubHurtDelta": -1,
+              "muteRemoteAction": true,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "FGFGOFGAEHK",
+                      "target": "CurLocalAvatar",
+                      "stateIDs": [
+                        "Move"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "id": 1004550040,
+              "doOffStage": true
+            }
+          ],
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "compareType": "MoreThanAndEqual",
+              "value": 1,
+              "key": "GV_FairyLight_HitByMirror"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Disable_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "EnableModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "GV_Using"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Enable_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "EnableModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "GV_Emitting"
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyTransferMirror_01_AS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyTransferMirror_01_AS",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "GlowEffectRoot"
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyTransferMirror_01_Glow",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyTransferMirror_01_Glow",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "followPath": "GlowEffectRoot"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "NotOriginObject": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetExtraButton",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetExtraButton",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "DHLDPLGIGOI": 1,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_MirrorTable_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 1,
+          "key": "GV_Emitting"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "RotateComponent",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "RotateComponent": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "targetKey": "_LaserControlTarget",
+              "otherTargets": {
+                "$type": "FODOKCBNJJH"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetPartControlTarget",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_LaserControlTarget"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "ActionSetTarget",
+              "partRootNames": [
+                "LaserControlParent"
+              ]
+            },
+            {
+              "$type": "EnablePartControl",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "partRootNames": [
+                "LaserControlParent"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnablePartControl",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "partRootNames": [
+                "LaserControlParent"
+              ]
+            }
+          ],
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_DirectionalTargetLine",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

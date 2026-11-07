@@ -1,0 +1,152 @@
+[
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetAnimatorTrigger",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "triggerID": "LookOn",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Karzelek_GripCutMachine",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Karzelek_GripCutMachine": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "HideUIBillBoard",
+              "actorIceSubHurtDelta": -1,
+              "hide": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "ResetAIThreatBroadcastRange",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAIHitFeeling",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_DenyLockOn",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_Invincible",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_MuteTaunt",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "State_IsGhostToEnemy",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HideUIBillBoard",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAIHitFeeling",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "VelocityForceMixin",
+              "actorIceSubHurtDelta": -1,
+              "excludeForces": [
+                "WindZoneType"
+              ]
+            },
+            {
+              "$type": "RejectAttackMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "attackTags": [
+                "Qin_VortexSmash",
+                "Sucrose_WindBlackHole",
+                "Faruzan_WindBlackHole"
+              ],
+              "type": "RejectAll"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_DenyLockOn": {
+          "state": "DenyLockOn",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_Invincible": {
+          "state": "Invincible",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_IsGhostToEnemy": {
+          "state": "IsGhostToEnemy",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_MuteTaunt": {
+          "state": "MuteTaunt",
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Karzelek_GripCutMachine",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

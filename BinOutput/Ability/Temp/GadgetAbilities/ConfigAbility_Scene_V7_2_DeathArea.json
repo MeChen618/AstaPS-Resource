@@ -1,0 +1,646 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_DeathArea_ScreenEffect_Level",
+        "GV_DeathArea_ScreenEffect_PrevLevel",
+        "GV_DeathArea_ScreenEffect_On"
+      ],
+      "onAdded": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Team",
+              "compareType": "MoreThan",
+              "key": "GV_DeathArea_ScreenEffect_Level"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_DeathArea_ScreenEffect_Cleaner",
+              "doOffStage": true
+            },
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "key": "GV_DeathArea_ScreenEffect_On"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CameraScreenEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "EHACCNBHAPM": true,
+                  "muteRemoteAction": true,
+                  "GKJHPJKDANC": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "value": 1,
+                  "key": "GV_DeathArea_ScreenEffect_On"
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "value": 2,
+                      "key": "GV_DeathArea_ScreenEffect_Level"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SendCameraScreenEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "muteRemoteAction": true,
+                      "canBeHandledOnRecover": true,
+                      "parameter": "FadeIn_02",
+                      "doOffStage": false,
+                      "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                    }
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "value": 2,
+                      "key": "GV_DeathArea_ScreenEffect_Level"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "SendCameraScreenEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "muteRemoteAction": true,
+                      "canBeHandledOnRecover": true,
+                      "parameter": "FadeIn_02",
+                      "doOffStage": false,
+                      "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "SendCameraScreenEffectTrigger",
+                      "actorIceSubHurtDelta": -1,
+                      "muteRemoteAction": true,
+                      "canBeHandledOnRecover": true,
+                      "parameter": "FadeIn_01",
+                      "doOffStage": false,
+                      "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "CopyGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "srcKey": "GV_DeathArea_ScreenEffect_Level",
+              "dstKey": "GV_DeathArea_ScreenEffect_PrevLevel",
+              "dstTarget": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "srcTarget": "Team"
+            }
+          ]
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DeathArea_ScreenEffect_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DeathArea_ScreenEffect_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "globalValueKey": "GV_DeathArea_ScreenEffect_Level",
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "value": "GV_DeathArea_ScreenEffect_PrevLevel",
+                      "key": "GV_DeathArea_ScreenEffect_Level"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PBIOEEHFHFD",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "MJKPCGCAPLK": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "value": 1,
+                          "key": "GV_DeathArea_ScreenEffect_Level"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "RemoveModifier",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Team",
+                          "canBeHandledOnRecover": true,
+                          "modifierName": "UNIQUE_DeathArea_ScreenEffect_Cleaner",
+                          "doOffStage": true
+                        },
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Team",
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Team",
+                              "key": "GV_DeathArea_ScreenEffect_On"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "CameraScreenEffect",
+                              "actorIceSubHurtDelta": -1,
+                              "EHACCNBHAPM": true,
+                              "muteRemoteAction": true,
+                              "GKJHPJKDANC": true,
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": true,
+                              "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                            },
+                            {
+                              "$type": "SetGlobalValueV2",
+                              "actorIceSubHurtDelta": -1,
+                              "target": "Team",
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": true,
+                              "value": 1,
+                              "key": "GV_DeathArea_ScreenEffect_On"
+                            }
+                          ],
+                          "failActions": [
+                            {
+                              "$type": "SendCameraScreenEffectTrigger",
+                              "actorIceSubHurtDelta": -1,
+                              "muteRemoteAction": true,
+                              "canBeHandledOnRecover": true,
+                              "parameter": "FadeIn_01",
+                              "doOffStage": false,
+                              "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                            }
+                          ]
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "PBIOEEHFHFD",
+                          "actorIceSubHurtDelta": -1,
+                          "target": "Team",
+                          "canBeHandledOnRecover": true,
+                          "doOffStage": false,
+                          "MJKPCGCAPLK": [
+                            {
+                              "$type": "ByTargetGlobalValue",
+                              "target": "Team",
+                              "value": 2,
+                              "key": "GV_DeathArea_ScreenEffect_Level"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "RemoveModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "target": "Team",
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "UNIQUE_DeathArea_ScreenEffect_Cleaner",
+                              "doOffStage": true
+                            },
+                            {
+                              "$type": "PBIOEEHFHFD",
+                              "actorIceSubHurtDelta": -1,
+                              "target": "Team",
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": false,
+                              "MJKPCGCAPLK": [
+                                {
+                                  "$type": "ByTargetGlobalValue",
+                                  "target": "Team",
+                                  "key": "GV_DeathArea_ScreenEffect_On"
+                                }
+                              ],
+                              "successActions": [
+                                {
+                                  "$type": "CameraScreenEffect",
+                                  "actorIceSubHurtDelta": -1,
+                                  "EHACCNBHAPM": true,
+                                  "muteRemoteAction": true,
+                                  "GKJHPJKDANC": true,
+                                  "canBeHandledOnRecover": true,
+                                  "doOffStage": true,
+                                  "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                                },
+                                {
+                                  "$type": "SetGlobalValueV2",
+                                  "actorIceSubHurtDelta": -1,
+                                  "target": "Team",
+                                  "canBeHandledOnRecover": true,
+                                  "doOffStage": true,
+                                  "value": 1,
+                                  "key": "GV_DeathArea_ScreenEffect_On"
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "SendCameraScreenEffectTrigger",
+                              "actorIceSubHurtDelta": -1,
+                              "muteRemoteAction": true,
+                              "canBeHandledOnRecover": true,
+                              "parameter": "FadeIn_02",
+                              "doOffStage": false,
+                              "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                            }
+                          ],
+                          "failActions": [
+                            {
+                              "$type": "PBIOEEHFHFD",
+                              "actorIceSubHurtDelta": -1,
+                              "target": "Team",
+                              "canBeHandledOnRecover": true,
+                              "doOffStage": false,
+                              "MJKPCGCAPLK": [
+                                {
+                                  "$type": "ByTargetGlobalValue",
+                                  "target": "Team",
+                                  "value": 2,
+                                  "key": "GV_DeathArea_ScreenEffect_PrevLevel"
+                                }
+                              ],
+                              "successActions": [
+                                {
+                                  "$type": "SendCameraScreenEffectTrigger",
+                                  "actorIceSubHurtDelta": -1,
+                                  "muteRemoteAction": true,
+                                  "canBeHandledOnRecover": true,
+                                  "parameter": "FadeOut_02",
+                                  "doOffStage": false,
+                                  "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                                }
+                              ],
+                              "failActions": [
+                                {
+                                  "$type": "SendCameraScreenEffectTrigger",
+                                  "actorIceSubHurtDelta": -1,
+                                  "muteRemoteAction": true,
+                                  "canBeHandledOnRecover": true,
+                                  "parameter": "FadeOut_01",
+                                  "doOffStage": false,
+                                  "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "AttachModifier",
+                              "actorIceSubHurtDelta": -1,
+                              "target": "Team",
+                              "canBeHandledOnRecover": true,
+                              "modifierName": "UNIQUE_DeathArea_ScreenEffect_Cleaner",
+                              "doOffStage": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "CopyGlobalValue",
+                      "actorIceSubHurtDelta": -1,
+                      "srcKey": "GV_DeathArea_ScreenEffect_Level",
+                      "dstKey": "GV_DeathArea_ScreenEffect_PrevLevel",
+                      "dstTarget": "Team",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "srcTarget": "Team"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_DeathArea_ScreenEffect_Cleaner": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "key": "GV_DeathArea_ScreenEffect_Level"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CameraScreenEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "muteRemoteAction": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+                },
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "key": "GV_DeathArea_ScreenEffect_On"
+                }
+              ]
+            }
+          ],
+          "duration": 5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "GV_DeathArea_ScreenEffect_On"
+        },
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_DeathArea_ScreenEffect_Cleaner",
+          "doOffStage": true
+        },
+        {
+          "$type": "CameraScreenEffect",
+          "actorIceSubHurtDelta": -1,
+          "muteRemoteAction": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+        }
+      ],
+      "abilityName": "V7_2_DynamicAbility_DeathArea_ScreenEffect_Team",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_SLT_ScreenEffect"
+      ],
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SLT_InTalk",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_SLT_ScreenEffect",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "SLT_ScreenEffect_Closed",
+            "SLT_ScreenEffect_Playing"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "SLT_InTalk": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "LEJEMKKPPAB",
+                  "target": "Target"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ServerLuaTriggerEvent",
+                  "sourceName": "SLT_InTalk",
+                  "actorIceSubHurtDelta": -1,
+                  "CallParamList": [
+                    133209125,
+                    133220829,
+                    133221105,
+                    133302790,
+                    133304613,
+                    133308906,
+                    133107321,
+                    133114058,
+                    133501723,
+                    133509661,
+                    133517157,
+                    133607384,
+                    133115278,
+                    133712205,
+                    133004273
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "luaCallType": "SpecificGroup"
+                },
+                {
+                  "$type": "DebugLog",
+                  "actorIceSubHurtDelta": -1,
+                  "content": "【圣土化】通知进入对话中",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SLT_ScreenEffect_Closed": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "muteRemoteAction": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SLT_ScreenEffect_Playing": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "muteRemoteAction": true,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CameraScreenEffect",
+              "actorIceSubHurtDelta": -1,
+              "muteRemoteAction": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "effectName": "Eff_SceneObj_POI_SLT_SlushaMovingShell_02"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SLT_InTalk",
+          "doOffStage": false
+        }
+      ],
+      "abilityName": "Quest_V7_2_SLT_ScreenEffect_Team",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "WidgetDisableMixin",
+          "actorIceSubHurtDelta": -1,
+          "HJGHNBCIBIP": true,
+          "MFCHONIKBEH": true
+        },
+        {
+          "$type": "HideActionSlotMixin",
+          "actorIceSubHurtDelta": -1,
+          "slotType": "SlotQuickUse"
+        }
+      ],
+      "abilityName": "V7_2_DynamicAbility_IceCreature_SkillDisable_Team",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

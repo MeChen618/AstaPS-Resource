@@ -1,0 +1,266 @@
+[
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_MONSTER_FUNGUSSTATE_"
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_MONSTER_FUNGUSSTATE_"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_MONSTER_FUNGUS_RAPTOR_ISCHARGED_"
+        },
+        {
+          "$type": "AttachAbilityStateResistance",
+          "actorIceSubHurtDelta": -1,
+          "durationRatio": 1,
+          "resistanceListID": 13002,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider"
+          ],
+          "setEnable": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Upper"
+          ],
+          "setEnable": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushColliderExtra"
+          ],
+          "setEnable": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_UpperExtra"
+          ],
+          "setEnable": true,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint_Upper"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint02"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint02_Upper"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_FaintSub"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_FaintSub_Upper"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_FaintExtra"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint_UpperExtra"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_FaintSubExtra"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_FaintSub_UpperExtra"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint02Extra"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "EnablePushColliderName",
+          "actorIceSubHurtDelta": -1,
+          "pushColliderNames": [
+            "PushCollider_Faint02_UpperExtra"
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_MONSTER_FUNGUSSTATE_",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_FungusNormalState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_FungusNormalState": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetPoseInt",
+              "intID": "FungusState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Fungus_Raptor_01_ActivityTeyvatDispatch_StateManager",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Regisvine_ActivityTeyvatDispatch_StateResistance",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Regisvine_ActivityTeyvatDispatch_StateResistance": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachAbilityStateResistance",
+              "actorIceSubHurtDelta": -1,
+              "durationRatio": 1,
+              "resistanceListID": 13002,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Regisvine_ActivityTeyvatDispatch_StateResistance",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

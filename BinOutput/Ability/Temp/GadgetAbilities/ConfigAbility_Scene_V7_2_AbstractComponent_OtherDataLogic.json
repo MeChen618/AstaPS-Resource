@@ -1,0 +1,738 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "IAttackableHandler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DisableHitPart": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "HitPart"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "EnableHitPart": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "HitPart"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "IAttackableHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "HitPart"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 201,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_MuteHitBox",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "RemoveAttackableHandler"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachToGadgetStateMutexMixin",
+              "actorIceSubHurtDelta": -1,
+              "CEBHIKGMAED": true,
+              "modifierNames": [
+                [
+                  "EnableHitPart"
+                ],
+                [
+                  "DisableHitPart"
+                ]
+              ],
+              "gadgetStates": [
+                0,
+                201
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "RemoveAttackableHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "IAttackableHandler",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_IAttackable",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ContinueDisableIntee",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "ContinueDisableIntee": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_WidgetSupportLock",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_DisableInteract",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "ContinueDisableInteeBySGV"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "ContinueDisableInteeBySGV": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_WidgetSupportLockBySGV",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "PlatformMoveMixin",
+          "moveModifiers": [
+            "DisableInteeDuringMove"
+          ],
+          "actorIceSubHurtDelta": -1
+        }
+      ],
+      "modifiers": {
+        "DisableInteeDuringMove": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_CrystalWall_Smoke_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 73154072
+              },
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_DisableInteeOnChild",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 73154042
+              },
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_DisableInteeOnChild",
+              "doOffStage": false
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByChildren",
+                "configID": 73154041
+              },
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_DisableInteeOnChild",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_DisableInteeOnChild": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetInteeMp",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_DisableWidgetSupportWhenPlatformMoving",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_UseExtendModel",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "EnableExtendModel"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "EnableExtendModel": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_IModelSwitchableByTeam",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_UseExtendModel",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "EnableDefaultModel",
+            "EnableExtendModel"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "EnableDefaultModel": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "EnableExtendModel": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_IModelSwitchableBySelf",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "AbstractComponent_IModelSwitchableBySelf_Collider",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "AbstractComponent_IModelSwitchableBySelf_Collider": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_UseExtendModel",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "EnableDefaultModel_Collider",
+                "EnableExtendModel_Collider"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "EnableDefaultModel_Collider": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            },
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "EnableExtendModel_Collider": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "DefaultModel"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            },
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "ExtendModel"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_IModelSwitchableBySelf_Collider",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

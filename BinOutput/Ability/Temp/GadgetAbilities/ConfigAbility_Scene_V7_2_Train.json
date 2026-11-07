@@ -1,0 +1,492 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "ReconnectHandler",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "SyncFollow",
+          "gadgetState": 201
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierName": "FetchLoop"
+        }
+      ],
+      "modifiers": {
+        "DelayFollowMove": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CNHGOAHFIJB",
+              "actorIceSubHurtDelta": -1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "FetchLoop": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "DBPHPMIHBCO",
+                "tag": "_PlayerTrainTag"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Target",
+                  "targetKey": "_CurrentFetchTarget",
+                  "predicates": [
+                    {
+                      "$type": "ILMHBGFOAJN",
+                      "target": "Target",
+                      "configIdArray": [
+                        73094085
+                      ]
+                    }
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ReconnectHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onReconnect": [
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "ReconnectEvent",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "FromGroup"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "RegisterPlatform": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "Applier",
+              "targetKey": "_TrainRotatePlatformTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifierToParent",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "DelayFollowMove",
+              "doOffStage": false,
+              "BFEHEAKKJJP": true
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "SyncFollow": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "modifierName": "RegisterPlatform",
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_CurrentFetchTarget"
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_TrainRotatePlatform",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "ChangeTag",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "doOffStage": false,
+          "tag": "_PlayerTrainTag"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_MoveToNextGraph",
+          "valueSteps": [
+            0.5,
+            1.5,
+            2.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "MoveToNextGraph",
+            "MoveToNextGraphPointOne"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "MoveToNextGraph": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DBLHPJDGCBN",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "MoveToNextGraphPointOne": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "DBLHPJDGCBN",
+              "actorIceSubHurtDelta": -1,
+              "HMIOBMPOBLA": 1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_PlayerTrain_HandleMoveToNext",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGadgetState"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "CurLocalAvatar",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "CallingTrain",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "CallingTrain": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "LOKKIPHDIGG",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "ServerLuaTriggerEvent",
+              "sourceName": "SafeReset",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                133721008
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 3,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_CallPlayerTrainTrigger",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "HandleHitEvent",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "TriggerTaunt",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "AbilityStateResistance_Handler",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "LowHP_Effect_Anim_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "AbilityStateResistance_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachAbilityStateResistance",
+              "actorIceSubHurtDelta": -1,
+              "durationRatio": 1,
+              "resistanceListID": 11002,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "HandleHitEvent": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_TriggerBeingHit"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "LowHP_Effect_Anim_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToHPPercentMixinV2",
+              "value": 1,
+              "actorIceSubHurtDelta": -1,
+              "MAAICOLCCAI": true,
+              "valueSteps": [
+                0.30000001192092896
+              ],
+              "modifierNameSteps": [
+                "LowHP_Effect_Anim_Handler_Default",
+                "LowHP_Effect_Anim_Handler_Low"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "LowHP_Effect_Anim_Handler_Default": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 301
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "LowHP_Effect_Anim_Handler_Low": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "GadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 201
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_TrainSteamEngine_Smoke_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TriggerTaunt": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "offset": {
+                  "y": 25,
+                  "x": -10
+                },
+                "topLimit": 100,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "shapeName": "Rect_SteamEngine"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerTaunt",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Other",
+                  "careValue": 50,
+                  "canBeHandledOnRecover": true,
+                  "tauntLevel": "Ability_TauntLevel_3",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_TrainSteamEngine",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

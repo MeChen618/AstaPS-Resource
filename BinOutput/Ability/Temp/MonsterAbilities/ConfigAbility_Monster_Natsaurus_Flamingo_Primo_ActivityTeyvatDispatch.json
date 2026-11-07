@@ -1,0 +1,727 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_FLAMINGO_PRIMO_ALERT_TAG_"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 1,
+          "key": "_FLAMINGO_PRIMO_STATE_"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_FLAMINGO_PRIMO_ENHANCED_"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachToAIAlertnessMixin",
+          "actorIceSubHurtDelta": -1,
+          "alertness": [
+            2,
+            3
+          ],
+          "modifierName": "Flamingo_Primo_AlertHandler"
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_FLAMINGO_PRIMO_ENHANCED_",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Common_Normal",
+            "Pose_Common_Enhanced"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Flamingo_Primo_AlertHandler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FLAMINGO_PRIMO_ALERT_TAG_"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FLAMINGO_PRIMO_STATE_"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FLAMINGO_PRIMO_ALERT_TAG_"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "defaultGlobalValueOnCreate": 1,
+              "enable": true,
+              "globalValueKey": "_FLAMINGO_PRIMO_STATE_",
+              "valueSteps": [
+                0.5,
+                1.5,
+                2.5,
+                3.5,
+                4.5,
+                5.5
+              ],
+              "modifierNameSteps": [
+                "Pose_Normal",
+                "Pose_NormalToEnhanced",
+                "Pose_Enhanced",
+                "Pose_EnhancedToNormal",
+                "Pose_Weak"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Pose_Common_Enhanced": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachActionToModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "onAdded": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider_Enhanced"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider",
+                    "PushCollider_VerBox1",
+                    "PushCollider_VerBox2",
+                    "PushCollider_Hor",
+                    "PushCollider_HorBox",
+                    "PushCollider_Head",
+                    "PushCollider_WingL",
+                    "PushCollider_WingR",
+                    "PushCollider_Extra1",
+                    "PushCollider_Extra2",
+                    "PushCollider_ExtraBox1",
+                    "PushCollider_ExtraBox2",
+                    "PushCollider_Occluder1",
+                    "PushCollider_Occluder2"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Enhanced"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Body",
+                    "HitBox_Head",
+                    "HitBox_Tail",
+                    "HitBox_WingL1",
+                    "HitBox_WingL2",
+                    "HitBox_WingR1",
+                    "HitBox_WingR2"
+                  ],
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Enhanced"
+                  ],
+                  "doOffStage": false
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider_Enhanced"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Enhanced"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider",
+                    "PushCollider_VerBox1",
+                    "PushCollider_VerBox2",
+                    "PushCollider_Hor",
+                    "PushCollider_HorBox",
+                    "PushCollider_Head",
+                    "PushCollider_WingL",
+                    "PushCollider_WingR",
+                    "PushCollider_Extra1",
+                    "PushCollider_Extra2",
+                    "PushCollider_ExtraBox1",
+                    "PushCollider_ExtraBox2",
+                    "PushCollider_Occluder1",
+                    "PushCollider_Occluder2"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Body",
+                    "HitBox_Head",
+                    "HitBox_Tail",
+                    "HitBox_WingL1",
+                    "HitBox_WingL2",
+                    "HitBox_WingR1",
+                    "HitBox_WingR2"
+                  ],
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Enhanced"
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            },
+            {
+              "$type": "OverrideAttachPointMixin",
+              "actorIceSubHurtDelta": -1,
+              "FPABOCLBMOL": [
+                "Fx_ChestNode",
+                "Fx_HeadNode"
+              ],
+              "NANFPLLHDEC": [
+                "Fx_ChestNode_Enhanced",
+                "Fx_HeadNode_Enhanced"
+              ]
+            },
+            {
+              "$type": "FMEOMIDBKNM",
+              "actorIceSubHurtDelta": -1,
+              "HNAPAGHFFFI": "BulletAim_Enhanced"
+            },
+            {
+              "$type": "SelectedPointsMaskMixin",
+              "actorIceSubHurtDelta": -1,
+              "points": [
+                "SelectedPoint_Transform"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Pose_Common_Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachActionToModifierMixin",
+              "actorIceSubHurtDelta": -1,
+              "onAdded": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider_Enhanced"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider",
+                    "PushCollider_VerBox1",
+                    "PushCollider_VerBox2",
+                    "PushCollider_Hor",
+                    "PushCollider_HorBox",
+                    "PushCollider_Head",
+                    "PushCollider_WingL",
+                    "PushCollider_WingR",
+                    "PushCollider_Extra1",
+                    "PushCollider_Extra2",
+                    "PushCollider_ExtraBox1",
+                    "PushCollider_ExtraBox2",
+                    "PushCollider_Occluder1",
+                    "PushCollider_Occluder2"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Enhanced"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Body",
+                    "HitBox_Head",
+                    "HitBox_Tail",
+                    "HitBox_WingL1",
+                    "HitBox_WingL2",
+                    "HitBox_WingR1",
+                    "HitBox_WingR2"
+                  ],
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Enhanced"
+                  ],
+                  "doOffStage": false
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider_Enhanced"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "MoveCollider"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider_Enhanced"
+                  ],
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnablePushColliderName",
+                  "actorIceSubHurtDelta": -1,
+                  "pushColliderNames": [
+                    "PushCollider",
+                    "PushCollider_VerBox1",
+                    "PushCollider_VerBox2",
+                    "PushCollider_Hor",
+                    "PushCollider_HorBox",
+                    "PushCollider_Head",
+                    "PushCollider_WingL",
+                    "PushCollider_WingR",
+                    "PushCollider_Extra1",
+                    "PushCollider_Extra2",
+                    "PushCollider_ExtraBox1",
+                    "PushCollider_ExtraBox2",
+                    "PushCollider_Occluder1",
+                    "PushCollider_Occluder2"
+                  ],
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Body",
+                    "HitBox_Head",
+                    "HitBox_Tail",
+                    "HitBox_WingL1",
+                    "HitBox_WingL2",
+                    "HitBox_WingR1",
+                    "HitBox_WingR2"
+                  ],
+                  "doOffStage": false
+                },
+                {
+                  "$type": "EnableHitBoxByName",
+                  "actorIceSubHurtDelta": -1,
+                  "setEnable": true,
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox_Enhanced"
+                  ],
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Pose_Enhanced": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetPoseInt",
+              "intID": "StateType",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 3
+            },
+            {
+              "$type": "SetAnimatorFloat",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "floatID": "Enhanced",
+              "doOffStage": false,
+              "PDIFFCBMGMO": 1
+            },
+            {
+              "$type": "SetSpecialCamera",
+              "actorIceSubHurtDelta": -1,
+              "specialCameraName": "Enhanced",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAISkillGCD",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 0.5
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FLAMINGO_PRIMO_ENHANCED_"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FLAMINGO_PRIMO_PWZC_KILL_"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FLAMINGO_PRIMO_PWZC_POS_KILL_"
+            },
+            {
+              "$type": "ServerMonsterLog",
+              "paramList": [
+                0,
+                1,
+                0
+              ],
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetPoseInt",
+              "intID": "EnhancedStage",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Pose_EnhancedToNormal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetPoseInt",
+              "intID": "StateType",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 4
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "WeakTag"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Pose_Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetPoseInt",
+              "intID": "StateType",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1
+            },
+            {
+              "$type": "SetPoseInt",
+              "intID": "EnhancedStage",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FLAMINGO_PRIMO_ENHANCED_"
+            },
+            {
+              "$type": "SetSpecialCamera",
+              "actorIceSubHurtDelta": -1,
+              "specialCameraName": "default",
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAISkillGCD",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 3
+            },
+            {
+              "$type": "ResetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "triggerID": "WeakTrigger",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "boolID": "WeakTag"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FLAMINGO_PRIMO_PWZC_KILL_"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_FLAMINGO_PRIMO_PWZC_POS_KILL_"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Pose_NormalToEnhanced": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetPoseInt",
+              "intID": "StateType",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Pose_Weak": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_FLAMINGO_PRIMO_ENHANCED_"
+            },
+            {
+              "$type": "SetPoseInt",
+              "intID": "StateType",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 5
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "triggerID": "WeakTrigger",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": true,
+              "boolID": "WeakTag"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "Monster_Natsaurus_Flamingo_Primo_ActivityTeyvatDispatch_MotionPose",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

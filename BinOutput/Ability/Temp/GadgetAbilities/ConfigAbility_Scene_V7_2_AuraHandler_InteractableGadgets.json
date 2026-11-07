@@ -1,0 +1,2754 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_AuraEnable_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_AuraEnable_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasStableFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasCrystalfly"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_AnyAuraEnabled"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasStableFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasCrystalfly"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_AnyAuraEnabled"
+            }
+          ],
+          "thinkInterval": 0.25,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "HPFCGICMFMF": [
+                "_HasCarryingFaerieFire",
+                "_HasStableFaerieFire",
+                "_HasCrystalfly"
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_HasCarryingFaerieFire"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_HasStableFaerieFire"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "_HasCrystalfly"
+            },
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_AuraEnable_Handler",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_EmptyCollider",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false,
+              "OCIBDNMMMGG": true
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_RuinsWall_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_SceneLightRevealed",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "_Progress",
+        "SGV_TargetHalfProgress",
+        "GV_TargetHalfProgress"
+      ],
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_Progress"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_ChargeMode"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 0.699999988079071,
+          "key": "GV_TargetHalfProgress"
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Target",
+              "compareType": "MoreThan",
+              "key": "SGV_TargetHalfProgress"
+            }
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": "SGV_TargetHalfProgress",
+          "key": "GV_TargetHalfProgress"
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "AuraDetector",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "EffectProgressController",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "StaticEffect",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_ChargeMode",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Discharge",
+            "ChargeToHalf",
+            "ChargeToFull"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachToGadgetStateMutexMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierNames": [
+            [
+              "Discharge_Already"
+            ],
+            [
+              "ChargeToHalf_Already"
+            ],
+            [
+              "ChargeToFull_Already"
+            ]
+          ],
+          "gadgetStates": [
+            0,
+            201,
+            301
+          ]
+        },
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueKey": "SGV_TargetHalfProgress",
+          "actions": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "key": "SGV_TargetHalfProgress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": "SGV_TargetHalfProgress",
+              "key": "GV_TargetHalfProgress"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "AuraDetector": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_ChargeMode"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "NoneOrEqual",
+                      "key": "_HasStableFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasCrystalfly"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_ChargeMode"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasCarryingFaerieFire"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_HasStableFaerieFire"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2,
+              "key": "_ChargeMode"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGadgetState",
+                  "gadgetState": 301
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 2,
+              "key": "_ChargeMode"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGadgetState",
+                  "gadgetState": 301
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_Progress"
+            }
+          ],
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "HPFCGICMFMF": [
+                "_HasCarryingFaerieFire",
+                "_HasStableFaerieFire",
+                "_HasCrystalfly"
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ChargeToFull": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "_Progress"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 0.10000000149011612,
+              "key": "_Progress"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "value": 1,
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_Progress"
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 301,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": 1,
+                  "key": "_Progress"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 301
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 201,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": "GV_TargetHalfProgress",
+                  "key": "_Progress"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "LessAndEqual",
+                  "value": 0.8999999761581421,
+                  "key": "_Progress"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 201
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 301
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": "GV_TargetHalfProgress",
+                      "key": "_Progress"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 301
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ChargeToFull_Already": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_CoreEffectEnabled",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "CoreEffectEnabled"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ChargeToHalf": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": "GV_TargetHalfProgress",
+                      "key": "_Progress"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 0.10000000149011612,
+              "key": "_Progress"
+            },
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "value": "GV_TargetHalfProgress",
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": -0.10000000149011612,
+              "key": "_Progress"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByAnd",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThan",
+                      "value": [
+                        "GV_TargetHalfProgress",
+                        0.05000000074505806,
+                        "SUB"
+                      ],
+                      "key": "_Progress"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": [
+                        "GV_TargetHalfProgress",
+                        0.05000000074505806,
+                        "ADD"
+                      ],
+                      "key": "_Progress"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": "GV_TargetHalfProgress",
+              "key": "_Progress"
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "value": 201,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThanAndEqual",
+                  "value": "GV_TargetHalfProgress",
+                  "key": "_Progress"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 201
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                0
+              ]
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": "GV_TargetHalfProgress",
+                      "key": "_Progress"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 301
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ChargeToHalf_Already": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "CoreEffectEnabled": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_01_Active",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_01_Active",
+              "type": "Bool",
+              "canBeHandledOnRecover": true,
+              "parameter": "Appear",
+              "doOffStage": true,
+              "value": 1
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Discharge": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": -0.10000000149011612,
+              "key": "_Progress"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "LessAndEqual",
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Progress"
+            },
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": "GV_TargetHalfProgress",
+                      "key": "_Progress"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGadgetState",
+                      "gadgetState": 301
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Discharge_Already": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "EffectProgressController": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "SendEffectTrigger",
+              "actorIceSubHurtDelta": -1,
+              "PJFLOFFGDGF": true,
+              "NLOODPBGAPM": "_Progress",
+              "type": "Float",
+              "canBeHandledOnRecover": true,
+              "parameter": "Blend",
+              "doOffStage": true,
+              "FLEFMCEEGJD": 0.15000000596046448
+            }
+          ],
+          "thinkInterval": 0.15000000596046448,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "StaticEffect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_01",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_01_Pattern",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_02",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_02": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_02_Pattern",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_02",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_03",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_03": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_03_Pattern",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_03",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_04",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_04": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_04_Pattern",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_04",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_05",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_05": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_05_Pattern",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_05",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_06",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_06": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_FairyPatternRune_06_Pattern",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_FairyPatternRune_AttachEffect_06",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachToGadgetStateMutexMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierNames": [
+            [
+              "State_Normal"
+            ],
+            [
+              "State_Active"
+            ]
+          ],
+          "gadgetStates": [
+            0,
+            201
+          ]
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "enable": true,
+          "globalValueKey": "_ABILITY_TPS_Avatar_IsScanEntity",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "ScanActive"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "value": 201,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                0
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                201
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "ScanActive": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_TpsHooklock_Active",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "TPSHook",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "TPSHook",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TPSHook": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedHook_01_Appear",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedHook_01_Disappear",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "SubTagScanEntityMixin",
+              "actorIceSubHurtDelta": -1,
+              "HFLGBIALBIO": "TPSHookPoint",
+              "tag": "Snezhnaya"
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_TPSHook",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "value": 1,
+          "key": "GV_IceCreatureSkill_A"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "DisableState",
+            "EnableState"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "DisableState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "EnableState": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "GKIAMKAIBCM",
+              "actorIceSubHurtDelta": -1,
+              "EHACCNBHAPM": true,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 1,
+              "LPMBCOFEEFM": -1,
+              "value": 3
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_Platform",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_PlatformLine_01",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_PlatformLine_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_AnyAuraEnabled"
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "FODOKCBNJJH"
+              },
+              "canBeHandledOnRecover": true,
+              "LAPMNDNLBLI": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "boolID": "Show"
+                }
+              ],
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "value": true,
+                  "boolID": "Show"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "SetAnimatorBool",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "boolID": "Show"
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_PlatformLine_01",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightReveal_Platform_LineControl",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AuraEnabledType",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "FaerieFireActive",
+            "CrystalflyActive"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "CrystalflyActive": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "value": 202,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                0
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FaerieFireActive": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "value": 201,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                0
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_TestTriggerBox",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AuraEnabledType",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "FaerieFireActive",
+            "CrystalflyActive"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "CrystalflyActive": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 202,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "FaerieFireActive": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 201,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_TestTriggerBox_CanReverse",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Model"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_AS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_Idle_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Model"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_DS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_03",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_TreasureBox_Normal",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "setEnable": true,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Model"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "GKJHPJKDANC": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_AS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_Idle_02",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Model"
+              ],
+              "doOffStage": false
+            },
+            {
+              "$type": "EnableGadgetIntee",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_DS",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_LightRevealedTreasure_03",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_TreasureBox_Special",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "SGV_CrystalFlay_Tag"
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_AnyAuraEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Normal",
+            "Active"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "WidgetMpSupportMixin",
+          "actorIceSubHurtDelta": -1,
+          "succActions": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "value": 301,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ]
+        },
+        {
+          "$type": "AttachToGadgetStateMutexMixin",
+          "actorIceSubHurtDelta": -1,
+          "modifierNames": [
+            [
+              "State_0"
+            ],
+            [
+              "State_201"
+            ],
+            [
+              "State_301"
+            ]
+          ],
+          "gadgetStates": [
+            0,
+            201,
+            301
+          ]
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "GENFIIMMOOJ",
+                "targetKey": "_CurrentOccupiedCrystalfly",
+                "OEGHBKOCAGD": {
+                  "$type": "GENFIIMMOOJ",
+                  "targetKey": "_HasCarryingFaerieFire_SourceEntity"
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Other",
+                  "value": "SGV_CrystalFlay_Tag",
+                  "key": "SGV_CrystalFlay_Tag"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "otherTargets": {
+                    "$type": "GENFIIMMOOJ",
+                    "targetKey": "_HasCarryingFaerieFire_SourceEntity"
+                  },
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "value": 1,
+                      "key": "_IsFollowedByCrystalfly"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "LessAndEqual",
+                      "value": 1,
+                      "key": "_OccupiedCrystalflyDistance"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ChangeGadgetState",
+                      "actorIceSubHurtDelta": -1,
+                      "BOEADPKMKGC": "WhiteList",
+                      "value": 201,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "PLNNNJAHCBP": [
+                        0
+                      ]
+                    },
+                    {
+                      "$type": "SetTargetToTargetKey",
+                      "actorIceSubHurtDelta": -1,
+                      "targetKey": "_CurrentPickedCrystalfly",
+                      "otherTargets": {
+                        "$type": "GENFIIMMOOJ",
+                        "targetKey": "_CurrentOccupiedCrystalfly",
+                        "OEGHBKOCAGD": {
+                          "$type": "GENFIIMMOOJ",
+                          "targetKey": "_HasCarryingFaerieFire_SourceEntity"
+                        }
+                      },
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "ChangeGadgetState",
+                      "actorIceSubHurtDelta": -1,
+                      "BOEADPKMKGC": "WhiteList",
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "PLNNNJAHCBP": [
+                        201
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                201
+              ]
+            }
+          ],
+          "thinkInterval": 0.5,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "KillCrystalfly": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalDir",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "Applier",
+              "CKEFLFOBBBL": "Target",
+              "DLGIAFKDMKB": true,
+              "canBeHandledOnRecover": true,
+              "setTarget": true,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "$type": "ConfigDirectionByLookAtEntity",
+                  "namedTransform": "EffPoint",
+                  "maxAngle": 180
+                }
+              },
+              "key": "_Dir"
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Crystalfly_ColorfulWhite_Die",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "$type": "ConfigDirectionByGlobalValue",
+                  "directionKey": "_Dir",
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                73154011
+              ],
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Normal": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ChangeGadgetState",
+              "actorIceSubHurtDelta": -1,
+              "BOEADPKMKGC": "WhiteList",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "PLNNNJAHCBP": [
+                201
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "RegisterSelfToCrystalfly": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetTargetToTargetKey",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "Applier",
+              "targetKey": "_Ability_CrystalflyFollowTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "duration": 0.20000000298023224,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "State_0": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "DKHMELDDOOE": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_201": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "DKHMELDDOOE": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "State_301": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_CurrentPickedCrystalfly"
+              },
+              "value": 1,
+              "key": "_SpecialControlState"
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "modifierName": "RegisterSelfToCrystalfly",
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_CurrentPickedCrystalfly"
+              }
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "TempTarget",
+              "canBeHandledOnRecover": true,
+              "modifierName": "KillCrystalfly",
+              "doOffStage": false,
+              "isOnStageFalseSwitchValue": {
+                "__unk_Q16140806": "_CurrentPickedCrystalfly"
+              }
+            },
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_InertCrystalFlower_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ShaderStateMachineSwitchMixin",
+              "actorIceSubHurtDelta": -1,
+              "BGOJEEJGDLD": 1,
+              "LPMBCOFEEFM": -1,
+              "value": 1,
+              "DKHMELDDOOE": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_LightAura_InertCrystalFlower",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

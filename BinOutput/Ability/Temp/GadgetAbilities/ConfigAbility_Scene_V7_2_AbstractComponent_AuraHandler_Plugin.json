@@ -1,0 +1,399 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "NearestCarryingFaerieFireCache_Scanner",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "NearestCarryingFaerieFireCache_Scanner": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "FNGLPHOJLLM",
+                  "target": "Target",
+                  "JOCPBNBKLJI": "Target"
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "DBPHPMIHBCO",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "_IsAuraSource_CarryingFaerieFire"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Target",
+                  "targetKey": "_HasCarryingFaerieFire_SourceEntity",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.30000001192092896,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "HPFCGICMFMF": [
+                "_HasCarryingFaerieFire",
+                "_HasStableFaerieFire",
+                "_HasCrystalfly"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_AuraHandler_Plugin_NearestCarryingFaerieFireCache",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "NearestStableFaerieFireCache_Scanner",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "NearestStableFaerieFireCache_Scanner": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "FNGLPHOJLLM",
+                  "target": "Target",
+                  "JOCPBNBKLJI": "Target"
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "DBPHPMIHBCO",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "_IsAuraSource_StableFaerieFire"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Target",
+                  "targetKey": "_HasStableFaerieFire_SourceEntity",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.20000000298023224,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "HPFCGICMFMF": [
+                "_HasCarryingFaerieFire",
+                "_HasStableFaerieFire",
+                "_HasCrystalfly"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_AuraHandler_Plugin_NearestStableFaerieFireCache",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "NearestCrystalflyCache_Scanner",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "NearestCrystalflyCache_Scanner": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "TriggerThinkInterval",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "FNGLPHOJLLM",
+                  "target": "Target",
+                  "JOCPBNBKLJI": "Target"
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "DBPHPMIHBCO",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "_IsAuraSource_Crystalfly"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "successActions": [
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Target",
+                  "targetKey": "_HasCrystalfly_SourceEntity",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "thinkInterval": 0.30000001192092896,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "JEGMMGHBFCJ",
+              "actorIceSubHurtDelta": -1,
+              "gvInTalk": true,
+              "actions": [
+                {
+                  "$type": "TriggerThinkInterval",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                }
+              ],
+              "HPFCGICMFMF": [
+                "_HasCarryingFaerieFire",
+                "_HasStableFaerieFire",
+                "_HasCrystalfly"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_AuraHandler_Plugin_NearestCrystalflyCache",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "_Progress"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "_HasCarryingFaerieFire",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            999
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Discharge",
+            "Charge"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Charge": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Target",
+                      "compareType": "MoreThanAndEqual",
+                      "value": 1,
+                      "key": "_Progress"
+                    }
+                  ]
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 0.05000000074505806,
+              "key": "_Progress"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "value": 1,
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": 1,
+              "key": "_Progress"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.05000000074505806,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Discharge": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "MoreThan",
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "value": -0.05000000074505806,
+              "key": "_Progress"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "LessAndEqual",
+                  "key": "_Progress"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "key": "_Progress"
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 0.05000000074505806,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "AbstractComponent_AuraHandlerProgress_Plugin",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]

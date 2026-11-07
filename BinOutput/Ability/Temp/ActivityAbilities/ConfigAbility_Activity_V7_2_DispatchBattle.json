@@ -1,0 +1,1455 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DispatchBattle_TSkill_Manager_1_Team",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DispatchBattle_TSkill_Manager_1_LocalAvatars": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "DispatchBattle_TSkill_Type_1_Trigger"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Manager_1_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_BattleScore"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AMPBGBFMKOB",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DispatchBattle_TSkill_Manager_1_LocalAvatars"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_BattleScore"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_Team_Buff_TSkill",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_DispatchBattle_TSkill_Type_1_Appear"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ],
+                9999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "TSkillReady"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Type_1_Trigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass",
+                "Overgrow",
+                "Burning",
+                "MoonOvergrow",
+                "Explode",
+                "Shock",
+                "MoonShock",
+                "Superconductor",
+                "SwirlFire",
+                "SwirlWater",
+                "SwirlElectric",
+                "SwirlIce",
+                "Stream",
+                "Melt",
+                "Freeze",
+                "FrozenBroken",
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce",
+                "MoonCrystallizeWater",
+                "StarSuperconductor",
+                "StarSwirlIce"
+              ],
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "FCFFCIKEOKH",
+                      "target": "Target"
+                    },
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "TSkillEnergy_TriggerCD"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "compareType": "MoreThanAndEqual",
+                          "value": "EnergyMax",
+                          "key": "GV_DispatchBattle_TSkillEnergy"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TSkillEnergyWatcher_ByTrigger",
+                      "doOffStage": true
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TSkillEnergy_TriggerCD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "HideAction_T": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTime": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTimeDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTrigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTriggerDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "param2": 1,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergy_TriggerCD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "duration": "EnergyTriggerCD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillReady": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TSkillReady"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_DispatchBattle_TSkill_Type_1_Appear": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "LessAndEqual",
+                  "value": "EnergyMax",
+                  "key": "GV_DispatchBattle_TSkillEnergy"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "TSkillEnergyWatcher_ByTime",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": "EnergyTimeCD",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Auto",
+              "PEONHILPDLC": 20227
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                -0.5,
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ]
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "HideAction_T"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_DispatchBattle_TSkill_Manager_1",
+      "abilitySpecials": {
+        "EnergyMax": 6000,
+        "EnergyTimeCD": 1,
+        "EnergyTimeDelta": 140,
+        "EnergyTriggerCD": 6,
+        "EnergyTriggerDelta": 1500
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DispatchBattle_TSkill_Manager_2_Team",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DispatchBattle_TSkill_Manager_2_LocalAvatars": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "DispatchBattle_TSkill_Type_2_Trigger"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Manager_2_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_BattleScore"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AMPBGBFMKOB",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DispatchBattle_TSkill_Manager_2_LocalAvatars"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_BattleScore"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_Team_Buff_TSkill",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_DispatchBattle_TSkill_Type_2_Appear"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ],
+                9999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "TSkillReady"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Type_2_Trigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce",
+                "MoonCrystallizeWater"
+              ],
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "TSkillEnergy_TriggerCD"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "compareType": "MoreThanAndEqual",
+                          "value": "EnergyMax",
+                          "key": "GV_DispatchBattle_TSkillEnergy"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TSkillEnergyWatcher_ByTrigger",
+                      "doOffStage": true
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TSkillEnergy_TriggerCD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "HideAction_T": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTime": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTimeDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTrigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTriggerDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "param2": 2,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergy_TriggerCD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "duration": "EnergyTriggerCD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillReady": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TSkillReady"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_DispatchBattle_TSkill_Type_2_Appear": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "LessAndEqual",
+                  "value": "EnergyMax",
+                  "key": "GV_DispatchBattle_TSkillEnergy"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "TSkillEnergyWatcher_ByTime",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": "EnergyTimeCD",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Auto",
+              "PEONHILPDLC": 20228
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                -0.5,
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ]
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "HideAction_T"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_DispatchBattle_TSkill_Manager_2",
+      "abilitySpecials": {
+        "EnergyMax": 6000,
+        "EnergyTimeCD": 1,
+        "EnergyTimeDelta": 140,
+        "EnergyTriggerCD": 6,
+        "EnergyTriggerDelta": 1500
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DispatchBattle_TSkill_Manager_3_Team",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DispatchBattle_TSkill_Manager_3_LocalAvatars": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "DispatchBattle_TSkill_Type_3_Trigger"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Manager_3_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_BattleScore"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AMPBGBFMKOB",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DispatchBattle_TSkill_Manager_3_LocalAvatars"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_BattleScore"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_Team_Buff_TSkill",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_DispatchBattle_TSkill_Type_3_Appear"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ],
+                9999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "TSkillReady"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Type_3_Trigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "Overgrow",
+                "MoonOvergrow",
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass"
+              ],
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "TSkillEnergy_TriggerCD"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Team",
+                          "compareType": "MoreThanAndEqual",
+                          "value": "EnergyMax",
+                          "key": "GV_DispatchBattle_TSkillEnergy"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TSkillEnergyWatcher_ByTrigger",
+                      "doOffStage": true
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "TSkillEnergy_TriggerCD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "HideAction_T": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTime": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTimeDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTrigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTriggerDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "param2": 3,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergy_TriggerCD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "duration": "EnergyTriggerCD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillReady": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TSkillReady"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_DispatchBattle_TSkill_Type_3_Appear": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "LessAndEqual",
+                  "value": "EnergyMax",
+                  "key": "GV_DispatchBattle_TSkillEnergy"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "TSkillEnergyWatcher_ByTime",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": "EnergyTimeCD",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Auto",
+              "PEONHILPDLC": 20229
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                -0.5,
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ]
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "HideAction_T"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_DispatchBattle_TSkill_Manager_3",
+      "abilitySpecials": {
+        "EnergyMax": 6000,
+        "EnergyTimeCD": 1,
+        "EnergyTimeDelta": 140,
+        "EnergyTriggerCD": 6,
+        "EnergyTriggerDelta": 1500
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "modifierName": "DispatchBattle_TSkill_Manager_4_Team",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "DispatchBattle_TSkill_Manager_4_Avatar": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_TSkillEnergy_NyxCostAccum"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "DispatchBattle_TSkill_Type_4_Trigger"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Manager_4_Team": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_BattleScore"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "DispatchBattle_TSkill_Manager_4_Avatar"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "ServerUpdateGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "key": "GV_DispatchBattle_BattleScore"
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_Team_Buff_TSkill",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_DispatchBattle_TSkill_Type_4_Appear"
+              ],
+              "PNELLOCFHCP": true
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ],
+                9999
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "TSkillReady"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "DispatchBattle_TSkill_Type_4_Trigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "NyxValueMonitorMixin",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "MLFIAAKKLPH": 1,
+              "ratio": 1,
+              "DPNLHBANFBN": "GV_TSkillEnergy_NyxCostAccum",
+              "type": "Reduce",
+              "AACDBJJHBBO": true,
+              "maxValue": 999
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "removeAppliedModifier": true,
+              "enable": true,
+              "globalValueKey": "GV_TSkillEnergy_NyxCostAccum",
+              "valueSteps": [
+                0.8999999761581421,
+                1000
+              ],
+              "modifierNameSteps": [
+                "TSkillEnergyWatcher_ByNyxCost_Handler"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "HideAction_T": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurTeamAvatars",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_TSkillEnergy_NyxCostAccum"
+            }
+          ],
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "HideActionSlotMixin",
+              "actorIceSubHurtDelta": -1,
+              "slotType": "SlotCharge"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByNyxCost_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Team",
+                      "modifierName": "TSkillEnergy_TriggerCD"
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Team",
+                      "compareType": "MoreThanAndEqual",
+                      "value": "EnergyMax",
+                      "key": "GV_DispatchBattle_TSkillEnergy"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "TSkillEnergyWatcher_ByTrigger",
+                  "doOffStage": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "TSkillEnergy_TriggerCD",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTime": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTimeDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergyWatcher_ByTrigger": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "param1": "EnergyTriggerDelta",
+              "actorIceSubHurtDelta": -1,
+              "paramNum": 2,
+              "canBeHandledOnRecover": true,
+              "param2": 4,
+              "doOffStage": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TriggerEnergyWatcher"
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillEnergy_TriggerCD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_TSkillEnergy_NyxCostAccum"
+            }
+          ],
+          "duration": "EnergyTriggerCD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "TSkillReady": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_TSkillReady"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_DispatchBattle_TSkill_Type_4_Appear": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "compareType": "LessAndEqual",
+                  "value": "EnergyMax",
+                  "key": "GV_DispatchBattle_TSkillEnergy"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "TSkillEnergyWatcher_ByTime",
+              "doOffStage": true
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": "EnergyTimeCD",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "ActivitySkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "priority": "Auto",
+              "PEONHILPDLC": 20230
+            },
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "GV_DispatchBattle_TSkillEnergy",
+              "valueSteps": [
+                -0.5,
+                [
+                  "EnergyMax",
+                  0.5,
+                  "SUB"
+                ]
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "HideAction_T"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_DispatchBattle_TSkill_Manager_4",
+      "abilitySpecials": {
+        "EnergyMax": 6000,
+        "EnergyTimeCD": 1,
+        "EnergyTimeDelta": 140,
+        "EnergyTriggerCD": 6,
+        "EnergyTriggerDelta": 1500
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

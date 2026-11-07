@@ -1,0 +1,4765 @@
+[
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV1_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV2_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV2_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV1_AttackUp": {
+          "reApplyModifierOnStateChange": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_AttackRatio": "AttackRatio"
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV1_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_HexenzirkelLevel",
+              "valueSteps": [
+                1.5,
+                6
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV1_AttackUp"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV2_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass",
+                "Overgrow",
+                "Burning",
+                "MoonOvergrow",
+                "Explode",
+                "Shock",
+                "MoonShock",
+                "Superconductor",
+                "SwirlFire",
+                "SwirlWater",
+                "SwirlElectric",
+                "SwirlIce",
+                "Stream",
+                "Melt",
+                "Freeze",
+                "FrozenBroken",
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce",
+                "MoonCrystallizeWater",
+                "StarSuperconductor",
+                "StarSwirlIce"
+              ],
+              "actions": [
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "V7_2_TeyvatDispatch_Mondstadt_LV2_Pos"
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "FCFFCIKEOKH",
+                      "target": "Target"
+                    },
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV2_CD"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Stages_SwirlDoField_DoAttack_02",
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": true,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "positionKey": "V7_2_TeyvatDispatch_Mondstadt_LV2_Pos",
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "KBOBCHGAMFB": "Caster",
+                        "onGround": true,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    },
+                    {
+                      "$type": "TriggerAttackEvent",
+                      "actorIceSubHurtDelta": -1,
+                      "attackEvent": {
+                        "attackPattern": {
+                          "$type": "ConfigAttackSphere",
+                          "radius": 8.5,
+                          "massiveAttackRatio": 1,
+                          "MPNIJNGFBIH": {
+                            "INOCAOHPEBB": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            }
+                          },
+                          "triggerType": "TriggerNoRepeat",
+                          "born": {
+                            "$type": "ConfigBornByGlobalValue",
+                            "positionKey": "V7_2_TeyvatDispatch_Mondstadt_LV2_Pos",
+                            "APKLAIJMEIL": {
+                              "HHNLJKNBKPP": 180
+                            },
+                            "value": 10,
+                            "onGroundRaycastUpDist": 2,
+                            "KBOBCHGAMFB": "Caster",
+                            "onGround": true,
+                            "direction": {
+                              "maxAngle": 180
+                            }
+                          }
+                        },
+                        "attackInfo": {
+                          "HBOOKFMCODC": {
+                            "BPIJOAMNKIH": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            },
+                            "onHitEffectName": "default"
+                          },
+                          "attackProperty": {
+                            "HJHPJLGAHHP": true,
+                            "damageExtra": [
+                              "ElementLevelCo",
+                              "DamageRatio",
+                              "MUL"
+                            ],
+                            "enBreak": 25,
+                            "JHLDBJEFNBP": true,
+                            "elementRank": 1,
+                            "EKBLGIOPKKA": true,
+                            "attackType": "Default"
+                          },
+                          "INKGMIHAPMA": {
+                            "NDIBGPPKGJP": "Shake"
+                          },
+                          "attenuationGroup": "default",
+                          "cameraShake": {
+                            "extension": {
+                              "cycleDamping": 0.11999999731779099,
+                              "baseOnCamera": true,
+                              "rangeAttenuation": 0.5,
+                              "baseCycle": 0.11999999731779099
+                            },
+                            "shakeDistance": 20
+                          },
+                          "hitPattern": {
+                            "hitHaltTimeScale": 0.009999999776482582,
+                            "BPIJOAMNKIH": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            },
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV3"
+                          }
+                        }
+                      },
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": true,
+                      "targetType": "Enemy"
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV2_CD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_LV2_CD": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "duration": "CD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Mondstadt",
+      "abilitySpecials": {
+        "AttackRatio": 0,
+        "CD": 0,
+        "DamageRatio": 0,
+        "ElementLevelCo": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "ServerLuaCall",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "luaCallType": "CurGalleryControlGroup",
+          "funcName": "SLC_TSkillTrigger"
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_T_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_T_Handler": {
+          "onThinkIntervalIsFixedUpdate": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_T_Trigger",
+              "doOffStage": false
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_T_Trigger",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "thinkInterval": 3,
+          "duration": 7,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Mondstadt_T_Trigger": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ANIMAL_ENTITY_TYPE"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "campBasedOn": "CurLocalAvatar",
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "centerBasedOn": "CurLocalAvatar",
+                "shapeName": "CircleR50H40C",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "TriggerBullet",
+                  "actorIceSubHurtDelta": -1,
+                  "BCJIANHJLBB": "CurLocalAvatar",
+                  "BDHBNCEEPPK": "Other",
+                  "trackTarget": "Other",
+                  "bulletID": 40034320,
+                  "canBeHandledOnRecover": true,
+                  "KGHIIEPKAAM": true,
+                  "LIJMFDEDPEH": "Team",
+                  "doOffStage": true,
+                  "MLDOBLJCKCK": true,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 30
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "$type": "ConfigDirectionByAttackTarget",
+                      "maxAngle": 180
+                    }
+                  },
+                  "EPHBNJHPPML": 1001
+                }
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Mondstadt_T",
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "FireEffect",
+          "actorIceSubHurtDelta": -1,
+          "effectPattern": "Eff_Monster_Dvalin_S04_DeathCannon_Explode_7_2_Activity",
+          "scale": 1,
+          "canBeHandledOnRecover": true,
+          "effectTempleteID": -1,
+          "doOffStage": false,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "useRotation": true,
+            "APKLAIJMEIL": {
+              "HHNLJKNBKPP": 180
+            },
+            "alongGround": true,
+            "value": 10,
+            "onGroundRaycastUpDist": 2,
+            "onGround": true,
+            "direction": {
+              "maxAngle": 180
+            }
+          }
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "actorIceSubHurtDelta": -1,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackSphere",
+              "radius": 12,
+              "massiveAttackRatio": 1,
+              "MPNIJNGFBIH": {
+                "INOCAOHPEBB": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                }
+              },
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            "attackInfo": {
+              "HBOOKFMCODC": {
+                "BPIJOAMNKIH": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                },
+                "onHitEffectName": "default"
+              },
+              "attackProperty": {
+                "HJHPJLGAHHP": true,
+                "damageExtra": [
+                  "Dvalin_Bullet_DamageRatio",
+                  "ElementLevelCo",
+                  "MUL"
+                ],
+                "elementType": "Wind",
+                "enBreak": 500,
+                "JHLDBJEFNBP": true,
+                "elementRank": 1,
+                "EKBLGIOPKKA": true,
+                "ELIEOGNBGKG": 1,
+                "attackType": "Default"
+              },
+              "INKGMIHAPMA": {
+                "NDIBGPPKGJP": "Shake"
+              },
+              "attenuationGroup": "default",
+              "canBeModifiedBy": "OriginOwner",
+              "attackTag": "SummonAttack",
+              "cameraShake": {
+                "extension": {
+                  "cycleDamping": 0.11999999731779099,
+                  "baseOnCamera": true,
+                  "rangeAttenuation": 0.5,
+                  "baseCycle": 0.11999999731779099
+                },
+                "shakeDistance": 20
+              },
+              "hitPattern": {
+                "BPIJOAMNKIH": {
+                  "value": 1,
+                  "GGOHGMFHHEC": true
+                },
+                "onHitEffectName": "none",
+                "retreatType": "ByHitDirection",
+                "hitImpulseType": "LV3"
+              }
+            }
+          },
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KillSelf",
+          "actorIceSubHurtDelta": -1,
+          "killSelfType": "Normal",
+          "canBeHandledOnRecover": true,
+          "configIdArray": [
+            40034320
+          ],
+          "doOffStage": false
+        },
+        {
+          "$type": "RemoveModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "V7_2_Dvalin_Bullet_Effect",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "V7_2_Dvalin_Bullet_Effect",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "V7_2_Dvalin_Bullet_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Dvalin_S04_DeathCannon_Shoot_7_2_Activity",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Mondstadt_Dvalin_Bullet",
+      "abilitySpecials": {
+        "Dvalin_Bullet_DamageRatio": 0,
+        "ElementLevelCo": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": true,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV1_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV2_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV1_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce",
+                "MoonCrystallizeWater"
+              ],
+              "actions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV1_Buff_OnTeam",
+                  "doOffStage": true
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV1_Buff_OnAvatars": {
+          "reApplyModifierOnStateChange": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_DefenceRatio": "DefenceRatio"
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV1_Buff_OnTeam": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "duration": "Duration",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AMPBGBFMKOB",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV1_Buff_OnAvatars"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_Aoe_01": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_Muqadas_Potion_Rock_Explode_Big",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 12.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 0.20000000298023224
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 2
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "AoeDamage",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Rock",
+                    "enBreak": 15,
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "attackType": "Default"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "AllExceptSelf",
+                "sizeRatio": 1,
+                "topLimit": 2,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "shapeName": "CircleR12_5H10",
+                "sortType": "Nearest"
+              },
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Gadget",
+                    "Bullet",
+                    "Field"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "value": 1,
+                  "key": "_COMMON_GADGET_ISSUMMON"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_COMMON_GADGET_ISSUMMON_NOT_ROCK"
+                }
+              ],
+              "canBeHandledOnRecover": true,
+              "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_Aoe_02",
+              "doOffStage": false
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_Aoe_02": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_Muqadas_Potion_Rock_Explode_Big",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 12.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 0.20000000298023224
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 2
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "AoeDamage2",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Rock",
+                    "enBreak": 15,
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "attackType": "Default"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "targetType": "Enemy"
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce",
+                "MoonCrystallizeWater"
+              ],
+              "actions": [
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_CD"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "CurLocalAvatar",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_Aoe_01",
+                      "doOffStage": true
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_CD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_LV2_CD": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "duration": "CD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Inazuma",
+      "abilitySpecials": {
+        "AoeDamage": 0,
+        "AoeDamage2": 0,
+        "CD": 0,
+        "DefenceRatio": 0,
+        "Duration": 0,
+        "ElementLevelCo": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "ServerLuaCall",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "luaCallType": "CurGalleryControlGroup",
+          "funcName": "SLC_TSkillTrigger"
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Inazuma_T_Trigger",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_V7_2_TeyvatDispatch_Inazuma_T_Trigger": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ANIMAL_ENTITY_TYPE"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "campBasedOn": "CurLocalAvatar",
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "centerBasedOn": "CurLocalAvatar",
+                "shapeName": "CircleR50H40C",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "V7_2_Inazuma_T_Aoe_01",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Inazuma_T_Aoe_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Inazuma",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": 2
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "y": 2
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Electric",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Inazuma_T_Aoe_02",
+              "doOffStage": true
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Inazuma_T_Aoe_02": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Inazuma",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": -1.399999976158142,
+                  "z": 1.399999976158142
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "y": -1.399999976158142,
+                      "z": 1.399999976158142
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Electric",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Inazuma_T_Aoe_03",
+              "doOffStage": true
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Inazuma_T_Aoe_03": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Inazuma",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "y": -1.399999976158142,
+                  "z": -1.399999976158142
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "y": -1.399999976158142,
+                      "z": -1.399999976158142
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Electric",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Inazuma_T",
+      "abilitySpecials": {
+        "Damage_Ratio": 0,
+        "ElementLevelCo": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV1_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV2_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV1_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_ElemReactOvergrowDelta": "DamageUpRatioOvergrow",
+            "Actor_ElemReactOvergrowElectricDelta": "DamageUpRatioOvergrowElectric",
+            "Actor_ElemReactOvergrowFireDelta": "DamageUpRatioOvergrowFire"
+          },
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "DoActionByElementReactionMixin",
+              "actorIceSubHurtDelta": -1,
+              "reactionTypes": [
+                "Overgrow",
+                "MoonOvergrow",
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass"
+              ],
+              "actions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Other",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV1_Buff_OnMonster",
+                  "doOffStage": true
+                }
+              ],
+              "entityTypes": [
+                "Monster"
+              ],
+              "range": 40
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV1_Buff_OnMonster": {
+          "reApplyModifierOnStateChange": true,
+          "state": "DefenseDown",
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "properties": {
+            "Actor_GrassSubHurtDelta": "SubHurtGrassDelta"
+          },
+          "duration": "Duration",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OnAvatarUseSkillMixin",
+              "actorIceSubHurtDelta": -1,
+              "onTriggerUltimateSkill": [
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Caster",
+                  "canBeHandledOnRecover": true,
+                  "setTarget": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 0.20000000298023224
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "V7_2_TeyvatDispatch_Sumeru_LV2_Pos"
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_CD"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_ShockWave_BigSize_Electric",
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": true,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "positionKey": "V7_2_TeyvatDispatch_Sumeru_LV2_Pos",
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "KBOBCHGAMFB": "Caster",
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    },
+                    {
+                      "$type": "TriggerAttackEvent",
+                      "actorIceSubHurtDelta": -1,
+                      "attackEvent": {
+                        "attackPattern": {
+                          "$type": "ConfigAttackCircle",
+                          "radius": 6,
+                          "fanAngle": 360,
+                          "massiveAttackRatio": 1,
+                          "MPNIJNGFBIH": {
+                            "INOCAOHPEBB": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            }
+                          },
+                          "triggerType": "TriggerNoRepeat",
+                          "born": {
+                            "$type": "ConfigBornByGlobalValue",
+                            "positionKey": "V7_2_TeyvatDispatch_Sumeru_LV2_Pos",
+                            "APKLAIJMEIL": {
+                              "HHNLJKNBKPP": 180
+                            },
+                            "value": 10,
+                            "onGroundRaycastUpDist": 2,
+                            "KBOBCHGAMFB": "Caster",
+                            "direction": {
+                              "maxAngle": 180
+                            }
+                          },
+                          "height": 10
+                        },
+                        "attackInfo": {
+                          "HBOOKFMCODC": {
+                            "BPIJOAMNKIH": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            },
+                            "onHitEffectName": "default"
+                          },
+                          "attackProperty": {
+                            "HJHPJLGAHHP": true,
+                            "damageExtra": [
+                              "ElementLevelCo",
+                              "DamageRatio",
+                              "MUL"
+                            ],
+                            "elementType": "Electric",
+                            "enBreak": 25,
+                            "JHLDBJEFNBP": true,
+                            "elementRank": 1,
+                            "EKBLGIOPKKA": true,
+                            "attackType": "Default"
+                          },
+                          "INKGMIHAPMA": {
+                            "NDIBGPPKGJP": "Shake"
+                          },
+                          "attenuationGroup": "default",
+                          "cameraShake": {
+                            "extension": {
+                              "cycleDamping": 0.11999999731779099,
+                              "baseOnCamera": true,
+                              "rangeAttenuation": 0.5,
+                              "baseCycle": 0.11999999731779099
+                            },
+                            "shakeDistance": 20
+                          },
+                          "hitPattern": {
+                            "hitHaltTimeScale": 0.009999999776482582,
+                            "BPIJOAMNKIH": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            },
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV3"
+                          }
+                        }
+                      },
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": true,
+                      "targetType": "Enemy"
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_CD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "onTriggerSkill": [
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Caster",
+                  "canBeHandledOnRecover": true,
+                  "setTarget": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": 0.20000000298023224
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "V7_2_TeyvatDispatch_Sumeru_LV2_Pos"
+                },
+                {
+                  "$type": "PBIOEEHFHFD",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "MJKPCGCAPLK": [
+                    {
+                      "$type": "ByNot",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "ByHasModifier",
+                          "target": "Team",
+                          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_CD"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "FireEffect",
+                      "actorIceSubHurtDelta": -1,
+                      "effectPattern": "Eff_Avatar_ShockWave_BigSize_Electric",
+                      "scale": 1,
+                      "canBeHandledOnRecover": true,
+                      "effectTempleteID": -1,
+                      "doOffStage": true,
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "positionKey": "V7_2_TeyvatDispatch_Sumeru_LV2_Pos",
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "KBOBCHGAMFB": "Caster",
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    },
+                    {
+                      "$type": "TriggerAttackEvent",
+                      "actorIceSubHurtDelta": -1,
+                      "attackEvent": {
+                        "attackPattern": {
+                          "$type": "ConfigAttackCircle",
+                          "radius": 6,
+                          "fanAngle": 360,
+                          "massiveAttackRatio": 1,
+                          "MPNIJNGFBIH": {
+                            "INOCAOHPEBB": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            }
+                          },
+                          "triggerType": "TriggerNoRepeat",
+                          "born": {
+                            "$type": "ConfigBornByGlobalValue",
+                            "positionKey": "V7_2_TeyvatDispatch_Sumeru_LV2_Pos",
+                            "APKLAIJMEIL": {
+                              "HHNLJKNBKPP": 180
+                            },
+                            "value": 10,
+                            "onGroundRaycastUpDist": 2,
+                            "KBOBCHGAMFB": "Caster",
+                            "direction": {
+                              "maxAngle": 180
+                            }
+                          },
+                          "height": 10
+                        },
+                        "attackInfo": {
+                          "HBOOKFMCODC": {
+                            "BPIJOAMNKIH": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            },
+                            "onHitEffectName": "default"
+                          },
+                          "attackProperty": {
+                            "HJHPJLGAHHP": true,
+                            "damageExtra": [
+                              "ElementLevelCo",
+                              "DamageRatio",
+                              "MUL"
+                            ],
+                            "elementType": "Electric",
+                            "enBreak": 25,
+                            "JHLDBJEFNBP": true,
+                            "elementRank": 1,
+                            "EKBLGIOPKKA": true,
+                            "attackType": "Default"
+                          },
+                          "INKGMIHAPMA": {
+                            "NDIBGPPKGJP": "Shake"
+                          },
+                          "attenuationGroup": "default",
+                          "cameraShake": {
+                            "extension": {
+                              "cycleDamping": 0.11999999731779099,
+                              "baseOnCamera": true,
+                              "rangeAttenuation": 0.5,
+                              "baseCycle": 0.11999999731779099
+                            },
+                            "shakeDistance": 20
+                          },
+                          "hitPattern": {
+                            "hitHaltTimeScale": 0.009999999776482582,
+                            "BPIJOAMNKIH": {
+                              "value": 1,
+                              "GGOHGMFHHEC": true
+                            },
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV3"
+                          }
+                        }
+                      },
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": true,
+                      "targetType": "Enemy"
+                    },
+                    {
+                      "$type": "ApplyModifier",
+                      "actorIceSubHurtDelta": -1,
+                      "target": "Team",
+                      "canBeHandledOnRecover": true,
+                      "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_CD",
+                      "doOffStage": true
+                    }
+                  ]
+                }
+              ],
+              "clearSkillIdDelay": 0.20000000298023224
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Sumeru_LV2_CD": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "duration": "CD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Sumeru",
+      "abilitySpecials": {
+        "CD": 0,
+        "DamageRatio": 0,
+        "DamageUpRatioOvergrow": 0,
+        "DamageUpRatioOvergrowElectric": 0,
+        "DamageUpRatioOvergrowFire": 0,
+        "Duration": 0,
+        "ElemMasteryDelta": 0,
+        "ElementLevelCo": 0,
+        "SubHurtGrassDelta": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "ServerLuaCall",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "luaCallType": "CurGalleryControlGroup",
+          "funcName": "SLC_TSkillTrigger"
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Sumeru_T_Trigger",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_V7_2_TeyvatDispatch_Sumeru_T_Trigger": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ANIMAL_ENTITY_TYPE"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "campBasedOn": "CurLocalAvatar",
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "centerBasedOn": "CurLocalAvatar",
+                "shapeName": "CircleR50H40C",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "V7_2_Sumeru_T_Aoe_01",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Sumeru_T_Aoe_01": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Sumeru_Water",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 0.5
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Water",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Water",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Sumeru_T_Aoe_01_02",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Sumeru_T_Aoe_01_02": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Sumeru_Water",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "offset": {
+                  "x": 0.5
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Water",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Water",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Sumeru_T_Aoe_02",
+              "doOffStage": true
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Sumeru_T_Aoe_02": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_Roguelike_Gadget_Wind_Die_Attack",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Wind",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Wind",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Sumeru_T_Aoe_02_02",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Sumeru_T_Aoe_02_02": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_Roguelike_Gadget_Wind_Die_Attack",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Wind",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Wind",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Sumeru_T_Aoe_03",
+              "doOffStage": true
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Sumeru_T_Aoe_03": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Fatuimecha_AMP_02_MeleeAttack02_Land",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Rock",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Rock",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Sumeru_T_Aoe_03_02",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Sumeru_T_Aoe_03_02": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Fatuimecha_AMP_02_MeleeAttack02_Land",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "radius": 10,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Rock",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Rock",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Sumeru_T",
+      "abilitySpecials": {
+        "Damage_Ratio_Rock": 0,
+        "Damage_Ratio_Water": 0,
+        "Damage_Ratio_Wind": 0,
+        "ElementLevelCo": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "key": "V7_2_Natlan_InNyxState"
+        },
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV1_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV1_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_V7_2_TeyvatDispatch_LV2_Buff_isUnlocked",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_Buff_Handler"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_InNyxState_DelayClear": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "V7_2_Natlan_InNyxState"
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV1_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "NyxValueMonitorMixin",
+              "actorIceSubHurtDelta": -1,
+              "MLFIAAKKLPH": 1,
+              "ratio": 1,
+              "DPNLHBANFBN": "V7_2_Natlan_InNyxState",
+              "type": "Reduce",
+              "AACDBJJHBBO": true,
+              "maxValue": 999
+            },
+            {
+              "$type": "AttachModifierToSelfGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "actionQueues": [
+                [
+                  {
+                    "$type": "ApplyModifier",
+                    "actorIceSubHurtDelta": -1,
+                    "target": "Team",
+                    "canBeHandledOnRecover": true,
+                    "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV1_Buff_OnTeam",
+                    "doOffStage": true
+                  },
+                  {
+                    "$type": "AttachModifier",
+                    "actorIceSubHurtDelta": -1,
+                    "canBeHandledOnRecover": true,
+                    "modifierName": "UNIQUE_V7_2_InNyxState_DelayClear",
+                    "doOffStage": true
+                  }
+                ]
+              ],
+              "globalValueKey": "V7_2_Natlan_InNyxState",
+              "valueSteps": [
+                0.8999999761581421,
+                1000
+              ],
+              "modifierNameSteps": [
+                "Blank"
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV1_Buff_OnAvatars": {
+          "reApplyModifierOnStateChange": true,
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "properties": {
+            "Actor_CriticalHurtDelta": "CriticalHurtDelta"
+          },
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV1_Buff_OnTeam": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "duration": "Duration",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AMPBGBFMKOB",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV1_Buff_OnAvatars"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_Buff_Handler": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "onAttackLanded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "target": "Other",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Target",
+                  "attackTags": [
+                    "ExtraAttack"
+                  ]
+                },
+                {
+                  "$type": "ByIsLocalAvatar",
+                  "target": "Caster"
+                },
+                {
+                  "$type": "ByNot",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "ByHasModifier",
+                      "target": "Team",
+                      "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_CD"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "key": "V7_2_TeyvatDispatch_Natlan_LV2_Pos"
+                },
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_RoleCombat_Superconductor_Physical_Impact",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": true,
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "V7_2_TeyvatDispatch_Natlan_LV2_Pos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "KBOBCHGAMFB": "Caster",
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "TriggerAttackEvent",
+                  "actorIceSubHurtDelta": -1,
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "ConfigAttackSphere",
+                      "radius": 6,
+                      "massiveAttackRatio": 1,
+                      "MPNIJNGFBIH": {
+                        "INOCAOHPEBB": {
+                          "value": 1,
+                          "GGOHGMFHHEC": true
+                        }
+                      },
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "positionKey": "V7_2_TeyvatDispatch_Natlan_LV2_Pos",
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 2,
+                        "KBOBCHGAMFB": "Caster",
+                        "onGround": true,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      }
+                    },
+                    "attackInfo": {
+                      "HBOOKFMCODC": {
+                        "BPIJOAMNKIH": {
+                          "value": 1,
+                          "GGOHGMFHHEC": true
+                        },
+                        "onHitEffectName": "default"
+                      },
+                      "attackProperty": {
+                        "HJHPJLGAHHP": true,
+                        "damageExtra": [
+                          "ElementLevelCo",
+                          "DamageRatio",
+                          "MUL"
+                        ],
+                        "enBreak": 25,
+                        "JHLDBJEFNBP": true,
+                        "elementRank": 1,
+                        "EKBLGIOPKKA": true,
+                        "attackType": "Default"
+                      },
+                      "INKGMIHAPMA": {
+                        "NDIBGPPKGJP": "Shake"
+                      },
+                      "attenuationGroup": "default",
+                      "cameraShake": {
+                        "extension": {
+                          "cycleDamping": 0.11999999731779099,
+                          "baseOnCamera": true,
+                          "rangeAttenuation": 0.5,
+                          "baseCycle": 0.11999999731779099
+                        },
+                        "shakeDistance": 20
+                      },
+                      "hitPattern": {
+                        "hitHaltTimeScale": 0.009999999776482582,
+                        "BPIJOAMNKIH": {
+                          "value": 1,
+                          "GGOHGMFHHEC": true
+                        },
+                        "onHitEffectName": "default",
+                        "hitImpulseType": "LV3"
+                      }
+                    }
+                  },
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "targetType": "Enemy"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_ReduceResistance",
+                  "doOffStage": true
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_CD",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_CD": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "duration": "CD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_LV2_ReduceResistance": {
+          "reApplyModifierOnStateChange": true,
+          "state": "DefenseDown",
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "RefreshUniqueDurability",
+          "properties": {
+            "Actor_ElecSubHurtDelta": "SubHurtDelta",
+            "Actor_FireSubHurtDelta": "SubHurtDelta",
+            "Actor_GrassSubHurtDelta": "SubHurtDelta",
+            "Actor_IceSubHurtDelta": "SubHurtDelta",
+            "Actor_PhysicalSubHurtDelta": "SubHurtDelta",
+            "Actor_RockSubHurtDelta": "SubHurtDelta",
+            "Actor_WaterSubHurtDelta": "SubHurtDelta",
+            "Actor_WindSubHurtDelta": "SubHurtDelta"
+          },
+          "duration": "DebuffDuration",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "SetGlobalValue",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "V7_2_Natlan_InNyxState"
+        }
+      ],
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Natlan",
+      "abilitySpecials": {
+        "CD": 0,
+        "CriticalHurtDelta": 0,
+        "DamageRatio": 0,
+        "DebuffDuration": 0,
+        "Duration": 0,
+        "ElementLevelCo": 0,
+        "SubHurtDelta": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAbilityStart": [
+        {
+          "$type": "ServerLuaCall",
+          "actorIceSubHurtDelta": -1,
+          "target": "Team",
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "luaCallType": "CurGalleryControlGroup",
+          "funcName": "SLC_TSkillTrigger"
+        },
+        {
+          "$type": "ApplyModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_V7_2_TeyvatDispatch_Natlan_T_Trigger",
+          "doOffStage": false
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "SetSystemValueToOverrideMap",
+          "actorIceSubHurtDelta": -1,
+          "type": "ElementLevelCo",
+          "canBeHandledOnRecover": true,
+          "value": -1,
+          "doOffStage": false,
+          "key": "ElementLevelCo"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_V7_2_TeyvatDispatch_Natlan_T_Trigger": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_DispatchBattle_TSkillEnergy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Woman_T",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Dragon_T": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ANIMAL_ENTITY_TYPE"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "campBasedOn": "CurLocalAvatar",
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "centerBasedOn": "CurLocalAvatar",
+                "shapeName": "CircleR50H40C",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "SetTargetToTargetKey",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "Other",
+                  "targetKey": "_SUPPORT_ATK_TARGET",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false
+                },
+                {
+                  "$type": "Randomed",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "successActions": [
+                    {
+                      "$type": "SetOverrideMapValue",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "overrideMapKey": "X1Random",
+                      "value": 15
+                    }
+                  ],
+                  "chance": 0.5,
+                  "failActions": [
+                    {
+                      "$type": "SetOverrideMapValue",
+                      "actorIceSubHurtDelta": -1,
+                      "canBeHandledOnRecover": true,
+                      "doOffStage": false,
+                      "overrideMapKey": "X1Random",
+                      "value": -15
+                    }
+                  ]
+                },
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "TempTarget",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "y": "X1Random",
+                      "z": 30
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "isOnStageFalseSwitchValue": {
+                    "__unk_Q16140806": "_SUPPORT_ATK_TARGET"
+                  },
+                  "key": "Natlan_T_Pos"
+                },
+                {
+                  "$type": "SetGlobalPos",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "TempTarget",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByTarget",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "isOnStageFalseSwitchValue": {
+                    "__unk_Q16140806": "_SUPPORT_ATK_TARGET"
+                  },
+                  "key": "Natlan_T_MonsterPos"
+                },
+                {
+                  "$type": "SetGlobalDir",
+                  "actorIceSubHurtDelta": -1,
+                  "BDHBNCEEPPK": "TempTarget",
+                  "CKEFLFOBBBL": "Target",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_Pos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "KBOBCHGAMFB": "Caster",
+                    "direction": {
+                      "$type": "ConfigDirectionByLookAtEntity",
+                      "maxAngle": 180
+                    }
+                  },
+                  "isOnStageFalseSwitchValue": {
+                    "__unk_Q16140806": "_SUPPORT_ATK_TARGET"
+                  },
+                  "key": "Natlan_T_CREATEDIR"
+                },
+                {
+                  "$type": "FireEffect",
+                  "actorIceSubHurtDelta": -1,
+                  "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Natlan_Dragon",
+                  "scale": 1,
+                  "canBeHandledOnRecover": true,
+                  "effectTempleteID": -1,
+                  "doOffStage": true,
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_Pos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "directionKey": "Natlan_T_CREATEDIR",
+                    "KBOBCHGAMFB": "Caster",
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  }
+                },
+                {
+                  "$type": "TriggerAttackEvent",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "ONBKHMOBGLD": 1001,
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "ConfigAttackCircle",
+                      "radius": 3.5,
+                      "fanAngle": 360,
+                      "massiveAttackRatio": 1,
+                      "MPNIJNGFBIH": {
+                        "INOCAOHPEBB": {
+                          "value": 1,
+                          "GGOHGMFHHEC": true
+                        }
+                      },
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "positionKey": "Natlan_T_MonsterPos",
+                        "APKLAIJMEIL": {
+                          "HHNLJKNBKPP": 180
+                        },
+                        "offset": {
+                          "x": -1
+                        },
+                        "value": 10,
+                        "onGroundRaycastUpDist": 3,
+                        "KBOBCHGAMFB": "Caster",
+                        "onGround": true,
+                        "direction": {
+                          "maxAngle": 180
+                        }
+                      },
+                      "height": 6
+                    },
+                    "attackInfo": {
+                      "HBOOKFMCODC": {
+                        "BPIJOAMNKIH": {
+                          "value": 1,
+                          "GGOHGMFHHEC": true
+                        },
+                        "onHitEffectName": "default"
+                      },
+                      "attackProperty": {
+                        "HJHPJLGAHHP": true,
+                        "damageExtra": [
+                          "Damage_Ratio_Fire",
+                          "ElementLevelCo",
+                          "MUL"
+                        ],
+                        "elementType": "Fire",
+                        "enBreak": 500,
+                        "strikeType": "Blunt",
+                        "JHLDBJEFNBP": true,
+                        "elementRank": 1,
+                        "EKBLGIOPKKA": true,
+                        "ELIEOGNBGKG": 1,
+                        "attackType": "Range"
+                      },
+                      "INKGMIHAPMA": {
+                        "NDIBGPPKGJP": "Shake"
+                      },
+                      "attenuationGroup": "default",
+                      "attackTag": "SummonAttack",
+                      "cameraShake": {
+                        "extension": {
+                          "cycleDamping": 0.11999999731779099,
+                          "baseOnCamera": true,
+                          "rangeAttenuation": 0.5,
+                          "baseCycle": 0.11999999731779099
+                        },
+                        "shakeDistance": 20
+                      },
+                      "hitPattern": {
+                        "BPIJOAMNKIH": {
+                          "value": 1,
+                          "GGOHGMFHHEC": true
+                        },
+                        "onHitEffectName": "default",
+                        "hitImpulseType": "LV3"
+                      }
+                    }
+                  },
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "targetType": "Enemy"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "V7_2_Natlan_Dragon_T_Last",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Dragon_T_Last": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Natlan_Dragon",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "Natlan_T_Pos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "Natlan_T_CREATEDIR",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 3.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_MonsterPos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": -1
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 3,
+                    "KBOBCHGAMFB": "Caster",
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Fire",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Fire",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Dragon_T_Last_2",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Dragon_T_Last_2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Natlan_Dragon",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "Natlan_T_Pos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "Natlan_T_CREATEDIR",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 3.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_MonsterPos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": -1
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 3,
+                    "KBOBCHGAMFB": "Caster",
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Fire",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Fire",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Dragon_T_Last_3",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Dragon_T_Last_3": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Natlan_Dragon",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "Natlan_T_Pos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "Natlan_T_CREATEDIR",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 3.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_MonsterPos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": -1
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 3,
+                    "KBOBCHGAMFB": "Caster",
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Fire",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Fire",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Dragon_T_Last_4",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Dragon_T_Last_4": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Natlan_Dragon",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "Natlan_T_Pos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "Natlan_T_CREATEDIR",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 3.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_MonsterPos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": -1
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 3,
+                    "KBOBCHGAMFB": "Caster",
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Fire",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Fire",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Dragon_T_Last_5",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Dragon_T_Last_5": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Activity_V7_2_TeyvatDispatch_Natlan_Dragon",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornByGlobalValue",
+                "positionKey": "Natlan_T_Pos",
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "directionKey": "Natlan_T_CREATEDIR",
+                "KBOBCHGAMFB": "Caster",
+                "onGround": true,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 3.5,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByGlobalValue",
+                    "positionKey": "Natlan_T_MonsterPos",
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "offset": {
+                      "x": -1
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 3,
+                    "KBOBCHGAMFB": "Caster",
+                    "onGround": true,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Fire",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Fire",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Woman_T_2",
+              "doOffStage": true
+            }
+          ],
+          "duration": 0.10000000149011612,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Woman_T": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ANIMAL_ENTITY_TYPE"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "campBasedOn": "CurLocalAvatar",
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "centerBasedOn": "CurLocalAvatar",
+                "shapeName": "CircleR50H40C",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "V7_2_Natlan_Woman_T_Aoe",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "V7_2_Natlan_Dragon_T",
+              "doOffStage": false
+            }
+          ],
+          "duration": 2,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Woman_T_2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "PredicatedBySelectTarget",
+              "actorIceSubHurtDelta": -1,
+              "FHADNGDMJND": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Target",
+                  "compareType": "NoneOrEqual",
+                  "key": "_ANIMAL_ENTITY_TYPE"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Target",
+                  "value": -1,
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "IPGCOPKAFFH": {
+                "$type": "SelectTargetsByShape",
+                "campTargetType": "Enemy",
+                "sizeRatio": 1,
+                "campBasedOn": "CurLocalAvatar",
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "topLimit": 1,
+                "NLNIBNNOOCK": {
+                  "APKLAIJMEIL": {
+                    "HHNLJKNBKPP": 180
+                  },
+                  "value": 10,
+                  "onGroundRaycastUpDist": 2,
+                  "direction": {
+                    "maxAngle": 180
+                  }
+                },
+                "centerBasedOn": "CurLocalAvatar",
+                "shapeName": "CircleR50H40C",
+                "sortType": "Nearest"
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Target",
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "V7_2_Natlan_Woman_T_Aoe_2",
+                  "doOffStage": true
+                }
+              ]
+            }
+          ],
+          "duration": 0.6000000238418579,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Woman_T_Aoe": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Tribalwarrior_Udugan_CircleAttack_Attack_01_7_2_Activity",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 7,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Ice",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Ice",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "V7_2_Natlan_Woman_T_Aoe_2": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_Monster_Tribalwarrior_Udugan_CircleAttack_Attack_01_7_2_Activity",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": true,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "ONBKHMOBGLD": 1001,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "radius": 7,
+                  "fanAngle": 360,
+                  "massiveAttackRatio": 1,
+                  "MPNIJNGFBIH": {
+                    "INOCAOHPEBB": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    }
+                  },
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true,
+                    "APKLAIJMEIL": {
+                      "HHNLJKNBKPP": 180
+                    },
+                    "value": 10,
+                    "onGroundRaycastUpDist": 2,
+                    "direction": {
+                      "maxAngle": 180
+                    }
+                  },
+                  "height": 6
+                },
+                "attackInfo": {
+                  "HBOOKFMCODC": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default"
+                  },
+                  "attackProperty": {
+                    "HJHPJLGAHHP": true,
+                    "damageExtra": [
+                      "Damage_Ratio_Ice",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "elementType": "Ice",
+                    "enBreak": 500,
+                    "strikeType": "Blunt",
+                    "JHLDBJEFNBP": true,
+                    "elementRank": 1,
+                    "EKBLGIOPKKA": true,
+                    "ELIEOGNBGKG": 1,
+                    "attackType": "Range"
+                  },
+                  "INKGMIHAPMA": {
+                    "NDIBGPPKGJP": "Shake"
+                  },
+                  "attenuationGroup": "default",
+                  "attackTag": "SummonAttack",
+                  "cameraShake": {
+                    "extension": {
+                      "cycleDamping": 0.11999999731779099,
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.5,
+                      "baseCycle": 0.11999999731779099
+                    },
+                    "shakeDistance": 20
+                  },
+                  "hitPattern": {
+                    "BPIJOAMNKIH": {
+                      "value": 1,
+                      "GGOHGMFHHEC": true
+                    },
+                    "onHitEffectName": "default",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "targetType": "Enemy"
+            }
+          ],
+          "duration": 1,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "ActivityAbility_V7_2_TeyvatDispatch_Natlan_T",
+      "abilitySpecials": {
+        "Damage_Ratio_Fire": 0,
+        "Damage_Ratio_Ice": 0,
+        "ElementLevelCo": 0,
+        "X1Random": 0
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

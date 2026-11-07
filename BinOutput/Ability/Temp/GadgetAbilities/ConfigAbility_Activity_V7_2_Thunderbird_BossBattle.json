@@ -1,0 +1,920 @@
+[
+  {
+    "Default": {
+      "__unk_Q2982101340": [
+        "GV_ElectricDamage_Invalid",
+        "GV_IS_IN_Summon_Skill",
+        "GV_IS_FinalSkill_Ready",
+        "GV_IS_TSkill_Hidden",
+        "GV_ElecImmune_Hit_CD",
+        "SGV_Thunderbird_BossBattle_Phase",
+        "SGV_Thunderbird_BossBattle_Immune_Duration",
+        "SGV_Thunderbird_BossBattle_FinalSkill_Duration",
+        "SGV_Thunderbird_BossBattle_CustomBarProgress",
+        "SGV_Thunderbird_BossBattle_CustomBarCount"
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PBIOEEHFHFD",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "MJKPCGCAPLK": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Team",
+              "compareType": "MoreThanAndEqual",
+              "value": 3,
+              "key": "SGV_Thunderbird_BossBattle_Phase"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Phase3_TSkill_Effect_Disable",
+              "doOffStage": false
+            },
+            {
+              "$type": "TriggerAbility",
+              "actorIceSubHurtDelta": -1,
+              "BDHBNCEEPPK": "CurLocalAvatar",
+              "abilityName": "Quest_V7_2_Boss_Shougun_T_Summon_Skill_Hit",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "LPFPKHHKGIB": "Other"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "SetExtraAbilityState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Defend_ElecImmune_Handler",
+              "doOffStage": false
+            }
+          ]
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Init_Handler",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "UNIQUE_Thunderbird_BossBattle_LockHp",
+          "doOffStage": false
+        }
+      ],
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "SGV_Thunderbird_BossBattle_Phase",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Phase0_Handler",
+            "Phase1_Handler",
+            "Phase2_Handler",
+            "Phase3_Handler"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "Team",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_IS_TSkill_Hidden",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "T_Hidden_Handler"
+          ],
+          "PNELLOCFHCP": true
+        },
+        {
+          "$type": "AttachModifierToGlobalValueMixin",
+          "actorIceSubHurtDelta": -1,
+          "globalValueTarget": "CurLocalAvatar",
+          "removeAppliedModifier": true,
+          "EECIIMBIDGB": true,
+          "globalValueKey": "GV_IS_IN_Summon_Skill",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "MAEJHFJIKDH": true,
+          "modifierNameSteps": [
+            "Phase3_TSkill_CD_After_Summon"
+          ],
+          "PNELLOCFHCP": true
+        }
+      ],
+      "modifiers": {
+        "Defend_ElecImmune_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "duration": "BuffTime",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Defend_ElecImmune_Hit_Handler"
+            },
+            {
+              "$type": "CurLocalAvatarMixinV2",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "Defend_ElecImmune_Loop_Effect"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Defend_ElecImmune_Hit_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "properties": {
+            "Actor_ElecMuteHurtDelta": 1,
+            "Actor_FireMuteHurtDelta": 1,
+            "Actor_GrassMuteHurtDelta": 1,
+            "Actor_IceMuteHurtDelta": 1,
+            "Actor_PhysicalMuteHurtDelta": 1,
+            "Actor_RockMuteHurtDelta": 1,
+            "Actor_WaterMuteHurtDelta": 1,
+            "Actor_WindMuteHurtDelta": 1
+          },
+          "minus_one": -1,
+          "onBeingHit": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByHitElement",
+                  "target": "Target",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "CurLocalAvatar",
+                  "compareType": "NoneOrEqual",
+                  "key": "GV_ElecImmune_Hit_CD"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Defend_ElecImmune_Hit_Once",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Defend_ElecImmune_Hit_Once": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "GV_ElecImmune_Hit_CD"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220374020
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_RecordElecImmuneHit"
+            },
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_Balloon_01_Disappear",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_ElecImmune_Hit_CD"
+            }
+          ],
+          "duration": "ElecImmuneHitCD",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Defend_ElecImmune_Loop_Effect": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "GV_ElectricDamage_Invalid"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_ElectricDamage_Invalid"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Init_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_ElectricDamage_Invalid"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_IS_IN_Summon_Skill"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_IS_FinalSkill_Ready"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_IS_TSkill_Hidden"
+            },
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "CurLocalAvatar",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "key": "GV_ElecImmune_Hit_CD"
+            },
+            {
+              "$type": "ShowExtraAbility",
+              "skillID": 20240,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetExtraAbilityEnable",
+              "actorIceSubHurtDelta": -1,
+              "enable": true,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Shield",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase0_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase1_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase2_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase3_CustomBarFirstFull": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "PBIOEEHFHFD",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "MJKPCGCAPLK": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Team",
+                  "key": "SGV_Thunderbird_BossBattle_CustomBarCount"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalValueV2",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "CurLocalAvatar",
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": true,
+                  "value": 1,
+                  "key": "GV_IS_FinalSkill_Ready"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "actorIceSubHurtDelta": -1,
+                  "target": "Team",
+                  "useLimitRange": true,
+                  "canBeHandledOnRecover": true,
+                  "doOffStage": false,
+                  "maxValue": 100,
+                  "value": 100,
+                  "key": "GV_Quest_7_2_Shougun_Super_ElementalBurst_Energy"
+                },
+                {
+                  "$type": "AttachModifier",
+                  "actorIceSubHurtDelta": -1,
+                  "canBeHandledOnRecover": true,
+                  "modifierName": "Phase3_FinalSkill_Duration_Handler",
+                  "doOffStage": false
+                }
+              ]
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase3_FinalSkill_Duration_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueV2",
+              "actorIceSubHurtDelta": -1,
+              "target": "Team",
+              "canBeHandledOnRecover": true,
+              "doOffStage": true,
+              "value": 1,
+              "key": "GV_IS_TSkill_Hidden"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "actorIceSubHurtDelta": -1,
+              "CallParamList": [
+                220374020
+              ],
+              "canBeHandledOnRecover": true,
+              "doOffStage": false,
+              "luaCallType": "SpecificGroup",
+              "funcName": "SLC_ClearPoolAndStopSpawn"
+            }
+          ],
+          "duration": "FinalSkillDuration",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase3_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Thunderbird_BossBattle_BarProgress",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Thunderbird_BossBattle_Phase3_SkillReady",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Thunderbird_BossBattle_BarProgress",
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase3_TSkill_CD_After_Summon": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "onRemoved": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Phase3_TSkill_Effect_Disable",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "Phase3_TSkill_Effect_Enable",
+              "doOffStage": false
+            },
+            {
+              "$type": "SetExtraAbilityState",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase3_TSkill_Effect_Disable": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Thunder",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Thunder_CD",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "duration": 6,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "Phase3_TSkill_Effect_Enable": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Thunder_CD",
+              "doOffStage": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Thunder",
+              "doOffStage": false
+            }
+          ],
+          "duration": 6,
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "T_Hidden_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ShowExtraAbility",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "SetExtraAbilityEnable",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "T_SkillIcon_Shield": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OEGEKDLKONE",
+              "actorIceSubHurtDelta": -1,
+              "GOEOCLKDLOC": {
+                "PHGMKDCPOJO": 20240
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "T_SkillIcon_Thunder": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OEGEKDLKONE",
+              "actorIceSubHurtDelta": -1,
+              "GOEOCLKDLOC": {
+                "CMDJLOFJFKH": true,
+                "GGFCONGEGMI": true,
+                "KMDHCICKDIJ": true,
+                "PHGMKDCPOJO": 20225
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "T_SkillIcon_Thunder_CD": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "OEGEKDLKONE",
+              "actorIceSubHurtDelta": -1,
+              "GOEOCLKDLOC": {
+                "PHGMKDCPOJO": 20225
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Thunderbird_BossBattle_BarProgress": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "LCOPKKPPMLC",
+              "actorIceSubHurtDelta": -1,
+              "FAMGIJOLBGC": "InLevelSGSkillBar",
+              "MOKLEIMMPHO": [
+                {
+                  "gvName": "SGV_Thunderbird_BossBattle_CustomBarProgress",
+                  "CHOAEDCKMGM": "GreaterOrEqual",
+                  "value": 1,
+                  "paramName": "IsFull",
+                  "NLEIMMOLBNP": 1,
+                  "MJDJKHCIECH": "Bool"
+                },
+                {
+                  "gvName": "SGV_Thunderbird_BossBattle_CustomBarCount",
+                  "CHOAEDCKMGM": "GreaterOrEqual",
+                  "value": 1,
+                  "paramName": "Ultimate",
+                  "MJDJKHCIECH": "Bool"
+                },
+                {
+                  "gvName": "SGV_Thunderbird_BossBattle_CustomBarProgress",
+                  "CGEIJECELGC": "DeltaGreaterThan",
+                  "HELHKPBIGLE": 0.019999999552965164,
+                  "value": 1,
+                  "paramName": "Add"
+                },
+                {
+                  "gvName": "SGV_Thunderbird_BossBattle_CustomBarProgress",
+                  "CGEIJECELGC": "DeltaLessThan",
+                  "HELHKPBIGLE": -1,
+                  "value": 1,
+                  "paramName": "Reduce"
+                }
+              ],
+              "AKHFDBAEJAC": "SGV_Thunderbird_BossBattle_CustomBarProgress"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Thunderbird_BossBattle_Phase3_SkillReady": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "ShowExtraAbility",
+              "skillID": 20225,
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            },
+            {
+              "$type": "RemoveModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Shield",
+              "doOffStage": false
+            },
+            {
+              "$type": "AttachModifier",
+              "actorIceSubHurtDelta": -1,
+              "canBeHandledOnRecover": true,
+              "modifierName": "T_SkillIcon_Thunder",
+              "doOffStage": false
+            }
+          ],
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AttachModifierToGlobalValueMixin",
+              "actorIceSubHurtDelta": -1,
+              "globalValueTarget": "Team",
+              "removeAppliedModifier": true,
+              "EECIIMBIDGB": true,
+              "globalValueKey": "SGV_Thunderbird_BossBattle_CustomBarProgress",
+              "valueSteps": [
+                0.9900000095367432,
+                1.0099999904632568
+              ],
+              "MAEJHFJIKDH": true,
+              "modifierNameSteps": [
+                "Phase3_CustomBarFirstFull"
+              ],
+              "PNELLOCFHCP": true
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Thunderbird_BossBattle_LockHp": {
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "modifierMixins": [
+            {
+              "$type": "AMPBGBFMKOB",
+              "actorIceSubHurtDelta": -1,
+              "modifierName": "UNIQUE_Thunderbird_BossBattle_LockHp_Avatar"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Thunderbird_BossBattle_LockHp_Avatar": {
+          "state": "Limbo",
+          "elementDurability": 100,
+          "isUnique": true,
+          "IAKPBCLBNKF": -1,
+          "stacking": "Unique",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "ShowExtraAbility",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "doOffStage": false
+        },
+        {
+          "$type": "SetGlobalValueV2",
+          "actorIceSubHurtDelta": -1,
+          "target": "CurLocalAvatar",
+          "canBeHandledOnRecover": true,
+          "doOffStage": true,
+          "key": "GV_IS_IN_Summon_Skill"
+        },
+        {
+          "$type": "ServerLuaCall",
+          "actorIceSubHurtDelta": -1,
+          "CallParamList": [
+            220374020
+          ],
+          "canBeHandledOnRecover": true,
+          "doOffStage": false,
+          "luaCallType": "SpecificGroup",
+          "funcName": "SLC_LeaveSummonSkill"
+        }
+      ],
+      "abilityName": "V7_2_DynamicAbility_Thunderbird_BossBattle_T",
+      "abilitySpecials": {
+        "BuffTime": 4,
+        "ElecImmuneHitCD": 5,
+        "FinalSkillDuration": 20
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "LifeTime_Handler",
+          "doOffStage": false
+        },
+        {
+          "$type": "AttachModifier",
+          "actorIceSubHurtDelta": -1,
+          "canBeHandledOnRecover": true,
+          "modifierName": "Effect_Handler",
+          "doOffStage": false
+        }
+      ],
+      "modifiers": {
+        "Effect_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ThunderbirdFeather_02_Appear_01",
+              "scale": 1,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "EffectNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "SetEffectFollowPath",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ThunderbirdFeather_02_Appear_01",
+              "canBeHandledOnRecover": true,
+              "attachPoint": "EffectNode",
+              "doOffStage": false,
+              "followPath": "EffectNode"
+            }
+          ],
+          "minus_one": -1,
+          "isLimitedProperties": true
+        },
+        "LifeTime_Handler": {
+          "elementDurability": 100,
+          "IAKPBCLBNKF": -1,
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "actorIceSubHurtDelta": -1,
+              "effectPattern": "Eff_SceneObj_ThunderbirdFeather_02_End_01",
+              "scale": 1.5,
+              "canBeHandledOnRecover": true,
+              "effectTempleteID": -1,
+              "doOffStage": false,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "APKLAIJMEIL": {
+                  "HHNLJKNBKPP": 180
+                },
+                "attachPointName": "EffectNode",
+                "value": 10,
+                "onGroundRaycastUpDist": 2,
+                "attachPointTargetType": "Self",
+                "direction": {
+                  "maxAngle": 180
+                }
+              }
+            },
+            {
+              "$type": "KillSelf",
+              "actorIceSubHurtDelta": -1,
+              "target": "Caster",
+              "killSelfType": "Normal",
+              "canBeHandledOnRecover": true,
+              "doOffStage": false
+            }
+          ],
+          "duration": "LifeTime",
+          "minus_one": -1,
+          "isLimitedProperties": true
+        }
+      },
+      "abilityName": "SceneObj_Area_Zd_Property_Ani_Prop_ThunderbirdFeather_02",
+      "abilitySpecials": {
+        "LifeTime": 1.5
+      },
+      "LKLPDIMKLKI": {
+        "elementDurability": 100,
+        "IAKPBCLBNKF": -1,
+        "minus_one": -1,
+        "isLimitedProperties": true
+      }
+    }
+  }
+]
